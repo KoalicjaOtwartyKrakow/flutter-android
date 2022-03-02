@@ -48,6 +48,9 @@ If something is not updating after restart:
 Update this section with any encountered issues and solutions
 
 
+### Building views
+Build views inside `presentation/<view_name>/<view_name>.dart`, keep `Widget build()` functions short by splitting it into separate widgets and keeping those inside `presentation/<view_name>/widgets/<widget_name>`
+
 
 ### 'RouteInformationBlablabla' error during build
 `flutter upgrade` and check if `flutter --version` is at least `2.8.1`
