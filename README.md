@@ -1,6 +1,5 @@
 # flutter_android
 
-A new Flutter project.
 
 ## Getting Started
 
@@ -16,6 +15,15 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 
+## Workflow
+
+Add new features on `feature/<feature_name>` branches, fix bugs on `bugfix/`, refactor on `refactor/`
+
+Make Pull Requests to `develop` and assign somebody to Code Review
+
+Don't push to `main`
+
+
 ## Setup
 
 ### Install dependencies:
@@ -24,7 +32,7 @@ samples, guidance on mobile development, and a full API reference.
 
 ---
 
-### Run code generation:
+### Run code generation (always do it before running the app):
 
 `flutter pub run build_runner build --delete-conflicting-outputs`
 
@@ -52,12 +60,15 @@ Update this section with any encountered issues and solutions
 Build views inside `presentation/<view_name>/<view_name>.dart`, keep `Widget build()` functions short by splitting it into separate widgets and keeping those inside `presentation/<view_name>/widgets/<widget_name>`
 
 
-### 'RouteInformationBlablabla' error during build
-`flutter upgrade` and check if `flutter --version` is at least `2.8.1`
-
+### Managing state
+Use `StatefulWidget`s and `setState()` to manage state. Bloc requires too much boilerplate for now.
 
 
 ### Navigation
 Navigating from `MyPage` to `AnotherPage` (auto_router replaces Page with Route in names, see presentation/routes/app_router.dart):
 
-`AutoRouter.of(context).replace(AnotherRoute)`
+`AutoRouter.of(context).replace(AnotherRoute())`
+
+
+### 'RouteInformationBlablabla' error during build
+`flutter upgrade` and check if `flutter --version` is at least `2.8.1`
