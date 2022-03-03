@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_android/presentation/apartment/widgets/apartment_form.dart';
+import 'package:flutter_android/presentation/host/widgets/apartment_form.dart';
 
 import '../../infrastructure/api_client.dart';
 import '../../injection.dart';

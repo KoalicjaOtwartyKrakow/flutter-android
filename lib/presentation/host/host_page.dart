@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_android/presentation/apartment/apartment_form_page.dart';
 import 'package:flutter_android/presentation/routes/app_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -8,8 +7,8 @@ import '../../infrastructure/api_client.dart';
 import '../../injection.dart';
 import 'widgets/apartment_form.dart';
 
-class ApartmentPage extends StatelessWidget {
-  const ApartmentPage({Key? key}) : super(key: key);
+class HostPage extends StatelessWidget {
+  const HostPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
