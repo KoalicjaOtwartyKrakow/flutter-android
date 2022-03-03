@@ -1,8 +1,7 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_android/models/apartment.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
-
-import 'dto/apartment_dto.dart';
 
 part 'api_client.g.dart';
 
@@ -13,10 +12,10 @@ abstract class ApiClient {
   factory ApiClient(Dio dio, {String baseUrl}) = _ApiClient;
 
   @GET("/dev/apartments")
-  Future<List<ApartmentDto>> listApartments();
+  Future<List<Apartment>> listApartments();
 
   @POST("/dev/apartments")
-  Future<ApartmentDto> postAnApartment(@Body() ApartmentDto apartmentDto);
+  Future<Apartment> postAnApartment(@Body() Apartment apartment);
 
   @GET("/dev/doc/contract")
   Future<String> getContractDownloadUrl();

@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
             ),
             TextButton(
               onPressed: () => AutoRouter.of(context).push(
-                const ApartmentRoute(),
+                const HostRoute(),
               ),
               child: const Text(
                 'Chcę zaproponować lokal',
