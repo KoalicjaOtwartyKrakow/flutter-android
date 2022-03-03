@@ -15,8 +15,8 @@ class ApartmentAddedSuccessPage extends StatelessWidget {
           const Text('Tutaj znajdzie się lista mieszkań, które zgłosiłeś.'),
           TextButton(
             onPressed: () =>
-                AutoRouter.of(context).replace(const ApartmentRoute()),
-            child: const Text('Chcę zaproponować jeszcze jeden lokal'),
+                AutoRouter.of(context).popUntil((route) => route.isFirst),
+            child: const Text('Super'),
           ),
         ],
       ),

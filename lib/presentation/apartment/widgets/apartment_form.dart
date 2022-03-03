@@ -152,8 +152,7 @@ class _ApartmentFormState extends State<ApartmentForm> {
           ElevatedButton(
             onPressed: () async {
               // TODO: move this into the if statement after success response
-              AutoRouter.of(context)
-                  .replace(const ApartmentAddedSuccessRoute());
+              AutoRouter.of(context).push(const ApartmentAddedSuccessRoute());
               if (_formKey.currentState!.validate()) {
                 // If form is valid post data
                 // TODO: handle error responses

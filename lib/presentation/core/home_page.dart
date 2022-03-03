@@ -19,7 +19,13 @@ class HomePage extends StatelessWidget {
             const Text(
                 'Jeśli masz możliwość udostępnienia lokalu mieszkalnego osobie lub rodzinie z Ukrainy, prosimy o wypełnienie formularza. Jeśli masz ograniczenia co do tego kogo możesz przyjąć (np. ludzie ze zwierzętami domowymi), zaznacz to proszę w opisie lokalu. Dziękujemy!'),
             TextButton(
-              onPressed: () => AutoRouter.of(context).replace(
+              onPressed: () {},
+              child: const Text(
+                'Szukam lokalu',
+              ),
+            ),
+            TextButton(
+              onPressed: () => AutoRouter.of(context).push(
                 const ApartmentRoute(),
               ),
               child: const Text(
