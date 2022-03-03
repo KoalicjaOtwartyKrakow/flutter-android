@@ -17,6 +17,9 @@ abstract class ApiClient {
 
   @POST("/dev/apartments")
   Future<ApartmentDto> postAnApartment(@Body() ApartmentDto apartmentDto);
+
+  @GET("/dev/doc/contract")
+  Future<String> getContractDownloadUrl();
 }
 
 // This is needed to be injected into ApiClient through injectable_generator
