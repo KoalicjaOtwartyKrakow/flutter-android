@@ -16,26 +16,48 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-                'Jeśli masz możliwość udostępnienia lokalu mieszkalnego osobie lub rodzinie z Ukrainy, prosimy o wypełnienie formularza. Jeśli masz ograniczenia co do tego kogo możesz przyjąć (np. ludzie ze zwierzętami domowymi), zaznacz to proszę w opisie lokalu. Dziękujemy!'),
-            TextButton(
-              onPressed: () {},
-              child: const Text(
-                'Szukam lokalu',
+            Container(
+              height: MediaQuery.of(context).size.height / 3,
+              margin: EdgeInsets.all(12),
+              child: Image.asset(
+                'assets/images/mapa-polski.png',
+                fit: BoxFit.scaleDown,
               ),
             ),
-            TextButton(
-              onPressed: () => AutoRouter.of(context).push(
+            Container(
+              margin: EdgeInsets.all(12),
+              child: const Text(
+                'Jeśli masz możliwość udostępnienia lokalu mieszkalnego osobie lub rodzinie z Ukrainy, prosimy o wypełnienie formularza. Jeśli masz ograniczenia co do tego kogo możesz przyjąć (np. ludzie ze zwierzętami domowymi), zaznacz to proszę w opisie lokalu. Dziękujemy!',
+                textAlign: TextAlign.center,
+              ),
+            ),
+            ListTile(
+              iconColor: Theme.of(context).primaryColor,
+              textColor: Theme.of(context).primaryColor,
+              onTap: () {},
+              leading: Icon(Icons.travel_explore),
+              title: const Text(
+                'SZUKAM LOKALU',
+              ),
+            ),
+            ListTile(
+              iconColor: Theme.of(context).primaryColor,
+              textColor: Theme.of(context).primaryColor,
+              onTap: () => AutoRouter.of(context).push(
                 const HostRoute(),
               ),
-              child: const Text(
-                'Chcę zaproponować lokal',
+              leading: Icon(Icons.night_shelter),
+              title: const Text(
+                'CHCĘ ZAPROPONOWAĆ LOKAL',
               ),
             ),
-            TextButton(
-              onPressed: () {},
-              child: const Text(
-                'Jestem koordynatorem',
+            ListTile(
+              iconColor: Theme.of(context).primaryColor,
+              textColor: Theme.of(context).primaryColor,
+              onTap: () {},
+              leading: Icon(Icons.menu_book),
+              title: const Text(
+                'JESTEM KOORDYNATOREM',
               ),
             ),
           ],

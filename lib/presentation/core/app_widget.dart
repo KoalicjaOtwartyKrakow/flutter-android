@@ -17,6 +17,18 @@ class MyApp extends StatelessWidget {
       title: 'Koalicja Otwarty Kraków',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        inputDecorationTheme: const InputDecorationTheme(
+          hintStyle: TextStyle(
+            fontSize: 12,
+          ),
+          contentPadding: EdgeInsets.fromLTRB(
+            2,
+            0,
+            2,
+            0,
+          ),
+          border: UnderlineInputBorder(),
+        ),
       ),
     );
   }

@@ -23,18 +23,28 @@ class HostPage extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height * 1 / 6,
               width: MediaQuery.of(context).size.width * 3 / 4,
-              child: ElevatedButton(
-                onPressed: () =>
+              child: ListTile(
+                iconColor: Theme.of(context).primaryColor,
+                textColor: Theme.of(context).primaryColor,
+                onTap: () =>
                     AutoRouter.of(context).push(const ApartmentFormRoute()),
-                child: Text('Zaproponuj mieszkanie'),
+                leading: Icon(Icons.night_shelter),
+                title: const Text(
+                  'ZAPROPONUJ MIESZKANIE',
+                ),
               ),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 1 / 6,
               width: MediaQuery.of(context).size.width * 3 / 4,
-              child: const ElevatedButton(
-                onPressed: _downloadContract,
-                child: Text('Pobierz umowę'),
+              child: ListTile(
+                iconColor: Theme.of(context).primaryColor,
+                textColor: Theme.of(context).primaryColor,
+                onTap: _downloadContract,
+                leading: Icon(Icons.download),
+                title: const Text(
+                  'POBIERZ UMOWĘ',
+                ),
               ),
             ),
           ],
