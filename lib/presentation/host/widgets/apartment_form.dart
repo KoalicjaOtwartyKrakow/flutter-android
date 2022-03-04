@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_android/infrastructure/converters.dart';
 import 'package:flutter_android/models/apartment.dart';
 
@@ -38,61 +39,21 @@ class _ApartmentFormState extends State<ApartmentForm> {
     return Form(
       key: _formKey,
       child: ListView(
-        padding: EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(10.0),
         children: <Widget>[
-          TextFormField(
-            controller: addressCityController,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Wpisz tu nazwę miasta...',
-            ),
-            validator: validateCity,
-          ),
-          TextFormField(
-            controller: addressCountyNameController,
-            validator: validateAddressCountyName,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Wpisz tu nazwę (county, gminy, hrabstwa xd?)...',
-            ),
-          ),
-          TextFormField(
-            controller: addressFlatNumberController,
-            validator: validateAddressFlatNumber,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Wpisz tu numer mieszkania...',
-            ),
-          ),
-          TextFormField(
-            controller: addressStreetNameController,
-            validator: validateAddressStreetName,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Wpisz tu nazwę ulicy...',
-            ),
-          ),
-          TextFormField(
-            controller: addressStreetNumberController,
-            validator: validateAddressStreetNumber,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Wpisz tu numer budynku...',
-            ),
-          ),
-          TextFormField(
-            controller: addressZipController,
-            validator: validateAddressZip,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Wpisz tu kod pocztowy...',
-            ),
+          AddressInputGroupWidget(
+            addressStreetNameController: addressStreetNameController,
+            addressStreetNumberController: addressStreetNumberController,
+            addressFlatNumberController: addressFlatNumberController,
+            addressZipController: addressZipController,
+            addressCityController: addressCityController,
+            addressCountyNameController: addressCountyNameController,
           ),
           // TextFormField(
           //   controller: createdAtController,
           //   validator: validateCreatedAt,
           //   decoration: const InputDecoration(
-          //     border: OutlineInputBorder(),
+          //
           //     hintText: 'Wpisz tu nazwę miasta...',
           //   ),
           // ),
@@ -100,7 +61,6 @@ class _ApartmentFormState extends State<ApartmentForm> {
             controller: descriptionController,
             validator: validateDescription,
             decoration: const InputDecoration(
-              border: OutlineInputBorder(),
               hintText: 'Napisz kilka słów od siebie...',
             ),
           ),
@@ -108,7 +68,7 @@ class _ApartmentFormState extends State<ApartmentForm> {
           //   controller: isVerifiedController,
           //   validator: validateIsVerified,
           //   decoration: const InputDecoration(
-          //     border: OutlineInputBorder(),
+          //
           //     hintText: 'Wpisz tu nazwę miasta...',
           //   ),
           // ),
@@ -116,7 +76,6 @@ class _ApartmentFormState extends State<ApartmentForm> {
             controller: landlordEmailController,
             validator: validateLandlordEmail,
             decoration: const InputDecoration(
-              border: OutlineInputBorder(),
               hintText: 'Wpisz tu swój adres email...',
             ),
           ),
@@ -124,7 +83,6 @@ class _ApartmentFormState extends State<ApartmentForm> {
             controller: landlordNameController,
             validator: validateLandlordName,
             decoration: const InputDecoration(
-              border: OutlineInputBorder(),
               hintText: 'Wpisz tu swoje imię i nazwisko...',
             ),
           ),
@@ -132,7 +90,6 @@ class _ApartmentFormState extends State<ApartmentForm> {
             controller: landlordPhoneController,
             validator: validateLandlordPhone,
             decoration: const InputDecoration(
-              border: OutlineInputBorder(),
               hintText: 'Wpisz tu numer telefonu kontaktowego...',
             ),
           ),
@@ -140,7 +97,6 @@ class _ApartmentFormState extends State<ApartmentForm> {
             controller: vacanciesTakenController,
             validator: validateVacanciesTaken,
             decoration: const InputDecoration(
-              border: OutlineInputBorder(),
               hintText: 'Wpisz tu liczbę zajętych miejsc...',
             ),
           ),
@@ -148,7 +104,6 @@ class _ApartmentFormState extends State<ApartmentForm> {
             controller: volunteerNameController,
             validator: validateVolunteerName,
             decoration: const InputDecoration(
-              border: OutlineInputBorder(),
               hintText: 'Wpisz tu imię i nazwisko wolontariusza...',
             ),
           ),
@@ -183,6 +138,132 @@ class _ApartmentFormState extends State<ApartmentForm> {
               }
             },
             child: const Text('Wyślij'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class AddressInputGroupWidget extends StatelessWidget {
+  const AddressInputGroupWidget({
+    Key? key,
+    required this.addressStreetNameController,
+    required this.addressStreetNumberController,
+    required this.addressFlatNumberController,
+    required this.addressZipController,
+    required this.addressCityController,
+    required this.addressCountyNameController,
+  }) : super(key: key);
+
+  final TextEditingController addressStreetNameController;
+  final TextEditingController addressStreetNumberController;
+  final TextEditingController addressFlatNumberController;
+  final TextEditingController addressZipController;
+  final TextEditingController addressCityController;
+  final TextEditingController addressCountyNameController;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 4.0,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'Adres',
+                    textAlign: TextAlign.left,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextFormField(
+              controller: addressStreetNameController,
+              validator: validateAddressStreetName,
+              decoration: const InputDecoration(
+                hintText: 'Ulica...',
+              ),
+            ),
+          ),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextFormField(
+                    controller: addressStreetNumberController,
+                    validator: validateAddressStreetNumber,
+                    decoration: const InputDecoration(
+                      hintText: 'Budynek...',
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextFormField(
+                    controller: addressFlatNumberController,
+                    validator: validateAddressFlatNumber,
+                    decoration: const InputDecoration(
+                      hintText: 'Mieszkanie...',
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Expanded(
+                flex: 1,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextFormField(
+                    controller: addressZipController,
+                    validator: validateAddressZip,
+                    decoration: const InputDecoration(
+                      hintText: 'Kod pocztowy...',
+                      hintMaxLines: 1,
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 2,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextFormField(
+                    controller: addressCityController,
+                    decoration: const InputDecoration(
+                      hintText: 'Miasto...',
+                    ),
+                    validator: validateCity,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextFormField(
+              controller: addressCountyNameController,
+              validator: validateAddressCountyName,
+              decoration: const InputDecoration(
+                border: UnderlineInputBorder(),
+                hintText: 'Województwo...',
+              ),
+            ),
           ),
         ],
       ),
