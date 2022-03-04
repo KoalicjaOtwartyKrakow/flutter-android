@@ -1,9 +1,11 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_android/infrastructure/converters.dart';
 import 'package:flutter_android/models/apartment.dart';
 
 import '../../../infrastructure/api_client.dart';
+import '../../../models/voivodeship.dart';
 import '../../routes/app_router.dart';
 
 class ApartmentForm extends StatefulWidget {
@@ -154,13 +156,16 @@ class _ApartmentFormState extends State<ApartmentForm> {
             onPressed: () async {
               // TODO: move this into the if statement after success response
               AutoRouter.of(context).push(const ApartmentAddedSuccessRoute());
+
               if (_formKey.currentState!.validate()) {
                 // If form is valid post data
                 // TODO: handle error responses
                 final response = await widget.apiClient.postAnApartment(
                   Apartment(
                     addressCity: addressCityController.text,
-                    addressCountyName: addressCountyNameController.text,
+                    addressCountyName: voivodeshipFromString(
+                      addressCountyNameController.text,
+                    ),
                     addressFlatNumber: addressFlatNumberController.text,
                     addressStreetName: addressStreetNameController.text,
                     addressStreetNumber: addressStreetNumberController.text,
@@ -171,7 +176,7 @@ class _ApartmentFormState extends State<ApartmentForm> {
                     landlordEmail: landlordEmailController.text,
                     landlordName: landlordNameController.text,
                     landlordPhone: landlordPhoneController.text,
-                    vacanciesTaken: num.parse(vacanciesTakenController.text),
+                    vacanciesTaken: int.parse(vacanciesTakenController.text),
                     volunteerName: volunteerNameController.text,
                   ),
                 );

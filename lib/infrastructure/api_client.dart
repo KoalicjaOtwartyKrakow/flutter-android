@@ -6,7 +6,7 @@ import 'package:retrofit/retrofit.dart';
 part 'api_client.g.dart';
 
 @injectable
-@RestApi(baseUrl: "https://cu2kg3w6c1.execute-api.eu-west-1.amazonaws.com/")
+@RestApi(baseUrl: "https://cu2kg3w6c1.execute-api.eu-west-1.amazonaws.com")
 abstract class ApiClient {
   @factoryMethod
   factory ApiClient(Dio dio, {String baseUrl}) = _ApiClient;
@@ -26,5 +26,5 @@ abstract class ApiClient {
 abstract class RegisterModule {
   Dio get dio => Dio();
   String get baseUrl =>
-      'https://cu2kg3w6c1.execute-api.eu-west-1.amazonaws.com/';
+      'https://cu2kg3w6c1.execute-api.eu-west-1.amazonaws.com';
 }
