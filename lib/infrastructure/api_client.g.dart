@@ -10,7 +10,7 @@ part of 'api_client.dart';
 
 class _ApiClient implements ApiClient {
   _ApiClient(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'https://cu2kg3w6c1.execute-api.eu-west-1.amazonaws.com/';
+    baseUrl ??= 'https://cu2kg3w6c1.execute-api.eu-west-1.amazonaws.com';
   }
 
   final Dio _dio;

@@ -1,3 +1,4 @@
+import 'package:flutter_android/models/voivodeship.dart';
 import 'package:intl/intl.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -11,7 +12,7 @@ class Apartment {
   String addressCity;
 
   @JsonKey(name: 'CNT_NAME')
-  String addressCountyName;
+  Voivodeship addressCountyName;
 
   @JsonKey(name: 'APT_NUM')
   String addressFlatNumber;
@@ -28,9 +29,9 @@ class Apartment {
   @JsonKey(
     name: 'CreationTime',
     fromJson: dateTimeFromString,
-    toJson: dateTimeToString,
+    toJson: _nullableDateTimeToString,
   )
-  DateTime createdAt;
+  DateTime? createdAt;
 
   @JsonKey(name: 'DESCRIPTION')
   String description;
@@ -39,7 +40,7 @@ class Apartment {
   String? id;
 
   @JsonKey(name: 'IS_VERIFIED')
-  bool isVerified;
+  bool? isVerified;
 
   @JsonKey(name: 'LANDLORD_EMAIL')
   String landlordEmail;
@@ -51,7 +52,7 @@ class Apartment {
   String landlordPhone;
 
   @JsonKey(name: 'PLACES_BUSY')
-  num vacanciesTaken;
+  int vacanciesTaken;
 
   @JsonKey(name: 'VOLUNTEER_NAME')
   String volunteerName;
@@ -77,4 +78,11 @@ class Apartment {
   factory Apartment.fromJson(Map<String, dynamic> json) =>
       _$ApartmentFromJson(json);
   Map<String, dynamic> toJson() => _$ApartmentToJson(this);
+}
+
+String? _nullableDateTimeToString(DateTime? dateTime) {
+  if (dateTime != null) {
+    return dateTimeToString(dateTime);
+  }
+  return null;
 }

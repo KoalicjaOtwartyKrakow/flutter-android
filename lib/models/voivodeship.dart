@@ -8,5 +8,5 @@ enum Voivodeship {
   MALOPOLSKIE,
 
   @JsonValue('DOLNOSLASKIE')
-  DOLNOSLASKIE,
+  DOLNOSLASKIE
 }
