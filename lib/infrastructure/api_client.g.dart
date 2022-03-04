@@ -10,7 +10,7 @@ part of 'api_client.dart';
 
 class _ApiClient implements ApiClient {
   _ApiClient(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'https://cu2kg3w6c1.execute-api.eu-west-1.amazonaws.com/';
+    baseUrl ??= 'https://cu2kg3w6c1.execute-api.eu-west-1.amazonaws.com';
   }
 
   final Dio _dio;
@@ -18,37 +18,37 @@ class _ApiClient implements ApiClient {
   String? baseUrl;
 
   @override
-  Future<List<ApartmentDto>> listApartments() async {
+  Future<List<Apartment>> listApartments() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<List<dynamic>>(
-        _setStreamType<List<ApartmentDto>>(
+        _setStreamType<List<Apartment>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/dev/apartments',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     var value = _result.data!
-        .map((dynamic i) => ApartmentDto.fromJson(i as Map<String, dynamic>))
+        .map((dynamic i) => Apartment.fromJson(i as Map<String, dynamic>))
         .toList();
     return value;
   }
 
   @override
-  Future<ApartmentDto> postAnApartment(apartmentDto) async {
+  Future<Apartment> postAnApartment(apartment) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    _data.addAll(apartmentDto.toJson());
+    _data.addAll(apartment.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<ApartmentDto>(
+        _setStreamType<Apartment>(
             Options(method: 'POST', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/dev/apartments',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = ApartmentDto.fromJson(_result.data!);
+    final value = Apartment.fromJson(_result.data!);
     return value;
   }
 

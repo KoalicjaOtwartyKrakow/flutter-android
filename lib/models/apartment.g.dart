@@ -1,38 +1,37 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'apartment_dto.dart';
+part of 'apartment.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-ApartmentDto _$ApartmentDtoFromJson(Map<String, dynamic> json) => ApartmentDto(
+Apartment _$ApartmentFromJson(Map<String, dynamic> json) => Apartment(
       id: json['ApartmentId'] as String?,
       addressCity: json['CITY'] as String,
-      addressCountyName: json['CNT_NAME'] as String,
+      addressCountyName: $enumDecode(_$VoivodeshipEnumMap, json['CNT_NAME']),
       addressFlatNumber: json['APT_NUM'] as String,
       addressStreetName: json['ST_NAME'] as String,
       addressStreetNumber: json['ST_NUM'] as String,
       addressZip: json['ZIP'] as String,
-      createdAt: json['CreationTime'] as String,
+      createdAt: dateTimeFromString(json['CreationTime'] as String),
       description: json['DESCRIPTION'] as String,
-      isVerified: json['IS_VERIFIED'] as bool,
+      isVerified: json['IS_VERIFIED'] as bool?,
       landlordEmail: json['LANDLORD_EMAIL'] as String,
       landlordName: json['LANDLORD_NAME'] as String,
       landlordPhone: json['LANDLORD_PHONE'] as String,
-      vacanciesTaken: json['PLACES_BUSY'] as num,
+      vacanciesTaken: json['PLACES_BUSY'] as int,
       volunteerName: json['VOLUNTEER_NAME'] as String,
     );
 
-Map<String, dynamic> _$ApartmentDtoToJson(ApartmentDto instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$ApartmentToJson(Apartment instance) => <String, dynamic>{
       'CITY': instance.addressCity,
-      'CNT_NAME': instance.addressCountyName,
+      'CNT_NAME': _$VoivodeshipEnumMap[instance.addressCountyName],
       'APT_NUM': instance.addressFlatNumber,
       'ST_NUM': instance.addressStreetNumber,
       'ST_NAME': instance.addressStreetName,
       'ZIP': instance.addressZip,
-      'CreationTime': instance.createdAt,
+      'CreationTime': _nullableDateTimeToString(instance.createdAt),
       'DESCRIPTION': instance.description,
       'ApartmentId': instance.id,
       'IS_VERIFIED': instance.isVerified,
@@ -42,3 +41,9 @@ Map<String, dynamic> _$ApartmentDtoToJson(ApartmentDto instance) =>
       'PLACES_BUSY': instance.vacanciesTaken,
       'VOLUNTEER_NAME': instance.volunteerName,
     };
+
+const _$VoivodeshipEnumMap = {
+  Voivodeship.LODZKIE: 'LODZKIE',
+  Voivodeship.MALOPOLSKIE: 'MAŁOPOLSKIE',
+  Voivodeship.DOLNOSLASKIE: 'DOLNOSLASKIE',
+};

@@ -1,8 +1,11 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_android/infrastructure/converters.dart';
+import 'package:flutter_android/models/apartment.dart';
 
 import '../../../infrastructure/api_client.dart';
-import '../../../infrastructure/dto/apartment_dto.dart';
+import '../../../models/voivodeship.dart';
 import '../../routes/app_router.dart';
 
 class ApartmentForm extends StatefulWidget {
@@ -157,20 +160,22 @@ class _ApartmentFormState extends State<ApartmentForm> {
                 // If form is valid post data
                 // TODO: handle error responses
                 final response = await widget.apiClient.postAnApartment(
-                  ApartmentDto(
+                  Apartment(
                     addressCity: addressCityController.text,
-                    addressCountyName: addressCountyNameController.text,
+                    addressCountyName: voivodeshipFromString(
+                      addressCountyNameController.text,
+                    ),
                     addressFlatNumber: addressFlatNumberController.text,
                     addressStreetName: addressStreetNameController.text,
                     addressStreetNumber: addressStreetNumberController.text,
                     addressZip: addressZipController.text,
-                    createdAt: createdAtController.text,
+                    createdAt: dateTimeFromString(createdAtController.text),
                     description: descriptionController.text,
                     isVerified: parseBool(isVerifiedController.text),
                     landlordEmail: landlordEmailController.text,
                     landlordName: landlordNameController.text,
                     landlordPhone: landlordPhoneController.text,
-                    vacanciesTaken: num.parse(vacanciesTakenController.text),
+                    vacanciesTaken: int.parse(vacanciesTakenController.text),
                     volunteerName: volunteerNameController.text,
                   ),
                 );
