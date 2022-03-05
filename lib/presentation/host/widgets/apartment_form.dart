@@ -289,12 +289,16 @@ String? validateAddressCountyName(String? value) {
   if (value == null || value.isEmpty) {
     return 'Wymagane';
   }
+  if (isNumeric(value))
   return null;
 }
 
 String? validateAddressFlatNumber(String? value) {
   if (value == null || value.isEmpty) {
     return 'Wymagane';
+  }
+  if (!isNumeric(value)) {
+    return 'Należy podać numer mieszkania';
   }
   return null;
 }
@@ -309,6 +313,9 @@ String? validateAddressStreetName(String? value) {
 String? validateAddressStreetNumber(String? value) {
   if (value == null || value.isEmpty) {
     return 'Wymagane';
+  }
+  if (!isNumeric(value)) {
+    'Należy podać numer budynku';
   }
   return null;
 }
@@ -345,6 +352,9 @@ String? validateLandlordEmail(String? value) {
   if (value == null || value.isEmpty) {
     return 'Wymagane';
   }
+  if (value == 'a') {
+    return 'Nieprawidłowy adres email';
+  }
   return null;
 }
 
@@ -378,4 +388,11 @@ String? validateVolunteerName(String? value) {
 
 bool parseBool(String value) {
   return value.toLowerCase() == 'true';
+}
+
+bool isNumeric(String s) {
+  if (s == null) {
+    return false;
+  }
+  return double.tryParse(s) != null;
 }
