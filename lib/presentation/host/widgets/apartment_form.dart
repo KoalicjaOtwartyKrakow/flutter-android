@@ -352,7 +352,7 @@ String? validateLandlordEmail(String? value) {
   if (value == null || value.isEmpty) {
     return 'Wymagane';
   }
-  if (value == 'a') {
+  if (value.contains("@")) {
     return 'Nieprawidłowy adres email';
   }
   return null;
