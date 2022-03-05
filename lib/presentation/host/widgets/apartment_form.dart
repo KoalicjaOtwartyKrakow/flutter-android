@@ -324,6 +324,9 @@ String? validateAddressZip(String? value) {
   if (value == null || value.isEmpty) {
     return 'Wymagane';
   }
+  if (!isZip(value)) {
+    return 'Nieprawidłowy kod pocztowy';
+  }
   return null;
 }
 
@@ -395,4 +398,10 @@ bool isNumeric(String s) {
     return false;
   }
   return double.tryParse(s) != null;
+}
+
+bool isZip(String s) {
+  String pattern = r'^\d\d-\d\d\d$';
+  RegExp regExp = RegExp(pattern);
+  return regExp.hasMatch(s);
 }
