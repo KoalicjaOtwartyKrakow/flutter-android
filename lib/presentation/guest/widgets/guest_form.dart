@@ -20,6 +20,7 @@ class _GuestFormState extends State<GuestForm> {
   final _formKey = GlobalKey<FormState>();
   final nameController = TextEditingController();
   final surnameController = TextEditingController();
+  final phoneNumberController = TextEditingController();
   final createdAtController = TextEditingController();
   final descriptionController = TextEditingController();
 
@@ -42,6 +43,13 @@ class _GuestFormState extends State<GuestForm> {
             validator: validateSurname,
             decoration: const InputDecoration(
               hintText: 'Wpisz swoje nazwisko',
+            ),
+          ),
+          TextFormField(
+            controller: phoneNumberController,
+            validator: validatePhoneNumber,
+            decoration: const InputDecoration(
+              hintText: 'Wpisz numer telefonu',
             ),
           ),
           TextFormField(
@@ -87,6 +95,13 @@ String? validateName(String? value) {
 String? validateSurname(String? value) {
   if (value == null || value.isEmpty) {
     return 'Surname is required';
+  }
+  return null;
+}
+
+String? validatePhoneNumber(String? value) {
+  if (value == null || value.isEmpty) {
+    return 'Phone number is required';
   }
   return null;
 }
