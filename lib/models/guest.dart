@@ -18,6 +18,9 @@ class Guest {
   @JsonKey(name: 'SURNAME')
   String surname;
 
+  @JsonKey(name: 'PHONENUMBER')
+  String phoneNumber;
+
   @JsonKey(
     name: 'CreationTime',
     fromJson: dateTimeFromString,
@@ -32,6 +35,7 @@ class Guest {
     this.id,
     required this.name,
     required this.surname,
+    required this.phoneNumber,
     required this.createdAt,
     required this.description,
   });
