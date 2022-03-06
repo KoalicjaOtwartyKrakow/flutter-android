@@ -5,6 +5,7 @@ import '../core/home_page.dart';
 import '../host/apartment_added_success_page.dart';
 import '../host/apartment_form_page.dart';
 import '../host/host_page.dart';
+import '../guest/guest_page.dart';
 
 part 'app_router.gr.dart';
 
@@ -13,6 +14,7 @@ part 'app_router.gr.dart';
   routes: <AutoRoute>[
     MaterialRoute(page: HomePage, initial: true),
     MaterialRoute(page: HostPage),
+    MaterialRoute(page: GuestPage),
     MaterialRoute(page: ApartmentFormPage),
     MaterialRoute(page: ApartmentAddedSuccessPage),
   ],
