@@ -18,11 +18,18 @@ class GuestForm extends StatefulWidget {
 
 class _GuestFormState extends State<GuestForm> {
   final _formKey = GlobalKey<FormState>();
-  final nameController = TextEditingController();
-  final surnameController = TextEditingController();
+  final fullNameController = TextEditingController();
   final phoneNumberController = TextEditingController();
+  final peopleInGroupController = TextEditingController();
+  final adultMaleCountController = TextEditingController();
+  final adultFemaleCountController = TextEditingController();
+  final childrenCountController = TextEditingController();
+  final childrenAgesController = TextEditingController();
+  final havePetsController = TextEditingController();
+  final petsDescriptionController = TextEditingController();
+  final specialNeedsController = TextEditingController();
+  final howLongToStayController = TextEditingController();
   final createdAtController = TextEditingController();
-  final descriptionController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -32,17 +39,10 @@ class _GuestFormState extends State<GuestForm> {
         padding: EdgeInsets.all(10.0),
         children: <Widget>[
           TextFormField(
-            controller: nameController,
-            validator: validateName,
+            controller: fullNameController,
+            validator: validateFullName,
             decoration: const InputDecoration(
-              hintText: 'Wpisz swoje imię',
-            ),
-          ),
-          TextFormField(
-            controller: surnameController,
-            validator: validateSurname,
-            decoration: const InputDecoration(
-              hintText: 'Wpisz swoje nazwisko',
+              hintText: 'Wpisz swoje imię i nazwisko',
             ),
           ),
           TextFormField(
@@ -53,28 +53,84 @@ class _GuestFormState extends State<GuestForm> {
             ),
           ),
           TextFormField(
-            controller: descriptionController,
-            validator: validateDescription,
+            controller: peopleInGroupController,
+            validator: validatePeopleInGroup,
             decoration: const InputDecoration(
-              hintText: 'Napisz kilka słów od siebie',
+              hintText: 'Napisz, ile osób liczy grupa',
+            ),
+          ),
+          TextFormField(
+            controller: adultMaleCountController,
+            validator: validateAdultMaleCount,
+            decoration: const InputDecoration(
+              hintText: 'Napisz, ilu jest w grupie dorosłych mężczyzn',
+            ),
+          ),
+          TextFormField(
+            controller: adultFemaleCountController,
+            validator: validateAdultFemaleCount,
+            decoration: const InputDecoration(
+              hintText: 'Napisz, ile jest w grupie dorosłych kobiet',
+            ),
+          ),
+          TextFormField(
+            controller: childrenCountController,
+            validator: validateChildrenCount,
+            decoration: const InputDecoration(
+              hintText: 'Napisz, ile jest w grupie dzieci',
+            ),
+          ),
+          TextFormField(
+            controller: childrenAgesController,
+            validator: validateChildrenAges,
+            decoration: const InputDecoration(
+              hintText: 'Napisz wiek każdego z dzieci (np.: 5, 12, 8)',
+            ),
+          ),
+          TextFormField(
+            controller: havePetsController,
+            validator: validateHavePets,
+            decoration: const InputDecoration(
+              hintText: 'Napisz, czy masz zwierzęta',
+            ),
+          ),
+          TextFormField(
+            controller: petsDescriptionController,
+            validator: validatePetsDescription,
+            decoration: const InputDecoration(
+              hintText: 'Napisz, jakie masz zwierzęta',
+            ),
+          ),
+          TextFormField(
+            controller: specialNeedsController,
+            validator: validateSpecialNeeds,
+            decoration: const InputDecoration(
+              hintText: 'Napisz, jakie masz specjalne potrzeby (np. dietetyczne)',
+            ),
+          ),
+          TextFormField(
+            controller: howLongToStayController,
+            validator: validateHowLongToStay,
+            decoration: const InputDecoration(
+              hintText: 'Napisz, na jak długo potrzebujesz/potrzebujecie zakwaterowania',
             ),
           ),
 
           ElevatedButton(
+            // onPressed: false
+            // ? () {
+            //
+            // }
+            // : null,
             onPressed: () async {
               // TODO: move this into the if statement after success response
               AutoRouter.of(context).push(const ApartmentAddedSuccessRoute());
               if (_formKey.currentState!.validate()) {
                 // If form is valid post data
                 // TODO: handle error responses
-                // final response = await widget.apiClient.postAnApartment(
-                //   Guest(
-                //     name: nameController.text,
-                //     surname: surnameController.text,
-                //     createdAt: dateTimeFromString(createdAtController.text),
-                //     description: descriptionController.text,
-                //   ),
-                // );
+              }
+              else {
+                false;
               }
             },
             child: const Text('Wyślij'),
@@ -85,16 +141,9 @@ class _GuestFormState extends State<GuestForm> {
   }
 }
 
-String? validateName(String? value) {
+String? validateFullName(String? value) {
   if (value == null || value.isEmpty) {
     return 'Name is required';
-  }
-  return null;
-}
-
-String? validateSurname(String? value) {
-  if (value == null || value.isEmpty) {
-    return 'Surname is required';
   }
   return null;
 }
@@ -106,14 +155,70 @@ String? validatePhoneNumber(String? value) {
   return null;
 }
 
-String? validateCreatedAt(String? value) {
+String? validatePeopleInGroup(String? value) {
   if (value == null || value.isEmpty) {
-    return 'Wymagane';
+    return 'Phone number is required';
   }
   return null;
 }
 
-String? validateDescription(String? value) {
+String? validateAdultMaleCount(String? value) {
+  if (value == null || value.isEmpty) {
+    return 'Phone number is required';
+  }
+  return null;
+}
+
+String? validateAdultFemaleCount(String? value) {
+  if (value == null || value.isEmpty) {
+    return 'Phone number is required';
+  }
+  return null;
+}
+
+String? validateChildrenCount(String? value) {
+  if (value == null || value.isEmpty) {
+    return 'Phone number is required';
+  }
+  return null;
+}
+
+String? validateChildrenAges(String? value) {
+  if (value == null || value.isEmpty) {
+    return 'Phone number is required';
+  }
+  return null;
+}
+
+String? validateHavePets(String? value) {
+  if (value == null || value.isEmpty) {
+    return 'Phone number is required';
+  }
+  return null;
+}
+
+String? validatePetsDescription(String? value) {
+  if (value == null || value.isEmpty) {
+    return 'Phone number is required';
+  }
+  return null;
+}
+
+String? validateSpecialNeeds(String? value) {
+  if (value == null || value.isEmpty) {
+    return 'Phone number is required';
+  }
+  return null;
+}
+
+String? validateHowLongToStay(String? value) {
+  if (value == null || value.isEmpty) {
+    return 'Phone number is required';
+  }
+  return null;
+}
+
+String? validateCreatedAt(String? value) {
   if (value == null || value.isEmpty) {
     return 'Wymagane';
   }
