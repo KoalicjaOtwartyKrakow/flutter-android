@@ -12,14 +12,38 @@ class Guest {
   @JsonKey(name: 'GuestId')
   String? id;
 
-  @JsonKey(name: 'NAME')
-  String name;
+  @JsonKey(name: 'FULL_NAME')
+  String fullName;
 
-  @JsonKey(name: 'SURNAME')
-  String surname;
-
-  @JsonKey(name: 'PHONENUMBER')
+  @JsonKey(name: 'PHONE_NUMBER')
   String phoneNumber;
+
+  @JsonKey(name: 'PEOPLE_IN_GROUP')
+  String peopleInGroup;
+
+  @JsonKey(name: 'ADULT_MALE_COUNT')
+  String adultMaleCount;
+
+  @JsonKey(name: 'ADULT_FEMALE_COUNT')
+  String adultFemaleCount;
+
+  @JsonKey(name: 'CHILDREN_COUNT')
+  String childrenCount;
+
+  @JsonKey(name: 'CHILDREN_AGES')
+  String childrenAges;
+
+  @JsonKey(name: 'HAVE_PETS')
+  String havePets;
+
+  @JsonKey(name: 'PETS_DESCRIPTION')
+  String petsDescription;
+
+  @JsonKey(name: 'SPECIAL_NEEDS')
+  String specialNeeds;
+
+  @JsonKey(name: 'HOW_LONG_TO_STAY')
+  String howLongToStay;
 
   @JsonKey(
     name: 'CreationTime',
@@ -33,9 +57,17 @@ class Guest {
 
   Guest({
     this.id,
-    required this.name,
-    required this.surname,
+    required this.fullName,
     required this.phoneNumber,
+    required this.peopleInGroup,
+    required this.adultMaleCount,
+    required this.adultFemaleCount,
+    required this.childrenCount,
+    required this.childrenAges,
+    required this.havePets,
+    required this.petsDescription,
+    required this.specialNeeds,
+    required this.howLongToStay,
     required this.createdAt,
     required this.description,
   });
