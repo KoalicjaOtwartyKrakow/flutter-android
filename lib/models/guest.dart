@@ -52,9 +52,6 @@ class Guest {
   )
   DateTime? createdAt;
 
-  @JsonKey(name: 'DESCRIPTION')
-  String description;
-
   Guest({
     this.id,
     required this.fullName,
@@ -69,7 +66,6 @@ class Guest {
     required this.specialNeeds,
     required this.howLongToStay,
     required this.createdAt,
-    required this.description,
   });
 
   factory Guest.fromJson(Map<String, dynamic> json) =>
