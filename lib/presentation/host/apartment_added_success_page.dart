@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_android/infrastructure/api_client.dart';
 import 'package:flutter_android/injection.dart';
 
-import '../../models/apartment.dart';
+import '../../models/accomodation.dart';
 import '../routes/app_router.dart';
 
 class ApartmentAddedSuccessPage extends StatelessWidget {
@@ -13,16 +13,16 @@ class ApartmentAddedSuccessPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder(
-        future: getIt<ApiClient>().listApartments(),
+        future: getIt<ApiClient>().getAccomodations(),
         builder: (context, snapshot) => ListView(
           children: [
             const Text('Dziękujemy! Dodałeś lokal. Prosimy czekać na kontakt.'),
             const Text('Tutaj znajdzie się lista mieszkań, które zgłosiłeś.'),
             if (snapshot.hasData)
-              ...(snapshot.data as List<Apartment>)
+              ...(snapshot.data as List<Accomodation>)
                   .map(
-                    (apartment) => ListTile(
-                      title: Text(apartment.createdAt?.toIso8601String() ?? ""),
+                    (accomodation) => ListTile(
+                      title: Text(accomodation.addressLine),
                     ),
                   )
                   .toList(
