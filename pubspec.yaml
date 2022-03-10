@@ -41,6 +41,9 @@ dependencies:
   injectable: ^1.5.3
   url_launcher: ^6.0.20
   intl: ^0.17.0
+  i18next: ^0.5.2
+  flutter_localizations:
+    sdk: flutter
   flutter_native_splash: ^2.0.5
 
 dev_dependencies:
@@ -75,6 +78,9 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/mapa-polski.png
+    - assets/locales/en/
+    - assets/locales/pl/
+    - assets/locales/ua/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
