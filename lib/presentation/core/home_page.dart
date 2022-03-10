@@ -18,14 +18,14 @@ class HomePage extends StatelessWidget {
           children: <Widget>[
             Container(
               height: MediaQuery.of(context).size.height / 3,
-              margin: EdgeInsets.all(12),
+              margin: const EdgeInsets.all(12),
               child: Image.asset(
                 'assets/images/mapa-polski.png',
                 fit: BoxFit.scaleDown,
               ),
             ),
             Container(
-              margin: EdgeInsets.all(12),
+              margin: const EdgeInsets.all(12),
               child: const Text(
                 'Jeśli masz możliwość udostępnienia lokalu mieszkalnego osobie lub rodzinie z Ukrainy, prosimy o wypełnienie formularza. Jeśli masz ograniczenia co do tego kogo możesz przyjąć (np. ludzie ze zwierzętami domowymi), zaznacz to proszę w opisie lokalu. Dziękujemy!',
                 textAlign: TextAlign.center,
@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
               iconColor: Theme.of(context).primaryColor,
               textColor: Theme.of(context).primaryColor,
               onTap: () {},
-              leading: Icon(Icons.travel_explore),
+              leading: const Icon(Icons.travel_explore),
               title: const Text(
                 'SZUKAM LOKALU',
               ),
@@ -46,7 +46,7 @@ class HomePage extends StatelessWidget {
               onTap: () => AutoRouter.of(context).push(
                 const HostRoute(),
               ),
-              leading: Icon(Icons.night_shelter),
+              leading: const Icon(Icons.night_shelter),
               title: const Text(
                 'CHCĘ ZAPROPONOWAĆ LOKAL',
               ),
@@ -55,7 +55,7 @@ class HomePage extends StatelessWidget {
               iconColor: Theme.of(context).primaryColor,
               textColor: Theme.of(context).primaryColor,
               onTap: () {},
-              leading: Icon(Icons.menu_book),
+              leading: const Icon(Icons.menu_book),
               title: const Text(
                 'JESTEM KOORDYNATOREM',
               ),

@@ -1,5 +1,4 @@
 import 'package:flutter_android/models/voivodeship.dart';
-import 'package:intl/intl.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import '../infrastructure/converters.dart';
