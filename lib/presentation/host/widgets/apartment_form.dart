@@ -151,10 +151,10 @@ class AddressInputGroupWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Row(
-            children: [
+            children: const [
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: Text(
                     I18Next.of(context)!.t('apartment:address'),
                     textAlign: TextAlign.left,

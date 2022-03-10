@@ -54,7 +54,8 @@ class HomePage extends StatelessWidget {
               ListTile(
                 iconColor: Theme.of(context).primaryColor,
                 textColor: Theme.of(context).primaryColor,
-                onTap: () => AutoRouter.of(context).push(const VolunteerRoute()),
+                onTap: () =>
+                    AutoRouter.of(context).push(const VolunteerRoute()),
                 leading: const Icon(Icons.menu_book),
                 title: Text(
                   I18Next.of(context)!.t('home:coordinator'),
