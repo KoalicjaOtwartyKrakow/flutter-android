@@ -5,7 +5,6 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../infrastructure/api_client.dart';
 import '../../injection.dart';
-import 'widgets/apartment_form.dart';
 
 class HostPage extends StatelessWidget {
   const HostPage({Key? key}) : super(key: key);
@@ -14,7 +13,7 @@ class HostPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Gospodarz'),
+        title: const Text('Gospodarz'),
       ),
       body: Center(
         child: Column(
@@ -28,7 +27,7 @@ class HostPage extends StatelessWidget {
                 textColor: Theme.of(context).primaryColor,
                 onTap: () =>
                     AutoRouter.of(context).push(const ApartmentFormRoute()),
-                leading: Icon(Icons.night_shelter),
+                leading: const Icon(Icons.night_shelter),
                 title: const Text(
                   'ZAPROPONUJ MIESZKANIE',
                 ),
@@ -41,7 +40,7 @@ class HostPage extends StatelessWidget {
                 iconColor: Theme.of(context).primaryColor,
                 textColor: Theme.of(context).primaryColor,
                 onTap: _downloadContract,
-                leading: Icon(Icons.download),
+                leading: const Icon(Icons.download),
                 title: const Text(
                   'POBIERZ UMOWĘ',
                 ),

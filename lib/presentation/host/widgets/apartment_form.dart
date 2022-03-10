@@ -1,16 +1,13 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_android/infrastructure/converters.dart';
 import 'package:flutter_android/models/apartment.dart';
 
 import '../../../infrastructure/api_client.dart';
-import '../../../models/voivodeship.dart';
 import '../../routes/app_router.dart';
 
 class ApartmentForm extends StatefulWidget {
-  ApartmentForm({Key? key, required this.apiClient}) : super(key: key);
+  const ApartmentForm({Key? key, required this.apiClient}) : super(key: key);
   final ApiClient apiClient;
 
   @override
@@ -39,7 +36,7 @@ class _ApartmentFormState extends State<ApartmentForm> {
     return Form(
       key: _formKey,
       child: ListView(
-        padding: EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10.0),
         children: <Widget>[
           AddressInputGroupWidget(
             addressStreetNameController: addressStreetNameController,
@@ -170,10 +167,10 @@ class AddressInputGroupWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Row(
-            children: [
+            children: const [
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: Text(
                     'Adres',
                     textAlign: TextAlign.left,
