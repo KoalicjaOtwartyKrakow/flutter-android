@@ -1,0 +1,20 @@
+{
+    "card": {
+        "title": "Accommodation Units",
+        "found": "Found",
+        "notAvailable": "No accommodations found."
+    },
+    "list": {
+        "columnHeader": {
+            "address": "Address",
+            "capacity": "Capacity",
+            "city": "City",
+            "description": "Description",
+            "information": "Information",
+            "status": "Status"
+        },
+        "item": {
+            "capacityNone": "None"
+        }
+    }
+}

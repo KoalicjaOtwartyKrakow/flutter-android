@@ -1,0 +1,51 @@
+{
+    "card": {
+        "title": {
+            "update": "Edit Accommodation Unit"
+        }
+    },
+    "common": {
+        "pets": {
+            "allowed": "Pets allowed",
+            "label": "Pets presence and approval",
+            "present": "Pets present",
+            "notAllowed": "Pets not allowed",
+            "notPresent": "Pets not present"
+        }
+    },
+    "errors": {
+        "notFound": "Accommodation Unit not found"
+    },
+    "form": {
+        "section": {
+            "addressData": "Address data",
+            "additionalInfo": "Additional information",
+            "availability": "Availability",
+            "host": "Host data"
+        },
+        "button": {
+            "create": "Add new accommodation",
+            "update": "Save changes",
+            "remove": "Remove Accommodation"
+        },
+        "label": {
+            "addressLine": "Address",
+            "addressProvince": "State / province",
+            "addressZip": "Zip code",
+            "pets": "Pets acceptance and presence",
+            "petsAllowed": "Pets allowed",
+            "petsPresent": "Pets present",
+            "vacanciesTaken": "Vacancies taken",
+            "vacanciesTotal": "Vacancies total"
+        },
+        "message": {
+            "updateSuccess": "Successfully updated Accommodation Unit",
+            "updateFailure": "Failed to update Accommodation Unit"
+        }
+    },
+    "status": {
+        "created": "New",
+        "verified": "Verified",
+        "rejected": "Rejected"
+    }
+}
