@@ -4,7 +4,6 @@ import 'package:flutter_android/infrastructure/api_client.dart';
 import 'package:flutter_android/injection.dart';
 
 import '../../models/accomodation.dart';
-import '../routes/app_router.dart';
 
 class ApartmentAddedSuccessPage extends StatelessWidget {
   const ApartmentAddedSuccessPage({Key? key}) : super(key: key);
@@ -31,8 +30,8 @@ class ApartmentAddedSuccessPage extends StatelessWidget {
             else
               ...([1, 2, 3].map(
                 (_) => Container(
-                  margin: EdgeInsets.all(15.0),
-                  child: LinearProgressIndicator(),
+                  margin: const EdgeInsets.all(15.0),
+                  child: const LinearProgressIndicator(),
                 ),
               )),
             TextButton(
