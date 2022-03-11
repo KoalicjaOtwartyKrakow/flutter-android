@@ -1,5 +1,3 @@
-import 'package:flutter_android/models/voivodeship.dart';
-import 'package:intl/intl.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import '../infrastructure/converters.dart';
@@ -18,32 +16,38 @@ class Guest {
   @JsonKey(name: 'PHONE_NUMBER')
   String phoneNumber;
 
+  @JsonKey(name: 'EMAIL')
+  String email;
+
   @JsonKey(name: 'PEOPLE_IN_GROUP')
-  String peopleInGroup;
+  String? peopleInGroup;
 
   @JsonKey(name: 'ADULT_MALE_COUNT')
-  String adultMaleCount;
+  int? adultMaleCount;
 
   @JsonKey(name: 'ADULT_FEMALE_COUNT')
-  String adultFemaleCount;
+  int? adultFemaleCount;
 
   @JsonKey(name: 'CHILDREN_COUNT')
-  String childrenCount;
+  int? childrenCount;
 
   @JsonKey(name: 'CHILDREN_AGES')
-  String childrenAges;
+  List<int>? childrenAges;
 
   @JsonKey(name: 'HAVE_PETS')
-  String havePets;
+  bool? havePets;
 
   @JsonKey(name: 'PETS_DESCRIPTION')
-  String petsDescription;
+  String? petsDescription;
 
   @JsonKey(name: 'SPECIAL_NEEDS')
-  String specialNeeds;
+  String? specialNeeds;
 
   @JsonKey(name: 'HOW_LONG_TO_STAY')
-  String howLongToStay;
+  String? howLongToStay;
+
+  @JsonKey(name: 'FINANCE_STATUS')
+  String? financeStatus;
 
   @JsonKey(
     name: 'CreationTime',
@@ -56,16 +60,18 @@ class Guest {
     this.id,
     required this.fullName,
     required this.phoneNumber,
-    required this.peopleInGroup,
-    required this.adultMaleCount,
-    required this.adultFemaleCount,
-    required this.childrenCount,
-    required this.childrenAges,
-    required this.havePets,
-    required this.petsDescription,
-    required this.specialNeeds,
-    required this.howLongToStay,
-    required this.createdAt,
+    required this.email,
+    this.peopleInGroup,
+    this.adultMaleCount,
+    this.adultFemaleCount,
+    this.childrenCount,
+    this.childrenAges,
+    this.havePets,
+    this.petsDescription,
+    this.specialNeeds,
+    this.howLongToStay,
+    this.financeStatus,
+    this.createdAt,
   });
 
   factory Guest.fromJson(Map<String, dynamic> json) =>
