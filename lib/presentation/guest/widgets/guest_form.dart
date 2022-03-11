@@ -1,15 +1,11 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_android/infrastructure/converters.dart';
-import 'package:flutter_android/models/apartment.dart';
 
 import '../../../infrastructure/api_client.dart';
 import '../../routes/app_router.dart';
 
 class GuestForm extends StatefulWidget {
-  GuestForm({Key? key, required this.apiClient}) : super(key: key);
+  const GuestForm({Key? key, required this.apiClient}) : super(key: key);
   final ApiClient apiClient;
 
   @override
@@ -28,6 +24,7 @@ class _GuestFormState extends State<GuestForm> {
   final havePetsController = TextEditingController();
   final petsDescriptionController = TextEditingController();
   final specialNeedsController = TextEditingController();
+  final financeStatusController = TextEditingController();
   final howLongToStayController = TextEditingController();
   final createdAtController = TextEditingController();
 
@@ -109,6 +106,13 @@ class _GuestFormState extends State<GuestForm> {
             ),
           ),
           TextFormField(
+            controller: financeStatusController,
+            validator: validateFinanceStatus,
+            decoration: const InputDecoration(
+              hintText: 'Napisz, jaki masz status finansowy',
+            ),
+          ),
+          TextFormField(
             controller: howLongToStayController,
             validator: validateHowLongToStay,
             decoration: const InputDecoration(
@@ -152,75 +156,86 @@ String? validatePhoneNumber(String? value) {
   if (value == null || value.isEmpty) {
     return 'Phone number is required';
   }
+  String result = value.replaceAll(new RegExp(r"\D"), "");
+  if (result.length < 9) {
+    return 'Incorrect phone number';
+  }
+  return null;
+}
+
+String? validateEmail(String? value) {
+  if (value == null || value.isEmpty) {
+    return 'Email address is required';
+  }
+  if (!value.contains('@')) {
+    return 'Incorrect email address';
+  }
   return null;
 }
 
 String? validatePeopleInGroup(String? value) {
-  if (value == null || value.isEmpty) {
-    return 'Phone number is required';
+  if (value?.isEmpty ?? false) {
+    if (!isNumeric(value)) {
+      return 'Incorrect value';
+    }
   }
   return null;
 }
 
 String? validateAdultMaleCount(String? value) {
-  if (value == null || value.isEmpty) {
-    return 'Phone number is required';
+  if (value?.isEmpty ?? false) {
+    if (!isNumeric(value)) {
+      return 'Incorrect value';
+    }
   }
   return null;
 }
 
 String? validateAdultFemaleCount(String? value) {
-  if (value == null || value.isEmpty) {
-    return 'Phone number is required';
+  if (value?.isEmpty ?? false) {
+    if (!isNumeric(value)) {
+      return 'Incorrect value';
+    }
   }
   return null;
 }
 
 String? validateChildrenCount(String? value) {
-  if (value == null || value.isEmpty) {
-    return 'Phone number is required';
+  if (value?.isEmpty ?? false) {
+    if (!isNumeric(value)) {
+      return 'Incorrect value';
+    }
   }
   return null;
 }
 
 String? validateChildrenAges(String? value) {
-  if (value == null || value.isEmpty) {
-    return 'Phone number is required';
-  }
   return null;
 }
 
 String? validateHavePets(String? value) {
-  if (value == null || value.isEmpty) {
-    return 'Phone number is required';
-  }
   return null;
 }
 
 String? validatePetsDescription(String? value) {
-  if (value == null || value.isEmpty) {
-    return 'Phone number is required';
-  }
   return null;
 }
 
 String? validateSpecialNeeds(String? value) {
-  if (value == null || value.isEmpty) {
-    return 'Phone number is required';
-  }
+  return null;
+}
+
+String? validateFinanceStatus(String? value) {
   return null;
 }
 
 String? validateHowLongToStay(String? value) {
-  if (value == null || value.isEmpty) {
-    return 'Phone number is required';
-  }
   return null;
 }
 
-String? validateCreatedAt(String? value) {
-  if (value == null || value.isEmpty) {
-    return 'Wymagane';
+bool isNumeric(String? s) {
+  if (s == null) {
+    return false;
   }
-  return null;
+  return double.tryParse(s) != null;
 }
