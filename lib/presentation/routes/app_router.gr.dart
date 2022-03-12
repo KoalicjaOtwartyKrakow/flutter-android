@@ -40,6 +40,13 @@ class _$AppRouter extends RootStackRouter {
     AccomodationListRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const AccomodationListPage());
+    },
+    AccomodationDetailRoute.name: (routeData) {
+      final args = routeData.argsAs<AccomodationDetailRouteArgs>();
+      return MaterialPageX<dynamic>(
+          routeData: routeData,
+          child: AccomodationDetailPage(
+              key: args.key, accomodation: args.accomodation));
     }
   };
 
@@ -51,7 +58,10 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(ApartmentAddedSuccessRoute.name,
             path: '/apartment-added-success-page'),
         RouteConfig(VolunteerRoute.name, path: '/volunteer-page'),
-        RouteConfig(AccomodationListRoute.name, path: '/accomodation-list-page')
+        RouteConfig(AccomodationListRoute.name,
+            path: '/accomodation-list-page'),
+        RouteConfig(AccomodationDetailRoute.name,
+            path: '/accomodation-detail-page')
       ];
 }
 
@@ -105,4 +115,30 @@ class AccomodationListRoute extends PageRouteInfo<void> {
       : super(AccomodationListRoute.name, path: '/accomodation-list-page');
 
   static const String name = 'AccomodationListRoute';
+}
+
+/// generated route for
+/// [AccomodationDetailPage]
+class AccomodationDetailRoute
+    extends PageRouteInfo<AccomodationDetailRouteArgs> {
+  AccomodationDetailRoute({Key? key, required Accomodation accomodation})
+      : super(AccomodationDetailRoute.name,
+            path: '/accomodation-detail-page',
+            args: AccomodationDetailRouteArgs(
+                key: key, accomodation: accomodation));
+
+  static const String name = 'AccomodationDetailRoute';
+}
+
+class AccomodationDetailRouteArgs {
+  const AccomodationDetailRouteArgs({this.key, required this.accomodation});
+
+  final Key? key;
+
+  final Accomodation accomodation;
+
+  @override
+  String toString() {
+    return 'AccomodationDetailRouteArgs{key: $key, accomodation: $accomodation}';
+  }
 }

@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -5,6 +6,7 @@ import '../../../application/accomodation_loader/accomodation_loader_bloc.dart';
 import '../../../injection.dart';
 import '../../../models/accomodation.dart';
 import '../../../models/accomodation_verification_status.dart';
+import '../../routes/app_router.dart';
 
 class AccomodationListPage extends StatelessWidget {
   const AccomodationListPage({Key? key}) : super(key: key);
@@ -103,6 +105,11 @@ class AccomodationListLoadSuccessWidget extends StatelessWidget {
                           accomodation.vacanciesFree.toString() +
                           '/' +
                           accomodation.vacanciesTotal.toString(),
+                    ),
+                    onTap: () => AutoRouter.of(context).push(
+                      AccomodationDetailRoute(
+                        accomodation: accomodation,
+                      ),
                     ),
                   ),
                 ),
