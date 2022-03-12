@@ -11,6 +11,8 @@ class MockAccomodationRepository extends Mock
 
 class FakeAccomodation extends Fake implements Accomodation {}
 
+class FakeFailure extends Fake implements Failure {}
+
 void main() {
   late AccomodationLoaderBloc accomodationLoaderBloc;
   late MockAccomodationRepository mockAccomodationRepository;
@@ -49,6 +51,34 @@ void main() {
       final expected = [
         const AccomodationLoaderState.loadInProgress(),
         AccomodationLoaderState.loadSuccess(tAccomodations),
+      ];
+      expectLater(
+        accomodationLoaderBloc.stream,
+        emitsInOrder(expected),
+      );
+
+      // act
+      accomodationLoaderBloc.add(
+        const AccomodationLoaderEvent.getAccomodationsStarted(),
+      );
+    },
+  );
+
+  test(
+    'should emit AccomodationLoaderState.loadFailure() if _iAccomodationRepository.getAccomodations() returns left of either with failure',
+    () async {
+      // arrange
+      final tFailure = FakeFailure();
+      when(mockAccomodationRepository)
+          .calls(const Symbol('getAccomodations'))
+          .thenAnswer(
+            (_) async => left<Failure, List<Accomodation>>(tFailure),
+          );
+
+      // assert later
+      final expected = [
+        const AccomodationLoaderState.loadInProgress(),
+        AccomodationLoaderState.loadFailure(tFailure),
       ];
       expectLater(
         accomodationLoaderBloc.stream,
