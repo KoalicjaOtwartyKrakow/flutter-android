@@ -38,7 +38,6 @@ class HomePage extends StatelessWidget {
                 const GuestRoute(),
               ),
               leading: Icon(Icons.travel_explore),
-              leading: const Icon(Icons.travel_explore),
               title: const Text(
                 'SZUKAM LOKALU',
               ),
