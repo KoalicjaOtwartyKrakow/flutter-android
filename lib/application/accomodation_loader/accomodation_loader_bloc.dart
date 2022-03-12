@@ -11,9 +11,13 @@ part 'accomodation_loader_state.dart';
 
 class AccomodationLoaderBloc
     extends Bloc<AccomodationLoaderEvent, AccomodationLoaderState> {
-  AccomodationLoaderBloc() : super(AccomodationLoaderInitial()) {
+  AccomodationLoaderBloc() : super(const AccomodationLoaderState.initial()) {
     on<AccomodationLoaderEvent>((event, emit) async {
-      // TODO: implement event handler
+      await event.map(
+        started: (_) {},
+        getAccomodationsStarted: (e) async {},
+        accomodationsReceived: (e) {},
+      );
     });
   }
 }
