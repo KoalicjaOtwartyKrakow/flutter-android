@@ -117,10 +117,23 @@ class AccomodationListLoadSuccessWidget extends StatelessWidget {
                       }
                     }(),
                     title: Text(accomodation.addressLine),
-                    subtitle: Text(
-                      (accomodation.voivodeship ?? '') +
-                          ' ' +
-                          (accomodation.city ?? ''),
+                    subtitle: Column(
+                      children: [
+                        Text(
+                          (accomodation.voivodeship ?? '') +
+                              ' ' +
+                              (accomodation.city ?? ''),
+                        ),
+                        Wrap(
+                          children: [
+                            SizedBox(
+                              child: _getAcceptPetsIndicator(accomodation),
+                              width: 30,
+                              height: 30,
+                            ),
+                          ],
+                        )
+                      ],
                     ),
                     trailing: Text(
                       'Wolne miejsca: ' +
@@ -137,5 +150,40 @@ class AccomodationListLoadSuccessWidget extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Widget _getAcceptPetsIndicator(Accomodation accomodation) {
+    if (accomodation.acceptPets == null) {
+      // Unspecified if accepts pets
+      return Stack(
+        children: const [
+          Icon(
+            Icons.pets,
+            color: Colors.grey,
+          ),
+          Icon(
+            Icons.question_mark,
+            color: Colors.orange,
+          ),
+        ],
+      );
+    } else if (accomodation.acceptPets!) {
+      return const Icon(Icons.pets);
+    } else {
+      return Stack(
+        alignment: AlignmentDirectional.center,
+        children: const [
+          Icon(
+            Icons.pets,
+            color: Colors.grey,
+          ),
+          Icon(
+            Icons.close,
+            color: Colors.red,
+            size: 30,
+          ),
+        ],
+      );
+    }
   }
 }

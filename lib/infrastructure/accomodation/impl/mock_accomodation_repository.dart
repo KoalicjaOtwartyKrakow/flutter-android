@@ -43,7 +43,6 @@ class MockAccomodationRepository implements IAccomodationRepository {
           vacanciesTotal: 20,
           vacanciesFree: 20,
           havePets: false,
-          acceptPets: true,
           comments: "Only girls ages <25",
           status: AccomodationVerificationStatus.added,
         ),
