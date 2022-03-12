@@ -32,6 +32,14 @@ class _$AppRouter extends RootStackRouter {
     ApartmentAddedSuccessRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const ApartmentAddedSuccessPage());
+    },
+    VolunteerRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const VolunteerPage());
+    },
+    AccomodationListRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const AccomodationListPage());
     }
   };
 
@@ -41,7 +49,9 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(HostRoute.name, path: '/host-page'),
         RouteConfig(ApartmentFormRoute.name, path: '/apartment-form-page'),
         RouteConfig(ApartmentAddedSuccessRoute.name,
-            path: '/apartment-added-success-page')
+            path: '/apartment-added-success-page'),
+        RouteConfig(VolunteerRoute.name, path: '/volunteer-page'),
+        RouteConfig(AccomodationListRoute.name, path: '/accomodation-list-page')
       ];
 }
 
@@ -78,4 +88,21 @@ class ApartmentAddedSuccessRoute extends PageRouteInfo<void> {
             path: '/apartment-added-success-page');
 
   static const String name = 'ApartmentAddedSuccessRoute';
+}
+
+/// generated route for
+/// [VolunteerPage]
+class VolunteerRoute extends PageRouteInfo<void> {
+  const VolunteerRoute() : super(VolunteerRoute.name, path: '/volunteer-page');
+
+  static const String name = 'VolunteerRoute';
+}
+
+/// generated route for
+/// [AccomodationListPage]
+class AccomodationListRoute extends PageRouteInfo<void> {
+  const AccomodationListRoute()
+      : super(AccomodationListRoute.name, path: '/accomodation-list-page');
+
+  static const String name = 'AccomodationListRoute';
 }

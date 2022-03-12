@@ -4,12 +4,14 @@ import 'package:flutter_android/infrastructure/accomodation/i_accomodation_repos
 import 'package:flutter_android/models/accomodation.dart';
 import 'package:flutter_android/models/failure.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 
 part 'accomodation_loader_bloc.freezed.dart';
 part 'accomodation_loader_event.dart';
 part 'accomodation_loader_state.dart';
 
+@injectable
 class AccomodationLoaderBloc
     extends Bloc<AccomodationLoaderEvent, AccomodationLoaderState> {
   final IAccomodationRepository _iAccomodationRepository;
