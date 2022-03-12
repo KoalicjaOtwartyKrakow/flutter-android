@@ -31,7 +31,6 @@ class HomePage extends StatelessWidget {
                   'Jeśli masz możliwość udostępnienia lokalu mieszkalnego osobie lub rodzinie z Ukrainy, prosimy o wypełnienie formularza. Jeśli masz ograniczenia co do tego kogo możesz przyjąć (np. ludzie ze zwierzętami domowymi), zaznacz to proszę w opisie lokalu. Dziękujemy!',
                   textAlign: TextAlign.center,
                 ),
-
               ),
               ListTile(
                 iconColor: Theme.of(context).primaryColor,
@@ -56,7 +55,8 @@ class HomePage extends StatelessWidget {
               ListTile(
                 iconColor: Theme.of(context).primaryColor,
                 textColor: Theme.of(context).primaryColor,
-                onTap: () => AutoRouter.of(context).push(const VolunteerRoute()),
+                onTap: () =>
+                    AutoRouter.of(context).push(const VolunteerRoute()),
                 leading: const Icon(Icons.menu_book),
                 title: const Text(
                   'JESTEM KOORDYNATOREM',
