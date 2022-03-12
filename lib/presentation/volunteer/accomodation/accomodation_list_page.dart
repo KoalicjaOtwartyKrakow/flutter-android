@@ -76,46 +76,8 @@ class AccomodationListLoadSuccessWidget extends StatelessWidget {
                 (accomodation) => Padding(
                   padding: const EdgeInsets.fromLTRB(0, 4, 0, 4),
                   child: ListTile(
-                    tileColor: () {
-                      switch (accomodation.status) {
-                        case AccomodationVerificationStatus.phoneVerified:
-                          return Colors.yellow[100];
-                        case AccomodationVerificationStatus.inPersonVerified:
-                          return Colors.green[200];
-                        case AccomodationVerificationStatus.added:
-                        default:
-                          return Colors.grey[200];
-                      }
-                    }(),
-                    leading: () {
-                      switch (accomodation.status) {
-                        case AccomodationVerificationStatus.phoneVerified:
-                          return Stack(
-                            children: const [
-                              Icon(Icons.phone),
-                              Icon(
-                                Icons.check,
-                                color: Colors.green,
-                                size: 35,
-                              ),
-                            ],
-                          );
-                        case AccomodationVerificationStatus.inPersonVerified:
-                          return Stack(
-                            children: const [
-                              Icon(Icons.person),
-                              Icon(
-                                Icons.check,
-                                color: Colors.green,
-                                size: 35,
-                              ),
-                            ],
-                          );
-                        case AccomodationVerificationStatus.added:
-                        default:
-                          return const Icon(Icons.question_mark);
-                      }
-                    }(),
+                    tileColor: _getVerifiedColor(accomodation),
+                    leading: _getVerifiedIndicator(accomodation),
                     title: Text(accomodation.addressLine),
                     subtitle: Column(
                       children: [
@@ -150,6 +112,48 @@ class AccomodationListLoadSuccessWidget extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Color? _getVerifiedColor(Accomodation accomodation) {
+    switch (accomodation.status) {
+      case AccomodationVerificationStatus.phoneVerified:
+        return Colors.yellow[100];
+      case AccomodationVerificationStatus.inPersonVerified:
+        return Colors.green[200];
+      case AccomodationVerificationStatus.added:
+      default:
+        return Colors.grey[200];
+    }
+  }
+
+  Widget _getVerifiedIndicator(Accomodation accomodation) {
+    switch (accomodation.status) {
+      case AccomodationVerificationStatus.phoneVerified:
+        return Stack(
+          children: const [
+            Icon(Icons.phone),
+            Icon(
+              Icons.check,
+              color: Colors.green,
+              size: 35,
+            ),
+          ],
+        );
+      case AccomodationVerificationStatus.inPersonVerified:
+        return Stack(
+          children: const [
+            Icon(Icons.person),
+            Icon(
+              Icons.check,
+              color: Colors.green,
+              size: 35,
+            ),
+          ],
+        );
+      case AccomodationVerificationStatus.added:
+      default:
+        return const Icon(Icons.question_mark);
+    }
   }
 
   Widget _getAcceptPetsIndicator(Accomodation accomodation) {
