@@ -7,6 +7,7 @@ class AccomodationLoaderState with _$AccomodationLoaderState {
   const factory AccomodationLoaderState.loadSuccess(
     List<Accomodation> accomodations,
   ) = _LoadSuccess;
-  const factory AccomodationLoaderState.loadFailure(Failure failure) =
-      _LoadFailure;
+  const factory AccomodationLoaderState.loadFailure(
+    Failure failure,
+  ) = _LoadFailure;
 }
