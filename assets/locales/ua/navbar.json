@@ -1,0 +1,14 @@
+{
+    "accommodations": "Accommodation",
+    "account": "Account",
+    "applicationSettings": "Application settings…",
+    "dashboard": "Dashboard",
+    "guests": "Guests",
+    "hosts": "Hosts",
+    "signOut": "Sign out",
+    "page": {
+        "header": {
+            "subtitle": "Cracow Citizens for Ukraine"
+        }
+    }
+}

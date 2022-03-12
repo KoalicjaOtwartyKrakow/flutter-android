@@ -1,0 +1,20 @@
+{
+    "card": {
+        "title": "What do you want to do?"
+    },
+    "accommodations": {
+        "header": "Accommodation Units management",
+        "description": "Allows to browse the list of Accommodation Units (i.e. flats, houses, buildings) and assign the Guests to the particular unit",
+        "navigateButtonLabel": "Manage Accommodation Units"
+    },
+    "guests": {
+        "header": "Guests management",
+        "description": "Allows to browse the list of Guests, find Guests without any Accommodation Unit assigned",
+        "navigateButtonLabel": "Manage Guests"
+    },
+    "hosts": {
+        "header": "Hosts management",
+        "description": "Allows to see the list of Hosts, add and remove hosts and manage their credibility",
+        "navigateButtonLabel": "Manage Hosts"
+    }
+}
