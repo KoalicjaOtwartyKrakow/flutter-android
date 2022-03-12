@@ -1,19 +1,15 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../infrastructure/api_client.dart';
 import '../../routes/app_router.dart';
+import '../guest_form_bloc/guest_form_bloc.dart';
 
-class GuestForm extends StatefulWidget {
-  const GuestForm({Key? key, required this.apiClient}) : super(key: key);
+class GuestForm extends StatelessWidget {
+  GuestForm({Key? key, required this.apiClient}) : super(key: key);
   final ApiClient apiClient;
 
-  @override
-  State<GuestForm> createState() => _GuestFormState();
-}
-
-class _GuestFormState extends State<GuestForm> {
-  final _formKey = GlobalKey<FormState>();
   final fullNameController = TextEditingController();
   final phoneNumberController = TextEditingController();
   final peopleInGroupController = TextEditingController();
@@ -28,122 +24,134 @@ class _GuestFormState extends State<GuestForm> {
   final howLongToStayController = TextEditingController();
   final createdAtController = TextEditingController();
 
+  final _formKey = GlobalKey<FormState>();
+
+  // @override
+  // State<GuestForm> createState() => _GuestFormState();
+
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
-      child: ListView(
-        padding: EdgeInsets.all(10.0),
-        children: <Widget>[
-          TextFormField(
-            controller: fullNameController,
-            validator: validateFullName,
-            decoration: const InputDecoration(
-              hintText: 'Wpisz swoje imię i nazwisko',
+    return BlocConsumer<GuestFormBloc, GuestFormState>(
+    builder: (context, state) {
+      return Form(
+        key: _formKey,
+        child: ListView(
+          padding: EdgeInsets.all(10.0),
+          children: <Widget>[
+            TextFormField(
+              controller: fullNameController,
+              validator: validateFullName,
+              decoration: const InputDecoration(
+                hintText: 'Wpisz swoje imię i nazwisko',
+              ),
             ),
-          ),
-          TextFormField(
-            controller: phoneNumberController,
-            validator: validatePhoneNumber,
-            decoration: const InputDecoration(
-              hintText: 'Wpisz numer telefonu',
+            TextFormField(
+              controller: phoneNumberController,
+              validator: validatePhoneNumber,
+              decoration: const InputDecoration(
+                hintText: 'Wpisz numer telefonu',
+              ),
             ),
-          ),
-          TextFormField(
-            controller: peopleInGroupController,
-            validator: validatePeopleInGroup,
-            decoration: const InputDecoration(
-              hintText: 'Napisz, ile osób liczy grupa',
+            TextFormField(
+              controller: peopleInGroupController,
+              validator: validatePeopleInGroup,
+              decoration: const InputDecoration(
+                hintText: 'Napisz, ile osób liczy grupa',
+              ),
             ),
-          ),
-          TextFormField(
-            controller: adultMaleCountController,
-            validator: validateAdultMaleCount,
-            decoration: const InputDecoration(
-              hintText: 'Napisz, ilu jest w grupie dorosłych mężczyzn',
+            TextFormField(
+              controller: adultMaleCountController,
+              validator: validateAdultMaleCount,
+              decoration: const InputDecoration(
+                hintText: 'Napisz, ilu jest w grupie dorosłych mężczyzn',
+              ),
             ),
-          ),
-          TextFormField(
-            controller: adultFemaleCountController,
-            validator: validateAdultFemaleCount,
-            decoration: const InputDecoration(
-              hintText: 'Napisz, ile jest w grupie dorosłych kobiet',
+            TextFormField(
+              controller: adultFemaleCountController,
+              validator: validateAdultFemaleCount,
+              decoration: const InputDecoration(
+                hintText: 'Napisz, ile jest w grupie dorosłych kobiet',
+              ),
             ),
-          ),
-          TextFormField(
-            controller: childrenCountController,
-            validator: validateChildrenCount,
-            decoration: const InputDecoration(
-              hintText: 'Napisz, ile jest w grupie dzieci',
+            TextFormField(
+              controller: childrenCountController,
+              validator: validateChildrenCount,
+              decoration: const InputDecoration(
+                hintText: 'Napisz, ile jest w grupie dzieci',
+              ),
             ),
-          ),
-          TextFormField(
-            controller: childrenAgesController,
-            validator: validateChildrenAges,
-            decoration: const InputDecoration(
-              hintText: 'Napisz wiek każdego z dzieci (np.: 5, 12, 8)',
+            TextFormField(
+              controller: childrenAgesController,
+              validator: validateChildrenAges,
+              decoration: const InputDecoration(
+                hintText: 'Napisz wiek każdego z dzieci (np.: 5, 12, 8)',
+              ),
             ),
-          ),
-          TextFormField(
-            controller: havePetsController,
-            validator: validateHavePets,
-            decoration: const InputDecoration(
-              hintText: 'Napisz, czy masz zwierzęta',
+            TextFormField(
+              controller: havePetsController,
+              validator: validateHavePets,
+              decoration: const InputDecoration(
+                hintText: 'Napisz, czy masz zwierzęta',
+              ),
             ),
-          ),
-          TextFormField(
-            controller: petsDescriptionController,
-            validator: validatePetsDescription,
-            decoration: const InputDecoration(
-              hintText: 'Napisz, jakie masz zwierzęta',
+            TextFormField(
+              controller: petsDescriptionController,
+              validator: validatePetsDescription,
+              decoration: const InputDecoration(
+                hintText: 'Napisz, jakie masz zwierzęta',
+              ),
             ),
-          ),
-          TextFormField(
-            controller: specialNeedsController,
-            validator: validateSpecialNeeds,
-            decoration: const InputDecoration(
-              hintText: 'Napisz, jakie masz specjalne potrzeby (np. dietetyczne)',
+            TextFormField(
+              controller: specialNeedsController,
+              validator: validateSpecialNeeds,
+              decoration: const InputDecoration(
+                hintText: 'Napisz, jakie masz specjalne potrzeby (np. dietetyczne)',
+              ),
             ),
-          ),
-          TextFormField(
-            controller: financeStatusController,
-            validator: validateFinanceStatus,
-            decoration: const InputDecoration(
-              hintText: 'Napisz, jaki masz status finansowy',
+            TextFormField(
+              controller: financeStatusController,
+              validator: validateFinanceStatus,
+              decoration: const InputDecoration(
+                hintText: 'Napisz, jaki masz status finansowy',
+              ),
             ),
-          ),
-          TextFormField(
-            controller: howLongToStayController,
-            validator: validateHowLongToStay,
-            decoration: const InputDecoration(
-              hintText: 'Napisz, na jak długo potrzebujesz/potrzebujecie zakwaterowania',
+            TextFormField(
+              controller: howLongToStayController,
+              validator: validateHowLongToStay,
+              decoration: const InputDecoration(
+                hintText: 'Napisz, na jak długo potrzebujesz/potrzebujecie zakwaterowania',
+              ),
             ),
-          ),
 
-          ElevatedButton(
-            // onPressed: false
-            // ? () {
-            //
-            // }
-            // : null,
-            onPressed: () async {
-              // TODO: move this into the if statement after success response
-              AutoRouter.of(context).push(const ApartmentAddedSuccessRoute());
-              if (_formKey.currentState!.validate()) {
-                // If form is valid post data
-                // TODO: handle error responses
-              }
-              else {
-                false;
-              }
-            },
-            child: const Text('Wyślij'),
-          ),
-        ],
-      ),
-    );
+            ElevatedButton(
+              // onPressed: false
+              // ? () {
+              //
+              // }
+              // : null,
+              onPressed: () async {
+                // TODO: move this into the if statement after success response
+                AutoRouter.of(context).push(const ApartmentAddedSuccessRoute());
+                if (_formKey.currentState!.validate()) {
+                  // If form is valid post data
+                  // TODO: handle error responses
+                }
+                else {
+                  false;
+                }
+              },
+              child: const Text('Wyślij'),
+            ),
+          ],
+        ),
+      );
+    },
+    listener: (context, state){
+
+    });
   }
 }
+
 
 String? validateFullName(String? value) {
   if (value == null || value.isEmpty) {
