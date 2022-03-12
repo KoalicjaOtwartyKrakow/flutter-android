@@ -82,9 +82,10 @@ class AccomodationListLoadSuccessWidget extends StatelessWidget {
                     subtitle: Column(
                       children: [
                         Text(
-                          (accomodation.voivodeship ?? '') +
-                              ' ' +
-                              (accomodation.city ?? ''),
+                          (accomodation.voivodeship ??
+                                  'Nie podano województwa') +
+                              '\n' +
+                              (accomodation.city ?? 'Nie podano miasta'),
                         ),
                         Wrap(
                           children: [
