@@ -1,7 +1,11 @@
+import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_android/models/apartment.dart';
+import 'package:flutter_android/presentation/guest/submit_failure.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
+
+import '../models/guest.dart';
 
 part 'api_client.g.dart';
 
@@ -19,6 +23,9 @@ abstract class ApiClient {
 
   @GET("/dev/doc/contract")
   Future<String> getContractDownloadUrl();
+
+  @POST("/dev/guests")
+  Future<Either<SubmitFailure, Unit>> postAGuest(@Body() Guest guest);
 }
 
 // This is needed to be injected into ApiClient through injectable_generator
