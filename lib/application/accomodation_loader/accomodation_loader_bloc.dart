@@ -5,39 +5,37 @@ import 'package:flutter_android/models/accomodation.dart';
 import 'package:flutter_android/models/failure.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:meta/meta.dart';
 
 part 'accomodation_loader_bloc.freezed.dart';
 part 'accomodation_loader_event.dart';
 part 'accomodation_loader_state.dart';
 
 @injectable
-class AccomodationLoaderBloc
-    extends Bloc<AccomodationLoaderEvent, AccomodationLoaderState> {
+class AccomodationLoaderBloc extends Bloc<AccommodationLoaderEvent, AccommodationLoaderState> {
   final IAccomodationRepository _iAccomodationRepository;
 
   AccomodationLoaderBloc(
     this._iAccomodationRepository,
-  ) : super(const AccomodationLoaderState.initial()) {
-    on<AccomodationLoaderEvent>((event, emit) async {
+  ) : super(const AccommodationLoaderState.initial()) {
+    on<AccommodationLoaderEvent>((event, emit) async {
       await event.map(
         started: (_) async {},
-        getAccomodationsStarted: (e) async {
+        getAccommodationsStarted: (e) async {
           emit(
-            const AccomodationLoaderState.loadInProgress(),
+            const AccommodationLoaderState.loadInProgress(),
           );
           add(
-            AccomodationLoaderEvent.accomodationsReceived(
-              await _iAccomodationRepository.getAccomodations(),
+            AccommodationLoaderEvent.accommodationsReceived(
+              await _iAccomodationRepository.getAccommodations(),
             ),
           );
         },
-        accomodationsReceived: (e) async => emit(
-          e.failureOrAccomodations.fold(
-            (failure) => AccomodationLoaderState.loadFailure(
+        accommodationsReceived: (e) async => emit(
+          e.failureOrAccommodations.fold(
+            (failure) => AccommodationLoaderState.loadFailure(
               failure,
             ),
-            (termEngagements) => AccomodationLoaderState.loadSuccess(
+            (termEngagements) => AccommodationLoaderState.loadSuccess(
               termEngagements,
             ),
           ),

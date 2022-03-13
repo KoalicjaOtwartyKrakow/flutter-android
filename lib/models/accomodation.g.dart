@@ -6,7 +6,8 @@ part of 'accomodation.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Accomodation _$AccomodationFromJson(Map<String, dynamic> json) => Accomodation(
+Accommodation _$AccommodationFromJson(Map<String, dynamic> json) =>
+    Accommodation(
       city: json['city'] as String?,
       zip: json['zip'] as String,
       voivodeship: json['voivodeship'] as String?,
@@ -20,7 +21,7 @@ Accomodation _$AccomodationFromJson(Map<String, dynamic> json) => Accomodation(
           _$AccomodationVerificationStatusEnumMap, json['status']),
     );
 
-Map<String, dynamic> _$AccomodationToJson(Accomodation instance) =>
+Map<String, dynamic> _$AccommodationToJson(Accommodation instance) =>
     <String, dynamic>{
       'city': instance.city,
       'zip': instance.zip,

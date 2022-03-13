@@ -1,13 +1,16 @@
 part of 'accomodation_loader_bloc.dart';
 
 @freezed
-class AccomodationLoaderState with _$AccomodationLoaderState {
-  const factory AccomodationLoaderState.initial() = _Initial;
-  const factory AccomodationLoaderState.loadInProgress() = _LoadInProgress;
-  const factory AccomodationLoaderState.loadSuccess(
-    List<Accomodation> accomodations,
+class AccommodationLoaderState with _$AccommodationLoaderState {
+  const factory AccommodationLoaderState.initial() = _Initial;
+
+  const factory AccommodationLoaderState.loadInProgress() = _LoadInProgress;
+
+  const factory AccommodationLoaderState.loadSuccess(
+    List<Accommodation> accommodations,
   ) = _LoadSuccess;
-  const factory AccomodationLoaderState.loadFailure(
+
+  const factory AccommodationLoaderState.loadFailure(
     Failure failure,
   ) = _LoadFailure;
 }

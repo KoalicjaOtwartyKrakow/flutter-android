@@ -18,7 +18,7 @@ class ApartmentAddedSuccessPage extends StatelessWidget {
               Text(I18Next.of(context)!.t('apartment:addSuccess')),
               Text(I18Next.of(context)!.t('apartment:addSuccessFooter')),
               if (snapshot.hasData)
-                ...(snapshot.data as List<Accomodation>)
+                ...(snapshot.data as List<Accommodation>)
                     .map(
                       (accommodation) => ListTile(
                         title: Text(accommodation.addressLine),

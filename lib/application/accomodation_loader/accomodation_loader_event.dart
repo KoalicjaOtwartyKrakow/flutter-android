@@ -1,11 +1,12 @@
 part of 'accomodation_loader_bloc.dart';
 
 @freezed
-class AccomodationLoaderEvent with _$AccomodationLoaderEvent {
-  const factory AccomodationLoaderEvent.started() = _Started;
-  const factory AccomodationLoaderEvent.getAccomodationsStarted() =
-      _GetAccomodationsStarted;
-  const factory AccomodationLoaderEvent.accomodationsReceived(
-    Either<Failure, List<Accomodation>> failureOrAccomodations,
-  ) = _AccomodationsReceived;
+class AccommodationLoaderEvent with _$AccommodationLoaderEvent {
+  const factory AccommodationLoaderEvent.started() = _Started;
+
+  const factory AccommodationLoaderEvent.getAccommodationsStarted() = _GetAccommodationsStarted;
+
+  const factory AccommodationLoaderEvent.accommodationsReceived(
+    Either<Failure, List<Accommodation>> failureOrAccommodations,
+  ) = _AccommodationsReceived;
 }

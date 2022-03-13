@@ -19,55 +19,55 @@ class _ApiClient implements ApiClient {
   String? baseUrl;
 
   @override
-  Future<List<Accomodation>> getAccomodations() async {
+  Future<List<Accommodation>> getAccomodations() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<List<dynamic>>(
-        _setStreamType<List<Accomodation>>(
+        _setStreamType<List<Accommodation>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/accomodation',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     var value = _result.data!
-        .map((dynamic i) => Accomodation.fromJson(i as Map<String, dynamic>))
+        .map((dynamic i) => Accommodation.fromJson(i as Map<String, dynamic>))
         .toList();
     return value;
   }
 
   @override
-  Future<List<Accomodation>> getAccomodationById(id) async {
+  Future<List<Accommodation>> getAccomodationById(id) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<List<dynamic>>(
-        _setStreamType<List<Accomodation>>(
+        _setStreamType<List<Accommodation>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/accomodation/${id}',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     var value = _result.data!
-        .map((dynamic i) => Accomodation.fromJson(i as Map<String, dynamic>))
+        .map((dynamic i) => Accommodation.fromJson(i as Map<String, dynamic>))
         .toList();
     return value;
   }
 
   @override
-  Future<Accomodation> createAccomodation(accomodation) async {
+  Future<Accommodation> createAccomodation(accomodation) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(accomodation.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<Accomodation>(
+        _setStreamType<Accommodation>(
             Options(method: 'POST', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/accomodation',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = Accomodation.fromJson(_result.data!);
+    final value = Accommodation.fromJson(_result.data!);
     return value;
   }
 
