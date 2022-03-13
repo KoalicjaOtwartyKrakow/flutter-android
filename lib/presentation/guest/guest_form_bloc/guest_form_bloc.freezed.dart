@@ -23,6 +23,16 @@ class _$GuestFormEventTearOff {
       guest,
     );
   }
+
+  EmailChanged emailChanged(String value) {
+    return EmailChanged(
+      value,
+    );
+  }
+
+  SubmitAddGuest submitAddGuest() {
+    return const SubmitAddGuest();
+  }
 }
 
 /// @nodoc
@@ -258,18 +268,26 @@ const $GuestFormState = _$GuestFormStateTearOff();
 mixin _$GuestFormState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() submitSuccess,
-    required TResult Function(Failure failure) submitFailure,
-  }) =>
-      throw _privateConstructorUsedError;
+    required TResult Function(String value) fullNameChanged,
+    required TResult Function(String value) phoneNumberChanged,
+    required TResult Function(String value) emailChanged,
+    required TResult Function() submitAddGuest,
+  }) {
+    return phoneNumberChanged(value);
+  }
+
+  @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? submitSuccess,
-    TResult Function(Failure failure)? submitFailure,
-  }) =>
-      throw _privateConstructorUsedError;
+    TResult Function(String value)? fullNameChanged,
+    TResult Function(String value)? phoneNumberChanged,
+    TResult Function(String value)? emailChanged,
+    TResult Function()? submitAddGuest,
+  }) {
+    return phoneNumberChanged?.call(value);
+  }
+
+  @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -539,150 +557,260 @@ abstract class _SubmitSuccess implements GuestFormState {
 }
 
 /// @nodoc
-abstract class _$SubmitFailureCopyWith<$Res> {
-  factory _$SubmitFailureCopyWith(
-          _SubmitFailure value, $Res Function(_SubmitFailure) then) =
-      __$SubmitFailureCopyWithImpl<$Res>;
-  $Res call({Failure failure});
+class _$GuestFormStateTearOff {
+  const _$GuestFormStateTearOff();
 
-  $FailureCopyWith<$Res> get failure;
+  _GuestFormState call(
+      {required String fullName,
+      required String email,
+      required String phoneNumber,
+      required bool showErrorMessages,
+      required bool isSubmitting,
+      required Option<Either<SubmitFailure, bool>>
+          submitFailureOrSuccessOption}) {
+    return _GuestFormState(
+      fullName: fullName,
+      email: email,
+      phoneNumber: phoneNumber,
+      showErrorMessages: showErrorMessages,
+      isSubmitting: isSubmitting,
+      submitFailureOrSuccessOption: submitFailureOrSuccessOption,
+    );
+  }
 }
 
 /// @nodoc
-class __$SubmitFailureCopyWithImpl<$Res>
-    extends _$GuestFormStateCopyWithImpl<$Res>
-    implements _$SubmitFailureCopyWith<$Res> {
-  __$SubmitFailureCopyWithImpl(
-      _SubmitFailure _value, $Res Function(_SubmitFailure) _then)
-      : super(_value, (v) => _then(v as _SubmitFailure));
+const $GuestFormState = _$GuestFormStateTearOff();
 
-  @override
-  _SubmitFailure get _value => super._value as _SubmitFailure;
+/// @nodoc
+mixin _$GuestFormState {
+  String get fullName => throw _privateConstructorUsedError;
+  String get email => throw _privateConstructorUsedError;
+  String get phoneNumber =>
+      throw _privateConstructorUsedError; // required AutovalidateMode showErrorMessages,
+  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get isSubmitting => throw _privateConstructorUsedError;
+  Option<Either<SubmitFailure, bool>> get submitFailureOrSuccessOption =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $GuestFormStateCopyWith<GuestFormState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GuestFormStateCopyWith<$Res> {
+  factory $GuestFormStateCopyWith(
+          GuestFormState value, $Res Function(GuestFormState) then) =
+      _$GuestFormStateCopyWithImpl<$Res>;
+  $Res call(
+      {String fullName,
+      String email,
+      String phoneNumber,
+      bool showErrorMessages,
+      bool isSubmitting,
+      Option<Either<SubmitFailure, bool>> submitFailureOrSuccessOption});
+}
+
+/// @nodoc
+class _$GuestFormStateCopyWithImpl<$Res>
+    implements $GuestFormStateCopyWith<$Res> {
+  _$GuestFormStateCopyWithImpl(this._value, this._then);
+
+  final GuestFormState _value;
+  // ignore: unused_field
+  final $Res Function(GuestFormState) _then;
 
   @override
   $Res call({
-    Object? failure = freezed,
+    Object? fullName = freezed,
+    Object? email = freezed,
+    Object? phoneNumber = freezed,
+    Object? showErrorMessages = freezed,
+    Object? isSubmitting = freezed,
+    Object? submitFailureOrSuccessOption = freezed,
   }) {
-    return _then(_SubmitFailure(
-      failure == freezed
-          ? _value.failure
-          : failure // ignore: cast_nullable_to_non_nullable
-              as Failure,
+    return _then(_value.copyWith(
+      fullName: fullName == freezed
+          ? _value.fullName
+          : fullName // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      showErrorMessages: showErrorMessages == freezed
+          ? _value.showErrorMessages
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSubmitting: isSubmitting == freezed
+          ? _value.isSubmitting
+          : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
+      submitFailureOrSuccessOption: submitFailureOrSuccessOption == freezed
+          ? _value.submitFailureOrSuccessOption
+          : submitFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<SubmitFailure, bool>>,
     ));
   }
+}
+
+/// @nodoc
+abstract class _$GuestFormStateCopyWith<$Res>
+    implements $GuestFormStateCopyWith<$Res> {
+  factory _$GuestFormStateCopyWith(
+          _GuestFormState value, $Res Function(_GuestFormState) then) =
+      __$GuestFormStateCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String fullName,
+      String email,
+      String phoneNumber,
+      bool showErrorMessages,
+      bool isSubmitting,
+      Option<Either<SubmitFailure, bool>> submitFailureOrSuccessOption});
+}
+
+/// @nodoc
+class __$GuestFormStateCopyWithImpl<$Res>
+    extends _$GuestFormStateCopyWithImpl<$Res>
+    implements _$GuestFormStateCopyWith<$Res> {
+  __$GuestFormStateCopyWithImpl(
+      _GuestFormState _value, $Res Function(_GuestFormState) _then)
+      : super(_value, (v) => _then(v as _GuestFormState));
 
   @override
-  $FailureCopyWith<$Res> get failure {
-    return $FailureCopyWith<$Res>(_value.failure, (value) {
-      return _then(_value.copyWith(failure: value));
-    });
+  _GuestFormState get _value => super._value as _GuestFormState;
+
+  @override
+  $Res call({
+    Object? fullName = freezed,
+    Object? email = freezed,
+    Object? phoneNumber = freezed,
+    Object? showErrorMessages = freezed,
+    Object? isSubmitting = freezed,
+    Object? submitFailureOrSuccessOption = freezed,
+  }) {
+    return _then(_GuestFormState(
+      fullName: fullName == freezed
+          ? _value.fullName
+          : fullName // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      showErrorMessages: showErrorMessages == freezed
+          ? _value.showErrorMessages
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSubmitting: isSubmitting == freezed
+          ? _value.isSubmitting
+          : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
+      submitFailureOrSuccessOption: submitFailureOrSuccessOption == freezed
+          ? _value.submitFailureOrSuccessOption
+          : submitFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<SubmitFailure, bool>>,
+    ));
   }
 }
 
 /// @nodoc
 
-class _$_SubmitFailure implements _SubmitFailure {
-  const _$_SubmitFailure(this.failure);
+class _$_GuestFormState implements _GuestFormState {
+  const _$_GuestFormState(
+      {required this.fullName,
+      required this.email,
+      required this.phoneNumber,
+      required this.showErrorMessages,
+      required this.isSubmitting,
+      required this.submitFailureOrSuccessOption});
 
   @override
-  final Failure failure;
+  final String fullName;
+  @override
+  final String email;
+  @override
+  final String phoneNumber;
+  @override // required AutovalidateMode showErrorMessages,
+  final bool showErrorMessages;
+  @override
+  final bool isSubmitting;
+  @override
+  final Option<Either<SubmitFailure, bool>> submitFailureOrSuccessOption;
 
   @override
   String toString() {
-    return 'GuestFormState.submitFailure(failure: $failure)';
+    return 'GuestFormState(fullName: $fullName, email: $email, phoneNumber: $phoneNumber, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, submitFailureOrSuccessOption: $submitFailureOrSuccessOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SubmitFailure &&
-            const DeepCollectionEquality().equals(other.failure, failure));
+            other is _GuestFormState &&
+            const DeepCollectionEquality().equals(other.fullName, fullName) &&
+            const DeepCollectionEquality().equals(other.email, email) &&
+            const DeepCollectionEquality()
+                .equals(other.phoneNumber, phoneNumber) &&
+            const DeepCollectionEquality()
+                .equals(other.showErrorMessages, showErrorMessages) &&
+            const DeepCollectionEquality()
+                .equals(other.isSubmitting, isSubmitting) &&
+            const DeepCollectionEquality().equals(
+                other.submitFailureOrSuccessOption,
+                submitFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(fullName),
+      const DeepCollectionEquality().hash(email),
+      const DeepCollectionEquality().hash(phoneNumber),
+      const DeepCollectionEquality().hash(showErrorMessages),
+      const DeepCollectionEquality().hash(isSubmitting),
+      const DeepCollectionEquality().hash(submitFailureOrSuccessOption));
 
   @JsonKey(ignore: true)
   @override
-  _$SubmitFailureCopyWith<_SubmitFailure> get copyWith =>
-      __$SubmitFailureCopyWithImpl<_SubmitFailure>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() submitSuccess,
-    required TResult Function(Failure failure) submitFailure,
-  }) {
-    return submitFailure(failure);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? submitSuccess,
-    TResult Function(Failure failure)? submitFailure,
-  }) {
-    return submitFailure?.call(failure);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? submitSuccess,
-    TResult Function(Failure failure)? submitFailure,
-    required TResult orElse(),
-  }) {
-    if (submitFailure != null) {
-      return submitFailure(failure);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_SubmitSuccess value) submitSuccess,
-    required TResult Function(_SubmitFailure value) submitFailure,
-  }) {
-    return submitFailure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_SubmitSuccess value)? submitSuccess,
-    TResult Function(_SubmitFailure value)? submitFailure,
-  }) {
-    return submitFailure?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_SubmitSuccess value)? submitSuccess,
-    TResult Function(_SubmitFailure value)? submitFailure,
-    required TResult orElse(),
-  }) {
-    if (submitFailure != null) {
-      return submitFailure(this);
-    }
-    return orElse();
-  }
+  _$GuestFormStateCopyWith<_GuestFormState> get copyWith =>
+      __$GuestFormStateCopyWithImpl<_GuestFormState>(this, _$identity);
 }
 
-abstract class _SubmitFailure implements GuestFormState {
-  const factory _SubmitFailure(Failure failure) = _$_SubmitFailure;
+abstract class _GuestFormState implements GuestFormState {
+  const factory _GuestFormState(
+      {required String fullName,
+      required String email,
+      required String phoneNumber,
+      required bool showErrorMessages,
+      required bool isSubmitting,
+      required Option<Either<SubmitFailure, bool>>
+          submitFailureOrSuccessOption}) = _$_GuestFormState;
 
-  Failure get failure;
+  @override
+  String get fullName;
+  @override
+  String get email;
+  @override
+  String get phoneNumber;
+  @override // required AutovalidateMode showErrorMessages,
+  bool get showErrorMessages;
+  @override
+  bool get isSubmitting;
+  @override
+  Option<Either<SubmitFailure, bool>> get submitFailureOrSuccessOption;
+  @override
   @JsonKey(ignore: true)
-  _$SubmitFailureCopyWith<_SubmitFailure> get copyWith =>
+  _$GuestFormStateCopyWith<_GuestFormState> get copyWith =>
       throw _privateConstructorUsedError;
 }
