@@ -5,6 +5,8 @@ import 'package:flutter_android/models/dto/guest_dto.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 
+import '../models/guest.dart';
+
 part 'api_client.g.dart';
 
 @injectable
