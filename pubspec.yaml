@@ -43,6 +43,8 @@ dependencies:
   intl: ^0.17.0
   flutter_native_splash: ^2.0.5
   dartz:
+  uuid:
+  kt_dart:
   freezed:
   freezed_annotation:
   flutter_bloc:
