@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_android/presentation/routes/app_router.dart';
+import 'package:i18next/i18next.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../infrastructure/api_client.dart';
@@ -13,7 +14,7 @@ class HostPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Gospodarz'),
+        title: Text(I18Next.of(context)!.t('host:title')),
       ),
       body: Center(
         child: Column(
@@ -28,8 +29,8 @@ class HostPage extends StatelessWidget {
                 onTap: () =>
                     AutoRouter.of(context).push(const ApartmentFormRoute()),
                 leading: const Icon(Icons.night_shelter),
-                title: const Text(
-                  'ZAPROPONUJ MIESZKANIE',
+                title: Text(
+                  I18Next.of(context)!.t('host:propose'),
                 ),
               ),
             ),
@@ -41,8 +42,8 @@ class HostPage extends StatelessWidget {
                 textColor: Theme.of(context).primaryColor,
                 onTap: _downloadContract,
                 leading: const Icon(Icons.download),
-                title: const Text(
-                  'POBIERZ UMOWĘ',
+                title: Text(
+                  I18Next.of(context)!.t('host:download'),
                 ),
               ),
             ),
