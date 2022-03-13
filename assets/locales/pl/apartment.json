@@ -1,0 +1,18 @@
+{
+  "totalVacancies": "Liczba wszystkich miejsc…",
+  "freeVacancies": "Liczba wolnych miejsc…",
+  "havePets": "Czy masz zwierzęta domowe…",
+  "acceptPets": "Czy przyjmiesz zwierzęta domowe…",
+  "comments": "Komentarze…",
+  "send": "Wyślij",
+  "address": "Adres",
+  "addressLine": "Ulica numer/mieszkanie…",
+  "zip": "Kod pocztowy…",
+  "city": "Miasto…",
+  "voivodeship": "Województwo…",
+  "required": "Wymagane",
+  "addSuccess": "Dziękujemy! Dodałeś lokal. Prosimy czekać na kontakt.",
+  "addSuccessFooter": "Tutaj znajdzie się lista mieszkań, które zgłosiłeś.",
+  "successButton": "Super",
+  "propose": "Zaproponuj mieszkanie"
+}
