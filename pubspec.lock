@@ -399,6 +399,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.1.5"
+  kt_dart:
+    dependency: "direct main"
+    description:
+      name: kt_dart
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.10.0"
   lints:
     dependency: transitive
     description:
@@ -712,6 +719,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.0"
+  uuid:
+    dependency: "direct main"
+    description:
+      name: uuid
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.6"
   vector_math:
     dependency: transitive
     description:

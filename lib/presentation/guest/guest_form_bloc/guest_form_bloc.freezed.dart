@@ -18,21 +18,21 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$GuestFormEventTearOff {
   const _$GuestFormEventTearOff();
 
-  FullNameChanged fullNameChanged(String value) {
+  FullNameChanged fullNameChanged(String fullNameStr) {
     return FullNameChanged(
-      value,
+      fullNameStr,
     );
   }
 
-  PhoneNumberChanged phoneNumberChanged(String value) {
+  PhoneNumberChanged phoneNumberChanged(String phoneNumberStr) {
     return PhoneNumberChanged(
-      value,
+      phoneNumberStr,
     );
   }
 
-  EmailChanged emailChanged(String value) {
+  EmailChanged emailChanged(String emailStr) {
     return EmailChanged(
-      value,
+      emailStr,
     );
   }
 
@@ -48,25 +48,25 @@ const $GuestFormEvent = _$GuestFormEventTearOff();
 mixin _$GuestFormEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) fullNameChanged,
-    required TResult Function(String value) phoneNumberChanged,
-    required TResult Function(String value) emailChanged,
+    required TResult Function(String fullNameStr) fullNameChanged,
+    required TResult Function(String phoneNumberStr) phoneNumberChanged,
+    required TResult Function(String emailStr) emailChanged,
     required TResult Function() submitAddGuest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String value)? fullNameChanged,
-    TResult Function(String value)? phoneNumberChanged,
-    TResult Function(String value)? emailChanged,
+    TResult Function(String fullNameStr)? fullNameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String emailStr)? emailChanged,
     TResult Function()? submitAddGuest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? fullNameChanged,
-    TResult Function(String value)? phoneNumberChanged,
-    TResult Function(String value)? emailChanged,
+    TResult Function(String fullNameStr)? fullNameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String emailStr)? emailChanged,
     TResult Function()? submitAddGuest,
     required TResult orElse(),
   }) =>
@@ -120,7 +120,7 @@ abstract class $FullNameChangedCopyWith<$Res> {
   factory $FullNameChangedCopyWith(
           FullNameChanged value, $Res Function(FullNameChanged) then) =
       _$FullNameChangedCopyWithImpl<$Res>;
-  $Res call({String value});
+  $Res call({String fullNameStr});
 }
 
 /// @nodoc
@@ -136,12 +136,12 @@ class _$FullNameChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? value = freezed,
+    Object? fullNameStr = freezed,
   }) {
     return _then(FullNameChanged(
-      value == freezed
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
+      fullNameStr == freezed
+          ? _value.fullNameStr
+          : fullNameStr // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -150,14 +150,14 @@ class _$FullNameChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$FullNameChanged implements FullNameChanged {
-  const _$FullNameChanged(this.value);
+  const _$FullNameChanged(this.fullNameStr);
 
   @override
-  final String value;
+  final String fullNameStr;
 
   @override
   String toString() {
-    return 'GuestFormEvent.fullNameChanged(value: $value)';
+    return 'GuestFormEvent.fullNameChanged(fullNameStr: $fullNameStr)';
   }
 
   @override
@@ -165,12 +165,13 @@ class _$FullNameChanged implements FullNameChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is FullNameChanged &&
-            const DeepCollectionEquality().equals(other.value, value));
+            const DeepCollectionEquality()
+                .equals(other.fullNameStr, fullNameStr));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(fullNameStr));
 
   @JsonKey(ignore: true)
   @override
@@ -180,36 +181,36 @@ class _$FullNameChanged implements FullNameChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) fullNameChanged,
-    required TResult Function(String value) phoneNumberChanged,
-    required TResult Function(String value) emailChanged,
+    required TResult Function(String fullNameStr) fullNameChanged,
+    required TResult Function(String phoneNumberStr) phoneNumberChanged,
+    required TResult Function(String emailStr) emailChanged,
     required TResult Function() submitAddGuest,
   }) {
-    return fullNameChanged(value);
+    return fullNameChanged(fullNameStr);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String value)? fullNameChanged,
-    TResult Function(String value)? phoneNumberChanged,
-    TResult Function(String value)? emailChanged,
+    TResult Function(String fullNameStr)? fullNameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String emailStr)? emailChanged,
     TResult Function()? submitAddGuest,
   }) {
-    return fullNameChanged?.call(value);
+    return fullNameChanged?.call(fullNameStr);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? fullNameChanged,
-    TResult Function(String value)? phoneNumberChanged,
-    TResult Function(String value)? emailChanged,
+    TResult Function(String fullNameStr)? fullNameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String emailStr)? emailChanged,
     TResult Function()? submitAddGuest,
     required TResult orElse(),
   }) {
     if (fullNameChanged != null) {
-      return fullNameChanged(value);
+      return fullNameChanged(fullNameStr);
     }
     return orElse();
   }
@@ -253,9 +254,9 @@ class _$FullNameChanged implements FullNameChanged {
 }
 
 abstract class FullNameChanged implements GuestFormEvent {
-  const factory FullNameChanged(String value) = _$FullNameChanged;
+  const factory FullNameChanged(String fullNameStr) = _$FullNameChanged;
 
-  String get value;
+  String get fullNameStr;
   @JsonKey(ignore: true)
   $FullNameChangedCopyWith<FullNameChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -266,7 +267,7 @@ abstract class $PhoneNumberChangedCopyWith<$Res> {
   factory $PhoneNumberChangedCopyWith(
           PhoneNumberChanged value, $Res Function(PhoneNumberChanged) then) =
       _$PhoneNumberChangedCopyWithImpl<$Res>;
-  $Res call({String value});
+  $Res call({String phoneNumberStr});
 }
 
 /// @nodoc
@@ -282,12 +283,12 @@ class _$PhoneNumberChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? value = freezed,
+    Object? phoneNumberStr = freezed,
   }) {
     return _then(PhoneNumberChanged(
-      value == freezed
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
+      phoneNumberStr == freezed
+          ? _value.phoneNumberStr
+          : phoneNumberStr // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -296,14 +297,14 @@ class _$PhoneNumberChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$PhoneNumberChanged implements PhoneNumberChanged {
-  const _$PhoneNumberChanged(this.value);
+  const _$PhoneNumberChanged(this.phoneNumberStr);
 
   @override
-  final String value;
+  final String phoneNumberStr;
 
   @override
   String toString() {
-    return 'GuestFormEvent.phoneNumberChanged(value: $value)';
+    return 'GuestFormEvent.phoneNumberChanged(phoneNumberStr: $phoneNumberStr)';
   }
 
   @override
@@ -311,12 +312,13 @@ class _$PhoneNumberChanged implements PhoneNumberChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is PhoneNumberChanged &&
-            const DeepCollectionEquality().equals(other.value, value));
+            const DeepCollectionEquality()
+                .equals(other.phoneNumberStr, phoneNumberStr));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(phoneNumberStr));
 
   @JsonKey(ignore: true)
   @override
@@ -326,36 +328,36 @@ class _$PhoneNumberChanged implements PhoneNumberChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) fullNameChanged,
-    required TResult Function(String value) phoneNumberChanged,
-    required TResult Function(String value) emailChanged,
+    required TResult Function(String fullNameStr) fullNameChanged,
+    required TResult Function(String phoneNumberStr) phoneNumberChanged,
+    required TResult Function(String emailStr) emailChanged,
     required TResult Function() submitAddGuest,
   }) {
-    return phoneNumberChanged(value);
+    return phoneNumberChanged(phoneNumberStr);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String value)? fullNameChanged,
-    TResult Function(String value)? phoneNumberChanged,
-    TResult Function(String value)? emailChanged,
+    TResult Function(String fullNameStr)? fullNameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String emailStr)? emailChanged,
     TResult Function()? submitAddGuest,
   }) {
-    return phoneNumberChanged?.call(value);
+    return phoneNumberChanged?.call(phoneNumberStr);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? fullNameChanged,
-    TResult Function(String value)? phoneNumberChanged,
-    TResult Function(String value)? emailChanged,
+    TResult Function(String fullNameStr)? fullNameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String emailStr)? emailChanged,
     TResult Function()? submitAddGuest,
     required TResult orElse(),
   }) {
     if (phoneNumberChanged != null) {
-      return phoneNumberChanged(value);
+      return phoneNumberChanged(phoneNumberStr);
     }
     return orElse();
   }
@@ -399,9 +401,10 @@ class _$PhoneNumberChanged implements PhoneNumberChanged {
 }
 
 abstract class PhoneNumberChanged implements GuestFormEvent {
-  const factory PhoneNumberChanged(String value) = _$PhoneNumberChanged;
+  const factory PhoneNumberChanged(String phoneNumberStr) =
+      _$PhoneNumberChanged;
 
-  String get value;
+  String get phoneNumberStr;
   @JsonKey(ignore: true)
   $PhoneNumberChangedCopyWith<PhoneNumberChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -412,7 +415,7 @@ abstract class $EmailChangedCopyWith<$Res> {
   factory $EmailChangedCopyWith(
           EmailChanged value, $Res Function(EmailChanged) then) =
       _$EmailChangedCopyWithImpl<$Res>;
-  $Res call({String value});
+  $Res call({String emailStr});
 }
 
 /// @nodoc
@@ -428,12 +431,12 @@ class _$EmailChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? value = freezed,
+    Object? emailStr = freezed,
   }) {
     return _then(EmailChanged(
-      value == freezed
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
+      emailStr == freezed
+          ? _value.emailStr
+          : emailStr // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -442,14 +445,14 @@ class _$EmailChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$EmailChanged implements EmailChanged {
-  const _$EmailChanged(this.value);
+  const _$EmailChanged(this.emailStr);
 
   @override
-  final String value;
+  final String emailStr;
 
   @override
   String toString() {
-    return 'GuestFormEvent.emailChanged(value: $value)';
+    return 'GuestFormEvent.emailChanged(emailStr: $emailStr)';
   }
 
   @override
@@ -457,12 +460,12 @@ class _$EmailChanged implements EmailChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is EmailChanged &&
-            const DeepCollectionEquality().equals(other.value, value));
+            const DeepCollectionEquality().equals(other.emailStr, emailStr));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(emailStr));
 
   @JsonKey(ignore: true)
   @override
@@ -472,36 +475,36 @@ class _$EmailChanged implements EmailChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) fullNameChanged,
-    required TResult Function(String value) phoneNumberChanged,
-    required TResult Function(String value) emailChanged,
+    required TResult Function(String fullNameStr) fullNameChanged,
+    required TResult Function(String phoneNumberStr) phoneNumberChanged,
+    required TResult Function(String emailStr) emailChanged,
     required TResult Function() submitAddGuest,
   }) {
-    return emailChanged(value);
+    return emailChanged(emailStr);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String value)? fullNameChanged,
-    TResult Function(String value)? phoneNumberChanged,
-    TResult Function(String value)? emailChanged,
+    TResult Function(String fullNameStr)? fullNameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String emailStr)? emailChanged,
     TResult Function()? submitAddGuest,
   }) {
-    return emailChanged?.call(value);
+    return emailChanged?.call(emailStr);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? fullNameChanged,
-    TResult Function(String value)? phoneNumberChanged,
-    TResult Function(String value)? emailChanged,
+    TResult Function(String fullNameStr)? fullNameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String emailStr)? emailChanged,
     TResult Function()? submitAddGuest,
     required TResult orElse(),
   }) {
     if (emailChanged != null) {
-      return emailChanged(value);
+      return emailChanged(emailStr);
     }
     return orElse();
   }
@@ -545,9 +548,9 @@ class _$EmailChanged implements EmailChanged {
 }
 
 abstract class EmailChanged implements GuestFormEvent {
-  const factory EmailChanged(String value) = _$EmailChanged;
+  const factory EmailChanged(String emailStr) = _$EmailChanged;
 
-  String get value;
+  String get emailStr;
   @JsonKey(ignore: true)
   $EmailChangedCopyWith<EmailChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -594,9 +597,9 @@ class _$SubmitAddGuest implements SubmitAddGuest {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) fullNameChanged,
-    required TResult Function(String value) phoneNumberChanged,
-    required TResult Function(String value) emailChanged,
+    required TResult Function(String fullNameStr) fullNameChanged,
+    required TResult Function(String phoneNumberStr) phoneNumberChanged,
+    required TResult Function(String emailStr) emailChanged,
     required TResult Function() submitAddGuest,
   }) {
     return submitAddGuest();
@@ -605,9 +608,9 @@ class _$SubmitAddGuest implements SubmitAddGuest {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String value)? fullNameChanged,
-    TResult Function(String value)? phoneNumberChanged,
-    TResult Function(String value)? emailChanged,
+    TResult Function(String fullNameStr)? fullNameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String emailStr)? emailChanged,
     TResult Function()? submitAddGuest,
   }) {
     return submitAddGuest?.call();
@@ -616,9 +619,9 @@ class _$SubmitAddGuest implements SubmitAddGuest {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? fullNameChanged,
-    TResult Function(String value)? phoneNumberChanged,
-    TResult Function(String value)? emailChanged,
+    TResult Function(String fullNameStr)? fullNameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String emailStr)? emailChanged,
     TResult Function()? submitAddGuest,
     required TResult orElse(),
   }) {
@@ -678,9 +681,9 @@ class _$GuestFormStateTearOff {
       {required String fullName,
       required String email,
       required String phoneNumber,
-      required bool showErrorMessages,
+      required AutovalidateMode showErrorMessages,
       required bool isSubmitting,
-      required Option<Either<SubmitFailure, bool>>
+      required Option<Either<SubmitFailure, Unit>>
           submitFailureOrSuccessOption}) {
     return _GuestFormState(
       fullName: fullName,
@@ -700,11 +703,10 @@ const $GuestFormState = _$GuestFormStateTearOff();
 mixin _$GuestFormState {
   String get fullName => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  String get phoneNumber =>
-      throw _privateConstructorUsedError; // required AutovalidateMode showErrorMessages,
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  String get phoneNumber => throw _privateConstructorUsedError;
+  AutovalidateMode get showErrorMessages => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
-  Option<Either<SubmitFailure, bool>> get submitFailureOrSuccessOption =>
+  Option<Either<SubmitFailure, Unit>> get submitFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -721,9 +723,9 @@ abstract class $GuestFormStateCopyWith<$Res> {
       {String fullName,
       String email,
       String phoneNumber,
-      bool showErrorMessages,
+      AutovalidateMode showErrorMessages,
       bool isSubmitting,
-      Option<Either<SubmitFailure, bool>> submitFailureOrSuccessOption});
+      Option<Either<SubmitFailure, Unit>> submitFailureOrSuccessOption});
 }
 
 /// @nodoc
@@ -760,7 +762,7 @@ class _$GuestFormStateCopyWithImpl<$Res>
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as AutovalidateMode,
       isSubmitting: isSubmitting == freezed
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
@@ -768,7 +770,7 @@ class _$GuestFormStateCopyWithImpl<$Res>
       submitFailureOrSuccessOption: submitFailureOrSuccessOption == freezed
           ? _value.submitFailureOrSuccessOption
           : submitFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
-              as Option<Either<SubmitFailure, bool>>,
+              as Option<Either<SubmitFailure, Unit>>,
     ));
   }
 }
@@ -784,9 +786,9 @@ abstract class _$GuestFormStateCopyWith<$Res>
       {String fullName,
       String email,
       String phoneNumber,
-      bool showErrorMessages,
+      AutovalidateMode showErrorMessages,
       bool isSubmitting,
-      Option<Either<SubmitFailure, bool>> submitFailureOrSuccessOption});
+      Option<Either<SubmitFailure, Unit>> submitFailureOrSuccessOption});
 }
 
 /// @nodoc
@@ -825,7 +827,7 @@ class __$GuestFormStateCopyWithImpl<$Res>
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as AutovalidateMode,
       isSubmitting: isSubmitting == freezed
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
@@ -833,7 +835,7 @@ class __$GuestFormStateCopyWithImpl<$Res>
       submitFailureOrSuccessOption: submitFailureOrSuccessOption == freezed
           ? _value.submitFailureOrSuccessOption
           : submitFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
-              as Option<Either<SubmitFailure, bool>>,
+              as Option<Either<SubmitFailure, Unit>>,
     ));
   }
 }
@@ -855,12 +857,12 @@ class _$_GuestFormState implements _GuestFormState {
   final String email;
   @override
   final String phoneNumber;
-  @override // required AutovalidateMode showErrorMessages,
-  final bool showErrorMessages;
+  @override
+  final AutovalidateMode showErrorMessages;
   @override
   final bool isSubmitting;
   @override
-  final Option<Either<SubmitFailure, bool>> submitFailureOrSuccessOption;
+  final Option<Either<SubmitFailure, Unit>> submitFailureOrSuccessOption;
 
   @override
   String toString() {
@@ -906,9 +908,9 @@ abstract class _GuestFormState implements GuestFormState {
       {required String fullName,
       required String email,
       required String phoneNumber,
-      required bool showErrorMessages,
+      required AutovalidateMode showErrorMessages,
       required bool isSubmitting,
-      required Option<Either<SubmitFailure, bool>>
+      required Option<Either<SubmitFailure, Unit>>
           submitFailureOrSuccessOption}) = _$_GuestFormState;
 
   @override
@@ -917,12 +919,12 @@ abstract class _GuestFormState implements GuestFormState {
   String get email;
   @override
   String get phoneNumber;
-  @override // required AutovalidateMode showErrorMessages,
-  bool get showErrorMessages;
+  @override
+  AutovalidateMode get showErrorMessages;
   @override
   bool get isSubmitting;
   @override
-  Option<Either<SubmitFailure, bool>> get submitFailureOrSuccessOption;
+  Option<Either<SubmitFailure, Unit>> get submitFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$GuestFormStateCopyWith<_GuestFormState> get copyWith =>
