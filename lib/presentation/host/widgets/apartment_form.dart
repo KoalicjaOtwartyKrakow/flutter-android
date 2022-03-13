@@ -1,15 +1,16 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_android/infrastructure/converters.dart';
+import 'package:flutter_android/application/apartment_form/apartment_form_bloc.dart';
+import 'package:flutter_android/application/apartment_form/apartment_form_event.dart';
+import 'package:flutter_android/application/apartment_form/apartment_form_state.dart';
 import 'package:flutter_android/models/accomodation.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:i18next/i18next.dart';
 
-import '../../../infrastructure/api_client.dart';
 import '../../routes/app_router.dart';
 
 class ApartmentForm extends StatefulWidget {
-  const ApartmentForm({Key? key, required this.apiClient}) : super(key: key);
-  final ApiClient apiClient;
+  const ApartmentForm({Key? key}) : super(key: key);
 
   @override
   State<ApartmentForm> createState() => _ApartmentFormState();
@@ -29,103 +30,119 @@ class _ApartmentFormState extends State<ApartmentForm> {
   final statusController = TextEditingController();
 
   @override
-  Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
-      child: ListView(
-        padding: const EdgeInsets.all(10.0),
-        children: <Widget>[
-          AddressInputGroupWidget(
-            cityController: cityController,
-            zipController: zipController,
-            voivodeshipController: voivodeshipController,
-            addressLineController: addressLineController,
-          ),
-          TextFormField(
-            keyboardType: const TextInputType.numberWithOptions(
-              signed: false,
-              decimal: false,
-            ),
-            controller: vacanciesTotalController,
-            decoration: InputDecoration(
-              hintText: I18Next.of(context)!.t('apartment:totalVacancies'),
-            ),
-          ),
-          TextFormField(
-            keyboardType: const TextInputType.numberWithOptions(
-              signed: false,
-              decimal: false,
-            ),
-            controller: vacanciesFreeController,
-            decoration: InputDecoration(
-              hintText: I18Next.of(context)!.t('apartment:freeVacancies'),
-            ),
-          ),
-          Row(
-            children: [
-              Checkbox(
-                value: havePets,
-                onChanged: (value) => setState(
-                  () {
-                    havePets = value ?? false;
-                  },
+  Widget build(BuildContext context) => BlocListener<ApartmentFormBloc, ApartmentFormState>(
+        listener: (BuildContext context, state) {
+          //TODO
+        },
+        child: Form(
+          key: _formKey,
+          child: ListView(
+            padding: const EdgeInsets.all(10.0),
+            children: <Widget>[
+              AddressInputGroupWidget(
+                cityController: cityController,
+                zipController: zipController,
+                voivodeshipController: voivodeshipController,
+                addressLineController: addressLineController,
+              ),
+              TextFormField(
+                keyboardType: const TextInputType.numberWithOptions(
+                  signed: false,
+                  decimal: false,
+                ),
+                controller: vacanciesTotalController,
+                decoration: InputDecoration(
+                  hintText: I18Next.of(context)!.t('apartment:totalVacancies'),
                 ),
               ),
-              Text(
-                I18Next.of(context)!.t('apartment:havePets'),
-                style: Theme.of(context).inputDecorationTheme.hintStyle,
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Checkbox(
-                value: acceptPets,
-                onChanged: (value) => setState(
-                  () {
-                    acceptPets = value ?? false;
-                  },
+              TextFormField(
+                keyboardType: const TextInputType.numberWithOptions(
+                  signed: false,
+                  decimal: false,
+                ),
+                controller: vacanciesFreeController,
+                decoration: InputDecoration(
+                  hintText: I18Next.of(context)!.t('apartment:freeVacancies'),
                 ),
               ),
-              Text(
-                I18Next.of(context)!.t('apartment:acceptPets'),
-                style: Theme.of(context).inputDecorationTheme.hintStyle,
-              ),
-            ],
-          ),
-          TextFormField(
-            controller: commentsController,
-            decoration: InputDecoration(
-              hintText: I18Next.of(context)!.t('apartment:comments'),
-            ),
-          ),
-          ElevatedButton(
-            onPressed: () async {
-              // TODO: move this into the if statement after success response
-              AutoRouter.of(context).push(const ApartmentAddedSuccessRoute());
-              if (_formKey.currentState!.validate()) {
-                // If form is valid post data
-                // TODO: handle error responses
-                final response = await widget.apiClient.createAccomodation(
-                  Accomodation(
-                    city: cityController.text,
-                    zip: zipController.text,
-                    voivodeship: voivodeshipController.text,
-                    addressLine: addressLineController.text,
-                    vacanciesTotal: int.parse(vacanciesTotalController.text),
-                    vacanciesFree: int.parse(vacanciesFreeController.text),
-                    havePets: havePets,
-                    acceptPets: acceptPets,
-                    comments: commentsController.text,
+              Row(
+                children: [
+                  Checkbox(
+                    value: havePets,
+                    onChanged: (value) => setState(
+                      () {
+                        havePets = value ?? false;
+                      },
+                    ),
                   ),
-                );
-              }
-            },
-            child: Text(I18Next.of(context)!.t('apartment:send')),
+                  Text(
+                    I18Next.of(context)!.t('apartment:havePets'),
+                    style: Theme.of(context).inputDecorationTheme.hintStyle,
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Checkbox(
+                    value: acceptPets,
+                    onChanged: (value) => setState(
+                      () {
+                        acceptPets = value ?? false;
+                      },
+                    ),
+                  ),
+                  Text(
+                    I18Next.of(context)!.t('apartment:acceptPets'),
+                    style: Theme.of(context).inputDecorationTheme.hintStyle,
+                  ),
+                ],
+              ),
+              TextFormField(
+                controller: commentsController,
+                decoration: InputDecoration(
+                  hintText: I18Next.of(context)!.t('apartment:comments'),
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () async {
+                  // TODO: move this into the if statement after success response
+                  AutoRouter.of(context).push(const ApartmentAddedSuccessRoute());
+                  if (_formKey.currentState!.validate()) {
+                    // If form is valid post data
+                    // TODO: handle error responses
+                    context.read<ApartmentFormBloc>().add(ApartmentFormEvent.submit(
+                          Accommodation(
+                            city: cityController.text,
+                            zip: zipController.text,
+                            voivodeship: voivodeshipController.text,
+                            addressLine: addressLineController.text,
+                            vacanciesTotal: int.parse(vacanciesTotalController.text),
+                            vacanciesFree: int.parse(vacanciesFreeController.text),
+                            havePets: havePets,
+                            acceptPets: acceptPets,
+                            comments: commentsController.text,
+                          ),
+                        ));
+                  }
+                },
+                child: Text(I18Next.of(context)!.t('apartment:send')),
+              ),
+            ],
           ),
-        ],
-      ),
-    );
+        ),
+      );
+
+  @override
+  void dispose() {
+    cityController.dispose();
+    zipController.dispose();
+    voivodeshipController.dispose();
+    addressLineController.dispose();
+    vacanciesTotalController.dispose();
+    vacanciesFreeController.dispose();
+    commentsController.dispose();
+    statusController.dispose();
+    super.dispose();
   }
 }
 
@@ -151,10 +168,10 @@ class AddressInputGroupWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Row(
-            children: const [
+            children: [
               Expanded(
                 child: Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Text(
                     I18Next.of(context)!.t('apartment:address'),
                     textAlign: TextAlign.left,

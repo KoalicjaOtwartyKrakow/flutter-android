@@ -13,13 +13,13 @@ abstract class ApiClient {
   factory ApiClient(Dio dio, {String baseUrl}) = _ApiClient;
 
   @GET("/accomodation")
-  Future<List<Accomodation>> getAccomodations();
+  Future<List<Accommodation>> getAccomodations();
 
   @GET("/accomodation/{id}")
-  Future<List<Accomodation>> getAccomodationById(@Path("id") String id);
+  Future<List<Accommodation>> getAccomodationById(@Path("id") String id);
 
   @POST("/accomodation")
-  Future<Accomodation> createAccomodation(@Body() Accomodation accomodation);
+  Future<Accommodation> createAccomodation(@Body() Accommodation accomodation);
 
   @GET("/dev/doc/contract")
   Future<String> getContractDownloadUrl();

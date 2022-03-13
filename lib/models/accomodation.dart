@@ -1,13 +1,10 @@
 import 'package:flutter_android/models/accomodation_verification_status.dart';
-import 'package:intl/intl.dart';
 import 'package:json_annotation/json_annotation.dart';
-
-import '../infrastructure/converters.dart';
 
 part 'accomodation.g.dart';
 
 @JsonSerializable()
-class Accomodation {
+class Accommodation {
   String? city;
 
   String zip;
@@ -33,7 +30,7 @@ class Accomodation {
 
   AccomodationVerificationStatus? status;
 
-  Accomodation({
+  Accommodation({
     this.city,
     required this.zip,
     this.voivodeship,
@@ -46,7 +43,7 @@ class Accomodation {
     this.status,
   });
 
-  factory Accomodation.fromJson(Map<String, dynamic> json) =>
-      _$AccomodationFromJson(json);
-  Map<String, dynamic> toJson() => _$AccomodationToJson(this);
+  factory Accommodation.fromJson(Map<String, dynamic> json) => _$AccommodationFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AccommodationToJson(this);
 }

@@ -21,16 +21,16 @@ class AccomodationListPage extends StatelessWidget {
       body: BlocProvider<AccomodationLoaderBloc>(
         create: (context) => getIt<AccomodationLoaderBloc>()
           ..add(
-            const AccomodationLoaderEvent.getAccomodationsStarted(),
+            const AccommodationLoaderEvent.getAccommodationsStarted(),
           ),
-        child: BlocBuilder<AccomodationLoaderBloc, AccomodationLoaderState>(
+        child: BlocBuilder<AccomodationLoaderBloc, AccommodationLoaderState>(
           builder: (context, state) => state.map(
             initial: (_) => Container(),
             loadInProgress: (_) => const Center(
               child: CircularProgressIndicator(),
             ),
             loadSuccess: (successState) => AccomodationListLoadSuccessWidget(
-              accomodations: successState.accomodations,
+              accomodations: successState.accommodations,
             ),
             loadFailure: (failureState) => Center(
               child: Column(
@@ -59,7 +59,7 @@ class AccomodationListLoadSuccessWidget extends StatelessWidget {
     required this.accomodations,
   }) : super(key: key);
 
-  final List<Accomodation> accomodations;
+  final List<Accommodation> accomodations;
 
   @override
   Widget build(BuildContext context) {
@@ -118,7 +118,7 @@ class AccomodationListLoadSuccessWidget extends StatelessWidget {
     );
   }
 
-  Color? _getVerifiedColor(Accomodation accomodation) {
+  Color? _getVerifiedColor(Accommodation accomodation) {
     switch (accomodation.status) {
       case AccomodationVerificationStatus.phoneVerified:
         return Colors.yellow[100];
@@ -130,7 +130,7 @@ class AccomodationListLoadSuccessWidget extends StatelessWidget {
     }
   }
 
-  Widget _getVerifiedIndicator(Accomodation accomodation) {
+  Widget _getVerifiedIndicator(Accommodation accomodation) {
     switch (accomodation.status) {
       case AccomodationVerificationStatus.phoneVerified:
         return Stack(
@@ -160,7 +160,7 @@ class AccomodationListLoadSuccessWidget extends StatelessWidget {
     }
   }
 
-  Widget _getAcceptPetsIndicator(Accomodation accomodation) {
+  Widget _getAcceptPetsIndicator(Accommodation accomodation) {
     if (accomodation.acceptPets == null) {
       // Unspecified if accepts pets
       return Stack(
