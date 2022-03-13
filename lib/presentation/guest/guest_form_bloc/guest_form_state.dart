@@ -11,17 +11,16 @@ abstract class GuestFormState with _$GuestFormState {
     required String fullName,
     required String email,
     required String phoneNumber,
-    // required AutovalidateMode showErrorMessages,
-    required bool showErrorMessages,
+    required AutovalidateMode showErrorMessages,
     required bool isSubmitting,
-    required Option<Either<SubmitFailure, bool>> submitFailureOrSuccessOption,
+    required Option<Either<SubmitFailure, Unit>> submitFailureOrSuccessOption,
   }) = _GuestFormState;
 
   factory GuestFormState.initial() => GuestFormState(
     fullName: '',
     email: '',
     phoneNumber: '',
-    showErrorMessages: false,
+    showErrorMessages: AutovalidateMode.disabled,
     isSubmitting: false,
     submitFailureOrSuccessOption: none(),
   );
