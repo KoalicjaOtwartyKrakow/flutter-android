@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_android/models/accomodation.dart';
 import 'package:flutter_android/models/dto/guest_dto.dart';
