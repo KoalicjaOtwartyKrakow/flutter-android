@@ -13,7 +13,7 @@ abstract class GuestFormState with _$GuestFormState {
     required String phoneNumber,
     required AutovalidateMode showErrorMessages,
     required bool isSubmitting,
-    required Option<Either<SubmitFailure, bool>> submitFailureOrSuccessOption,
+    required Option<Either<Failure, Guest>> submitFailureOrSuccessOption,
   }) = _GuestFormState;
 
   factory GuestFormState.initial() => GuestFormState(
