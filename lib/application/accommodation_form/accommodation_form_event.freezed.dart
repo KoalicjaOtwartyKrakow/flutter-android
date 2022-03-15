@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'apartment_form_event.dart';
+part of 'accommodation_form_event.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,8 +15,8 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$ApartmentFormEventTearOff {
-  const _$ApartmentFormEventTearOff();
+class _$AccommodationFormEventTearOff {
+  const _$AccommodationFormEventTearOff();
 
   _Submit submit(Accommodation accommodation) {
     return _Submit(
@@ -26,10 +26,10 @@ class _$ApartmentFormEventTearOff {
 }
 
 /// @nodoc
-const $ApartmentFormEvent = _$ApartmentFormEventTearOff();
+const $AccommodationFormEvent = _$AccommodationFormEventTearOff();
 
 /// @nodoc
-mixin _$ApartmentFormEvent {
+mixin _$AccommodationFormEvent {
   Accommodation get accommodation => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
@@ -43,26 +43,22 @@ mixin _$ApartmentFormEvent {
     TResult Function(Accommodation accommodation)? submit,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Accommodation accommodation)? submit,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Submit value) submit,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Submit value)? submit,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Submit value)? submit,
@@ -71,25 +67,25 @@ mixin _$ApartmentFormEvent {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ApartmentFormEventCopyWith<ApartmentFormEvent> get copyWith => throw _privateConstructorUsedError;
+  $AccommodationFormEventCopyWith<AccommodationFormEvent> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ApartmentFormEventCopyWith<$Res> {
-  factory $ApartmentFormEventCopyWith(ApartmentFormEvent value, $Res Function(ApartmentFormEvent) then) =
-      _$ApartmentFormEventCopyWithImpl<$Res>;
+abstract class $AccommodationFormEventCopyWith<$Res> {
+  factory $AccommodationFormEventCopyWith(AccommodationFormEvent value, $Res Function(AccommodationFormEvent) then) =
+      _$AccommodationFormEventCopyWithImpl<$Res>;
 
   $Res call({Accommodation accommodation});
 }
 
 /// @nodoc
-class _$ApartmentFormEventCopyWithImpl<$Res> implements $ApartmentFormEventCopyWith<$Res> {
-  _$ApartmentFormEventCopyWithImpl(this._value, this._then);
+class _$AccommodationFormEventCopyWithImpl<$Res> implements $AccommodationFormEventCopyWith<$Res> {
+  _$AccommodationFormEventCopyWithImpl(this._value, this._then);
 
-  final ApartmentFormEvent _value;
+  final AccommodationFormEvent _value;
 
   // ignore: unused_field
-  final $Res Function(ApartmentFormEvent) _then;
+  final $Res Function(AccommodationFormEvent) _then;
 
   @override
   $Res call({
@@ -105,7 +101,7 @@ class _$ApartmentFormEventCopyWithImpl<$Res> implements $ApartmentFormEventCopyW
 }
 
 /// @nodoc
-abstract class _$SubmitCopyWith<$Res> implements $ApartmentFormEventCopyWith<$Res> {
+abstract class _$SubmitCopyWith<$Res> implements $AccommodationFormEventCopyWith<$Res> {
   factory _$SubmitCopyWith(_Submit value, $Res Function(_Submit) then) = __$SubmitCopyWithImpl<$Res>;
 
   @override
@@ -113,7 +109,7 @@ abstract class _$SubmitCopyWith<$Res> implements $ApartmentFormEventCopyWith<$Re
 }
 
 /// @nodoc
-class __$SubmitCopyWithImpl<$Res> extends _$ApartmentFormEventCopyWithImpl<$Res> implements _$SubmitCopyWith<$Res> {
+class __$SubmitCopyWithImpl<$Res> extends _$AccommodationFormEventCopyWithImpl<$Res> implements _$SubmitCopyWith<$Res> {
   __$SubmitCopyWithImpl(_Submit _value, $Res Function(_Submit) _then) : super(_value, (v) => _then(v as _Submit));
 
   @override
@@ -142,7 +138,7 @@ class _$_Submit implements _Submit {
 
   @override
   String toString() {
-    return 'ApartmentFormEvent.submit(accommodation: $accommodation)';
+    return 'AccommodationFormEvent.submit(accommodation: $accommodation)';
   }
 
   @override
@@ -217,7 +213,7 @@ class _$_Submit implements _Submit {
   }
 }
 
-abstract class _Submit implements ApartmentFormEvent {
+abstract class _Submit implements AccommodationFormEvent {
   const factory _Submit(Accommodation accommodation) = _$_Submit;
 
   @override
