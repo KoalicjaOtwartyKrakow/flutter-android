@@ -5,10 +5,10 @@ import 'package:flutter_android/models/failure.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable
-class ApartmentFormRepository {
+class AccommodationFormRepository {
   final ApiClient _apiClient;
 
-  ApartmentFormRepository(this._apiClient);
+  AccommodationFormRepository(this._apiClient);
 
   Future<Either<Failure, Accommodation>> submit(Accommodation accommodation) async {
     try {
