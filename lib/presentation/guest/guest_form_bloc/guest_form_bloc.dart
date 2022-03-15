@@ -52,21 +52,135 @@ class GuestFormBloc extends Bloc<GuestFormEvent, GuestFormState> {
         );
       },
     );
+    on<PeopleInGroupChanged>(
+          (event, emit) {
+        emit(
+          state.copyWith(
+            email: event.peopleInGroupStr,
+            submitFailureOrSuccessOption: none(),
+          ),
+        );
+      },
+    );
+    on<AdultMaleCountChanged>(
+          (event, emit) {
+        emit(
+          state.copyWith(
+            email: event.adultMaleCountStr,
+            submitFailureOrSuccessOption: none(),
+          ),
+        );
+      },
+    );
+    on<AdultFemaleCountChanged>(
+          (event, emit) {
+        emit(
+          state.copyWith(
+            email: event.adultFemaleCountStr,
+            submitFailureOrSuccessOption: none(),
+          ),
+        );
+      },
+    );
+    on<ChildrenCountChanged>(
+          (event, emit) {
+        emit(
+          state.copyWith(
+            email: event.childrenCountStr,
+            submitFailureOrSuccessOption: none(),
+          ),
+        );
+      },
+    );
+    on<ChildrenAgesChanged>(
+          (event, emit) {
+        emit(
+          state.copyWith(
+            email: event.childrenAgesStr,
+            submitFailureOrSuccessOption: none(),
+          ),
+        );
+      },
+    );
+    on<HavePetsChanged>(
+          (event, emit) {
+        emit(
+          state.copyWith(
+            email: event.havePetsStr,
+            submitFailureOrSuccessOption: none(),
+          ),
+        );
+      },
+    );
+    on<EmailChanged>(
+          (event, emit) {
+        emit(
+          state.copyWith(
+            email: event.emailStr,
+            submitFailureOrSuccessOption: none(),
+          ),
+        );
+      },
+    );
+    on<PetsDescriptionChanged>(
+          (event, emit) {
+        emit(
+          state.copyWith(
+            email: event.petsDescriptionStr,
+            submitFailureOrSuccessOption: none(),
+          ),
+        );
+      },
+    );
+    on<SpecialNeedsChanged>(
+          (event, emit) {
+        emit(
+          state.copyWith(
+            email: event.specialNeedsStr,
+            submitFailureOrSuccessOption: none(),
+          ),
+        );
+      },
+    );
+    on<HowLongToStayChanged>(
+          (event, emit) {
+        emit(
+          state.copyWith(
+            email: event.howLongToStayStr,
+            submitFailureOrSuccessOption: none(),
+          ),
+        );
+      },
+    );
     on<SubmitAddGuest>(
           (event, emit) async {
-        emit(state.copyWith(
-          isSubmitting: true,
-          submitFailureOrSuccessOption: none(),
-        ));
 
-        final failureOrSuccess = await apiClient.postAGuest(Guest(
-          fullName: state.fullName,
-          phoneNumber: state.phoneNumber,
-          email: state.email
-        ));
+          Either<SubmitFailure, Unit>? failureOrSuccess;
+
+          Guest guest = Guest(
+            fullName: state.fullName,
+            phoneNumber: state.phoneNumber,
+            email: state.email
+          );
+
+          if (guest.isValidated()) {
+            emit(state.copyWith(
+              isSubmitting: true,
+              submitFailureOrSuccessOption: none(),
+          ));
+
+          failureOrSuccess = await apiClient.postAGuest(guest);
+        }
+
         emit(state.copyWith(
           isSubmitting: false,
-          submitFailureOrSuccessOption: some(failureOrSuccess),
+          showErrorMessages: AutovalidateMode.always,
+          submitFailureOrSuccessOption: optionOf(
+            failureOrSuccess?.fold(
+                  (failure) => left(failure),
+                  (_) => right(true),
+            ),
+          ),
         ));
       },
     );
