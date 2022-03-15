@@ -8,7 +8,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import '../../../infrastructure/guest/i_guest_repository.dart';
 import '../../../models/failure.dart';
 import '../../../models/guest.dart';
-import '../submit_failure.dart';
 
 part 'guest_form_event.dart';
 part 'guest_form_state.dart';
@@ -161,7 +160,8 @@ class GuestFormBloc extends Bloc<GuestFormEvent, GuestFormState> {
           Guest guest = Guest(
             fullName: state.fullName,
             phoneNumber: state.phoneNumber,
-            email: state.email
+            email: state.email,
+            peopleInGroup:
           );
 
           if (guest.isValidated()) {
