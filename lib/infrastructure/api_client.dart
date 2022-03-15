@@ -25,7 +25,7 @@ abstract class ApiClient {
   Future<String> getContractDownloadUrl();
 
   @POST("/dev/guests")
-  Future<Either<SubmitFailure, Unit>> postAGuest(@Body() Guest guest);
+  Future<Guest> postAGuest(@Body() Guest guest);
 }
 
 // This is needed to be injected into ApiClient through injectable_generator

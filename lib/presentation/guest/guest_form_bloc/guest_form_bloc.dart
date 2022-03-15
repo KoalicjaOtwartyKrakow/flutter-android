@@ -5,7 +5,8 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../infrastructure/api_client.dart';
+import '../../../infrastructure/guest/i_guest_repository.dart';
+import '../../../models/failure.dart';
 import '../../../models/guest.dart';
 import '../submit_failure.dart';
 
@@ -19,9 +20,9 @@ class GuestFormBloc extends Bloc<GuestFormEvent, GuestFormState> {
   @override
   GuestFormState get initialState => GuestFormState.initial();
 
-  final ApiClient apiClient;
+  final IGuestRepository guestRepository;
 
-  GuestFormBloc(this.apiClient) : super(GuestFormState.initial()) {
+  GuestFormBloc(this.guestRepository) : super(GuestFormState.initial()) {
     on<FullNameChanged>(
           (event, emit) {
         emit(
@@ -155,7 +156,7 @@ class GuestFormBloc extends Bloc<GuestFormEvent, GuestFormState> {
     on<SubmitAddGuest>(
           (event, emit) async {
 
-          Either<SubmitFailure, Unit>? failureOrSuccess;
+          Either<Failure, Guest>? failureOrSuccess;
 
           Guest guest = Guest(
             fullName: state.fullName,
@@ -169,7 +170,7 @@ class GuestFormBloc extends Bloc<GuestFormEvent, GuestFormState> {
               submitFailureOrSuccessOption: none(),
           ));
 
-          failureOrSuccess = await apiClient.postAGuest(guest);
+          failureOrSuccess = await guestRepository.postGuest(guest);
         }
 
         emit(state.copyWith(
@@ -178,7 +179,7 @@ class GuestFormBloc extends Bloc<GuestFormEvent, GuestFormState> {
           submitFailureOrSuccessOption: optionOf(
             failureOrSuccess?.fold(
                   (failure) => left(failure),
-                  (_) => right(true),
+                  (_) => right(Guest),
             ),
           ),
         ));
