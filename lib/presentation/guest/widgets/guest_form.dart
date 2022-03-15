@@ -153,97 +153,97 @@ class GuestForm extends StatelessWidget {
 }
 
 
-// String? validateFullName(String? value) {
-//   if (value == null || value.isEmpty) {
-//     return 'Name is required';
-//   }
-//   return null;
-// }
-//
-// String? validatePhoneNumber(String? value) {
-//   if (value == null || value.isEmpty) {
-//     return 'Phone number is required';
-//   }
-//   String result = value.replaceAll(new RegExp(r"\D"), "");
-//   if (result.length < 9) {
-//     return 'Incorrect phone number';
-//   }
-//   return null;
-// }
-//
-// String? validateEmail(String? value) {
-//   if (value == null || value.isEmpty) {
-//     return 'Email address is required';
-//   }
-//   if (!value.contains('@')) {
-//     return 'Incorrect email address';
-//   }
-//   return null;
-// }
-//
-// String? validatePeopleInGroup(String? value) {
-//   if (value?.isEmpty ?? false) {
-//     if (!isNumeric(value)) {
-//       return 'Incorrect value';
-//     }
-//   }
-//   return null;
-// }
-//
-// String? validateAdultMaleCount(String? value) {
-//   if (value?.isEmpty ?? false) {
-//     if (!isNumeric(value)) {
-//       return 'Incorrect value';
-//     }
-//   }
-//   return null;
-// }
-//
-// String? validateAdultFemaleCount(String? value) {
-//   if (value?.isEmpty ?? false) {
-//     if (!isNumeric(value)) {
-//       return 'Incorrect value';
-//     }
-//   }
-//   return null;
-// }
-//
-// String? validateChildrenCount(String? value) {
-//   if (value?.isEmpty ?? false) {
-//     if (!isNumeric(value)) {
-//       return 'Incorrect value';
-//     }
-//   }
-//   return null;
-// }
-//
-// String? validateChildrenAges(String? value) {
-//   return null;
-// }
-//
-// String? validateHavePets(String? value) {
-//   return null;
-// }
-//
-// String? validatePetsDescription(String? value) {
-//   return null;
-// }
-//
-// String? validateSpecialNeeds(String? value) {
-//   return null;
-// }
-//
-// String? validateFinanceStatus(String? value) {
-//   return null;
-// }
-//
-// String? validateHowLongToStay(String? value) {
-//   return null;
-// }
-//
-// bool isNumeric(String? s) {
-//   if (s == null) {
-//     return false;
-//   }
-//   return double.tryParse(s) != null;
-// }
+String? validateFullName(String? value) {
+  if (value == null || value.isEmpty) {
+    return 'Name is required';
+  }
+  return null;
+}
+
+String? validatePhoneNumber(String? value) {
+  if (value == null || value.isEmpty) {
+    return 'Phone number is required';
+  }
+  String result = value.replaceAll(new RegExp(r"\D"), "");
+  if (result.length < 9) {
+    return 'Incorrect phone number';
+  }
+  return null;
+}
+
+String? validateEmail(String? value) {
+  if (value == null || value.isEmpty) {
+    return 'Email address is required';
+  }
+  if (!value.contains('@')) {
+    return 'Incorrect email address';
+  }
+  return null;
+}
+
+String? validatePeopleInGroup(String? value) {
+  if (value?.isEmpty ?? false) {
+    if (!isNumeric(value)) {
+      return 'Incorrect value';
+    }
+  }
+  return null;
+}
+
+String? validateAdultMaleCount(String? value) {
+  if (value?.isEmpty ?? false) {
+    if (!isNumeric(value)) {
+      return 'Incorrect value';
+    }
+  }
+  return null;
+}
+
+String? validateAdultFemaleCount(String? value) {
+  if (value?.isEmpty ?? false) {
+    if (!isNumeric(value)) {
+      return 'Incorrect value';
+    }
+  }
+  return null;
+}
+
+String? validateChildrenCount(String? value) {
+  if (value?.isEmpty ?? false) {
+    if (!isNumeric(value)) {
+      return 'Incorrect value';
+    }
+  }
+  return null;
+}
+
+String? validateChildrenAges(String? value) {
+  return null;
+}
+
+String? validateHavePets(String? value) {
+  return null;
+}
+
+String? validatePetsDescription(String? value) {
+  return null;
+}
+
+String? validateSpecialNeeds(String? value) {
+  return null;
+}
+
+String? validateFinanceStatus(String? value) {
+  return null;
+}
+
+String? validateHowLongToStay(String? value) {
+  return null;
+}
+
+bool isNumeric(String? s) {
+  if (s == null) {
+    return false;
+  }
+  return double.tryParse(s) != null;
+}
