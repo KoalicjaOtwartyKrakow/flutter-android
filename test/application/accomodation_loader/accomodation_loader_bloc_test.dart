@@ -28,7 +28,7 @@ void main() {
       // assert
       expect(
         accomodationLoaderBloc.state,
-        const AccomodationLoaderState.initial(),
+        const AccommodationLoaderState.initial(),
       );
     },
   );
@@ -49,8 +49,8 @@ void main() {
 
       // assert later
       final expected = [
-        const AccomodationLoaderState.loadInProgress(),
-        AccomodationLoaderState.loadSuccess(tAccomodations),
+        const AccommodationLoaderState.loadInProgress(),
+        AccommodationLoaderState.loadSuccess(tAccomodations),
       ];
       expectLater(
         accomodationLoaderBloc.stream,
@@ -59,7 +59,7 @@ void main() {
 
       // act
       accomodationLoaderBloc.add(
-        const AccomodationLoaderEvent.getAccomodationsStarted(),
+        const AccommodationLoaderEvent.getAccommodationsStarted(),
       );
     },
   );
@@ -77,8 +77,8 @@ void main() {
 
       // assert later
       final expected = [
-        const AccomodationLoaderState.loadInProgress(),
-        AccomodationLoaderState.loadFailure(tFailure),
+        const AccommodationLoaderState.loadInProgress(),
+        AccommodationLoaderState.loadFailure(tFailure),
       ];
       expectLater(
         accomodationLoaderBloc.stream,
@@ -87,7 +87,7 @@ void main() {
 
       // act
       accomodationLoaderBloc.add(
-        const AccomodationLoaderEvent.getAccomodationsStarted(),
+        const AccommodationLoaderEvent.getAccommodationsStarted(),
       );
     },
   );

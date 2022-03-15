@@ -1,4 +1,3 @@
-import 'package:flutter_android/models/accomodation_verification_status.dart';
 import 'package:intl/intl.dart';
 
 DateTime dateTimeFromString(String dateString) {
