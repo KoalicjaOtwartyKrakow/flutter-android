@@ -1,22 +1,22 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_android/application/apartment_form/apartment_form_bloc.dart';
-import 'package:flutter_android/application/apartment_form/apartment_form_event.dart';
-import 'package:flutter_android/application/apartment_form/apartment_form_state.dart';
+import 'package:flutter_android/application/accommodation_form/accommodation_form_bloc.dart';
+import 'package:flutter_android/application/accommodation_form/accommodation_form_event.dart';
+import 'package:flutter_android/application/accommodation_form/accommodation_form_state.dart';
 import 'package:flutter_android/models/accomodation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:i18next/i18next.dart';
 
 import '../../routes/app_router.dart';
 
-class ApartmentForm extends StatefulWidget {
-  const ApartmentForm({Key? key}) : super(key: key);
+class AccommodationForm extends StatefulWidget {
+  const AccommodationForm({Key? key}) : super(key: key);
 
   @override
-  State<ApartmentForm> createState() => _ApartmentFormState();
+  State<AccommodationForm> createState() => _AccommodationFormState();
 }
 
-class _ApartmentFormState extends State<ApartmentForm> {
+class _AccommodationFormState extends State<AccommodationForm> {
   final _formKey = GlobalKey<FormState>();
   final cityController = TextEditingController();
   final zipController = TextEditingController();
@@ -30,9 +30,9 @@ class _ApartmentFormState extends State<ApartmentForm> {
   final statusController = TextEditingController();
 
   @override
-  Widget build(BuildContext context) => BlocListener<ApartmentFormBloc, ApartmentFormState>(
+  Widget build(BuildContext context) => BlocListener<AccommodationFormBloc, AccommodationFormState>(
         listener: (BuildContext context, state) {
-          if (state == const ApartmentFormState.submitSuccess()) {
+          if (state == const AccommodationFormState.submitSuccess()) {
             AutoRouter.of(context).push(const ApartmentAddedSuccessRoute());
           } else if (state is SubmitFailure) {
             // TODO: handle error responses
@@ -111,7 +111,7 @@ class _ApartmentFormState extends State<ApartmentForm> {
                 onPressed: () async {
                   if (_formKey.currentState!.validate()) {
                     // If form is valid post data
-                    context.read<ApartmentFormBloc>().add(ApartmentFormEvent.submit(
+                    context.read<AccommodationFormBloc>().add(AccommodationFormEvent.submit(
                           Accommodation(
                             city: cityController.text,
                             zip: zipController.text,

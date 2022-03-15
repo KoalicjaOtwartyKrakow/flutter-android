@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'apartment_form_state.dart';
+part of 'accommodation_form_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,8 +15,8 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$ApartmentFormStateTearOff {
-  const _$ApartmentFormStateTearOff();
+class _$AccommodationFormStateTearOff {
+  const _$AccommodationFormStateTearOff();
 
   _Initial initial() {
     return const _Initial();
@@ -34,10 +34,10 @@ class _$ApartmentFormStateTearOff {
 }
 
 /// @nodoc
-const $ApartmentFormState = _$ApartmentFormStateTearOff();
+const $AccommodationFormState = _$AccommodationFormStateTearOff();
 
 /// @nodoc
-mixin _$ApartmentFormState {
+mixin _$AccommodationFormState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -45,6 +45,7 @@ mixin _$ApartmentFormState {
     required TResult Function(Failure failure) submitFailure,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
@@ -85,19 +86,19 @@ mixin _$ApartmentFormState {
 }
 
 /// @nodoc
-abstract class $ApartmentFormStateCopyWith<$Res> {
-  factory $ApartmentFormStateCopyWith(ApartmentFormState value, $Res Function(ApartmentFormState) then) =
-      _$ApartmentFormStateCopyWithImpl<$Res>;
+abstract class $AccommodationFormStateCopyWith<$Res> {
+  factory $AccommodationFormStateCopyWith(AccommodationFormState value, $Res Function(AccommodationFormState) then) =
+      _$AccommodationFormStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ApartmentFormStateCopyWithImpl<$Res> implements $ApartmentFormStateCopyWith<$Res> {
-  _$ApartmentFormStateCopyWithImpl(this._value, this._then);
+class _$AccommodationFormStateCopyWithImpl<$Res> implements $AccommodationFormStateCopyWith<$Res> {
+  _$AccommodationFormStateCopyWithImpl(this._value, this._then);
 
-  final ApartmentFormState _value;
+  final AccommodationFormState _value;
 
   // ignore: unused_field
-  final $Res Function(ApartmentFormState) _then;
+  final $Res Function(AccommodationFormState) _then;
 }
 
 /// @nodoc
@@ -106,7 +107,8 @@ abstract class _$InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$ApartmentFormStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
+class __$InitialCopyWithImpl<$Res> extends _$AccommodationFormStateCopyWithImpl<$Res>
+    implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
 
   @override
@@ -120,7 +122,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'ApartmentFormState.initial()';
+    return 'AccommodationFormState.initial()';
   }
 
   @override
@@ -200,7 +202,7 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements ApartmentFormState {
+abstract class _Initial implements AccommodationFormState {
   const factory _Initial() = _$_Initial;
 }
 
@@ -211,7 +213,7 @@ abstract class _$SubmitSuccessCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$SubmitSuccessCopyWithImpl<$Res> extends _$ApartmentFormStateCopyWithImpl<$Res>
+class __$SubmitSuccessCopyWithImpl<$Res> extends _$AccommodationFormStateCopyWithImpl<$Res>
     implements _$SubmitSuccessCopyWith<$Res> {
   __$SubmitSuccessCopyWithImpl(_SubmitSuccess _value, $Res Function(_SubmitSuccess) _then)
       : super(_value, (v) => _then(v as _SubmitSuccess));
@@ -227,7 +229,7 @@ class _$_SubmitSuccess implements _SubmitSuccess {
 
   @override
   String toString() {
-    return 'ApartmentFormState.submitSuccess()';
+    return 'AccommodationFormState.submitSuccess()';
   }
 
   @override
@@ -307,7 +309,7 @@ class _$_SubmitSuccess implements _SubmitSuccess {
   }
 }
 
-abstract class _SubmitSuccess implements ApartmentFormState {
+abstract class _SubmitSuccess implements AccommodationFormState {
   const factory _SubmitSuccess() = _$_SubmitSuccess;
 }
 
@@ -322,7 +324,7 @@ abstract class $SubmitFailureCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SubmitFailureCopyWithImpl<$Res> extends _$ApartmentFormStateCopyWithImpl<$Res>
+class _$SubmitFailureCopyWithImpl<$Res> extends _$AccommodationFormStateCopyWithImpl<$Res>
     implements $SubmitFailureCopyWith<$Res> {
   _$SubmitFailureCopyWithImpl(SubmitFailure _value, $Res Function(SubmitFailure) _then)
       : super(_value, (v) => _then(v as SubmitFailure));
@@ -360,7 +362,7 @@ class _$SubmitFailure implements SubmitFailure {
 
   @override
   String toString() {
-    return 'ApartmentFormState.submitFailure(failure: $failure)';
+    return 'AccommodationFormState.submitFailure(failure: $failure)';
   }
 
   @override
@@ -447,7 +449,7 @@ class _$SubmitFailure implements SubmitFailure {
   }
 }
 
-abstract class SubmitFailure implements ApartmentFormState {
+abstract class SubmitFailure implements AccommodationFormState {
   const factory SubmitFailure(Failure failure) = _$SubmitFailure;
 
   Failure get failure;
