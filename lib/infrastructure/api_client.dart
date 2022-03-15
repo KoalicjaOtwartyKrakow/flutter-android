@@ -28,6 +28,9 @@ abstract class ApiClient {
 
   @GET("/guest")
   Future<List<GuestDto>> getGuests();
+
+  @POST("/dev/guests")
+  Future<Guest> postAGuest(@Body() Guest guest);
 }
 
 // This is needed to be injected into ApiClient through injectable_generator
