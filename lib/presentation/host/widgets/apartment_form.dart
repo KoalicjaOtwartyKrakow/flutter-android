@@ -32,7 +32,11 @@ class _ApartmentFormState extends State<ApartmentForm> {
   @override
   Widget build(BuildContext context) => BlocListener<ApartmentFormBloc, ApartmentFormState>(
         listener: (BuildContext context, state) {
-          //TODO
+          if (state == const ApartmentFormState.submitSuccess()) {
+            AutoRouter.of(context).push(const ApartmentAddedSuccessRoute());
+          } else if (state is SubmitFailure) {
+            // TODO: handle error responses
+          }
         },
         child: Form(
           key: _formKey,
@@ -105,11 +109,8 @@ class _ApartmentFormState extends State<ApartmentForm> {
               ),
               ElevatedButton(
                 onPressed: () async {
-                  // TODO: move this into the if statement after success response
-                  AutoRouter.of(context).push(const ApartmentAddedSuccessRoute());
                   if (_formKey.currentState!.validate()) {
                     // If form is valid post data
-                    // TODO: handle error responses
                     context.read<ApartmentFormBloc>().add(ApartmentFormEvent.submit(
                           Accommodation(
                             city: cityController.text,

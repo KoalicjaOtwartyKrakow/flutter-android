@@ -9,5 +9,5 @@ class ApartmentFormState with _$ApartmentFormState {
 
   const factory ApartmentFormState.submitSuccess() = _SubmitSuccess;
 
-  const factory ApartmentFormState.submitFailure(Failure failure) = _SubmitFailure;
+  const factory ApartmentFormState.submitFailure(Failure failure) = SubmitFailure;
 }
