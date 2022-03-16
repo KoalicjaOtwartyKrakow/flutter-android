@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_android/presentation/guest/guest_form_success_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../routes/app_router.dart';
@@ -137,13 +138,15 @@ class GuestForm extends StatelessWidget {
               // : null,
               onPressed: () async {
                 // TODO: move this into the if statement after success response
-                AutoRouter.of(context).push(const ApartmentAddedSuccessRoute());
+                AutoRouter.of(context).push(const GuestFormSuccessRoute());
                 if (_formKey.currentState!.validate()) {
                   // If form is valid post data
+                  AutoRouter.of(context).push(const GuestFormSuccessRoute());
                   // TODO: handle error responses
                 }
                 else {
-                  false;
+                  AutoRouter.of(context).push(const GuestFormFailureRoute());
+                  // false;
                 }
               },
               child: const Text('Wyślij'),

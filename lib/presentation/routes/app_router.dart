@@ -13,6 +13,8 @@ import '../host/host_page.dart';
 import '../guest/guest_page.dart';
 import '../guest/guest_form_page.dart';
 import '../volunteer/accomodation/accomodation_detail_page.dart';
+import '../guest/guest_form_success_page.dart';
+import '../guest/guest_form_failure_page.dart';
 
 part 'app_router.gr.dart';
 
@@ -29,6 +31,8 @@ part 'app_router.gr.dart';
     MaterialRoute(page: GuestListPage),
     MaterialRoute(page: AccommodationListPage),
     MaterialRoute(page: AccomodationDetailPage),
+    MaterialRoute(page: GuestFormSuccessPage),
+    MaterialRoute(page: GuestFormFailurePage)
   ],
 )
 class AppRouter extends _$AppRouter {}

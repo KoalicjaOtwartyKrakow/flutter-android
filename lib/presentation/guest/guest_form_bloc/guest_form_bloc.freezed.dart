@@ -36,39 +36,39 @@ class _$GuestFormEventTearOff {
     );
   }
 
-  PeopleInGroupChanged peopleInGroupChanged(String peopleInGroupStr) {
+  PeopleInGroupChanged peopleInGroupChanged(int peopleInGroup) {
     return PeopleInGroupChanged(
-      peopleInGroupStr,
+      peopleInGroup,
     );
   }
 
-  AdultMaleCountChanged adultMaleCountChanged(String adultMaleCountStr) {
+  AdultMaleCountChanged adultMaleCountChanged(int adultMaleCount) {
     return AdultMaleCountChanged(
-      adultMaleCountStr,
+      adultMaleCount,
     );
   }
 
-  AdultFemaleCountChanged adultFemaleCountChanged(String adultFemaleCountStr) {
+  AdultFemaleCountChanged adultFemaleCountChanged(int adultFemaleCount) {
     return AdultFemaleCountChanged(
-      adultFemaleCountStr,
+      adultFemaleCount,
     );
   }
 
-  ChildrenCountChanged childrenCountChanged(String childrenCountStr) {
+  ChildrenCountChanged childrenCountChanged(int childrenCount) {
     return ChildrenCountChanged(
-      childrenCountStr,
+      childrenCount,
     );
   }
 
-  ChildrenAgesChanged childrenAgesChanged(String childrenAgesStr) {
+  ChildrenAgesChanged childrenAgesChanged(List<int> childrenAges) {
     return ChildrenAgesChanged(
-      childrenAgesStr,
+      childrenAges,
     );
   }
 
-  HavePetsChanged havePetsChanged(String havePetsStr) {
+  HavePetsChanged havePetsChanged(bool havePets) {
     return HavePetsChanged(
-      havePetsStr,
+      havePets,
     );
   }
 
@@ -111,13 +111,12 @@ mixin _$GuestFormEvent {
     required TResult Function(String fullNameStr) fullNameChanged,
     required TResult Function(String phoneNumberStr) phoneNumberChanged,
     required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String peopleInGroupStr) peopleInGroupChanged,
-    required TResult Function(String adultMaleCountStr) adultMaleCountChanged,
-    required TResult Function(String adultFemaleCountStr)
-        adultFemaleCountChanged,
-    required TResult Function(String childrenCountStr) childrenCountChanged,
-    required TResult Function(String childrenAgesStr) childrenAgesChanged,
-    required TResult Function(String havePetsStr) havePetsChanged,
+    required TResult Function(int peopleInGroup) peopleInGroupChanged,
+    required TResult Function(int adultMaleCount) adultMaleCountChanged,
+    required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
+    required TResult Function(int childrenCount) childrenCountChanged,
+    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
     required TResult Function(String howLongToStayStr) howLongToStayChanged,
@@ -130,12 +129,12 @@ mixin _$GuestFormEvent {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
@@ -148,12 +147,12 @@ mixin _$GuestFormEvent {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
@@ -308,13 +307,12 @@ class _$FullNameChanged implements FullNameChanged {
     required TResult Function(String fullNameStr) fullNameChanged,
     required TResult Function(String phoneNumberStr) phoneNumberChanged,
     required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String peopleInGroupStr) peopleInGroupChanged,
-    required TResult Function(String adultMaleCountStr) adultMaleCountChanged,
-    required TResult Function(String adultFemaleCountStr)
-        adultFemaleCountChanged,
-    required TResult Function(String childrenCountStr) childrenCountChanged,
-    required TResult Function(String childrenAgesStr) childrenAgesChanged,
-    required TResult Function(String havePetsStr) havePetsChanged,
+    required TResult Function(int peopleInGroup) peopleInGroupChanged,
+    required TResult Function(int adultMaleCount) adultMaleCountChanged,
+    required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
+    required TResult Function(int childrenCount) childrenCountChanged,
+    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
     required TResult Function(String howLongToStayStr) howLongToStayChanged,
@@ -330,12 +328,12 @@ class _$FullNameChanged implements FullNameChanged {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
@@ -351,12 +349,12 @@ class _$FullNameChanged implements FullNameChanged {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
@@ -519,13 +517,12 @@ class _$PhoneNumberChanged implements PhoneNumberChanged {
     required TResult Function(String fullNameStr) fullNameChanged,
     required TResult Function(String phoneNumberStr) phoneNumberChanged,
     required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String peopleInGroupStr) peopleInGroupChanged,
-    required TResult Function(String adultMaleCountStr) adultMaleCountChanged,
-    required TResult Function(String adultFemaleCountStr)
-        adultFemaleCountChanged,
-    required TResult Function(String childrenCountStr) childrenCountChanged,
-    required TResult Function(String childrenAgesStr) childrenAgesChanged,
-    required TResult Function(String havePetsStr) havePetsChanged,
+    required TResult Function(int peopleInGroup) peopleInGroupChanged,
+    required TResult Function(int adultMaleCount) adultMaleCountChanged,
+    required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
+    required TResult Function(int childrenCount) childrenCountChanged,
+    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
     required TResult Function(String howLongToStayStr) howLongToStayChanged,
@@ -541,12 +538,12 @@ class _$PhoneNumberChanged implements PhoneNumberChanged {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
@@ -562,12 +559,12 @@ class _$PhoneNumberChanged implements PhoneNumberChanged {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
@@ -730,13 +727,12 @@ class _$EmailChanged implements EmailChanged {
     required TResult Function(String fullNameStr) fullNameChanged,
     required TResult Function(String phoneNumberStr) phoneNumberChanged,
     required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String peopleInGroupStr) peopleInGroupChanged,
-    required TResult Function(String adultMaleCountStr) adultMaleCountChanged,
-    required TResult Function(String adultFemaleCountStr)
-        adultFemaleCountChanged,
-    required TResult Function(String childrenCountStr) childrenCountChanged,
-    required TResult Function(String childrenAgesStr) childrenAgesChanged,
-    required TResult Function(String havePetsStr) havePetsChanged,
+    required TResult Function(int peopleInGroup) peopleInGroupChanged,
+    required TResult Function(int adultMaleCount) adultMaleCountChanged,
+    required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
+    required TResult Function(int childrenCount) childrenCountChanged,
+    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
     required TResult Function(String howLongToStayStr) howLongToStayChanged,
@@ -752,12 +748,12 @@ class _$EmailChanged implements EmailChanged {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
@@ -773,12 +769,12 @@ class _$EmailChanged implements EmailChanged {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
@@ -877,7 +873,7 @@ abstract class $PeopleInGroupChangedCopyWith<$Res> {
   factory $PeopleInGroupChangedCopyWith(PeopleInGroupChanged value,
           $Res Function(PeopleInGroupChanged) then) =
       _$PeopleInGroupChangedCopyWithImpl<$Res>;
-  $Res call({String peopleInGroupStr});
+  $Res call({int peopleInGroup});
 }
 
 /// @nodoc
@@ -893,13 +889,13 @@ class _$PeopleInGroupChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? peopleInGroupStr = freezed,
+    Object? peopleInGroup = freezed,
   }) {
     return _then(PeopleInGroupChanged(
-      peopleInGroupStr == freezed
-          ? _value.peopleInGroupStr
-          : peopleInGroupStr // ignore: cast_nullable_to_non_nullable
-              as String,
+      peopleInGroup == freezed
+          ? _value.peopleInGroup
+          : peopleInGroup // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -907,14 +903,14 @@ class _$PeopleInGroupChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$PeopleInGroupChanged implements PeopleInGroupChanged {
-  const _$PeopleInGroupChanged(this.peopleInGroupStr);
+  const _$PeopleInGroupChanged(this.peopleInGroup);
 
   @override
-  final String peopleInGroupStr;
+  final int peopleInGroup;
 
   @override
   String toString() {
-    return 'GuestFormEvent.peopleInGroupChanged(peopleInGroupStr: $peopleInGroupStr)';
+    return 'GuestFormEvent.peopleInGroupChanged(peopleInGroup: $peopleInGroup)';
   }
 
   @override
@@ -923,12 +919,12 @@ class _$PeopleInGroupChanged implements PeopleInGroupChanged {
         (other.runtimeType == runtimeType &&
             other is PeopleInGroupChanged &&
             const DeepCollectionEquality()
-                .equals(other.peopleInGroupStr, peopleInGroupStr));
+                .equals(other.peopleInGroup, peopleInGroup));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(peopleInGroupStr));
+      runtimeType, const DeepCollectionEquality().hash(peopleInGroup));
 
   @JsonKey(ignore: true)
   @override
@@ -942,20 +938,19 @@ class _$PeopleInGroupChanged implements PeopleInGroupChanged {
     required TResult Function(String fullNameStr) fullNameChanged,
     required TResult Function(String phoneNumberStr) phoneNumberChanged,
     required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String peopleInGroupStr) peopleInGroupChanged,
-    required TResult Function(String adultMaleCountStr) adultMaleCountChanged,
-    required TResult Function(String adultFemaleCountStr)
-        adultFemaleCountChanged,
-    required TResult Function(String childrenCountStr) childrenCountChanged,
-    required TResult Function(String childrenAgesStr) childrenAgesChanged,
-    required TResult Function(String havePetsStr) havePetsChanged,
+    required TResult Function(int peopleInGroup) peopleInGroupChanged,
+    required TResult Function(int adultMaleCount) adultMaleCountChanged,
+    required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
+    required TResult Function(int childrenCount) childrenCountChanged,
+    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
     required TResult Function(String howLongToStayStr) howLongToStayChanged,
     required TResult Function(String financeStatusStr) financeStatusChanged,
     required TResult Function() submitAddGuest,
   }) {
-    return peopleInGroupChanged(peopleInGroupStr);
+    return peopleInGroupChanged(peopleInGroup);
   }
 
   @override
@@ -964,19 +959,19 @@ class _$PeopleInGroupChanged implements PeopleInGroupChanged {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
     TResult Function(String financeStatusStr)? financeStatusChanged,
     TResult Function()? submitAddGuest,
   }) {
-    return peopleInGroupChanged?.call(peopleInGroupStr);
+    return peopleInGroupChanged?.call(peopleInGroup);
   }
 
   @override
@@ -985,12 +980,12 @@ class _$PeopleInGroupChanged implements PeopleInGroupChanged {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
@@ -999,7 +994,7 @@ class _$PeopleInGroupChanged implements PeopleInGroupChanged {
     required TResult orElse(),
   }) {
     if (peopleInGroupChanged != null) {
-      return peopleInGroupChanged(peopleInGroupStr);
+      return peopleInGroupChanged(peopleInGroup);
     }
     return orElse();
   }
@@ -1076,10 +1071,10 @@ class _$PeopleInGroupChanged implements PeopleInGroupChanged {
 }
 
 abstract class PeopleInGroupChanged implements GuestFormEvent {
-  const factory PeopleInGroupChanged(String peopleInGroupStr) =
+  const factory PeopleInGroupChanged(int peopleInGroup) =
       _$PeopleInGroupChanged;
 
-  String get peopleInGroupStr;
+  int get peopleInGroup;
   @JsonKey(ignore: true)
   $PeopleInGroupChangedCopyWith<PeopleInGroupChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1090,7 +1085,7 @@ abstract class $AdultMaleCountChangedCopyWith<$Res> {
   factory $AdultMaleCountChangedCopyWith(AdultMaleCountChanged value,
           $Res Function(AdultMaleCountChanged) then) =
       _$AdultMaleCountChangedCopyWithImpl<$Res>;
-  $Res call({String adultMaleCountStr});
+  $Res call({int adultMaleCount});
 }
 
 /// @nodoc
@@ -1106,13 +1101,13 @@ class _$AdultMaleCountChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? adultMaleCountStr = freezed,
+    Object? adultMaleCount = freezed,
   }) {
     return _then(AdultMaleCountChanged(
-      adultMaleCountStr == freezed
-          ? _value.adultMaleCountStr
-          : adultMaleCountStr // ignore: cast_nullable_to_non_nullable
-              as String,
+      adultMaleCount == freezed
+          ? _value.adultMaleCount
+          : adultMaleCount // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -1120,14 +1115,14 @@ class _$AdultMaleCountChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$AdultMaleCountChanged implements AdultMaleCountChanged {
-  const _$AdultMaleCountChanged(this.adultMaleCountStr);
+  const _$AdultMaleCountChanged(this.adultMaleCount);
 
   @override
-  final String adultMaleCountStr;
+  final int adultMaleCount;
 
   @override
   String toString() {
-    return 'GuestFormEvent.adultMaleCountChanged(adultMaleCountStr: $adultMaleCountStr)';
+    return 'GuestFormEvent.adultMaleCountChanged(adultMaleCount: $adultMaleCount)';
   }
 
   @override
@@ -1136,12 +1131,12 @@ class _$AdultMaleCountChanged implements AdultMaleCountChanged {
         (other.runtimeType == runtimeType &&
             other is AdultMaleCountChanged &&
             const DeepCollectionEquality()
-                .equals(other.adultMaleCountStr, adultMaleCountStr));
+                .equals(other.adultMaleCount, adultMaleCount));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(adultMaleCountStr));
+      runtimeType, const DeepCollectionEquality().hash(adultMaleCount));
 
   @JsonKey(ignore: true)
   @override
@@ -1155,20 +1150,19 @@ class _$AdultMaleCountChanged implements AdultMaleCountChanged {
     required TResult Function(String fullNameStr) fullNameChanged,
     required TResult Function(String phoneNumberStr) phoneNumberChanged,
     required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String peopleInGroupStr) peopleInGroupChanged,
-    required TResult Function(String adultMaleCountStr) adultMaleCountChanged,
-    required TResult Function(String adultFemaleCountStr)
-        adultFemaleCountChanged,
-    required TResult Function(String childrenCountStr) childrenCountChanged,
-    required TResult Function(String childrenAgesStr) childrenAgesChanged,
-    required TResult Function(String havePetsStr) havePetsChanged,
+    required TResult Function(int peopleInGroup) peopleInGroupChanged,
+    required TResult Function(int adultMaleCount) adultMaleCountChanged,
+    required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
+    required TResult Function(int childrenCount) childrenCountChanged,
+    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
     required TResult Function(String howLongToStayStr) howLongToStayChanged,
     required TResult Function(String financeStatusStr) financeStatusChanged,
     required TResult Function() submitAddGuest,
   }) {
-    return adultMaleCountChanged(adultMaleCountStr);
+    return adultMaleCountChanged(adultMaleCount);
   }
 
   @override
@@ -1177,19 +1171,19 @@ class _$AdultMaleCountChanged implements AdultMaleCountChanged {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
     TResult Function(String financeStatusStr)? financeStatusChanged,
     TResult Function()? submitAddGuest,
   }) {
-    return adultMaleCountChanged?.call(adultMaleCountStr);
+    return adultMaleCountChanged?.call(adultMaleCount);
   }
 
   @override
@@ -1198,12 +1192,12 @@ class _$AdultMaleCountChanged implements AdultMaleCountChanged {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
@@ -1212,7 +1206,7 @@ class _$AdultMaleCountChanged implements AdultMaleCountChanged {
     required TResult orElse(),
   }) {
     if (adultMaleCountChanged != null) {
-      return adultMaleCountChanged(adultMaleCountStr);
+      return adultMaleCountChanged(adultMaleCount);
     }
     return orElse();
   }
@@ -1289,10 +1283,10 @@ class _$AdultMaleCountChanged implements AdultMaleCountChanged {
 }
 
 abstract class AdultMaleCountChanged implements GuestFormEvent {
-  const factory AdultMaleCountChanged(String adultMaleCountStr) =
+  const factory AdultMaleCountChanged(int adultMaleCount) =
       _$AdultMaleCountChanged;
 
-  String get adultMaleCountStr;
+  int get adultMaleCount;
   @JsonKey(ignore: true)
   $AdultMaleCountChangedCopyWith<AdultMaleCountChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1303,7 +1297,7 @@ abstract class $AdultFemaleCountChangedCopyWith<$Res> {
   factory $AdultFemaleCountChangedCopyWith(AdultFemaleCountChanged value,
           $Res Function(AdultFemaleCountChanged) then) =
       _$AdultFemaleCountChangedCopyWithImpl<$Res>;
-  $Res call({String adultFemaleCountStr});
+  $Res call({int adultFemaleCount});
 }
 
 /// @nodoc
@@ -1319,13 +1313,13 @@ class _$AdultFemaleCountChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? adultFemaleCountStr = freezed,
+    Object? adultFemaleCount = freezed,
   }) {
     return _then(AdultFemaleCountChanged(
-      adultFemaleCountStr == freezed
-          ? _value.adultFemaleCountStr
-          : adultFemaleCountStr // ignore: cast_nullable_to_non_nullable
-              as String,
+      adultFemaleCount == freezed
+          ? _value.adultFemaleCount
+          : adultFemaleCount // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -1333,14 +1327,14 @@ class _$AdultFemaleCountChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$AdultFemaleCountChanged implements AdultFemaleCountChanged {
-  const _$AdultFemaleCountChanged(this.adultFemaleCountStr);
+  const _$AdultFemaleCountChanged(this.adultFemaleCount);
 
   @override
-  final String adultFemaleCountStr;
+  final int adultFemaleCount;
 
   @override
   String toString() {
-    return 'GuestFormEvent.adultFemaleCountChanged(adultFemaleCountStr: $adultFemaleCountStr)';
+    return 'GuestFormEvent.adultFemaleCountChanged(adultFemaleCount: $adultFemaleCount)';
   }
 
   @override
@@ -1349,12 +1343,12 @@ class _$AdultFemaleCountChanged implements AdultFemaleCountChanged {
         (other.runtimeType == runtimeType &&
             other is AdultFemaleCountChanged &&
             const DeepCollectionEquality()
-                .equals(other.adultFemaleCountStr, adultFemaleCountStr));
+                .equals(other.adultFemaleCount, adultFemaleCount));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(adultFemaleCountStr));
+      runtimeType, const DeepCollectionEquality().hash(adultFemaleCount));
 
   @JsonKey(ignore: true)
   @override
@@ -1368,20 +1362,19 @@ class _$AdultFemaleCountChanged implements AdultFemaleCountChanged {
     required TResult Function(String fullNameStr) fullNameChanged,
     required TResult Function(String phoneNumberStr) phoneNumberChanged,
     required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String peopleInGroupStr) peopleInGroupChanged,
-    required TResult Function(String adultMaleCountStr) adultMaleCountChanged,
-    required TResult Function(String adultFemaleCountStr)
-        adultFemaleCountChanged,
-    required TResult Function(String childrenCountStr) childrenCountChanged,
-    required TResult Function(String childrenAgesStr) childrenAgesChanged,
-    required TResult Function(String havePetsStr) havePetsChanged,
+    required TResult Function(int peopleInGroup) peopleInGroupChanged,
+    required TResult Function(int adultMaleCount) adultMaleCountChanged,
+    required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
+    required TResult Function(int childrenCount) childrenCountChanged,
+    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
     required TResult Function(String howLongToStayStr) howLongToStayChanged,
     required TResult Function(String financeStatusStr) financeStatusChanged,
     required TResult Function() submitAddGuest,
   }) {
-    return adultFemaleCountChanged(adultFemaleCountStr);
+    return adultFemaleCountChanged(adultFemaleCount);
   }
 
   @override
@@ -1390,19 +1383,19 @@ class _$AdultFemaleCountChanged implements AdultFemaleCountChanged {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
     TResult Function(String financeStatusStr)? financeStatusChanged,
     TResult Function()? submitAddGuest,
   }) {
-    return adultFemaleCountChanged?.call(adultFemaleCountStr);
+    return adultFemaleCountChanged?.call(adultFemaleCount);
   }
 
   @override
@@ -1411,12 +1404,12 @@ class _$AdultFemaleCountChanged implements AdultFemaleCountChanged {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
@@ -1425,7 +1418,7 @@ class _$AdultFemaleCountChanged implements AdultFemaleCountChanged {
     required TResult orElse(),
   }) {
     if (adultFemaleCountChanged != null) {
-      return adultFemaleCountChanged(adultFemaleCountStr);
+      return adultFemaleCountChanged(adultFemaleCount);
     }
     return orElse();
   }
@@ -1502,10 +1495,10 @@ class _$AdultFemaleCountChanged implements AdultFemaleCountChanged {
 }
 
 abstract class AdultFemaleCountChanged implements GuestFormEvent {
-  const factory AdultFemaleCountChanged(String adultFemaleCountStr) =
+  const factory AdultFemaleCountChanged(int adultFemaleCount) =
       _$AdultFemaleCountChanged;
 
-  String get adultFemaleCountStr;
+  int get adultFemaleCount;
   @JsonKey(ignore: true)
   $AdultFemaleCountChangedCopyWith<AdultFemaleCountChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1516,7 +1509,7 @@ abstract class $ChildrenCountChangedCopyWith<$Res> {
   factory $ChildrenCountChangedCopyWith(ChildrenCountChanged value,
           $Res Function(ChildrenCountChanged) then) =
       _$ChildrenCountChangedCopyWithImpl<$Res>;
-  $Res call({String childrenCountStr});
+  $Res call({int childrenCount});
 }
 
 /// @nodoc
@@ -1532,13 +1525,13 @@ class _$ChildrenCountChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? childrenCountStr = freezed,
+    Object? childrenCount = freezed,
   }) {
     return _then(ChildrenCountChanged(
-      childrenCountStr == freezed
-          ? _value.childrenCountStr
-          : childrenCountStr // ignore: cast_nullable_to_non_nullable
-              as String,
+      childrenCount == freezed
+          ? _value.childrenCount
+          : childrenCount // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -1546,14 +1539,14 @@ class _$ChildrenCountChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ChildrenCountChanged implements ChildrenCountChanged {
-  const _$ChildrenCountChanged(this.childrenCountStr);
+  const _$ChildrenCountChanged(this.childrenCount);
 
   @override
-  final String childrenCountStr;
+  final int childrenCount;
 
   @override
   String toString() {
-    return 'GuestFormEvent.childrenCountChanged(childrenCountStr: $childrenCountStr)';
+    return 'GuestFormEvent.childrenCountChanged(childrenCount: $childrenCount)';
   }
 
   @override
@@ -1562,12 +1555,12 @@ class _$ChildrenCountChanged implements ChildrenCountChanged {
         (other.runtimeType == runtimeType &&
             other is ChildrenCountChanged &&
             const DeepCollectionEquality()
-                .equals(other.childrenCountStr, childrenCountStr));
+                .equals(other.childrenCount, childrenCount));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(childrenCountStr));
+      runtimeType, const DeepCollectionEquality().hash(childrenCount));
 
   @JsonKey(ignore: true)
   @override
@@ -1581,20 +1574,19 @@ class _$ChildrenCountChanged implements ChildrenCountChanged {
     required TResult Function(String fullNameStr) fullNameChanged,
     required TResult Function(String phoneNumberStr) phoneNumberChanged,
     required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String peopleInGroupStr) peopleInGroupChanged,
-    required TResult Function(String adultMaleCountStr) adultMaleCountChanged,
-    required TResult Function(String adultFemaleCountStr)
-        adultFemaleCountChanged,
-    required TResult Function(String childrenCountStr) childrenCountChanged,
-    required TResult Function(String childrenAgesStr) childrenAgesChanged,
-    required TResult Function(String havePetsStr) havePetsChanged,
+    required TResult Function(int peopleInGroup) peopleInGroupChanged,
+    required TResult Function(int adultMaleCount) adultMaleCountChanged,
+    required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
+    required TResult Function(int childrenCount) childrenCountChanged,
+    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
     required TResult Function(String howLongToStayStr) howLongToStayChanged,
     required TResult Function(String financeStatusStr) financeStatusChanged,
     required TResult Function() submitAddGuest,
   }) {
-    return childrenCountChanged(childrenCountStr);
+    return childrenCountChanged(childrenCount);
   }
 
   @override
@@ -1603,19 +1595,19 @@ class _$ChildrenCountChanged implements ChildrenCountChanged {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
     TResult Function(String financeStatusStr)? financeStatusChanged,
     TResult Function()? submitAddGuest,
   }) {
-    return childrenCountChanged?.call(childrenCountStr);
+    return childrenCountChanged?.call(childrenCount);
   }
 
   @override
@@ -1624,12 +1616,12 @@ class _$ChildrenCountChanged implements ChildrenCountChanged {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
@@ -1638,7 +1630,7 @@ class _$ChildrenCountChanged implements ChildrenCountChanged {
     required TResult orElse(),
   }) {
     if (childrenCountChanged != null) {
-      return childrenCountChanged(childrenCountStr);
+      return childrenCountChanged(childrenCount);
     }
     return orElse();
   }
@@ -1715,10 +1707,10 @@ class _$ChildrenCountChanged implements ChildrenCountChanged {
 }
 
 abstract class ChildrenCountChanged implements GuestFormEvent {
-  const factory ChildrenCountChanged(String childrenCountStr) =
+  const factory ChildrenCountChanged(int childrenCount) =
       _$ChildrenCountChanged;
 
-  String get childrenCountStr;
+  int get childrenCount;
   @JsonKey(ignore: true)
   $ChildrenCountChangedCopyWith<ChildrenCountChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1729,7 +1721,7 @@ abstract class $ChildrenAgesChangedCopyWith<$Res> {
   factory $ChildrenAgesChangedCopyWith(
           ChildrenAgesChanged value, $Res Function(ChildrenAgesChanged) then) =
       _$ChildrenAgesChangedCopyWithImpl<$Res>;
-  $Res call({String childrenAgesStr});
+  $Res call({List<int> childrenAges});
 }
 
 /// @nodoc
@@ -1745,13 +1737,13 @@ class _$ChildrenAgesChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? childrenAgesStr = freezed,
+    Object? childrenAges = freezed,
   }) {
     return _then(ChildrenAgesChanged(
-      childrenAgesStr == freezed
-          ? _value.childrenAgesStr
-          : childrenAgesStr // ignore: cast_nullable_to_non_nullable
-              as String,
+      childrenAges == freezed
+          ? _value.childrenAges
+          : childrenAges // ignore: cast_nullable_to_non_nullable
+              as List<int>,
     ));
   }
 }
@@ -1759,14 +1751,14 @@ class _$ChildrenAgesChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ChildrenAgesChanged implements ChildrenAgesChanged {
-  const _$ChildrenAgesChanged(this.childrenAgesStr);
+  const _$ChildrenAgesChanged(this.childrenAges);
 
   @override
-  final String childrenAgesStr;
+  final List<int> childrenAges;
 
   @override
   String toString() {
-    return 'GuestFormEvent.childrenAgesChanged(childrenAgesStr: $childrenAgesStr)';
+    return 'GuestFormEvent.childrenAgesChanged(childrenAges: $childrenAges)';
   }
 
   @override
@@ -1775,12 +1767,12 @@ class _$ChildrenAgesChanged implements ChildrenAgesChanged {
         (other.runtimeType == runtimeType &&
             other is ChildrenAgesChanged &&
             const DeepCollectionEquality()
-                .equals(other.childrenAgesStr, childrenAgesStr));
+                .equals(other.childrenAges, childrenAges));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(childrenAgesStr));
+      runtimeType, const DeepCollectionEquality().hash(childrenAges));
 
   @JsonKey(ignore: true)
   @override
@@ -1793,20 +1785,19 @@ class _$ChildrenAgesChanged implements ChildrenAgesChanged {
     required TResult Function(String fullNameStr) fullNameChanged,
     required TResult Function(String phoneNumberStr) phoneNumberChanged,
     required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String peopleInGroupStr) peopleInGroupChanged,
-    required TResult Function(String adultMaleCountStr) adultMaleCountChanged,
-    required TResult Function(String adultFemaleCountStr)
-        adultFemaleCountChanged,
-    required TResult Function(String childrenCountStr) childrenCountChanged,
-    required TResult Function(String childrenAgesStr) childrenAgesChanged,
-    required TResult Function(String havePetsStr) havePetsChanged,
+    required TResult Function(int peopleInGroup) peopleInGroupChanged,
+    required TResult Function(int adultMaleCount) adultMaleCountChanged,
+    required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
+    required TResult Function(int childrenCount) childrenCountChanged,
+    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
     required TResult Function(String howLongToStayStr) howLongToStayChanged,
     required TResult Function(String financeStatusStr) financeStatusChanged,
     required TResult Function() submitAddGuest,
   }) {
-    return childrenAgesChanged(childrenAgesStr);
+    return childrenAgesChanged(childrenAges);
   }
 
   @override
@@ -1815,19 +1806,19 @@ class _$ChildrenAgesChanged implements ChildrenAgesChanged {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
     TResult Function(String financeStatusStr)? financeStatusChanged,
     TResult Function()? submitAddGuest,
   }) {
-    return childrenAgesChanged?.call(childrenAgesStr);
+    return childrenAgesChanged?.call(childrenAges);
   }
 
   @override
@@ -1836,12 +1827,12 @@ class _$ChildrenAgesChanged implements ChildrenAgesChanged {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
@@ -1850,7 +1841,7 @@ class _$ChildrenAgesChanged implements ChildrenAgesChanged {
     required TResult orElse(),
   }) {
     if (childrenAgesChanged != null) {
-      return childrenAgesChanged(childrenAgesStr);
+      return childrenAgesChanged(childrenAges);
     }
     return orElse();
   }
@@ -1927,10 +1918,10 @@ class _$ChildrenAgesChanged implements ChildrenAgesChanged {
 }
 
 abstract class ChildrenAgesChanged implements GuestFormEvent {
-  const factory ChildrenAgesChanged(String childrenAgesStr) =
+  const factory ChildrenAgesChanged(List<int> childrenAges) =
       _$ChildrenAgesChanged;
 
-  String get childrenAgesStr;
+  List<int> get childrenAges;
   @JsonKey(ignore: true)
   $ChildrenAgesChangedCopyWith<ChildrenAgesChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1941,7 +1932,7 @@ abstract class $HavePetsChangedCopyWith<$Res> {
   factory $HavePetsChangedCopyWith(
           HavePetsChanged value, $Res Function(HavePetsChanged) then) =
       _$HavePetsChangedCopyWithImpl<$Res>;
-  $Res call({String havePetsStr});
+  $Res call({bool havePets});
 }
 
 /// @nodoc
@@ -1957,13 +1948,13 @@ class _$HavePetsChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? havePetsStr = freezed,
+    Object? havePets = freezed,
   }) {
     return _then(HavePetsChanged(
-      havePetsStr == freezed
-          ? _value.havePetsStr
-          : havePetsStr // ignore: cast_nullable_to_non_nullable
-              as String,
+      havePets == freezed
+          ? _value.havePets
+          : havePets // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -1971,14 +1962,14 @@ class _$HavePetsChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$HavePetsChanged implements HavePetsChanged {
-  const _$HavePetsChanged(this.havePetsStr);
+  const _$HavePetsChanged(this.havePets);
 
   @override
-  final String havePetsStr;
+  final bool havePets;
 
   @override
   String toString() {
-    return 'GuestFormEvent.havePetsChanged(havePetsStr: $havePetsStr)';
+    return 'GuestFormEvent.havePetsChanged(havePets: $havePets)';
   }
 
   @override
@@ -1986,13 +1977,12 @@ class _$HavePetsChanged implements HavePetsChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is HavePetsChanged &&
-            const DeepCollectionEquality()
-                .equals(other.havePetsStr, havePetsStr));
+            const DeepCollectionEquality().equals(other.havePets, havePets));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(havePetsStr));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(havePets));
 
   @JsonKey(ignore: true)
   @override
@@ -2005,20 +1995,19 @@ class _$HavePetsChanged implements HavePetsChanged {
     required TResult Function(String fullNameStr) fullNameChanged,
     required TResult Function(String phoneNumberStr) phoneNumberChanged,
     required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String peopleInGroupStr) peopleInGroupChanged,
-    required TResult Function(String adultMaleCountStr) adultMaleCountChanged,
-    required TResult Function(String adultFemaleCountStr)
-        adultFemaleCountChanged,
-    required TResult Function(String childrenCountStr) childrenCountChanged,
-    required TResult Function(String childrenAgesStr) childrenAgesChanged,
-    required TResult Function(String havePetsStr) havePetsChanged,
+    required TResult Function(int peopleInGroup) peopleInGroupChanged,
+    required TResult Function(int adultMaleCount) adultMaleCountChanged,
+    required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
+    required TResult Function(int childrenCount) childrenCountChanged,
+    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
     required TResult Function(String howLongToStayStr) howLongToStayChanged,
     required TResult Function(String financeStatusStr) financeStatusChanged,
     required TResult Function() submitAddGuest,
   }) {
-    return havePetsChanged(havePetsStr);
+    return havePetsChanged(havePets);
   }
 
   @override
@@ -2027,19 +2016,19 @@ class _$HavePetsChanged implements HavePetsChanged {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
     TResult Function(String financeStatusStr)? financeStatusChanged,
     TResult Function()? submitAddGuest,
   }) {
-    return havePetsChanged?.call(havePetsStr);
+    return havePetsChanged?.call(havePets);
   }
 
   @override
@@ -2048,12 +2037,12 @@ class _$HavePetsChanged implements HavePetsChanged {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
@@ -2062,7 +2051,7 @@ class _$HavePetsChanged implements HavePetsChanged {
     required TResult orElse(),
   }) {
     if (havePetsChanged != null) {
-      return havePetsChanged(havePetsStr);
+      return havePetsChanged(havePets);
     }
     return orElse();
   }
@@ -2139,9 +2128,9 @@ class _$HavePetsChanged implements HavePetsChanged {
 }
 
 abstract class HavePetsChanged implements GuestFormEvent {
-  const factory HavePetsChanged(String havePetsStr) = _$HavePetsChanged;
+  const factory HavePetsChanged(bool havePets) = _$HavePetsChanged;
 
-  String get havePetsStr;
+  bool get havePets;
   @JsonKey(ignore: true)
   $HavePetsChangedCopyWith<HavePetsChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2217,13 +2206,12 @@ class _$PetsDescriptionChanged implements PetsDescriptionChanged {
     required TResult Function(String fullNameStr) fullNameChanged,
     required TResult Function(String phoneNumberStr) phoneNumberChanged,
     required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String peopleInGroupStr) peopleInGroupChanged,
-    required TResult Function(String adultMaleCountStr) adultMaleCountChanged,
-    required TResult Function(String adultFemaleCountStr)
-        adultFemaleCountChanged,
-    required TResult Function(String childrenCountStr) childrenCountChanged,
-    required TResult Function(String childrenAgesStr) childrenAgesChanged,
-    required TResult Function(String havePetsStr) havePetsChanged,
+    required TResult Function(int peopleInGroup) peopleInGroupChanged,
+    required TResult Function(int adultMaleCount) adultMaleCountChanged,
+    required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
+    required TResult Function(int childrenCount) childrenCountChanged,
+    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
     required TResult Function(String howLongToStayStr) howLongToStayChanged,
@@ -2239,12 +2227,12 @@ class _$PetsDescriptionChanged implements PetsDescriptionChanged {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
@@ -2260,12 +2248,12 @@ class _$PetsDescriptionChanged implements PetsDescriptionChanged {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
@@ -2429,13 +2417,12 @@ class _$SpecialNeedsChanged implements SpecialNeedsChanged {
     required TResult Function(String fullNameStr) fullNameChanged,
     required TResult Function(String phoneNumberStr) phoneNumberChanged,
     required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String peopleInGroupStr) peopleInGroupChanged,
-    required TResult Function(String adultMaleCountStr) adultMaleCountChanged,
-    required TResult Function(String adultFemaleCountStr)
-        adultFemaleCountChanged,
-    required TResult Function(String childrenCountStr) childrenCountChanged,
-    required TResult Function(String childrenAgesStr) childrenAgesChanged,
-    required TResult Function(String havePetsStr) havePetsChanged,
+    required TResult Function(int peopleInGroup) peopleInGroupChanged,
+    required TResult Function(int adultMaleCount) adultMaleCountChanged,
+    required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
+    required TResult Function(int childrenCount) childrenCountChanged,
+    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
     required TResult Function(String howLongToStayStr) howLongToStayChanged,
@@ -2451,12 +2438,12 @@ class _$SpecialNeedsChanged implements SpecialNeedsChanged {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
@@ -2472,12 +2459,12 @@ class _$SpecialNeedsChanged implements SpecialNeedsChanged {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
@@ -2642,13 +2629,12 @@ class _$HowLongToStayChanged implements HowLongToStayChanged {
     required TResult Function(String fullNameStr) fullNameChanged,
     required TResult Function(String phoneNumberStr) phoneNumberChanged,
     required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String peopleInGroupStr) peopleInGroupChanged,
-    required TResult Function(String adultMaleCountStr) adultMaleCountChanged,
-    required TResult Function(String adultFemaleCountStr)
-        adultFemaleCountChanged,
-    required TResult Function(String childrenCountStr) childrenCountChanged,
-    required TResult Function(String childrenAgesStr) childrenAgesChanged,
-    required TResult Function(String havePetsStr) havePetsChanged,
+    required TResult Function(int peopleInGroup) peopleInGroupChanged,
+    required TResult Function(int adultMaleCount) adultMaleCountChanged,
+    required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
+    required TResult Function(int childrenCount) childrenCountChanged,
+    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
     required TResult Function(String howLongToStayStr) howLongToStayChanged,
@@ -2664,12 +2650,12 @@ class _$HowLongToStayChanged implements HowLongToStayChanged {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
@@ -2685,12 +2671,12 @@ class _$HowLongToStayChanged implements HowLongToStayChanged {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
@@ -2855,13 +2841,12 @@ class _$FinanceStatusChanged implements FinanceStatusChanged {
     required TResult Function(String fullNameStr) fullNameChanged,
     required TResult Function(String phoneNumberStr) phoneNumberChanged,
     required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String peopleInGroupStr) peopleInGroupChanged,
-    required TResult Function(String adultMaleCountStr) adultMaleCountChanged,
-    required TResult Function(String adultFemaleCountStr)
-        adultFemaleCountChanged,
-    required TResult Function(String childrenCountStr) childrenCountChanged,
-    required TResult Function(String childrenAgesStr) childrenAgesChanged,
-    required TResult Function(String havePetsStr) havePetsChanged,
+    required TResult Function(int peopleInGroup) peopleInGroupChanged,
+    required TResult Function(int adultMaleCount) adultMaleCountChanged,
+    required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
+    required TResult Function(int childrenCount) childrenCountChanged,
+    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
     required TResult Function(String howLongToStayStr) howLongToStayChanged,
@@ -2877,12 +2862,12 @@ class _$FinanceStatusChanged implements FinanceStatusChanged {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
@@ -2898,12 +2883,12 @@ class _$FinanceStatusChanged implements FinanceStatusChanged {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
@@ -3042,13 +3027,12 @@ class _$SubmitAddGuest implements SubmitAddGuest {
     required TResult Function(String fullNameStr) fullNameChanged,
     required TResult Function(String phoneNumberStr) phoneNumberChanged,
     required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String peopleInGroupStr) peopleInGroupChanged,
-    required TResult Function(String adultMaleCountStr) adultMaleCountChanged,
-    required TResult Function(String adultFemaleCountStr)
-        adultFemaleCountChanged,
-    required TResult Function(String childrenCountStr) childrenCountChanged,
-    required TResult Function(String childrenAgesStr) childrenAgesChanged,
-    required TResult Function(String havePetsStr) havePetsChanged,
+    required TResult Function(int peopleInGroup) peopleInGroupChanged,
+    required TResult Function(int adultMaleCount) adultMaleCountChanged,
+    required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
+    required TResult Function(int childrenCount) childrenCountChanged,
+    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
     required TResult Function(String howLongToStayStr) howLongToStayChanged,
@@ -3064,12 +3048,12 @@ class _$SubmitAddGuest implements SubmitAddGuest {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,
@@ -3085,12 +3069,12 @@ class _$SubmitAddGuest implements SubmitAddGuest {
     TResult Function(String fullNameStr)? fullNameChanged,
     TResult Function(String phoneNumberStr)? phoneNumberChanged,
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String peopleInGroupStr)? peopleInGroupChanged,
-    TResult Function(String adultMaleCountStr)? adultMaleCountChanged,
-    TResult Function(String adultFemaleCountStr)? adultFemaleCountChanged,
-    TResult Function(String childrenCountStr)? childrenCountChanged,
-    TResult Function(String childrenAgesStr)? childrenAgesChanged,
-    TResult Function(String havePetsStr)? havePetsChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(int childrenCount)? childrenCountChanged,
+    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
     TResult Function(String howLongToStayStr)? howLongToStayChanged,

@@ -51,6 +51,15 @@ class _$AppRouter extends RootStackRouter {
     AccomodationDetailRoute.name: (routeData) {
       final args = routeData.argsAs<AccomodationDetailRouteArgs>();
       return MaterialPageX<dynamic>(
+          routeData: routeData, child: const ApartmentAddedSuccessPage());
+    },
+    GuestFormSuccessRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const GuestFormSuccessPage());
+    },
+    GuestFormFailureRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const GuestFormFailurePage());
           routeData: routeData, child: AccomodationDetailPage(key: args.key, accomodation: args.accomodation));
     }
   };
@@ -69,7 +78,11 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(AccomodationDetailRoute.name, path: '/accomodation-detail-page')
         RouteConfig(GuestFormRoute.name, path: '/guest-form-page'),
         RouteConfig(ApartmentAddedSuccessRoute.name,
-            path: '/apartment-added-success-page')
+            path: '/apartment-added-success-page'),
+        RouteConfig(GuestFormSuccessRoute.name,
+            path: '/guest-form-success-page'),
+        RouteConfig(GuestFormFailureRoute.name,
+            path: '/guest-form-failure-page')
       ];
 }
 
@@ -172,4 +185,22 @@ class AccomodationDetailRouteArgs {
   String toString() {
     return 'AccomodationDetailRouteArgs{key: $key, accomodation: $accomodation}';
   }
+}
+
+/// generated route for
+/// [GuestFormSuccessPage]
+class GuestFormSuccessRoute extends PageRouteInfo<void> {
+  const GuestFormSuccessRoute()
+      : super(GuestFormSuccessRoute.name, path: '/guest-form-success-page');
+
+  static const String name = 'GuestFormSuccessRoute';
+}
+
+/// generated route for
+/// [GuestFormFailurePage]
+class GuestFormFailureRoute extends PageRouteInfo<void> {
+  const GuestFormFailureRoute()
+      : super(GuestFormFailureRoute.name, path: '/guest-form-failure-page');
+
+  static const String name = 'GuestFormFailureRoute';
 }
