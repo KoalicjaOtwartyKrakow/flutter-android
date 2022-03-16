@@ -25,9 +25,17 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const HostPage());
     },
+    GuestRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const GuestPage());
+    },
     ApartmentFormRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const ApartmentFormPage());
+    },
+    GuestFormRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const GuestFormPage());
     },
     ApartmentAddedSuccessRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
@@ -39,7 +47,9 @@ class _$AppRouter extends RootStackRouter {
   List<RouteConfig> get routes => [
         RouteConfig(HomeRoute.name, path: '/'),
         RouteConfig(HostRoute.name, path: '/host-page'),
+        RouteConfig(GuestRoute.name, path: '/guest-page'),
         RouteConfig(ApartmentFormRoute.name, path: '/apartment-form-page'),
+        RouteConfig(GuestFormRoute.name, path: '/guest-form-page'),
         RouteConfig(ApartmentAddedSuccessRoute.name,
             path: '/apartment-added-success-page')
       ];
@@ -62,12 +72,28 @@ class HostRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [GuestPage]
+class GuestRoute extends PageRouteInfo<void> {
+  const GuestRoute() : super(GuestRoute.name, path: '/guest-page');
+
+  static const String name = 'GuestRoute';
+}
+
+/// generated route for
 /// [ApartmentFormPage]
 class ApartmentFormRoute extends PageRouteInfo<void> {
   const ApartmentFormRoute()
       : super(ApartmentFormRoute.name, path: '/apartment-form-page');
 
   static const String name = 'ApartmentFormRoute';
+}
+
+/// generated route for
+/// [GuestFormPage]
+class GuestFormRoute extends PageRouteInfo<void> {
+  const GuestFormRoute() : super(GuestFormRoute.name, path: '/guest-form-page');
+
+  static const String name = 'GuestFormRoute';
 }
 
 /// generated route for

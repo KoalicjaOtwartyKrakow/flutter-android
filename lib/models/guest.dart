@@ -20,7 +20,7 @@ class Guest {
   String email;
 
   @JsonKey(name: 'PEOPLE_IN_GROUP')
-  String? peopleInGroup;
+  int? peopleInGroup;
 
   @JsonKey(name: 'ADULT_MALE_COUNT')
   int? adultMaleCount;
@@ -68,7 +68,7 @@ class Guest {
     this.childrenAges,
     this.havePets,
     this.petsDescription,
-    this.specialNeeds,
+    this.specialNeeds,  
     this.howLongToStay,
     this.financeStatus,
     this.createdAt,

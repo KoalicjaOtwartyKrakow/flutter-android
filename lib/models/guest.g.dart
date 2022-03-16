@@ -11,7 +11,7 @@ Guest _$GuestFromJson(Map<String, dynamic> json) => Guest(
       fullName: json['FULL_NAME'] as String,
       phoneNumber: json['PHONE_NUMBER'] as String,
       email: json['EMAIL'] as String,
-      peopleInGroup: json['PEOPLE_IN_GROUP'] as String?,
+      peopleInGroup: json['PEOPLE_IN_GROUP'] as int?,
       adultMaleCount: json['ADULT_MALE_COUNT'] as int?,
       adultFemaleCount: json['ADULT_FEMALE_COUNT'] as int?,
       childrenCount: json['CHILDREN_COUNT'] as int?,
