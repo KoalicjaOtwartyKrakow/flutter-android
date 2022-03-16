@@ -2,16 +2,15 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../infrastructure/api_client.dart';
 import '../../routes/app_router.dart';
 import '../guest_form_bloc/guest_form_bloc.dart';
 
 class GuestForm extends StatelessWidget {
-  GuestForm({Key? key, required this.apiClient}) : super(key: key);
-  final ApiClient apiClient;
+  GuestForm({Key? key}) : super(key: key);
 
   final fullNameController = TextEditingController();
   final phoneNumberController = TextEditingController();
+  final emailController = TextEditingController();
   final peopleInGroupController = TextEditingController();
   final adultMaleCountController = TextEditingController();
   final adultFemaleCountController = TextEditingController();
@@ -48,6 +47,13 @@ class GuestForm extends StatelessWidget {
             TextFormField(
               controller: phoneNumberController,
               validator: validatePhoneNumber,
+              decoration: const InputDecoration(
+                hintText: 'Wpisz numer telefonu',
+              ),
+            ),
+            TextFormField(
+              controller: emailController,
+              validator: validateEmail,
               decoration: const InputDecoration(
                 hintText: 'Wpisz numer telefonu',
               ),

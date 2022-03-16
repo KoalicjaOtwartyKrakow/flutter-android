@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../../infrastructure/guest/i_guest_repository.dart';
 import '../../../models/failure.dart';
@@ -13,7 +14,7 @@ part 'guest_form_event.dart';
 part 'guest_form_state.dart';
 part 'guest_form_bloc.freezed.dart';
 
-
+@injectable
 class GuestFormBloc extends Bloc<GuestFormEvent, GuestFormState> {
 
   @override
@@ -112,16 +113,6 @@ class GuestFormBloc extends Bloc<GuestFormEvent, GuestFormState> {
         );
       },
     );
-    on<EmailChanged>(
-          (event, emit) {
-        emit(
-          state.copyWith(
-            email: event.emailStr,
-            submitFailureOrSuccessOption: none(),
-          ),
-        );
-      },
-    );
     on<PetsDescriptionChanged>(
           (event, emit) {
         emit(
@@ -152,6 +143,16 @@ class GuestFormBloc extends Bloc<GuestFormEvent, GuestFormState> {
         );
       },
     );
+    on<FinanceStatusChanged>(
+          (event, emit) {
+        emit(
+          state.copyWith(
+            email: event.financeStatusStr,
+            submitFailureOrSuccessOption: none(),
+          ),
+        );
+      },
+    );
     on<SubmitAddGuest>(
           (event, emit) async {
 
@@ -161,7 +162,15 @@ class GuestFormBloc extends Bloc<GuestFormEvent, GuestFormState> {
             fullName: state.fullName,
             phoneNumber: state.phoneNumber,
             email: state.email,
-            peopleInGroup:
+            peopleInGroup: state.peopleInGroup,
+            adultMaleCount: state.adultMaleCount,
+            adultFemaleCount: state.adultFemaleCount,
+            childrenCount: state.childrenCount,
+            havePets: state.havePets,
+            petsDescription: state.petsDescription,
+            specialNeeds: state.specialNeeds,
+            howLongToStay: state.howLongToStay,
+            financeStatus: state.financeStatus,
           );
 
           if (guest.isValidated()) {
@@ -179,7 +188,7 @@ class GuestFormBloc extends Bloc<GuestFormEvent, GuestFormState> {
           submitFailureOrSuccessOption: optionOf(
             failureOrSuccess?.fold(
                   (failure) => left(failure),
-                  (_) => right(Guest),
+                  (_) => right(guest),
             ),
           ),
         ));

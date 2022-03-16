@@ -18,6 +18,11 @@ import 'infrastructure/api_client.dart' as _i7;
 import 'infrastructure/guest/guest_repository.dart' as _i8;
 import 'infrastructure/host/accommodation_form_repository.dart' as _i10;
 import 'infrastructure/host/host_repository.dart' as _i9; // ignore_for_file: unnecessary_lambdas
+import 'infrastructure/api_client.dart' as _i6;
+import 'infrastructure/guest/i_guest_repository.dart' as _i4;
+import 'infrastructure/guest/impl/mock_guest_repository.dart' as _i5;
+import 'presentation/guest/guest_form_bloc/guest_form_bloc.dart'
+    as _i7; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
