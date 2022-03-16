@@ -37,7 +37,7 @@ class GuestFormBloc extends Bloc<GuestFormEvent, GuestFormState> {
           (event, emit) {
         emit(
           state.copyWith(
-            fullName: event.phoneNumberStr,
+            phoneNumber: event.phoneNumberStr,
             submitFailureOrSuccessOption: none(),
           ),
         );
@@ -57,7 +57,7 @@ class GuestFormBloc extends Bloc<GuestFormEvent, GuestFormState> {
           (event, emit) {
         emit(
           state.copyWith(
-            email: event.peopleInGroupStr,
+            peopleInGroup: event.peopleInGroup,
             submitFailureOrSuccessOption: none(),
           ),
         );
@@ -67,7 +67,7 @@ class GuestFormBloc extends Bloc<GuestFormEvent, GuestFormState> {
           (event, emit) {
         emit(
           state.copyWith(
-            email: event.adultMaleCountStr,
+            adultMaleCount: event.adultMaleCount,
             submitFailureOrSuccessOption: none(),
           ),
         );
@@ -77,7 +77,7 @@ class GuestFormBloc extends Bloc<GuestFormEvent, GuestFormState> {
           (event, emit) {
         emit(
           state.copyWith(
-            email: event.adultFemaleCountStr,
+            adultFemaleCount: event.adultFemaleCount,
             submitFailureOrSuccessOption: none(),
           ),
         );
@@ -87,7 +87,7 @@ class GuestFormBloc extends Bloc<GuestFormEvent, GuestFormState> {
           (event, emit) {
         emit(
           state.copyWith(
-            email: event.childrenCountStr,
+            childrenCount: event.childrenCount,
             submitFailureOrSuccessOption: none(),
           ),
         );
@@ -97,7 +97,7 @@ class GuestFormBloc extends Bloc<GuestFormEvent, GuestFormState> {
           (event, emit) {
         emit(
           state.copyWith(
-            email: event.childrenAgesStr,
+            childrenAges: event.childrenAges,
             submitFailureOrSuccessOption: none(),
           ),
         );
@@ -107,7 +107,7 @@ class GuestFormBloc extends Bloc<GuestFormEvent, GuestFormState> {
           (event, emit) {
         emit(
           state.copyWith(
-            email: event.havePetsStr,
+            havePets: event.havePets,
             submitFailureOrSuccessOption: none(),
           ),
         );
