@@ -117,7 +117,7 @@ class GuestFormBloc extends Bloc<GuestFormEvent, GuestFormState> {
           (event, emit) {
         emit(
           state.copyWith(
-            email: event.petsDescriptionStr,
+            petsDescription: event.petsDescriptionStr,
             submitFailureOrSuccessOption: none(),
           ),
         );
@@ -127,7 +127,7 @@ class GuestFormBloc extends Bloc<GuestFormEvent, GuestFormState> {
           (event, emit) {
         emit(
           state.copyWith(
-            email: event.specialNeedsStr,
+            specialNeeds: event.specialNeedsStr,
             submitFailureOrSuccessOption: none(),
           ),
         );
@@ -137,7 +137,7 @@ class GuestFormBloc extends Bloc<GuestFormEvent, GuestFormState> {
           (event, emit) {
         emit(
           state.copyWith(
-            email: event.howLongToStayStr,
+            howLongToStay: event.howLongToStayStr,
             submitFailureOrSuccessOption: none(),
           ),
         );
@@ -147,7 +147,7 @@ class GuestFormBloc extends Bloc<GuestFormEvent, GuestFormState> {
           (event, emit) {
         emit(
           state.copyWith(
-            email: event.financeStatusStr,
+            financeStatus: event.financeStatusStr,
             submitFailureOrSuccessOption: none(),
           ),
         );

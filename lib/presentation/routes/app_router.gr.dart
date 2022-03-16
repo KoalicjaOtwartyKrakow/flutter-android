@@ -40,6 +40,14 @@ class _$AppRouter extends RootStackRouter {
     ApartmentAddedSuccessRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const ApartmentAddedSuccessPage());
+    },
+    GuestFormSuccessRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const GuestFormSuccessPage());
+    },
+    GuestFormFailureRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const GuestFormFailurePage());
     }
   };
 
@@ -51,7 +59,11 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(ApartmentFormRoute.name, path: '/apartment-form-page'),
         RouteConfig(GuestFormRoute.name, path: '/guest-form-page'),
         RouteConfig(ApartmentAddedSuccessRoute.name,
-            path: '/apartment-added-success-page')
+            path: '/apartment-added-success-page'),
+        RouteConfig(GuestFormSuccessRoute.name,
+            path: '/guest-form-success-page'),
+        RouteConfig(GuestFormFailureRoute.name,
+            path: '/guest-form-failure-page')
       ];
 }
 
@@ -104,4 +116,22 @@ class ApartmentAddedSuccessRoute extends PageRouteInfo<void> {
             path: '/apartment-added-success-page');
 
   static const String name = 'ApartmentAddedSuccessRoute';
+}
+
+/// generated route for
+/// [GuestFormSuccessPage]
+class GuestFormSuccessRoute extends PageRouteInfo<void> {
+  const GuestFormSuccessRoute()
+      : super(GuestFormSuccessRoute.name, path: '/guest-form-success-page');
+
+  static const String name = 'GuestFormSuccessRoute';
+}
+
+/// generated route for
+/// [GuestFormFailurePage]
+class GuestFormFailureRoute extends PageRouteInfo<void> {
+  const GuestFormFailureRoute()
+      : super(GuestFormFailureRoute.name, path: '/guest-form-failure-page');
+
+  static const String name = 'GuestFormFailureRoute';
 }
