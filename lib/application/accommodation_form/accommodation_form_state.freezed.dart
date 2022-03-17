@@ -26,8 +26,8 @@ class _$AccommodationFormStateTearOff {
     return const _SubmitSuccess();
   }
 
-  SubmitFailure submitFailure(Failure failure) {
-    return SubmitFailure(
+  _SubmitFailure submitFailure(Failure failure) {
+    return _SubmitFailure(
       failure,
     );
   }
@@ -45,7 +45,6 @@ mixin _$AccommodationFormState {
     required TResult Function(Failure failure) submitFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
@@ -65,21 +64,21 @@ mixin _$AccommodationFormState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_SubmitSuccess value) submitSuccess,
-    required TResult Function(SubmitFailure value) submitFailure,
+    required TResult Function(_SubmitFailure value) submitFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_SubmitSuccess value)? submitSuccess,
-    TResult Function(SubmitFailure value)? submitFailure,
+    TResult Function(_SubmitFailure value)? submitFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_SubmitSuccess value)? submitSuccess,
-    TResult Function(SubmitFailure value)? submitFailure,
+    TResult Function(_SubmitFailure value)? submitFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -172,7 +171,7 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_SubmitSuccess value) submitSuccess,
-    required TResult Function(SubmitFailure value) submitFailure,
+    required TResult Function(_SubmitFailure value) submitFailure,
   }) {
     return initial(this);
   }
@@ -182,7 +181,7 @@ class _$_Initial implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_SubmitSuccess value)? submitSuccess,
-    TResult Function(SubmitFailure value)? submitFailure,
+    TResult Function(_SubmitFailure value)? submitFailure,
   }) {
     return initial?.call(this);
   }
@@ -192,7 +191,7 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_SubmitSuccess value)? submitSuccess,
-    TResult Function(SubmitFailure value)? submitFailure,
+    TResult Function(_SubmitFailure value)? submitFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -279,7 +278,7 @@ class _$_SubmitSuccess implements _SubmitSuccess {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_SubmitSuccess value) submitSuccess,
-    required TResult Function(SubmitFailure value) submitFailure,
+    required TResult Function(_SubmitFailure value) submitFailure,
   }) {
     return submitSuccess(this);
   }
@@ -289,7 +288,7 @@ class _$_SubmitSuccess implements _SubmitSuccess {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_SubmitSuccess value)? submitSuccess,
-    TResult Function(SubmitFailure value)? submitFailure,
+    TResult Function(_SubmitFailure value)? submitFailure,
   }) {
     return submitSuccess?.call(this);
   }
@@ -299,7 +298,7 @@ class _$_SubmitSuccess implements _SubmitSuccess {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_SubmitSuccess value)? submitSuccess,
-    TResult Function(SubmitFailure value)? submitFailure,
+    TResult Function(_SubmitFailure value)? submitFailure,
     required TResult orElse(),
   }) {
     if (submitSuccess != null) {
@@ -314,9 +313,9 @@ abstract class _SubmitSuccess implements AccommodationFormState {
 }
 
 /// @nodoc
-abstract class $SubmitFailureCopyWith<$Res> {
-  factory $SubmitFailureCopyWith(SubmitFailure value, $Res Function(SubmitFailure) then) =
-      _$SubmitFailureCopyWithImpl<$Res>;
+abstract class _$SubmitFailureCopyWith<$Res> {
+  factory _$SubmitFailureCopyWith(_SubmitFailure value, $Res Function(_SubmitFailure) then) =
+      __$SubmitFailureCopyWithImpl<$Res>;
 
   $Res call({Failure failure});
 
@@ -324,19 +323,19 @@ abstract class $SubmitFailureCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SubmitFailureCopyWithImpl<$Res> extends _$AccommodationFormStateCopyWithImpl<$Res>
-    implements $SubmitFailureCopyWith<$Res> {
-  _$SubmitFailureCopyWithImpl(SubmitFailure _value, $Res Function(SubmitFailure) _then)
-      : super(_value, (v) => _then(v as SubmitFailure));
+class __$SubmitFailureCopyWithImpl<$Res> extends _$AccommodationFormStateCopyWithImpl<$Res>
+    implements _$SubmitFailureCopyWith<$Res> {
+  __$SubmitFailureCopyWithImpl(_SubmitFailure _value, $Res Function(_SubmitFailure) _then)
+      : super(_value, (v) => _then(v as _SubmitFailure));
 
   @override
-  SubmitFailure get _value => super._value as SubmitFailure;
+  _SubmitFailure get _value => super._value as _SubmitFailure;
 
   @override
   $Res call({
     Object? failure = freezed,
   }) {
-    return _then(SubmitFailure(
+    return _then(_SubmitFailure(
       failure == freezed
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -354,8 +353,8 @@ class _$SubmitFailureCopyWithImpl<$Res> extends _$AccommodationFormStateCopyWith
 
 /// @nodoc
 
-class _$SubmitFailure implements SubmitFailure {
-  const _$SubmitFailure(this.failure);
+class _$_SubmitFailure implements _SubmitFailure {
+  const _$_SubmitFailure(this.failure);
 
   @override
   final Failure failure;
@@ -369,7 +368,7 @@ class _$SubmitFailure implements SubmitFailure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SubmitFailure &&
+            other is _SubmitFailure &&
             const DeepCollectionEquality().equals(other.failure, failure));
   }
 
@@ -378,7 +377,8 @@ class _$SubmitFailure implements SubmitFailure {
 
   @JsonKey(ignore: true)
   @override
-  $SubmitFailureCopyWith<SubmitFailure> get copyWith => _$SubmitFailureCopyWithImpl<SubmitFailure>(this, _$identity);
+  _$SubmitFailureCopyWith<_SubmitFailure> get copyWith =>
+      __$SubmitFailureCopyWithImpl<_SubmitFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -419,7 +419,7 @@ class _$SubmitFailure implements SubmitFailure {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_SubmitSuccess value) submitSuccess,
-    required TResult Function(SubmitFailure value) submitFailure,
+    required TResult Function(_SubmitFailure value) submitFailure,
   }) {
     return submitFailure(this);
   }
@@ -429,7 +429,7 @@ class _$SubmitFailure implements SubmitFailure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_SubmitSuccess value)? submitSuccess,
-    TResult Function(SubmitFailure value)? submitFailure,
+    TResult Function(_SubmitFailure value)? submitFailure,
   }) {
     return submitFailure?.call(this);
   }
@@ -439,7 +439,7 @@ class _$SubmitFailure implements SubmitFailure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_SubmitSuccess value)? submitSuccess,
-    TResult Function(SubmitFailure value)? submitFailure,
+    TResult Function(_SubmitFailure value)? submitFailure,
     required TResult orElse(),
   }) {
     if (submitFailure != null) {
@@ -449,11 +449,11 @@ class _$SubmitFailure implements SubmitFailure {
   }
 }
 
-abstract class SubmitFailure implements AccommodationFormState {
-  const factory SubmitFailure(Failure failure) = _$SubmitFailure;
+abstract class _SubmitFailure implements AccommodationFormState {
+  const factory _SubmitFailure(Failure failure) = _$_SubmitFailure;
 
   Failure get failure;
 
   @JsonKey(ignore: true)
-  $SubmitFailureCopyWith<SubmitFailure> get copyWith => throw _privateConstructorUsedError;
+  _$SubmitFailureCopyWith<_SubmitFailure> get copyWith => throw _privateConstructorUsedError;
 }

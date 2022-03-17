@@ -31,13 +31,10 @@ class _AccommodationFormState extends State<AccommodationForm> {
 
   @override
   Widget build(BuildContext context) => BlocListener<AccommodationFormBloc, AccommodationFormState>(
-        listener: (context, state) {
-          if (state == const AccommodationFormState.submitSuccess()) {
-            AutoRouter.of(context).push(const ApartmentAddedSuccessRoute());
-          } else if (state is SubmitFailure) {
-            // TODO: handle error responses
-          }
-        },
+        listener: (context, state) => state.whenOrNull(
+          submitSuccess: () => AutoRouter.of(context).push(const ApartmentAddedSuccessRoute()),
+          // TODO: handle failures
+        ),
         child: Form(
           key: _formKey,
           child: ListView(
