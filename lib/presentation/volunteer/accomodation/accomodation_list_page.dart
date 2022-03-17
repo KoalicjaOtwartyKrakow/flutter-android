@@ -6,6 +6,7 @@ import '../../../application/accomodation_loader/accomodation_loader_bloc.dart';
 import '../../../injection.dart';
 import '../../../models/accomodation.dart';
 import '../../../models/accomodation_verification_status.dart';
+import '../../core/utils.dart';
 import '../../routes/app_router.dart';
 
 class AccomodationListPage extends StatelessWidget {
@@ -78,8 +79,8 @@ class AccomodationListLoadSuccessWidget extends StatelessWidget {
                 (accomodation) => Padding(
                   padding: const EdgeInsets.fromLTRB(0, 4, 0, 4),
                   child: ListTile(
-                    tileColor: _getVerifiedColor(accomodation),
-                    leading: _getVerifiedIndicator(accomodation),
+                    tileColor: getVacanciesColor(accomodation),
+                    leading: getVerifiedIndicator(accomodation),
                     title: Text(accomodation.addressLine),
                     subtitle: Column(
                       children: [
@@ -92,7 +93,7 @@ class AccomodationListLoadSuccessWidget extends StatelessWidget {
                         Wrap(
                           children: [
                             SizedBox(
-                              child: _getAcceptPetsIndicator(accomodation),
+                              child: getAcceptPetsIndicator(accomodation),
                               width: 30,
                               height: 30,
                             ),
@@ -120,82 +121,5 @@ class AccomodationListLoadSuccessWidget extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  Color? _getVerifiedColor(Accomodation accomodation) {
-    switch (accomodation.status) {
-      case AccomodationVerificationStatus.phoneVerified:
-        return Colors.yellow[100];
-      case AccomodationVerificationStatus.inPersonVerified:
-        return Colors.green[200];
-      case AccomodationVerificationStatus.added:
-      default:
-        return Colors.grey[200];
-    }
-  }
-
-  Widget _getVerifiedIndicator(Accomodation accomodation) {
-    switch (accomodation.status) {
-      case AccomodationVerificationStatus.phoneVerified:
-        return Stack(
-          children: const [
-            Icon(Icons.phone),
-            Icon(
-              Icons.check,
-              color: Colors.green,
-              size: 35,
-            ),
-          ],
-        );
-      case AccomodationVerificationStatus.inPersonVerified:
-        return Stack(
-          children: const [
-            Icon(Icons.person),
-            Icon(
-              Icons.check,
-              color: Colors.green,
-              size: 35,
-            ),
-          ],
-        );
-      case AccomodationVerificationStatus.added:
-      default:
-        return const Icon(Icons.question_mark);
-    }
-  }
-
-  Widget _getAcceptPetsIndicator(Accomodation accomodation) {
-    if (accomodation.acceptPets == null) {
-      // Unspecified if accepts pets
-      return Stack(
-        children: const [
-          Icon(
-            Icons.pets,
-            color: Colors.grey,
-          ),
-          Icon(
-            Icons.question_mark,
-            color: Colors.orange,
-          ),
-        ],
-      );
-    } else if (accomodation.acceptPets!) {
-      return const Icon(Icons.pets);
-    } else {
-      return Stack(
-        alignment: AlignmentDirectional.center,
-        children: const [
-          Icon(
-            Icons.pets,
-            color: Colors.grey,
-          ),
-          Icon(
-            Icons.close,
-            color: Colors.red,
-            size: 30,
-          ),
-        ],
-      );
-    }
   }
 }
