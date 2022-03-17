@@ -1,4 +1,4 @@
-part of 'accomodation_loader_bloc.dart';
+part of 'accommodation_loader_bloc.dart';
 
 @freezed
 class AccommodationLoaderState with _$AccommodationLoaderState {

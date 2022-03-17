@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter_android/application/accomodation_loader/accomodation_loader_bloc.dart';
+import 'package:flutter_android/application/accommodation_loader/accommodation_loader_bloc.dart';
 import 'package:flutter_android/infrastructure/accomodation/i_accomodation_repository.dart';
 import 'package:flutter_android/models/accomodation.dart';
 import 'package:flutter_android/models/failure.dart';
@@ -14,12 +14,12 @@ class FakeAccomodation extends Fake implements Accommodation {}
 class FakeFailure extends Fake implements Failure {}
 
 void main() {
-  late AccomodationLoaderBloc accomodationLoaderBloc;
+  late AccommodationLoaderBloc accomodationLoaderBloc;
   late MockAccomodationRepository mockAccomodationRepository;
 
   setUp(() {
     mockAccomodationRepository = MockAccomodationRepository();
-    accomodationLoaderBloc = AccomodationLoaderBloc(mockAccomodationRepository);
+    accomodationLoaderBloc = AccommodationLoaderBloc(mockAccomodationRepository);
   });
 
   test(

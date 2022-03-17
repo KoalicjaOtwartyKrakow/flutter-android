@@ -9,7 +9,7 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
 import 'application/accommodation_form/accommodation_form_bloc.dart' as _i11;
-import 'application/accomodation_loader/accomodation_loader_bloc.dart' as _i6;
+import 'application/accommodation_loader/accommodation_loader_bloc.dart' as _i6;
 import 'application/host/host_bloc.dart' as _i10;
 import 'infrastructure/accomodation/i_accomodation_repository.dart' as _i4;
 import 'infrastructure/accomodation/impl/mock_accomodation_repository.dart' as _i5;
@@ -25,7 +25,7 @@ _i1.GetIt $initGetIt(_i1.GetIt get, {String? environment, _i2.EnvironmentFilter?
   gh.factory<_i3.Dio>(() => registerModule.dio);
   gh.lazySingleton<_i4.IAccomodationRepository>(() => _i5.MockAccomodationRepository());
   gh.factory<String>(() => registerModule.baseUrl);
-  gh.factory<_i6.AccomodationLoaderBloc>(() => _i6.AccomodationLoaderBloc(get<_i4.IAccomodationRepository>()));
+  gh.factory<_i6.AccommodationLoaderBloc>(() => _i6.AccommodationLoaderBloc(get<_i4.IAccomodationRepository>()));
   gh.factory<_i7.ApiClient>(() => _i7.ApiClient(get<_i3.Dio>(), baseUrl: get<String>()));
   gh.factory<_i8.HostRepository>(() => _i8.HostRepository(get<_i7.ApiClient>()));
   gh.factory<_i9.AccommodationFormRepository>(() => _i9.AccommodationFormRepository(get<_i7.ApiClient>()));
