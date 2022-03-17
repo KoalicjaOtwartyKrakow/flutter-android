@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:i18next/i18next.dart';
 
-import '../../../application/accomodation_loader/accomodation_loader_bloc.dart';
+import '../../../application/accommodation_loader/accommodation_loader_bloc.dart';
 import '../../../injection.dart';
 import '../../../models/accomodation.dart';
 import '../../../models/accomodation_verification_status.dart';
 
-class AccomodationListPage extends StatelessWidget {
-  const AccomodationListPage({Key? key}) : super(key: key);
+class AccommodationListPage extends StatelessWidget {
+  const AccommodationListPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,12 +18,12 @@ class AccomodationListPage extends StatelessWidget {
           I18Next.of(context)!.t('volunteer:accommodationListTitle'),
         ),
       ),
-      body: BlocProvider<AccomodationLoaderBloc>(
-        create: (context) => getIt<AccomodationLoaderBloc>()
+      body: BlocProvider<AccommodationLoaderBloc>(
+        create: (context) => getIt<AccommodationLoaderBloc>()
           ..add(
             const AccommodationLoaderEvent.getAccommodationsStarted(),
           ),
-        child: BlocBuilder<AccomodationLoaderBloc, AccommodationLoaderState>(
+        child: BlocBuilder<AccommodationLoaderBloc, AccommodationLoaderState>(
           builder: (context, state) => state.map(
             initial: (_) => Container(),
             loadInProgress: (_) => const Center(

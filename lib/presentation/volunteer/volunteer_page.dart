@@ -22,7 +22,7 @@ class VolunteerPage extends StatelessWidget {
               child: ListTile(
                 iconColor: Theme.of(context).primaryColor,
                 textColor: Theme.of(context).primaryColor,
-                onTap: () => AutoRouter.of(context).push(const AccomodationListRoute()),
+                onTap: () => AutoRouter.of(context).push(const AccommodationListRoute()),
                 leading: const Icon(Icons.home_outlined),
                 title: Text(I18Next.of(context)!.t('volunteer:showApartments')),
               ),

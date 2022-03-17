@@ -6,15 +6,17 @@ import 'package:flutter_android/models/failure.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
-part 'accomodation_loader_bloc.freezed.dart';
-part 'accomodation_loader_event.dart';
-part 'accomodation_loader_state.dart';
+part 'accommodation_loader_bloc.freezed.dart';
+
+part 'accommodation_loader_event.dart';
+
+part 'accommodation_loader_state.dart';
 
 @injectable
-class AccomodationLoaderBloc extends Bloc<AccommodationLoaderEvent, AccommodationLoaderState> {
+class AccommodationLoaderBloc extends Bloc<AccommodationLoaderEvent, AccommodationLoaderState> {
   final IAccomodationRepository _iAccomodationRepository;
 
-  AccomodationLoaderBloc(
+  AccommodationLoaderBloc(
     this._iAccomodationRepository,
   ) : super(const AccommodationLoaderState.initial()) {
     on<AccommodationLoaderEvent>((event, emit) async {

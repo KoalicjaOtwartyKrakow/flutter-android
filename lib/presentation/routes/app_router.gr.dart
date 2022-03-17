@@ -37,9 +37,9 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const VolunteerPage());
     },
-    AccomodationListRoute.name: (routeData) {
+    AccommodationListRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
-          routeData: routeData, child: const AccomodationListPage());
+          routeData: routeData, child: const AccommodationListPage());
     }
   };
 
@@ -51,7 +51,8 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(ApartmentAddedSuccessRoute.name,
             path: '/apartment-added-success-page'),
         RouteConfig(VolunteerRoute.name, path: '/volunteer-page'),
-        RouteConfig(AccomodationListRoute.name, path: '/accomodation-list-page')
+        RouteConfig(AccommodationListRoute.name,
+            path: '/accommodation-list-page')
       ];
 }
 
@@ -99,10 +100,10 @@ class VolunteerRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [AccomodationListPage]
-class AccomodationListRoute extends PageRouteInfo<void> {
-  const AccomodationListRoute()
-      : super(AccomodationListRoute.name, path: '/accomodation-list-page');
+/// [AccommodationListPage]
+class AccommodationListRoute extends PageRouteInfo<void> {
+  const AccommodationListRoute()
+      : super(AccommodationListRoute.name, path: '/accommodation-list-page');
 
-  static const String name = 'AccomodationListRoute';
+  static const String name = 'AccommodationListRoute';
 }
