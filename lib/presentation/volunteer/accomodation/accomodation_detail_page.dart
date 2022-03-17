@@ -27,7 +27,7 @@ class AccomodationDetailPage extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
-                    children: [
+                    children: const [
                       Icon(Icons.location_city),
                       Text('MIASTO: '),
                     ],
@@ -48,9 +48,9 @@ class AccomodationDetailPage extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
-                    children: [
+                    children: const [
                       Icon(Icons.mail),
-                      const Text('KOD POCZTOWY: '),
+                      Text('KOD POCZTOWY: '),
                     ],
                   ),
                 ),
@@ -69,9 +69,9 @@ class AccomodationDetailPage extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
-                    children: [
+                    children: const [
                       Icon(Icons.map),
-                      const Text('WOJEWÓDZTWO: '),
+                      Text('WOJEWÓDZTWO: '),
                     ],
                   ),
                 ),
@@ -90,9 +90,9 @@ class AccomodationDetailPage extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
-                    children: [
+                    children: const [
                       Icon(Icons.location_on),
-                      const Text('ADRES: '),
+                      Text('ADRES: '),
                     ],
                   ),
                 ),
@@ -114,9 +114,9 @@ class AccomodationDetailPage extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
-                      children: [
+                      children: const [
                         Icon(Icons.night_shelter),
-                        const Text('WOLNE MIEJSCA: '),
+                        Text('WOLNE MIEJSCA: '),
                       ],
                     ),
                   ),
@@ -186,9 +186,9 @@ class AccomodationDetailPage extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
-                    children: [
+                    children: const [
                       Icon(Icons.comment),
-                      const Text('UWAGI: '),
+                      Text('UWAGI: '),
                     ],
                   ),
                 ),
@@ -208,9 +208,9 @@ class AccomodationDetailPage extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
-                    children: [
+                    children: const [
                       Icon(Icons.report),
-                      const Text('STATUS: '),
+                      Text('STATUS: '),
                     ],
                   ),
                 ),
