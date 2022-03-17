@@ -6,20 +6,19 @@ import 'package:flutter_android/models/failure.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-class MockAccomodationRepository extends Mock
-    implements IAccomodationRepository {}
+class MockAccommodationRepository extends Mock implements IAccomodationRepository {}
 
 class FakeAccomodation extends Fake implements Accommodation {}
 
 class FakeFailure extends Fake implements Failure {}
 
 void main() {
-  late AccommodationLoaderBloc accomodationLoaderBloc;
-  late MockAccomodationRepository mockAccomodationRepository;
+  late AccommodationLoaderBloc accommodationLoaderBloc;
+  late MockAccommodationRepository mockAccommodationRepository;
 
   setUp(() {
-    mockAccomodationRepository = MockAccomodationRepository();
-    accomodationLoaderBloc = AccommodationLoaderBloc(mockAccomodationRepository);
+    mockAccommodationRepository = MockAccommodationRepository();
+    accommodationLoaderBloc = AccommodationLoaderBloc(mockAccommodationRepository);
   });
 
   test(
@@ -27,7 +26,7 @@ void main() {
     () async {
       // assert
       expect(
-        accomodationLoaderBloc.state,
+        accommodationLoaderBloc.state,
         const AccommodationLoaderState.initial(),
       );
     },
@@ -41,8 +40,7 @@ void main() {
         FakeAccomodation(),
         FakeAccomodation(),
       ];
-      when(mockAccomodationRepository)
-          .calls(const Symbol('getAccomodations'))
+      when(mockAccommodationRepository).calls(const Symbol('getAccomodations'))
           .thenAnswer(
             (_) async => right<Failure, List<Accommodation>>(tAccomodations),
           );
@@ -53,12 +51,12 @@ void main() {
         AccommodationLoaderState.loadSuccess(tAccomodations),
       ];
       expectLater(
-        accomodationLoaderBloc.stream,
+        accommodationLoaderBloc.stream,
         emitsInOrder(expected),
       );
 
       // act
-      accomodationLoaderBloc.add(
+      accommodationLoaderBloc.add(
         const AccommodationLoaderEvent.getAccommodationsStarted(),
       );
     },
@@ -69,8 +67,7 @@ void main() {
     () async {
       // arrange
       final tFailure = FakeFailure();
-      when(mockAccomodationRepository)
-          .calls(const Symbol('getAccomodations'))
+      when(mockAccommodationRepository).calls(const Symbol('getAccomodations'))
           .thenAnswer(
             (_) async => left<Failure, List<Accommodation>>(tFailure),
           );
@@ -81,18 +78,18 @@ void main() {
         AccommodationLoaderState.loadFailure(tFailure),
       ];
       expectLater(
-        accomodationLoaderBloc.stream,
+        accommodationLoaderBloc.stream,
         emitsInOrder(expected),
       );
 
       // act
-      accomodationLoaderBloc.add(
+      accommodationLoaderBloc.add(
         const AccommodationLoaderEvent.getAccommodationsStarted(),
       );
     },
   );
 
   tearDown(() {
-    accomodationLoaderBloc.close();
+    accommodationLoaderBloc.close();
   });
 }
