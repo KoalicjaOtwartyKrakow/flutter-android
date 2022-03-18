@@ -29,7 +29,7 @@ class AccommodationListPage extends StatelessWidget {
             loadInProgress: (_) => const Center(
               child: CircularProgressIndicator(),
             ),
-            loadSuccess: (successState) => AccomodationListLoadSuccessWidget(
+            loadSuccess: (successState) => AccommodationListLoadSuccessWidget(
               accomodations: successState.accommodations,
             ),
             loadFailure: (failureState) => Center(
@@ -53,8 +53,8 @@ class AccommodationListPage extends StatelessWidget {
   }
 }
 
-class AccomodationListLoadSuccessWidget extends StatelessWidget {
-  const AccomodationListLoadSuccessWidget({
+class AccommodationListLoadSuccessWidget extends StatelessWidget {
+  const AccommodationListLoadSuccessWidget({
     Key? key,
     required this.accomodations,
   }) : super(key: key);
