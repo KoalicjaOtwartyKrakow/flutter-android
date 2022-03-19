@@ -41,11 +41,15 @@ class Guest {
   @JsonKey(name: 'SPECIAL_NEEDS')
   String? specialNeeds;
 
+  @JsonKey(name: 'FINANCE_STATUS')
+  String? financeStatus;
+
   @JsonKey(name: 'HOW_LONG_TO_STAY')
   String? howLongToStay;
 
-  @JsonKey(name: 'FINANCE_STATUS')
-  String? financeStatus;
+  @JsonKey(name: 'PREFERRED_LOCATION')
+  String? preferredLocation;
+
 
   Guest({
     this.id,
@@ -60,8 +64,9 @@ class Guest {
     this.havePets,
     this.petsDescription,
     this.specialNeeds,
-    this.howLongToStay,
     this.financeStatus,
+    this.howLongToStay,
+    this.preferredLocation
   });
 
   factory Guest.fromJson(Map<String, dynamic> json) =>

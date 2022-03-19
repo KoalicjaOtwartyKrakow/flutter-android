@@ -21,8 +21,9 @@ Guest _$GuestFromJson(Map<String, dynamic> json) => Guest(
       havePets: json['HAVE_PETS'] as bool?,
       petsDescription: json['PETS_DESCRIPTION'] as String?,
       specialNeeds: json['SPECIAL_NEEDS'] as String?,
-      howLongToStay: json['HOW_LONG_TO_STAY'] as String?,
       financeStatus: json['FINANCE_STATUS'] as String?,
+      howLongToStay: json['HOW_LONG_TO_STAY'] as String?,
+      preferredLocation: json['PREFERRED_LOCATION'] as String?,
     );
 
 Map<String, dynamic> _$GuestToJson(Guest instance) => <String, dynamic>{
@@ -38,6 +39,7 @@ Map<String, dynamic> _$GuestToJson(Guest instance) => <String, dynamic>{
       'HAVE_PETS': instance.havePets,
       'PETS_DESCRIPTION': instance.petsDescription,
       'SPECIAL_NEEDS': instance.specialNeeds,
-      'HOW_LONG_TO_STAY': instance.howLongToStay,
       'FINANCE_STATUS': instance.financeStatus,
+      'HOW_LONG_TO_STAY': instance.howLongToStay,
+      'PREFERRED_LOCATION': instance.preferredLocation,
     };
