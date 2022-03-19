@@ -1,4 +1,7 @@
 {
+    "appBar": {
+        "title": "Accomodation Information"
+    },
     "card": {
         "title": {
             "update": "Edit Accommodation Unit"
@@ -31,12 +34,18 @@
         "label": {
             "addressLine": "Address",
             "addressProvince": "State / province",
+            "addressCity": "City",
             "addressZip": "Zip code",
             "pets": "Pets acceptance and presence",
             "petsAllowed": "Pets allowed",
+            "petsNotAllowed": "Pets not allowed",
             "petsPresent": "Pets present",
-            "vacanciesTaken": "Vacancies taken",
-            "vacanciesTotal": "Vacancies total"
+            "petsNotPresent": "Pets not present",
+            "vacanciesFree": "Vacancies free",
+            "vacanciesTotal": "Vacancies total",
+            "comments": "Comments",
+            "status": "Status",
+            "noInfo": "No information given"
         },
         "message": {
             "updateSuccess": "Successfully updated Accommodation Unit",

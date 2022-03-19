@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:i18next/i18next.dart';
 
 import '../../../models/accomodation.dart';
 import '../../core/utils.dart';
@@ -16,7 +17,9 @@ class AccomodationDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Informacje o mieszkaniu'),
+        title: Text(
+          I18Next.of(context)!.t('accommodation:appBar.title'),
+        ),
       ),
       body: ListView(
         shrinkWrap: true,
@@ -27,16 +30,20 @@ class AccomodationDetailPage extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
-                    children: const [
+                    children: [
                       Icon(Icons.location_city),
-                      Text('MIASTO: '),
+                      Text(
+                        I18Next.of(context)!
+                            .t('accommodation:form.label.addressCity'),
+                      ),
                     ],
                   ),
                 ),
               ),
               Expanded(
                 child: Text(
-                  accomodation.city ?? 'Nie podano miasta',
+                  accomodation.city ??
+                      I18Next.of(context)!.t('accommodation:form.label.noInfo'),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -48,9 +55,12 @@ class AccomodationDetailPage extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
-                    children: const [
+                    children: [
                       Icon(Icons.mail),
-                      Text('KOD POCZTOWY: '),
+                      Text(
+                        I18Next.of(context)!
+                            .t('accommodation:form.label.addressZip'),
+                      ),
                     ],
                   ),
                 ),
@@ -69,9 +79,12 @@ class AccomodationDetailPage extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
-                    children: const [
+                    children: [
                       Icon(Icons.map),
-                      Text('WOJEWÓDZTWO: '),
+                      Text(
+                        I18Next.of(context)!
+                            .t('accommodation:form.label.addressProvince'),
+                      ),
                     ],
                   ),
                 ),
@@ -90,9 +103,12 @@ class AccomodationDetailPage extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
-                    children: const [
+                    children: [
                       Icon(Icons.location_on),
-                      Text('ADRES: '),
+                      Text(
+                        I18Next.of(context)!
+                            .t('accommodation:form.label.addressLine'),
+                      ),
                     ],
                   ),
                 ),
@@ -114,9 +130,12 @@ class AccomodationDetailPage extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
-                      children: const [
+                      children: [
                         Icon(Icons.night_shelter),
-                        Text('WOLNE MIEJSCA: '),
+                        Text(
+                          I18Next.of(context)!
+                              .t('accommodation:form.label.vacanciesFree'),
+                        ),
                       ],
                     ),
                   ),
@@ -143,10 +162,13 @@ class AccomodationDetailPage extends StatelessWidget {
                       getHavePetsIndicator(accomodation),
                       Text(
                         (accomodation.havePets == null
-                                ? 'Nie podano informacji o posiadanych zwierzętach'
+                                ? I18Next.of(context)!
+                                    .t('accommodation:form.label.noInfo')
                                 : (accomodation.havePets!
-                                    ? 'Posiada zwierzęta'
-                                    : 'Nie posiada zwierząt'))
+                                    ? I18Next.of(context)!.t(
+                                        'accommodation:form.label.petsPresent')
+                                    : I18Next.of(context)!.t(
+                                        'accommodation:form.label.petsNotPresent')))
                             .toUpperCase(),
                         textAlign: TextAlign.center,
                       ),
@@ -167,10 +189,13 @@ class AccomodationDetailPage extends StatelessWidget {
                       getAcceptPetsIndicator(accomodation),
                       Text(
                         (accomodation.acceptPets == null
-                                ? 'Nie podano informacji o akceptowanych zwierzętach'
+                                ? I18Next.of(context)!
+                                    .t('accommodation:form.label.noInfo')
                                 : (accomodation.acceptPets!
-                                    ? 'Akceptuje zwierzęta'
-                                    : 'Nie akceptuje zwierząt'))
+                                    ? I18Next.of(context)!.t(
+                                        'accommodation:form.label.petsAllowed')
+                                    : I18Next.of(context)!.t(
+                                        'accommodation:form.label.petsNotAllowed')))
                             .toUpperCase(),
                         textAlign: TextAlign.center,
                       ),
@@ -186,16 +211,20 @@ class AccomodationDetailPage extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
-                    children: const [
+                    children: [
                       Icon(Icons.comment),
-                      Text('UWAGI: '),
+                      Text(
+                        I18Next.of(context)!
+                            .t('accommodation:form.label.comments'),
+                      ),
                     ],
                   ),
                 ),
               ),
               Expanded(
                 child: Text(
-                  accomodation.comments ?? 'Brak dodatkowych komentarzy',
+                  accomodation.comments ??
+                      I18Next.of(context)!.t('accommodation:form.label.noInfo'),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -208,9 +237,12 @@ class AccomodationDetailPage extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
-                    children: const [
+                    children: [
                       Icon(Icons.report),
-                      Text('STATUS: '),
+                      Text(
+                        I18Next.of(context)!
+                            .t('accommodation:form.label.status'),
+                      ),
                     ],
                   ),
                 ),
@@ -218,7 +250,8 @@ class AccomodationDetailPage extends StatelessWidget {
               Expanded(
                 child: Text(
                   (accomodation.status?.name ??
-                      'Brak informacji o statusie weryfikacji'),
+                      I18Next.of(context)!
+                          .t('accommodation:form.label.noInfo')),
                   textAlign: TextAlign.center,
                 ),
               ),
