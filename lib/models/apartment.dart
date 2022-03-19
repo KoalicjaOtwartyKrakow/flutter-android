@@ -28,7 +28,7 @@ class Apartment {
   @JsonKey(
     name: 'CreationTime',
     fromJson: dateTimeFromString,
-    toJson: _nullableDateTimeToString,
+    toJson: nullableDateTimeToString,
   )
   DateTime? createdAt;
 
@@ -79,9 +79,3 @@ class Apartment {
   Map<String, dynamic> toJson() => _$ApartmentToJson(this);
 }
 
-String? _nullableDateTimeToString(DateTime? dateTime) {
-  if (dateTime != null) {
-    return dateTimeToString(dateTime);
-  }
-  return null;
-}
