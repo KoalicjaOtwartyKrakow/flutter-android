@@ -31,7 +31,7 @@ Map<String, dynamic> _$ApartmentToJson(Apartment instance) => <String, dynamic>{
       'ST_NUM': instance.addressStreetNumber,
       'ST_NAME': instance.addressStreetName,
       'ZIP': instance.addressZip,
-      'CreationTime': _nullableDateTimeToString(instance.createdAt),
+      'CreationTime': nullableDateTimeToString(instance.createdAt),
       'DESCRIPTION': instance.description,
       'ApartmentId': instance.id,
       'IS_VERIFIED': instance.isVerified,
