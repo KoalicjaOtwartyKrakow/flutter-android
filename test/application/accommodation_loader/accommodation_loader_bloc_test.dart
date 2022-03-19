@@ -6,7 +6,8 @@ import 'package:flutter_android/models/failure.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-class MockAccommodationRepository extends Mock implements IAccomodationRepository {}
+class MockAccommodationRepository extends Mock
+    implements IAccomodationRepository {}
 
 class FakeAccomodation extends Fake implements Accommodation {}
 
@@ -18,7 +19,8 @@ void main() {
 
   setUp(() {
     mockAccommodationRepository = MockAccommodationRepository();
-    accommodationLoaderBloc = AccommodationLoaderBloc(mockAccommodationRepository);
+    accommodationLoaderBloc =
+        AccommodationLoaderBloc(mockAccommodationRepository);
   });
 
   test(
@@ -40,7 +42,8 @@ void main() {
         FakeAccomodation(),
         FakeAccomodation(),
       ];
-      when(mockAccommodationRepository).calls(const Symbol('getAccomodations'))
+      when(mockAccommodationRepository)
+          .calls(const Symbol('getAccommodations'))
           .thenAnswer(
             (_) async => right<Failure, List<Accommodation>>(tAccomodations),
           );
@@ -67,7 +70,8 @@ void main() {
     () async {
       // arrange
       final tFailure = FakeFailure();
-      when(mockAccommodationRepository).calls(const Symbol('getAccomodations'))
+      when(mockAccommodationRepository)
+          .calls(const Symbol('getAccommodations'))
           .thenAnswer(
             (_) async => left<Failure, List<Accommodation>>(tFailure),
           );
