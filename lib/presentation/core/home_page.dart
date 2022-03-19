@@ -10,8 +10,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text(
-              I18Next.of(context)!.t('common:application.header.subtitle')),
+          title: Text(I18Next.of(context)!.t('common:application.title')),
         ),
         body: Center(
           child: Column(
@@ -27,8 +26,8 @@ class HomePage extends StatelessWidget {
               ),
               Container(
                 margin: const EdgeInsets.all(12),
-                child: const Text(
-                  'Jeśli masz możliwość udostępnienia lokalu mieszkalnego osobie lub rodzinie z Ukrainy, prosimy o wypełnienie formularza. Jeśli masz ograniczenia co do tego kogo możesz przyjąć (np. ludzie ze zwierzętami domowymi), zaznacz to proszę w opisie lokalu. Dziękujemy!',
+                child: Text(
+                  I18Next.of(context)!.t('home:header'),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -37,8 +36,8 @@ class HomePage extends StatelessWidget {
                 textColor: Theme.of(context).primaryColor,
                 onTap: () {},
                 leading: const Icon(Icons.travel_explore),
-                title: const Text(
-                  'SZUKAM LOKALU',
+                title: Text(
+                  I18Next.of(context)!.t('home:search'),
                 ),
               ),
               ListTile(
@@ -48,8 +47,8 @@ class HomePage extends StatelessWidget {
                   const HostRoute(),
                 ),
                 leading: const Icon(Icons.night_shelter),
-                title: const Text(
-                  'CHCĘ ZAPROPONOWAĆ LOKAL',
+                title: Text(
+                  I18Next.of(context)!.t('home:propose'),
                 ),
               ),
               ListTile(
@@ -58,8 +57,8 @@ class HomePage extends StatelessWidget {
                 onTap: () =>
                     AutoRouter.of(context).push(const VolunteerRoute()),
                 leading: const Icon(Icons.menu_book),
-                title: const Text(
-                  'JESTEM KOORDYNATOREM',
+                title: Text(
+                  I18Next.of(context)!.t('home:coordinator'),
                 ),
               ),
             ],

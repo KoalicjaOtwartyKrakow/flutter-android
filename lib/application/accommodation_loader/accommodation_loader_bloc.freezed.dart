@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'accomodation_loader_bloc.dart';
+part of 'accommodation_loader_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,99 +15,99 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$AccomodationLoaderEventTearOff {
-  const _$AccomodationLoaderEventTearOff();
+class _$AccommodationLoaderEventTearOff {
+  const _$AccommodationLoaderEventTearOff();
 
   _Started started() {
     return const _Started();
   }
 
-  _GetAccomodationsStarted getAccomodationsStarted() {
-    return const _GetAccomodationsStarted();
+  _GetAccommodationsStarted getAccommodationsStarted() {
+    return const _GetAccommodationsStarted();
   }
 
-  _AccomodationsReceived accomodationsReceived(
-      Either<Failure, List<Accomodation>> failureOrAccomodations) {
-    return _AccomodationsReceived(
-      failureOrAccomodations,
+  _AccommodationsReceived accommodationsReceived(
+      Either<Failure, List<Accommodation>> failureOrAccommodations) {
+    return _AccommodationsReceived(
+      failureOrAccommodations,
     );
   }
 }
 
 /// @nodoc
-const $AccomodationLoaderEvent = _$AccomodationLoaderEventTearOff();
+const $AccommodationLoaderEvent = _$AccommodationLoaderEventTearOff();
 
 /// @nodoc
-mixin _$AccomodationLoaderEvent {
+mixin _$AccommodationLoaderEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getAccomodationsStarted,
+    required TResult Function() getAccommodationsStarted,
     required TResult Function(
-            Either<Failure, List<Accomodation>> failureOrAccomodations)
-        accomodationsReceived,
+            Either<Failure, List<Accommodation>> failureOrAccommodations)
+        accommodationsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAccomodationsStarted,
+    TResult Function()? getAccommodationsStarted,
     TResult Function(
-            Either<Failure, List<Accomodation>> failureOrAccomodations)?
-        accomodationsReceived,
+            Either<Failure, List<Accommodation>> failureOrAccommodations)?
+        accommodationsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAccomodationsStarted,
+    TResult Function()? getAccommodationsStarted,
     TResult Function(
-            Either<Failure, List<Accomodation>> failureOrAccomodations)?
-        accomodationsReceived,
+            Either<Failure, List<Accommodation>> failureOrAccommodations)?
+        accommodationsReceived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetAccomodationsStarted value)
-        getAccomodationsStarted,
-    required TResult Function(_AccomodationsReceived value)
-        accomodationsReceived,
+    required TResult Function(_GetAccommodationsStarted value)
+        getAccommodationsStarted,
+    required TResult Function(_AccommodationsReceived value)
+        accommodationsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetAccomodationsStarted value)? getAccomodationsStarted,
-    TResult Function(_AccomodationsReceived value)? accomodationsReceived,
+    TResult Function(_GetAccommodationsStarted value)? getAccommodationsStarted,
+    TResult Function(_AccommodationsReceived value)? accommodationsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetAccomodationsStarted value)? getAccomodationsStarted,
-    TResult Function(_AccomodationsReceived value)? accomodationsReceived,
+    TResult Function(_GetAccommodationsStarted value)? getAccommodationsStarted,
+    TResult Function(_AccommodationsReceived value)? accommodationsReceived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AccomodationLoaderEventCopyWith<$Res> {
-  factory $AccomodationLoaderEventCopyWith(AccomodationLoaderEvent value,
-          $Res Function(AccomodationLoaderEvent) then) =
-      _$AccomodationLoaderEventCopyWithImpl<$Res>;
+abstract class $AccommodationLoaderEventCopyWith<$Res> {
+  factory $AccommodationLoaderEventCopyWith(AccommodationLoaderEvent value,
+          $Res Function(AccommodationLoaderEvent) then) =
+      _$AccommodationLoaderEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AccomodationLoaderEventCopyWithImpl<$Res>
-    implements $AccomodationLoaderEventCopyWith<$Res> {
-  _$AccomodationLoaderEventCopyWithImpl(this._value, this._then);
+class _$AccommodationLoaderEventCopyWithImpl<$Res>
+    implements $AccommodationLoaderEventCopyWith<$Res> {
+  _$AccommodationLoaderEventCopyWithImpl(this._value, this._then);
 
-  final AccomodationLoaderEvent _value;
+  final AccommodationLoaderEvent _value;
   // ignore: unused_field
-  final $Res Function(AccomodationLoaderEvent) _then;
+  final $Res Function(AccommodationLoaderEvent) _then;
 }
 
 /// @nodoc
@@ -118,7 +118,7 @@ abstract class _$StartedCopyWith<$Res> {
 
 /// @nodoc
 class __$StartedCopyWithImpl<$Res>
-    extends _$AccomodationLoaderEventCopyWithImpl<$Res>
+    extends _$AccommodationLoaderEventCopyWithImpl<$Res>
     implements _$StartedCopyWith<$Res> {
   __$StartedCopyWithImpl(_Started _value, $Res Function(_Started) _then)
       : super(_value, (v) => _then(v as _Started));
@@ -134,7 +134,7 @@ class _$_Started implements _Started {
 
   @override
   String toString() {
-    return 'AccomodationLoaderEvent.started()';
+    return 'AccommodationLoaderEvent.started()';
   }
 
   @override
@@ -150,10 +150,10 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getAccomodationsStarted,
+    required TResult Function() getAccommodationsStarted,
     required TResult Function(
-            Either<Failure, List<Accomodation>> failureOrAccomodations)
-        accomodationsReceived,
+            Either<Failure, List<Accommodation>> failureOrAccommodations)
+        accommodationsReceived,
   }) {
     return started();
   }
@@ -162,10 +162,10 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAccomodationsStarted,
+    TResult Function()? getAccommodationsStarted,
     TResult Function(
-            Either<Failure, List<Accomodation>> failureOrAccomodations)?
-        accomodationsReceived,
+            Either<Failure, List<Accommodation>> failureOrAccommodations)?
+        accommodationsReceived,
   }) {
     return started?.call();
   }
@@ -174,10 +174,10 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAccomodationsStarted,
+    TResult Function()? getAccommodationsStarted,
     TResult Function(
-            Either<Failure, List<Accomodation>> failureOrAccomodations)?
-        accomodationsReceived,
+            Either<Failure, List<Accommodation>> failureOrAccommodations)?
+        accommodationsReceived,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -190,10 +190,10 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetAccomodationsStarted value)
-        getAccomodationsStarted,
-    required TResult Function(_AccomodationsReceived value)
-        accomodationsReceived,
+    required TResult Function(_GetAccommodationsStarted value)
+        getAccommodationsStarted,
+    required TResult Function(_AccommodationsReceived value)
+        accommodationsReceived,
   }) {
     return started(this);
   }
@@ -202,8 +202,8 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetAccomodationsStarted value)? getAccomodationsStarted,
-    TResult Function(_AccomodationsReceived value)? accomodationsReceived,
+    TResult Function(_GetAccommodationsStarted value)? getAccommodationsStarted,
+    TResult Function(_AccommodationsReceived value)? accommodationsReceived,
   }) {
     return started?.call(this);
   }
@@ -212,8 +212,8 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetAccomodationsStarted value)? getAccomodationsStarted,
-    TResult Function(_AccomodationsReceived value)? accomodationsReceived,
+    TResult Function(_GetAccommodationsStarted value)? getAccommodationsStarted,
+    TResult Function(_AccommodationsReceived value)? accommodationsReceived,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -223,44 +223,45 @@ class _$_Started implements _Started {
   }
 }
 
-abstract class _Started implements AccomodationLoaderEvent {
+abstract class _Started implements AccommodationLoaderEvent {
   const factory _Started() = _$_Started;
 }
 
 /// @nodoc
-abstract class _$GetAccomodationsStartedCopyWith<$Res> {
-  factory _$GetAccomodationsStartedCopyWith(_GetAccomodationsStarted value,
-          $Res Function(_GetAccomodationsStarted) then) =
-      __$GetAccomodationsStartedCopyWithImpl<$Res>;
+abstract class _$GetAccommodationsStartedCopyWith<$Res> {
+  factory _$GetAccommodationsStartedCopyWith(_GetAccommodationsStarted value,
+          $Res Function(_GetAccommodationsStarted) then) =
+      __$GetAccommodationsStartedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$GetAccomodationsStartedCopyWithImpl<$Res>
-    extends _$AccomodationLoaderEventCopyWithImpl<$Res>
-    implements _$GetAccomodationsStartedCopyWith<$Res> {
-  __$GetAccomodationsStartedCopyWithImpl(_GetAccomodationsStarted _value,
-      $Res Function(_GetAccomodationsStarted) _then)
-      : super(_value, (v) => _then(v as _GetAccomodationsStarted));
+class __$GetAccommodationsStartedCopyWithImpl<$Res>
+    extends _$AccommodationLoaderEventCopyWithImpl<$Res>
+    implements _$GetAccommodationsStartedCopyWith<$Res> {
+  __$GetAccommodationsStartedCopyWithImpl(_GetAccommodationsStarted _value,
+      $Res Function(_GetAccommodationsStarted) _then)
+      : super(_value, (v) => _then(v as _GetAccommodationsStarted));
 
   @override
-  _GetAccomodationsStarted get _value =>
-      super._value as _GetAccomodationsStarted;
+  _GetAccommodationsStarted get _value =>
+      super._value as _GetAccommodationsStarted;
 }
 
 /// @nodoc
 
-class _$_GetAccomodationsStarted implements _GetAccomodationsStarted {
-  const _$_GetAccomodationsStarted();
+class _$_GetAccommodationsStarted implements _GetAccommodationsStarted {
+  const _$_GetAccommodationsStarted();
 
   @override
   String toString() {
-    return 'AccomodationLoaderEvent.getAccomodationsStarted()';
+    return 'AccommodationLoaderEvent.getAccommodationsStarted()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _GetAccomodationsStarted);
+        (other.runtimeType == runtimeType &&
+            other is _GetAccommodationsStarted);
   }
 
   @override
@@ -270,38 +271,38 @@ class _$_GetAccomodationsStarted implements _GetAccomodationsStarted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getAccomodationsStarted,
+    required TResult Function() getAccommodationsStarted,
     required TResult Function(
-            Either<Failure, List<Accomodation>> failureOrAccomodations)
-        accomodationsReceived,
+            Either<Failure, List<Accommodation>> failureOrAccommodations)
+        accommodationsReceived,
   }) {
-    return getAccomodationsStarted();
+    return getAccommodationsStarted();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAccomodationsStarted,
+    TResult Function()? getAccommodationsStarted,
     TResult Function(
-            Either<Failure, List<Accomodation>> failureOrAccomodations)?
-        accomodationsReceived,
+            Either<Failure, List<Accommodation>> failureOrAccommodations)?
+        accommodationsReceived,
   }) {
-    return getAccomodationsStarted?.call();
+    return getAccommodationsStarted?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAccomodationsStarted,
+    TResult Function()? getAccommodationsStarted,
     TResult Function(
-            Either<Failure, List<Accomodation>> failureOrAccomodations)?
-        accomodationsReceived,
+            Either<Failure, List<Accommodation>> failureOrAccommodations)?
+        accommodationsReceived,
     required TResult orElse(),
   }) {
-    if (getAccomodationsStarted != null) {
-      return getAccomodationsStarted();
+    if (getAccommodationsStarted != null) {
+      return getAccommodationsStarted();
     }
     return orElse();
   }
@@ -310,143 +311,143 @@ class _$_GetAccomodationsStarted implements _GetAccomodationsStarted {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetAccomodationsStarted value)
-        getAccomodationsStarted,
-    required TResult Function(_AccomodationsReceived value)
-        accomodationsReceived,
+    required TResult Function(_GetAccommodationsStarted value)
+        getAccommodationsStarted,
+    required TResult Function(_AccommodationsReceived value)
+        accommodationsReceived,
   }) {
-    return getAccomodationsStarted(this);
+    return getAccommodationsStarted(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetAccomodationsStarted value)? getAccomodationsStarted,
-    TResult Function(_AccomodationsReceived value)? accomodationsReceived,
+    TResult Function(_GetAccommodationsStarted value)? getAccommodationsStarted,
+    TResult Function(_AccommodationsReceived value)? accommodationsReceived,
   }) {
-    return getAccomodationsStarted?.call(this);
+    return getAccommodationsStarted?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetAccomodationsStarted value)? getAccomodationsStarted,
-    TResult Function(_AccomodationsReceived value)? accomodationsReceived,
+    TResult Function(_GetAccommodationsStarted value)? getAccommodationsStarted,
+    TResult Function(_AccommodationsReceived value)? accommodationsReceived,
     required TResult orElse(),
   }) {
-    if (getAccomodationsStarted != null) {
-      return getAccomodationsStarted(this);
+    if (getAccommodationsStarted != null) {
+      return getAccommodationsStarted(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetAccomodationsStarted implements AccomodationLoaderEvent {
-  const factory _GetAccomodationsStarted() = _$_GetAccomodationsStarted;
+abstract class _GetAccommodationsStarted implements AccommodationLoaderEvent {
+  const factory _GetAccommodationsStarted() = _$_GetAccommodationsStarted;
 }
 
 /// @nodoc
-abstract class _$AccomodationsReceivedCopyWith<$Res> {
-  factory _$AccomodationsReceivedCopyWith(_AccomodationsReceived value,
-          $Res Function(_AccomodationsReceived) then) =
-      __$AccomodationsReceivedCopyWithImpl<$Res>;
-  $Res call({Either<Failure, List<Accomodation>> failureOrAccomodations});
+abstract class _$AccommodationsReceivedCopyWith<$Res> {
+  factory _$AccommodationsReceivedCopyWith(_AccommodationsReceived value,
+          $Res Function(_AccommodationsReceived) then) =
+      __$AccommodationsReceivedCopyWithImpl<$Res>;
+  $Res call({Either<Failure, List<Accommodation>> failureOrAccommodations});
 }
 
 /// @nodoc
-class __$AccomodationsReceivedCopyWithImpl<$Res>
-    extends _$AccomodationLoaderEventCopyWithImpl<$Res>
-    implements _$AccomodationsReceivedCopyWith<$Res> {
-  __$AccomodationsReceivedCopyWithImpl(_AccomodationsReceived _value,
-      $Res Function(_AccomodationsReceived) _then)
-      : super(_value, (v) => _then(v as _AccomodationsReceived));
+class __$AccommodationsReceivedCopyWithImpl<$Res>
+    extends _$AccommodationLoaderEventCopyWithImpl<$Res>
+    implements _$AccommodationsReceivedCopyWith<$Res> {
+  __$AccommodationsReceivedCopyWithImpl(_AccommodationsReceived _value,
+      $Res Function(_AccommodationsReceived) _then)
+      : super(_value, (v) => _then(v as _AccommodationsReceived));
 
   @override
-  _AccomodationsReceived get _value => super._value as _AccomodationsReceived;
+  _AccommodationsReceived get _value => super._value as _AccommodationsReceived;
 
   @override
   $Res call({
-    Object? failureOrAccomodations = freezed,
+    Object? failureOrAccommodations = freezed,
   }) {
-    return _then(_AccomodationsReceived(
-      failureOrAccomodations == freezed
-          ? _value.failureOrAccomodations
-          : failureOrAccomodations // ignore: cast_nullable_to_non_nullable
-              as Either<Failure, List<Accomodation>>,
+    return _then(_AccommodationsReceived(
+      failureOrAccommodations == freezed
+          ? _value.failureOrAccommodations
+          : failureOrAccommodations // ignore: cast_nullable_to_non_nullable
+              as Either<Failure, List<Accommodation>>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_AccomodationsReceived implements _AccomodationsReceived {
-  const _$_AccomodationsReceived(this.failureOrAccomodations);
+class _$_AccommodationsReceived implements _AccommodationsReceived {
+  const _$_AccommodationsReceived(this.failureOrAccommodations);
 
   @override
-  final Either<Failure, List<Accomodation>> failureOrAccomodations;
+  final Either<Failure, List<Accommodation>> failureOrAccommodations;
 
   @override
   String toString() {
-    return 'AccomodationLoaderEvent.accomodationsReceived(failureOrAccomodations: $failureOrAccomodations)';
+    return 'AccommodationLoaderEvent.accommodationsReceived(failureOrAccommodations: $failureOrAccommodations)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AccomodationsReceived &&
-            const DeepCollectionEquality()
-                .equals(other.failureOrAccomodations, failureOrAccomodations));
+            other is _AccommodationsReceived &&
+            const DeepCollectionEquality().equals(
+                other.failureOrAccommodations, failureOrAccommodations));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(failureOrAccomodations));
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(failureOrAccommodations));
 
   @JsonKey(ignore: true)
   @override
-  _$AccomodationsReceivedCopyWith<_AccomodationsReceived> get copyWith =>
-      __$AccomodationsReceivedCopyWithImpl<_AccomodationsReceived>(
+  _$AccommodationsReceivedCopyWith<_AccommodationsReceived> get copyWith =>
+      __$AccommodationsReceivedCopyWithImpl<_AccommodationsReceived>(
           this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getAccomodationsStarted,
+    required TResult Function() getAccommodationsStarted,
     required TResult Function(
-            Either<Failure, List<Accomodation>> failureOrAccomodations)
-        accomodationsReceived,
+            Either<Failure, List<Accommodation>> failureOrAccommodations)
+        accommodationsReceived,
   }) {
-    return accomodationsReceived(failureOrAccomodations);
+    return accommodationsReceived(failureOrAccommodations);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAccomodationsStarted,
+    TResult Function()? getAccommodationsStarted,
     TResult Function(
-            Either<Failure, List<Accomodation>> failureOrAccomodations)?
-        accomodationsReceived,
+            Either<Failure, List<Accommodation>> failureOrAccommodations)?
+        accommodationsReceived,
   }) {
-    return accomodationsReceived?.call(failureOrAccomodations);
+    return accommodationsReceived?.call(failureOrAccommodations);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAccomodationsStarted,
+    TResult Function()? getAccommodationsStarted,
     TResult Function(
-            Either<Failure, List<Accomodation>> failureOrAccomodations)?
-        accomodationsReceived,
+            Either<Failure, List<Accommodation>> failureOrAccommodations)?
+        accommodationsReceived,
     required TResult orElse(),
   }) {
-    if (accomodationsReceived != null) {
-      return accomodationsReceived(failureOrAccomodations);
+    if (accommodationsReceived != null) {
+      return accommodationsReceived(failureOrAccommodations);
     }
     return orElse();
   }
@@ -455,53 +456,53 @@ class _$_AccomodationsReceived implements _AccomodationsReceived {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetAccomodationsStarted value)
-        getAccomodationsStarted,
-    required TResult Function(_AccomodationsReceived value)
-        accomodationsReceived,
+    required TResult Function(_GetAccommodationsStarted value)
+        getAccommodationsStarted,
+    required TResult Function(_AccommodationsReceived value)
+        accommodationsReceived,
   }) {
-    return accomodationsReceived(this);
+    return accommodationsReceived(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetAccomodationsStarted value)? getAccomodationsStarted,
-    TResult Function(_AccomodationsReceived value)? accomodationsReceived,
+    TResult Function(_GetAccommodationsStarted value)? getAccommodationsStarted,
+    TResult Function(_AccommodationsReceived value)? accommodationsReceived,
   }) {
-    return accomodationsReceived?.call(this);
+    return accommodationsReceived?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetAccomodationsStarted value)? getAccomodationsStarted,
-    TResult Function(_AccomodationsReceived value)? accomodationsReceived,
+    TResult Function(_GetAccommodationsStarted value)? getAccommodationsStarted,
+    TResult Function(_AccommodationsReceived value)? accommodationsReceived,
     required TResult orElse(),
   }) {
-    if (accomodationsReceived != null) {
-      return accomodationsReceived(this);
+    if (accommodationsReceived != null) {
+      return accommodationsReceived(this);
     }
     return orElse();
   }
 }
 
-abstract class _AccomodationsReceived implements AccomodationLoaderEvent {
-  const factory _AccomodationsReceived(
-          Either<Failure, List<Accomodation>> failureOrAccomodations) =
-      _$_AccomodationsReceived;
+abstract class _AccommodationsReceived implements AccommodationLoaderEvent {
+  const factory _AccommodationsReceived(
+          Either<Failure, List<Accommodation>> failureOrAccommodations) =
+      _$_AccommodationsReceived;
 
-  Either<Failure, List<Accomodation>> get failureOrAccomodations;
+  Either<Failure, List<Accommodation>> get failureOrAccommodations;
   @JsonKey(ignore: true)
-  _$AccomodationsReceivedCopyWith<_AccomodationsReceived> get copyWith =>
+  _$AccommodationsReceivedCopyWith<_AccommodationsReceived> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class _$AccomodationLoaderStateTearOff {
-  const _$AccomodationLoaderStateTearOff();
+class _$AccommodationLoaderStateTearOff {
+  const _$AccommodationLoaderStateTearOff();
 
   _Initial initial() {
     return const _Initial();
@@ -511,9 +512,9 @@ class _$AccomodationLoaderStateTearOff {
     return const _LoadInProgress();
   }
 
-  _LoadSuccess loadSuccess(List<Accomodation> accomodations) {
+  _LoadSuccess loadSuccess(List<Accommodation> accommodations) {
     return _LoadSuccess(
-      accomodations,
+      accommodations,
     );
   }
 
@@ -525,15 +526,15 @@ class _$AccomodationLoaderStateTearOff {
 }
 
 /// @nodoc
-const $AccomodationLoaderState = _$AccomodationLoaderStateTearOff();
+const $AccommodationLoaderState = _$AccommodationLoaderStateTearOff();
 
 /// @nodoc
-mixin _$AccomodationLoaderState {
+mixin _$AccommodationLoaderState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Accomodation> accomodations) loadSuccess,
+    required TResult Function(List<Accommodation> accommodations) loadSuccess,
     required TResult Function(Failure failure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -541,7 +542,7 @@ mixin _$AccomodationLoaderState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Accomodation> accomodations)? loadSuccess,
+    TResult Function(List<Accommodation> accommodations)? loadSuccess,
     TResult Function(Failure failure)? loadFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -549,7 +550,7 @@ mixin _$AccomodationLoaderState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Accomodation> accomodations)? loadSuccess,
+    TResult Function(List<Accommodation> accommodations)? loadSuccess,
     TResult Function(Failure failure)? loadFailure,
     required TResult orElse(),
   }) =>
@@ -582,20 +583,20 @@ mixin _$AccomodationLoaderState {
 }
 
 /// @nodoc
-abstract class $AccomodationLoaderStateCopyWith<$Res> {
-  factory $AccomodationLoaderStateCopyWith(AccomodationLoaderState value,
-          $Res Function(AccomodationLoaderState) then) =
-      _$AccomodationLoaderStateCopyWithImpl<$Res>;
+abstract class $AccommodationLoaderStateCopyWith<$Res> {
+  factory $AccommodationLoaderStateCopyWith(AccommodationLoaderState value,
+          $Res Function(AccommodationLoaderState) then) =
+      _$AccommodationLoaderStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AccomodationLoaderStateCopyWithImpl<$Res>
-    implements $AccomodationLoaderStateCopyWith<$Res> {
-  _$AccomodationLoaderStateCopyWithImpl(this._value, this._then);
+class _$AccommodationLoaderStateCopyWithImpl<$Res>
+    implements $AccommodationLoaderStateCopyWith<$Res> {
+  _$AccommodationLoaderStateCopyWithImpl(this._value, this._then);
 
-  final AccomodationLoaderState _value;
+  final AccommodationLoaderState _value;
   // ignore: unused_field
-  final $Res Function(AccomodationLoaderState) _then;
+  final $Res Function(AccommodationLoaderState) _then;
 }
 
 /// @nodoc
@@ -606,7 +607,7 @@ abstract class _$InitialCopyWith<$Res> {
 
 /// @nodoc
 class __$InitialCopyWithImpl<$Res>
-    extends _$AccomodationLoaderStateCopyWithImpl<$Res>
+    extends _$AccommodationLoaderStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
       : super(_value, (v) => _then(v as _Initial));
@@ -622,7 +623,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'AccomodationLoaderState.initial()';
+    return 'AccommodationLoaderState.initial()';
   }
 
   @override
@@ -639,7 +640,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Accomodation> accomodations) loadSuccess,
+    required TResult Function(List<Accommodation> accommodations) loadSuccess,
     required TResult Function(Failure failure) loadFailure,
   }) {
     return initial();
@@ -650,7 +651,7 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Accomodation> accomodations)? loadSuccess,
+    TResult Function(List<Accommodation> accommodations)? loadSuccess,
     TResult Function(Failure failure)? loadFailure,
   }) {
     return initial?.call();
@@ -661,7 +662,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Accomodation> accomodations)? loadSuccess,
+    TResult Function(List<Accommodation> accommodations)? loadSuccess,
     TResult Function(Failure failure)? loadFailure,
     required TResult orElse(),
   }) {
@@ -709,7 +710,7 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements AccomodationLoaderState {
+abstract class _Initial implements AccommodationLoaderState {
   const factory _Initial() = _$_Initial;
 }
 
@@ -722,7 +723,7 @@ abstract class _$LoadInProgressCopyWith<$Res> {
 
 /// @nodoc
 class __$LoadInProgressCopyWithImpl<$Res>
-    extends _$AccomodationLoaderStateCopyWithImpl<$Res>
+    extends _$AccommodationLoaderStateCopyWithImpl<$Res>
     implements _$LoadInProgressCopyWith<$Res> {
   __$LoadInProgressCopyWithImpl(
       _LoadInProgress _value, $Res Function(_LoadInProgress) _then)
@@ -739,7 +740,7 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   String toString() {
-    return 'AccomodationLoaderState.loadInProgress()';
+    return 'AccommodationLoaderState.loadInProgress()';
   }
 
   @override
@@ -756,7 +757,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Accomodation> accomodations) loadSuccess,
+    required TResult Function(List<Accommodation> accommodations) loadSuccess,
     required TResult Function(Failure failure) loadFailure,
   }) {
     return loadInProgress();
@@ -767,7 +768,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Accomodation> accomodations)? loadSuccess,
+    TResult Function(List<Accommodation> accommodations)? loadSuccess,
     TResult Function(Failure failure)? loadFailure,
   }) {
     return loadInProgress?.call();
@@ -778,7 +779,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Accomodation> accomodations)? loadSuccess,
+    TResult Function(List<Accommodation> accommodations)? loadSuccess,
     TResult Function(Failure failure)? loadFailure,
     required TResult orElse(),
   }) {
@@ -826,7 +827,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   }
 }
 
-abstract class _LoadInProgress implements AccomodationLoaderState {
+abstract class _LoadInProgress implements AccommodationLoaderState {
   const factory _LoadInProgress() = _$_LoadInProgress;
 }
 
@@ -835,12 +836,12 @@ abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(
           _LoadSuccess value, $Res Function(_LoadSuccess) then) =
       __$LoadSuccessCopyWithImpl<$Res>;
-  $Res call({List<Accomodation> accomodations});
+  $Res call({List<Accommodation> accommodations});
 }
 
 /// @nodoc
 class __$LoadSuccessCopyWithImpl<$Res>
-    extends _$AccomodationLoaderStateCopyWithImpl<$Res>
+    extends _$AccommodationLoaderStateCopyWithImpl<$Res>
     implements _$LoadSuccessCopyWith<$Res> {
   __$LoadSuccessCopyWithImpl(
       _LoadSuccess _value, $Res Function(_LoadSuccess) _then)
@@ -851,13 +852,13 @@ class __$LoadSuccessCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? accomodations = freezed,
+    Object? accommodations = freezed,
   }) {
     return _then(_LoadSuccess(
-      accomodations == freezed
-          ? _value.accomodations
-          : accomodations // ignore: cast_nullable_to_non_nullable
-              as List<Accomodation>,
+      accommodations == freezed
+          ? _value.accommodations
+          : accommodations // ignore: cast_nullable_to_non_nullable
+              as List<Accommodation>,
     ));
   }
 }
@@ -865,14 +866,14 @@ class __$LoadSuccessCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_LoadSuccess implements _LoadSuccess {
-  const _$_LoadSuccess(this.accomodations);
+  const _$_LoadSuccess(this.accommodations);
 
   @override
-  final List<Accomodation> accomodations;
+  final List<Accommodation> accommodations;
 
   @override
   String toString() {
-    return 'AccomodationLoaderState.loadSuccess(accomodations: $accomodations)';
+    return 'AccommodationLoaderState.loadSuccess(accommodations: $accommodations)';
   }
 
   @override
@@ -881,12 +882,12 @@ class _$_LoadSuccess implements _LoadSuccess {
         (other.runtimeType == runtimeType &&
             other is _LoadSuccess &&
             const DeepCollectionEquality()
-                .equals(other.accomodations, accomodations));
+                .equals(other.accommodations, accommodations));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(accomodations));
+      runtimeType, const DeepCollectionEquality().hash(accommodations));
 
   @JsonKey(ignore: true)
   @override
@@ -898,10 +899,10 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Accomodation> accomodations) loadSuccess,
+    required TResult Function(List<Accommodation> accommodations) loadSuccess,
     required TResult Function(Failure failure) loadFailure,
   }) {
-    return loadSuccess(accomodations);
+    return loadSuccess(accommodations);
   }
 
   @override
@@ -909,10 +910,10 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Accomodation> accomodations)? loadSuccess,
+    TResult Function(List<Accommodation> accommodations)? loadSuccess,
     TResult Function(Failure failure)? loadFailure,
   }) {
-    return loadSuccess?.call(accomodations);
+    return loadSuccess?.call(accommodations);
   }
 
   @override
@@ -920,12 +921,12 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Accomodation> accomodations)? loadSuccess,
+    TResult Function(List<Accommodation> accommodations)? loadSuccess,
     TResult Function(Failure failure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
-      return loadSuccess(accomodations);
+      return loadSuccess(accommodations);
     }
     return orElse();
   }
@@ -968,10 +969,11 @@ class _$_LoadSuccess implements _LoadSuccess {
   }
 }
 
-abstract class _LoadSuccess implements AccomodationLoaderState {
-  const factory _LoadSuccess(List<Accomodation> accomodations) = _$_LoadSuccess;
+abstract class _LoadSuccess implements AccommodationLoaderState {
+  const factory _LoadSuccess(List<Accommodation> accommodations) =
+      _$_LoadSuccess;
 
-  List<Accomodation> get accomodations;
+  List<Accommodation> get accommodations;
   @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -989,7 +991,7 @@ abstract class _$LoadFailureCopyWith<$Res> {
 
 /// @nodoc
 class __$LoadFailureCopyWithImpl<$Res>
-    extends _$AccomodationLoaderStateCopyWithImpl<$Res>
+    extends _$AccommodationLoaderStateCopyWithImpl<$Res>
     implements _$LoadFailureCopyWith<$Res> {
   __$LoadFailureCopyWithImpl(
       _LoadFailure _value, $Res Function(_LoadFailure) _then)
@@ -1028,7 +1030,7 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   String toString() {
-    return 'AccomodationLoaderState.loadFailure(failure: $failure)';
+    return 'AccommodationLoaderState.loadFailure(failure: $failure)';
   }
 
   @override
@@ -1053,7 +1055,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Accomodation> accomodations) loadSuccess,
+    required TResult Function(List<Accommodation> accommodations) loadSuccess,
     required TResult Function(Failure failure) loadFailure,
   }) {
     return loadFailure(failure);
@@ -1064,7 +1066,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Accomodation> accomodations)? loadSuccess,
+    TResult Function(List<Accommodation> accommodations)? loadSuccess,
     TResult Function(Failure failure)? loadFailure,
   }) {
     return loadFailure?.call(failure);
@@ -1075,7 +1077,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Accomodation> accomodations)? loadSuccess,
+    TResult Function(List<Accommodation> accommodations)? loadSuccess,
     TResult Function(Failure failure)? loadFailure,
     required TResult orElse(),
   }) {
@@ -1123,7 +1125,7 @@ class _$_LoadFailure implements _LoadFailure {
   }
 }
 
-abstract class _LoadFailure implements AccomodationLoaderState {
+abstract class _LoadFailure implements AccommodationLoaderState {
   const factory _LoadFailure(Failure failure) = _$_LoadFailure;
 
   Failure get failure;

@@ -1,36 +1,39 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:i18next/i18next.dart';
 
-import '../../../application/accomodation_loader/accomodation_loader_bloc.dart';
+import '../../../application/accommodation_loader/accommodation_loader_bloc.dart';
 import '../../../injection.dart';
 import '../../../models/accomodation.dart';
 import '../../../models/accomodation_verification_status.dart';
 import '../../core/utils.dart';
 import '../../routes/app_router.dart';
 
-class AccomodationListPage extends StatelessWidget {
-  const AccomodationListPage({Key? key}) : super(key: key);
+class AccommodationListPage extends StatelessWidget {
+  const AccommodationListPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Mieszkania'),
+        title: Text(
+          I18Next.of(context)!.t('volunteer:accommodationListTitle'),
+        ),
       ),
-      body: BlocProvider<AccomodationLoaderBloc>(
-        create: (context) => getIt<AccomodationLoaderBloc>()
+      body: BlocProvider<AccommodationLoaderBloc>(
+        create: (context) => getIt<AccommodationLoaderBloc>()
           ..add(
-            const AccomodationLoaderEvent.getAccomodationsStarted(),
+            const AccommodationLoaderEvent.getAccommodationsStarted(),
           ),
-        child: BlocBuilder<AccomodationLoaderBloc, AccomodationLoaderState>(
+        child: BlocBuilder<AccommodationLoaderBloc, AccommodationLoaderState>(
           builder: (context, state) => state.map(
             initial: (_) => Container(),
             loadInProgress: (_) => const Center(
               child: CircularProgressIndicator(),
             ),
             loadSuccess: (successState) => AccomodationListLoadSuccessWidget(
-              accomodations: successState.accomodations,
+              accomodations: successState.accommodations,
             ),
             loadFailure: (failureState) => Center(
               child: Column(
@@ -59,7 +62,7 @@ class AccomodationListLoadSuccessWidget extends StatelessWidget {
     required this.accomodations,
   }) : super(key: key);
 
-  final List<Accomodation> accomodations;
+  final List<Accommodation> accomodations;
 
   @override
   Widget build(BuildContext context) {
@@ -67,10 +70,10 @@ class AccomodationListLoadSuccessWidget extends StatelessWidget {
       padding: const EdgeInsets.all(4.0),
       child: ListView(
         children: [
-          const Padding(
-            padding: EdgeInsets.fromLTRB(0, 14, 0, 14),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0, 14, 0, 14),
             child: Text(
-              'Lista zgłoszonych mieszkań',
+              I18Next.of(context)!.t('volunteer:accommodationList'),
               textAlign: TextAlign.center,
             ),
           ),
@@ -85,10 +88,12 @@ class AccomodationListLoadSuccessWidget extends StatelessWidget {
                     subtitle: Column(
                       children: [
                         Text(
-                          (accomodation.voivodeship ??
-                                  'Nie podano województwa') +
-                              '\n' +
-                              (accomodation.city ?? 'Nie podano miasta'),
+                          I18Next.of(context)!
+                              .t('volunteer:location', variables: {
+                            'voivodeship': (accomodation.voivodeship ??
+                                'Nie podano województwa'),
+                            'city': (accomodation.city ?? 'Nie podano miasta'),
+                          }),
                         ),
                         Wrap(
                           children: [
@@ -102,10 +107,10 @@ class AccomodationListLoadSuccessWidget extends StatelessWidget {
                       ],
                     ),
                     trailing: Text(
-                      'Wolne miejsca: ' +
-                          accomodation.vacanciesFree.toString() +
-                          '/' +
-                          accomodation.vacanciesTotal.toString(),
+                      I18Next.of(context)!.t('volunteer:vacancies', variables: {
+                        'free': accomodation.vacanciesFree,
+                        'total': accomodation.vacanciesTotal,
+                      }),
                     ),
                     onTap: () => AutoRouter.of(context).push(
                       AccomodationDetailRoute(

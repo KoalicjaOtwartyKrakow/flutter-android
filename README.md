@@ -68,7 +68,7 @@ Build views inside `presentation/<view_name>/<view_name>.dart`, keep `Widget bui
 
 
 ### Managing state
-Use `StatefulWidget`s and `setState()` to manage state. Bloc requires too much boilerplate for now.
+Avoid using `StatefulWidget` where possible, you should use the `bloc` package with `freezed` unions. Use existing blocs at `lib/application/<bloc_name>` for reference on how to create a bloc.
 
 
 ### Navigation

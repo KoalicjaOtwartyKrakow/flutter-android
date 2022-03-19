@@ -11,7 +11,7 @@ class AccomodationDetailPage extends StatelessWidget {
     required this.accomodation,
   }) : super(key: key);
 
-  final Accomodation accomodation;
+  final Accommodation accomodation;
 
   @override
   Widget build(BuildContext context) {

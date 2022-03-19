@@ -4,5 +4,5 @@ import '../../models/accomodation.dart';
 import '../../models/failure.dart';
 
 abstract class IAccomodationRepository {
-  Future<Either<Failure, List<Accomodation>>> getAccomodations();
+  Future<Either<Failure, List<Accommodation>>> getAccommodations();
 }

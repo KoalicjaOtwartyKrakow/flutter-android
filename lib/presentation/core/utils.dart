@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import '../../models/accomodation.dart';
 import '../../models/accomodation_verification_status.dart';
 
-Color getVacanciesColor(Accomodation accomodation) {
-  return accomodation.vacanciesFree == 0
+Color getVacanciesColor(Accommodation accommodation) {
+  return accommodation.vacanciesFree == 0
       ? Colors.red[200]!
-      : (accomodation.vacanciesFree == accomodation.vacanciesTotal
+      : (accommodation.vacanciesFree == accommodation.vacanciesTotal
           ? Colors.green[200]!
           : Colors.yellow[200]!);
 }
 
-Widget getAcceptPetsIndicator(Accomodation accomodation) {
-  if (accomodation.acceptPets == null) {
+Widget getAcceptPetsIndicator(Accommodation accommodation) {
+  if (accommodation.acceptPets == null) {
     // Unspecified if accepts pets
     return Stack(
       children: const [
@@ -26,7 +26,7 @@ Widget getAcceptPetsIndicator(Accomodation accomodation) {
         ),
       ],
     );
-  } else if (accomodation.acceptPets!) {
+  } else if (accommodation.acceptPets!) {
     return const Icon(Icons.pets);
   } else {
     return Stack(
@@ -46,8 +46,8 @@ Widget getAcceptPetsIndicator(Accomodation accomodation) {
   }
 }
 
-Widget getHavePetsIndicator(Accomodation accomodation) {
-  if (accomodation.havePets == null) {
+Widget getHavePetsIndicator(Accommodation accommodation) {
+  if (accommodation.havePets == null) {
     // Unspecified if haves pets
     return Stack(
       children: const [
@@ -61,7 +61,7 @@ Widget getHavePetsIndicator(Accomodation accomodation) {
         ),
       ],
     );
-  } else if (accomodation.havePets!) {
+  } else if (accommodation.havePets!) {
     return const Icon(Icons.pets);
   } else {
     return Stack(
@@ -76,8 +76,8 @@ Widget getHavePetsIndicator(Accomodation accomodation) {
   }
 }
 
-Widget getVerifiedIndicator(Accomodation accomodation) {
-  switch (accomodation.status) {
+Widget getVerifiedIndicator(Accommodation accommodation) {
+  switch (accommodation.status) {
     case AccomodationVerificationStatus.phoneVerified:
       return Stack(
         children: const [
@@ -106,8 +106,8 @@ Widget getVerifiedIndicator(Accomodation accomodation) {
   }
 }
 
-Color? getVerifiedColor(Accomodation accomodation) {
-  switch (accomodation.status) {
+Color? getVerifiedColor(Accommodation accommodation) {
+  switch (accommodation.status) {
     case AccomodationVerificationStatus.phoneVerified:
       return Colors.yellow[100];
     case AccomodationVerificationStatus.inPersonVerified:

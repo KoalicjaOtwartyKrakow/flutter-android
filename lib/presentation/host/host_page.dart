@@ -1,65 +1,71 @@
+import 'dart:async';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_android/application/host/host_bloc.dart';
+import 'package:flutter_android/application/host/host_event.dart';
+import 'package:flutter_android/application/host/host_state.dart';
 import 'package:flutter_android/presentation/routes/app_router.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:i18next/i18next.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../infrastructure/api_client.dart';
 import '../../injection.dart';
-import 'widgets/apartment_form.dart';
 
 class HostPage extends StatelessWidget {
   const HostPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Gospodarz'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 1 / 6,
-              width: MediaQuery.of(context).size.width * 3 / 4,
-              child: ListTile(
-                iconColor: Theme.of(context).primaryColor,
-                textColor: Theme.of(context).primaryColor,
-                onTap: () =>
-                    AutoRouter.of(context).push(const ApartmentFormRoute()),
-                leading: Icon(Icons.night_shelter),
-                title: const Text(
-                  'ZAPROPONUJ MIESZKANIE',
-                ),
-              ),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 1 / 6,
-              width: MediaQuery.of(context).size.width * 3 / 4,
-              child: ListTile(
-                iconColor: Theme.of(context).primaryColor,
-                textColor: Theme.of(context).primaryColor,
-                onTap: _downloadContract,
-                leading: Icon(Icons.download),
-                title: const Text(
-                  'POBIERZ UMOWĘ',
-                ),
-              ),
-            ),
-          ],
+  Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(
+          title: Text(I18Next.of(context)!.t('host:title')),
         ),
-      ),
-    );
-  }
-}
-
-Future<bool> _downloadContract() async {
-  final downloadUrlWithQuotation =
-      await getIt<ApiClient>().getContractDownloadUrl();
-
-  // Remove quotation marks from URL: "http://xyz.xyz" -> http://xyz.xyz
-  final downloadUrl = downloadUrlWithQuotation.substring(
-      1, downloadUrlWithQuotation.length - 1);
-  return await launch(downloadUrl);
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 1 / 6,
+                width: MediaQuery.of(context).size.width * 3 / 4,
+                child: ListTile(
+                  iconColor: Theme.of(context).primaryColor,
+                  textColor: Theme.of(context).primaryColor,
+                  onTap: () => AutoRouter.of(context).push(const ApartmentFormRoute()),
+                  leading: const Icon(Icons.night_shelter),
+                  title: Text(
+                    I18Next.of(context)!.t('host:propose'),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 1 / 6,
+                width: MediaQuery.of(context).size.width * 3 / 4,
+                child: BlocProvider<HostBloc>(
+                  create: (_) => getIt<HostBloc>(),
+                  child: BlocConsumer<HostBloc, HostState>(
+                    listener: (context, state) async {
+                      if (state is HostStateSuccess) {
+                        launch(state.url).onError((error, stackTrace) {
+                          // TODO: handle launch errors
+                          return true;
+                        });
+                      } else {
+                        // TODO: handle error responses
+                      }
+                    },
+                    buildWhen: (previous, current) => current == const HostState.initial(),
+                    builder: (context, _) => ListTile(
+                      iconColor: Theme.of(context).primaryColor,
+                      textColor: Theme.of(context).primaryColor,
+                      onTap: () => context.read<HostBloc>().add(const HostEvent.downloadContract()),
+                      leading: const Icon(Icons.download),
+                      title: Text(I18Next.of(context)!.t('host:download')),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
 }

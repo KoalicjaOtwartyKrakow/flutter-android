@@ -1,0 +1,11 @@
+{
+  "accommodationListTitle": "Mieszkania",
+  "accommodationList": "Lista zgłoszonych mieszkań",
+  "noVoivodeship": "Nie podano województwa",
+  "noCity": "Nie podano miasta",
+  "location": "{{voivodeship}}\n{{city}}",
+  "vacancies": "Wolne miejsca: {{free}}/{{total}}",
+  "coordinator": "Koordynator",
+  "showApartments": "WYŚWIETL MIESZKANIA",
+  "showRequests": "ZGŁOSZENIA GOŚCI"
+}

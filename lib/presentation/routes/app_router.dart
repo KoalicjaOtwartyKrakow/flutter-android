@@ -20,7 +20,7 @@ part 'app_router.gr.dart';
     MaterialRoute(page: ApartmentFormPage),
     MaterialRoute(page: ApartmentAddedSuccessPage),
     MaterialRoute(page: VolunteerPage),
-    MaterialRoute(page: AccomodationListPage),
+    MaterialRoute(page: AccommodationListPage),
     MaterialRoute(page: AccomodationDetailPage),
   ],
 )
