@@ -41,5 +41,5 @@ Map<String, dynamic> _$GuestToJson(Guest instance) => <String, dynamic>{
       'SPECIAL_NEEDS': instance.specialNeeds,
       'HOW_LONG_TO_STAY': instance.howLongToStay,
       'FINANCE_STATUS': instance.financeStatus,
-      'CreationTime': _nullableDateTimeToString(instance.createdAt),
+      'CreationTime': nullableDateTimeToString(instance.createdAt),
     };

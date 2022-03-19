@@ -28,7 +28,7 @@ class Apartment {
   @JsonKey(
     name: 'CreationTime',
     fromJson: dateTimeFromString,
-    toJson: _nullableDateTimeToString,
+    toJson: nullableDateTimeToString,
   )
   DateTime? createdAt;
 
@@ -77,11 +77,4 @@ class Apartment {
   factory Apartment.fromJson(Map<String, dynamic> json) =>
       _$ApartmentFromJson(json);
   Map<String, dynamic> toJson() => _$ApartmentToJson(this);
-}
-
-String? _nullableDateTimeToString(DateTime? dateTime) {
-  if (dateTime != null) {
-    return dateTimeToString(dateTime);
-  }
-  return null;
 }

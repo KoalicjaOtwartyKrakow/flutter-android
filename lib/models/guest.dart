@@ -52,7 +52,7 @@ class Guest {
   @JsonKey(
     name: 'CreationTime',
     fromJson: dateTimeFromString,
-    toJson: _nullableDateTimeToString,
+    toJson: nullableDateTimeToString,
   )
   DateTime? createdAt;
 
@@ -185,14 +185,6 @@ class Guest {
   }
 
 }
-
-String? _nullableDateTimeToString(DateTime? dateTime) {
-  if (dateTime != null) {
-    return dateTimeToString(dateTime);
-  }
-  return null;
-}
-
 
 
 
