@@ -1,6 +1,8 @@
+import 'package:flutter_android/models/failure.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import '../infrastructure/converters.dart';
+import 'child_age.dart';
 
 part 'guest.g.dart';
 
@@ -12,10 +14,10 @@ class Guest {
   int? peopleInGroup;
   int? adultMaleCount;
   int? adultFemaleCount;
-  @JsonKey(
-    fromJson: childrenAgesFromString,
-    toJson: nullableChildenAgesToString,
-  )
+  // @JsonKey(
+  //   fromJson: childrenAgesFromString,
+  //   toJson: nullableChildenAgesToString,
+  // )
   List<ChildAge>? children;
   bool? havePets;
   String? petsDescription;
@@ -93,7 +95,3 @@ enum VerificationStatus {
   rejected
 }
 
-@JsonSerializable()
-class ChildAge {
-  int? age;
-}

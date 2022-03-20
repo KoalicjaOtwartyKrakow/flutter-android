@@ -13,7 +13,9 @@ Guest _$GuestFromJson(Map<String, dynamic> json) => Guest(
       peopleInGroup: json['peopleInGroup'] as int?,
       adultMaleCount: json['adultMaleCount'] as int?,
       adultFemaleCount: json['adultFemaleCount'] as int?,
-      children: childrenAgesFromString(json['children'] as String),
+      children: (json['children'] as List<dynamic>?)
+          ?.map((e) => ChildAge.fromJson(e as Map<String, dynamic>))
+          .toList(),
       havePets: json['havePets'] as bool?,
       petsDescription: json['petsDescription'] as String?,
       specialNeeds: json['specialNeeds'] as String?,
@@ -41,7 +43,7 @@ Map<String, dynamic> _$GuestToJson(Guest instance) => <String, dynamic>{
       'peopleInGroup': instance.peopleInGroup,
       'adultMaleCount': instance.adultMaleCount,
       'adultFemaleCount': instance.adultFemaleCount,
-      'children': nullableChildenAgesToString(instance.children),
+      'children': instance.children,
       'havePets': instance.havePets,
       'petsDescription': instance.petsDescription,
       'specialNeeds': instance.specialNeeds,
@@ -75,10 +77,3 @@ const _$VerificationStatusEnumMap = {
   VerificationStatus.verified: 'verified',
   VerificationStatus.rejected: 'rejected',
 };
-
-ChildAge _$ChildAgeFromJson(Map<String, dynamic> json) =>
-    ChildAge()..age = json['age'] as int?;
-
-Map<String, dynamic> _$ChildAgeToJson(ChildAge instance) => <String, dynamic>{
-      'age': instance.age,
-    };
