@@ -7,7 +7,6 @@ part of 'guest.dart';
 // **************************************************************************
 
 Guest _$GuestFromJson(Map<String, dynamic> json) => Guest(
-      id: json['GuestId'] as String?,
       fullName: json['FULL_NAME'] as String,
       email: json['EMAIL'] as String,
       phoneNumber: json['PHONE_NUMBER'] as String,
@@ -29,10 +28,14 @@ Guest _$GuestFromJson(Map<String, dynamic> json) => Guest(
       priorityStatus:
           $enumDecodeNullable(_$PriorityStatusEnumMap, json['PRIORITY_STATUS']),
       priorityDate: dateTimeFromString(json['PRIORITY_DATE'] as String),
+      verificationStatus: $enumDecodeNullable(
+          _$VerificationStatusEnumMap, json['VERIFICATION_STATUS']),
+      id: json['GuestId'] as String?,
+      createdAt: dateTimeFromString(json['CREATED_AT'] as String),
+      updatedAt: dateTimeFromString(json['UPDATED_AT'] as String),
     );
 
 Map<String, dynamic> _$GuestToJson(Guest instance) => <String, dynamic>{
-      'GuestId': instance.id,
       'FULL_NAME': instance.fullName,
       'EMAIL': instance.email,
       'PHONE_NUMBER': instance.phoneNumber,
@@ -52,6 +55,11 @@ Map<String, dynamic> _$GuestToJson(Guest instance) => <String, dynamic>{
       'DESIRED_DESTINATION': instance.desiredDestination,
       'PRIORITY_STATUS': _$PriorityStatusEnumMap[instance.priorityStatus],
       'PRIORITY_DATE': nullableDateTimeToString(instance.priorityDate),
+      'VERIFICATION_STATUS':
+          _$VerificationStatusEnumMap[instance.verificationStatus],
+      'GuestId': instance.id,
+      'CREATED_AT': nullableDateTimeToString(instance.createdAt),
+      'UPDATED_AT': nullableDateTimeToString(instance.updatedAt),
     };
 
 const _$PriorityStatusEnumMap = {
@@ -61,4 +69,10 @@ const _$PriorityStatusEnumMap = {
   PriorityStatus.en_route_poland: 'en_route_poland',
   PriorityStatus.in_krakow: 'in_krakow',
   PriorityStatus.in_crisis_point: 'in_crisis_point',
+};
+
+const _$VerificationStatusEnumMap = {
+  VerificationStatus.created: 'created',
+  VerificationStatus.verified: 'verified',
+  VerificationStatus.rejected: 'rejected',
 };

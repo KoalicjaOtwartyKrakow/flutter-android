@@ -7,9 +7,6 @@ part 'guest.g.dart';
 @JsonSerializable()
 class Guest {
 
-  @JsonKey(name: 'GuestId')
-  String? id;
-
   @JsonKey(name: 'FULL_NAME')
   String fullName;
 
@@ -43,7 +40,7 @@ class Guest {
   @JsonKey(name: 'FOOD_ALLERGIES')
   bool? foodAllergies;
 
-    @JsonKey(name: 'MEAT_FREE_DIET')
+  @JsonKey(name: 'MEAT_FREE_DIET')
   bool? meatFreeDiet;
 
   @JsonKey(name: 'GLUTEN_FREE_DIET')
@@ -71,9 +68,28 @@ class Guest {
   )
   DateTime? priorityDate;
 
+  @JsonKey(name: 'VERIFICATION_STATUS')
+  VerificationStatus? verificationStatus;
+
+  @JsonKey(name: 'GuestId')
+  String? id;
+
+  @JsonKey(
+    name: 'CREATED_AT',
+    fromJson: dateTimeFromString,
+    toJson: nullableDateTimeToString,
+  )
+  DateTime? createdAt;
+
+  @JsonKey(
+    name: 'UPDATED_AT',
+    fromJson: dateTimeFromString,
+    toJson: nullableDateTimeToString,
+  )
+  DateTime? updatedAt;
+
 
   Guest({
-    this.id,
     required this.fullName,
     required this.email,
     required this.phoneNumber,
@@ -92,7 +108,11 @@ class Guest {
     this.howLongToStay,
     this.desiredDestination,
     this.priorityStatus,
-    this.priorityDate
+    this.priorityDate,
+    this.verificationStatus,
+    this.id,
+    this.createdAt,
+    this.updatedAt
   });
 
   factory Guest.fromJson(Map<String, dynamic> json) =>
@@ -107,4 +127,10 @@ enum PriorityStatus {
   en_route_poland,
   in_krakow,
   in_crisis_point
+}
+
+enum VerificationStatus {
+  created,
+  verified,
+  rejected
 }
