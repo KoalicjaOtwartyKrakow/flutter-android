@@ -13,9 +13,7 @@ Guest _$GuestFromJson(Map<String, dynamic> json) => Guest(
       peopleInGroup: json['peopleInGroup'] as int?,
       adultMaleCount: json['adultMaleCount'] as int?,
       adultFemaleCount: json['adultFemaleCount'] as int?,
-      children: (json['children'] as List<dynamic>?)
-          ?.map((e) => ChildAge.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      children: childrenAgesFromString(json['children'] as String),
       havePets: json['havePets'] as bool?,
       petsDescription: json['petsDescription'] as String?,
       specialNeeds: json['specialNeeds'] as String?,
@@ -43,7 +41,7 @@ Map<String, dynamic> _$GuestToJson(Guest instance) => <String, dynamic>{
       'peopleInGroup': instance.peopleInGroup,
       'adultMaleCount': instance.adultMaleCount,
       'adultFemaleCount': instance.adultFemaleCount,
-      'children': instance.children,
+      'children': nullableChildenAgesToString(instance.children),
       'havePets': instance.havePets,
       'petsDescription': instance.petsDescription,
       'specialNeeds': instance.specialNeeds,
