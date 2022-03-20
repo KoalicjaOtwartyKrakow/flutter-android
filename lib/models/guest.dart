@@ -6,83 +6,37 @@ part 'guest.g.dart';
 
 @JsonSerializable()
 class Guest {
-
-  @JsonKey(name: 'FULL_NAME')
   String fullName;
-
-  @JsonKey(name: 'EMAIL')
   String email;
-
-  @JsonKey(name: 'PHONE_NUMBER')
   String phoneNumber;
-
-  @JsonKey(name: 'PEOPLE_IN_GROUP')
   int? peopleInGroup;
-
-  @JsonKey(name: 'ADULT_MALE_COUNT')
   int? adultMaleCount;
-
-  @JsonKey(name: 'ADULT_FEMALE_COUNT')
   int? adultFemaleCount;
-
-  @JsonKey(name: 'CHILDREN')
-  List<int>? children;
-
-  @JsonKey(name: 'HAVE_PETS')
+  List<ChildAge>? children;
   bool? havePets;
-
-  @JsonKey(name: 'PETS_DESCRIPTION')
   String? petsDescription;
-
-  @JsonKey(name: 'SPECIAL_NEEDS')
   String? specialNeeds;
-
-  @JsonKey(name: 'FOOD_ALLERGIES')
-  bool? foodAllergies;
-
-  @JsonKey(name: 'MEAT_FREE_DIET')
+  String? foodAllergies;
   bool? meatFreeDiet;
-
-  @JsonKey(name: 'GLUTEN_FREE_DIET')
   bool? glutenFreeDiet;
-
-  @JsonKey(name: 'LACTOSE_FREE_DIET')
   bool? lactoseFreeDiet;
-
-  @JsonKey(name: 'FINANCE_STATUS')
   String? financeStatus;
-
-  @JsonKey(name: 'HOW_LONG_TO_STAY')
   String? howLongToStay;
-
-  @JsonKey(name: 'DESIRED_DESTINATION')
   String? desiredDestination;
-
-  @JsonKey(name: 'PRIORITY_STATUS')
   PriorityStatus? priorityStatus;
-
   @JsonKey(
-    name: 'PRIORITY_DATE',
     fromJson: dateTimeFromString,
     toJson: nullableDateTimeToString,
   )
   DateTime? priorityDate;
-
-  @JsonKey(name: 'VERIFICATION_STATUS')
   VerificationStatus? verificationStatus;
-
-  @JsonKey(name: 'GuestId')
   String? id;
-
   @JsonKey(
-    name: 'CREATED_AT',
     fromJson: dateTimeFromString,
     toJson: nullableDateTimeToString,
   )
   DateTime? createdAt;
-
   @JsonKey(
-    name: 'UPDATED_AT',
     fromJson: dateTimeFromString,
     toJson: nullableDateTimeToString,
   )
@@ -133,4 +87,9 @@ enum VerificationStatus {
   created,
   verified,
   rejected
+}
+
+@JsonSerializable()
+class ChildAge {
+  int? age;
 }
