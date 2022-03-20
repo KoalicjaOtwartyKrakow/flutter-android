@@ -4,7 +4,7 @@ part 'child_age.g.dart';
 
 @JsonSerializable()
 class ChildAge {
-  int? age;
+  final int? age;
 
   ChildAge({
     required this.age
