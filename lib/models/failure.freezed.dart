@@ -25,6 +25,10 @@ class _$FailureTearOff {
   _InsufficientPermissions insufficientPermissions() {
     return const _InsufficientPermissions();
   }
+
+  _CanceledByUser canceledByUser() {
+    return const _CanceledByUser();
+  }
 }
 
 /// @nodoc
@@ -36,18 +40,21 @@ mixin _$Failure {
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
     required TResult Function() insufficientPermissions,
+    required TResult Function() canceledByUser,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
+    TResult Function()? canceledByUser,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
+    TResult Function()? canceledByUser,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -56,18 +63,21 @@ mixin _$Failure {
     required TResult Function(_Unexpected value) unexpected,
     required TResult Function(_InsufficientPermissions value)
         insufficientPermissions,
+    required TResult Function(_CanceledByUser value) canceledByUser,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
+    TResult Function(_CanceledByUser value)? canceledByUser,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
+    TResult Function(_CanceledByUser value)? canceledByUser,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -130,6 +140,7 @@ class _$_Unexpected implements _Unexpected {
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
     required TResult Function() insufficientPermissions,
+    required TResult Function() canceledByUser,
   }) {
     return unexpected();
   }
@@ -139,6 +150,7 @@ class _$_Unexpected implements _Unexpected {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
+    TResult Function()? canceledByUser,
   }) {
     return unexpected?.call();
   }
@@ -148,6 +160,7 @@ class _$_Unexpected implements _Unexpected {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
+    TResult Function()? canceledByUser,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -162,6 +175,7 @@ class _$_Unexpected implements _Unexpected {
     required TResult Function(_Unexpected value) unexpected,
     required TResult Function(_InsufficientPermissions value)
         insufficientPermissions,
+    required TResult Function(_CanceledByUser value) canceledByUser,
   }) {
     return unexpected(this);
   }
@@ -171,6 +185,7 @@ class _$_Unexpected implements _Unexpected {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
+    TResult Function(_CanceledByUser value)? canceledByUser,
   }) {
     return unexpected?.call(this);
   }
@@ -180,6 +195,7 @@ class _$_Unexpected implements _Unexpected {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
+    TResult Function(_CanceledByUser value)? canceledByUser,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -237,6 +253,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
     required TResult Function() insufficientPermissions,
+    required TResult Function() canceledByUser,
   }) {
     return insufficientPermissions();
   }
@@ -246,6 +263,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
+    TResult Function()? canceledByUser,
   }) {
     return insufficientPermissions?.call();
   }
@@ -255,6 +273,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
+    TResult Function()? canceledByUser,
     required TResult orElse(),
   }) {
     if (insufficientPermissions != null) {
@@ -269,6 +288,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
     required TResult Function(_Unexpected value) unexpected,
     required TResult Function(_InsufficientPermissions value)
         insufficientPermissions,
+    required TResult Function(_CanceledByUser value) canceledByUser,
   }) {
     return insufficientPermissions(this);
   }
@@ -278,6 +298,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
+    TResult Function(_CanceledByUser value)? canceledByUser,
   }) {
     return insufficientPermissions?.call(this);
   }
@@ -287,6 +308,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
+    TResult Function(_CanceledByUser value)? canceledByUser,
     required TResult orElse(),
   }) {
     if (insufficientPermissions != null) {
@@ -298,4 +320,115 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
 
 abstract class _InsufficientPermissions implements Failure {
   const factory _InsufficientPermissions() = _$_InsufficientPermissions;
+}
+
+/// @nodoc
+abstract class _$CanceledByUserCopyWith<$Res> {
+  factory _$CanceledByUserCopyWith(
+          _CanceledByUser value, $Res Function(_CanceledByUser) then) =
+      __$CanceledByUserCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$CanceledByUserCopyWithImpl<$Res> extends _$FailureCopyWithImpl<$Res>
+    implements _$CanceledByUserCopyWith<$Res> {
+  __$CanceledByUserCopyWithImpl(
+      _CanceledByUser _value, $Res Function(_CanceledByUser) _then)
+      : super(_value, (v) => _then(v as _CanceledByUser));
+
+  @override
+  _CanceledByUser get _value => super._value as _CanceledByUser;
+}
+
+/// @nodoc
+
+class _$_CanceledByUser implements _CanceledByUser {
+  const _$_CanceledByUser();
+
+  @override
+  String toString() {
+    return 'Failure.canceledByUser()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _CanceledByUser);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() insufficientPermissions,
+    required TResult Function() canceledByUser,
+  }) {
+    return canceledByUser();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? insufficientPermissions,
+    TResult Function()? canceledByUser,
+  }) {
+    return canceledByUser?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? insufficientPermissions,
+    TResult Function()? canceledByUser,
+    required TResult orElse(),
+  }) {
+    if (canceledByUser != null) {
+      return canceledByUser();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_InsufficientPermissions value)
+        insufficientPermissions,
+    required TResult Function(_CanceledByUser value) canceledByUser,
+  }) {
+    return canceledByUser(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_InsufficientPermissions value)? insufficientPermissions,
+    TResult Function(_CanceledByUser value)? canceledByUser,
+  }) {
+    return canceledByUser?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_InsufficientPermissions value)? insufficientPermissions,
+    TResult Function(_CanceledByUser value)? canceledByUser,
+    required TResult orElse(),
+  }) {
+    if (canceledByUser != null) {
+      return canceledByUser(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CanceledByUser implements Failure {
+  const factory _CanceledByUser() = _$_CanceledByUser;
 }

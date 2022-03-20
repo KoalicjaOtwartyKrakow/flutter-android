@@ -5,11 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_android/application/host/host_bloc.dart';
 import 'package:flutter_android/application/host/host_event.dart';
 import 'package:flutter_android/application/host/host_state.dart';
+import 'package:flutter_android/infrastructure/auth/i_auth_facade.dart';
 import 'package:flutter_android/presentation/routes/app_router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:i18next/i18next.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../application/auth/auth_bloc.dart';
+import '../../infrastructure/auth/impl/auth_facade.dart';
 import '../../injection.dart';
 
 class HostPage extends StatelessWidget {
@@ -27,10 +30,35 @@ class HostPage extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 1 / 6,
                 width: MediaQuery.of(context).size.width * 3 / 4,
+                child: BlocBuilder<AuthBloc, AuthState>(
+                  builder: (context, state) {
+                    return ListTile(
+                      iconColor: state.map(
+                        initial: (_) => Theme.of(context).primaryColor,
+                        authInProgress: (_) => Colors.amber,
+                        authenticated: (_) => Colors.green,
+                        unAuthenticated: (_) => Colors.red,
+                      ),
+                      textColor: Theme.of(context).primaryColor,
+                      onTap: () => context.read<AuthBloc>().add(
+                            const AuthEvent.signInWithGooglePressed(),
+                          ),
+                      leading: const Icon(Icons.night_shelter),
+                      title: const Text(
+                        'LOGIN',
+                      ),
+                    );
+                  },
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 1 / 6,
+                width: MediaQuery.of(context).size.width * 3 / 4,
                 child: ListTile(
                   iconColor: Theme.of(context).primaryColor,
                   textColor: Theme.of(context).primaryColor,
-                  onTap: () => AutoRouter.of(context).push(const ApartmentFormRoute()),
+                  onTap: () =>
+                      AutoRouter.of(context).push(const ApartmentFormRoute()),
                   leading: const Icon(Icons.night_shelter),
                   title: Text(
                     I18Next.of(context)!.t('host:propose'),
@@ -53,11 +81,14 @@ class HostPage extends StatelessWidget {
                         // TODO: handle error responses
                       }
                     },
-                    buildWhen: (previous, current) => current == const HostState.initial(),
+                    buildWhen: (previous, current) =>
+                        current == const HostState.initial(),
                     builder: (context, _) => ListTile(
                       iconColor: Theme.of(context).primaryColor,
                       textColor: Theme.of(context).primaryColor,
-                      onTap: () => context.read<HostBloc>().add(const HostEvent.downloadContract()),
+                      onTap: () => context
+                          .read<HostBloc>()
+                          .add(const HostEvent.downloadContract()),
                       leading: const Icon(Icons.download),
                       title: Text(I18Next.of(context)!.t('host:download')),
                     ),

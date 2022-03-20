@@ -51,6 +51,7 @@ dependencies:
   mocktail: ^0.0.1-dev.12
   flutter_bloc: ^8.0.1
   json_annotation: ^4.4.0
+  google_sign_in: ^5.2.4
 
 dev_dependencies:
   flutter_test:

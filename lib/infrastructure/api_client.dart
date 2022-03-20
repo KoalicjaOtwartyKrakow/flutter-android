@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_android/models/accomodation.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -31,4 +32,5 @@ abstract class RegisterModule {
   Dio get dio => Dio();
   String get baseUrl =>
       'https://europe-central2-salamlab-aparatments.cloudfunctions.net';
+  GoogleSignIn get googleSignIng => GoogleSignIn();
 }
