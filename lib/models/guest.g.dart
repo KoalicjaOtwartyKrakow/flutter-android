@@ -7,59 +7,60 @@ part of 'guest.dart';
 // **************************************************************************
 
 Guest _$GuestFromJson(Map<String, dynamic> json) => Guest(
-      fullName: json['FULL_NAME'] as String,
-      email: json['EMAIL'] as String,
-      phoneNumber: json['PHONE_NUMBER'] as String,
-      peopleInGroup: json['PEOPLE_IN_GROUP'] as int?,
-      adultMaleCount: json['ADULT_MALE_COUNT'] as int?,
-      adultFemaleCount: json['ADULT_FEMALE_COUNT'] as int?,
-      children:
-          (json['CHILDREN'] as List<dynamic>?)?.map((e) => e as int).toList(),
-      havePets: json['HAVE_PETS'] as bool?,
-      petsDescription: json['PETS_DESCRIPTION'] as String?,
-      specialNeeds: json['SPECIAL_NEEDS'] as String?,
-      foodAllergies: json['FOOD_ALLERGIES'] as bool?,
-      meatFreeDiet: json['MEAT_FREE_DIET'] as bool?,
-      glutenFreeDiet: json['GLUTEN_FREE_DIET'] as bool?,
-      lactoseFreeDiet: json['LACTOSE_FREE_DIET'] as bool?,
-      financeStatus: json['FINANCE_STATUS'] as String?,
-      howLongToStay: json['HOW_LONG_TO_STAY'] as String?,
-      desiredDestination: json['DESIRED_DESTINATION'] as String?,
+      fullName: json['fullName'] as String,
+      email: json['email'] as String,
+      phoneNumber: json['phoneNumber'] as String,
+      peopleInGroup: json['peopleInGroup'] as int?,
+      adultMaleCount: json['adultMaleCount'] as int?,
+      adultFemaleCount: json['adultFemaleCount'] as int?,
+      children: (json['children'] as List<dynamic>?)
+          ?.map((e) => ChildAge.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      havePets: json['havePets'] as bool?,
+      petsDescription: json['petsDescription'] as String?,
+      specialNeeds: json['specialNeeds'] as String?,
+      foodAllergies: json['foodAllergies'] as String?,
+      meatFreeDiet: json['meatFreeDiet'] as bool?,
+      glutenFreeDiet: json['glutenFreeDiet'] as bool?,
+      lactoseFreeDiet: json['lactoseFreeDiet'] as bool?,
+      financeStatus: json['financeStatus'] as String?,
+      howLongToStay: json['howLongToStay'] as String?,
+      desiredDestination: json['desiredDestination'] as String?,
       priorityStatus:
-          $enumDecodeNullable(_$PriorityStatusEnumMap, json['PRIORITY_STATUS']),
-      priorityDate: dateTimeFromString(json['PRIORITY_DATE'] as String),
+          $enumDecodeNullable(_$PriorityStatusEnumMap, json['priorityStatus']),
+      priorityDate: dateTimeFromString(json['priorityDate'] as String),
       verificationStatus: $enumDecodeNullable(
-          _$VerificationStatusEnumMap, json['VERIFICATION_STATUS']),
-      id: json['GuestId'] as String?,
-      createdAt: dateTimeFromString(json['CREATED_AT'] as String),
-      updatedAt: dateTimeFromString(json['UPDATED_AT'] as String),
+          _$VerificationStatusEnumMap, json['verificationStatus']),
+      id: json['id'] as String?,
+      createdAt: dateTimeFromString(json['createdAt'] as String),
+      updatedAt: dateTimeFromString(json['updatedAt'] as String),
     );
 
 Map<String, dynamic> _$GuestToJson(Guest instance) => <String, dynamic>{
-      'FULL_NAME': instance.fullName,
-      'EMAIL': instance.email,
-      'PHONE_NUMBER': instance.phoneNumber,
-      'PEOPLE_IN_GROUP': instance.peopleInGroup,
-      'ADULT_MALE_COUNT': instance.adultMaleCount,
-      'ADULT_FEMALE_COUNT': instance.adultFemaleCount,
-      'CHILDREN': instance.children,
-      'HAVE_PETS': instance.havePets,
-      'PETS_DESCRIPTION': instance.petsDescription,
-      'SPECIAL_NEEDS': instance.specialNeeds,
-      'FOOD_ALLERGIES': instance.foodAllergies,
-      'MEAT_FREE_DIET': instance.meatFreeDiet,
-      'GLUTEN_FREE_DIET': instance.glutenFreeDiet,
-      'LACTOSE_FREE_DIET': instance.lactoseFreeDiet,
-      'FINANCE_STATUS': instance.financeStatus,
-      'HOW_LONG_TO_STAY': instance.howLongToStay,
-      'DESIRED_DESTINATION': instance.desiredDestination,
-      'PRIORITY_STATUS': _$PriorityStatusEnumMap[instance.priorityStatus],
-      'PRIORITY_DATE': nullableDateTimeToString(instance.priorityDate),
-      'VERIFICATION_STATUS':
+      'fullName': instance.fullName,
+      'email': instance.email,
+      'phoneNumber': instance.phoneNumber,
+      'peopleInGroup': instance.peopleInGroup,
+      'adultMaleCount': instance.adultMaleCount,
+      'adultFemaleCount': instance.adultFemaleCount,
+      'children': instance.children,
+      'havePets': instance.havePets,
+      'petsDescription': instance.petsDescription,
+      'specialNeeds': instance.specialNeeds,
+      'foodAllergies': instance.foodAllergies,
+      'meatFreeDiet': instance.meatFreeDiet,
+      'glutenFreeDiet': instance.glutenFreeDiet,
+      'lactoseFreeDiet': instance.lactoseFreeDiet,
+      'financeStatus': instance.financeStatus,
+      'howLongToStay': instance.howLongToStay,
+      'desiredDestination': instance.desiredDestination,
+      'priorityStatus': _$PriorityStatusEnumMap[instance.priorityStatus],
+      'priorityDate': nullableDateTimeToString(instance.priorityDate),
+      'verificationStatus':
           _$VerificationStatusEnumMap[instance.verificationStatus],
-      'GuestId': instance.id,
-      'CREATED_AT': nullableDateTimeToString(instance.createdAt),
-      'UPDATED_AT': nullableDateTimeToString(instance.updatedAt),
+      'id': instance.id,
+      'createdAt': nullableDateTimeToString(instance.createdAt),
+      'updatedAt': nullableDateTimeToString(instance.updatedAt),
     };
 
 const _$PriorityStatusEnumMap = {
@@ -76,3 +77,10 @@ const _$VerificationStatusEnumMap = {
   VerificationStatus.verified: 'verified',
   VerificationStatus.rejected: 'rejected',
 };
+
+ChildAge _$ChildAgeFromJson(Map<String, dynamic> json) =>
+    ChildAge()..age = json['age'] as int?;
+
+Map<String, dynamic> _$ChildAgeToJson(ChildAge instance) => <String, dynamic>{
+      'age': instance.age,
+    };
