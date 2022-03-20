@@ -14,10 +14,6 @@ class Guest {
   int? peopleInGroup;
   int? adultMaleCount;
   int? adultFemaleCount;
-  // @JsonKey(
-  //   fromJson: childrenAgesFromString,
-  //   toJson: nullableChildenAgesToString,
-  // )
   List<ChildAge>? children;
   bool? havePets;
   String? petsDescription;
