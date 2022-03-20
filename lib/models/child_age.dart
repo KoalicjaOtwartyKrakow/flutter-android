@@ -7,7 +7,7 @@ class ChildAge {
   int? age;
 
   ChildAge({
-    this.age
+    required this.age
   });
 
   Map<String, dynamic> toJson() => _$ChildAgeToJson(this);
