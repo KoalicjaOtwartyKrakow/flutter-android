@@ -1,31 +1,28 @@
-import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter_android/models/apartment.dart';
-import 'package:flutter_android/presentation/guest/submit_failure.dart';
+import 'package:flutter_android/models/accomodation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
-
-import '../models/guest.dart';
 
 part 'api_client.g.dart';
 
 @injectable
-@RestApi(baseUrl: "https://cu2kg3w6c1.execute-api.eu-west-1.amazonaws.com")
+@RestApi(
+    baseUrl: "https://europe-central2-salamlab-aparatments.cloudfunctions.net/")
 abstract class ApiClient {
   @factoryMethod
   factory ApiClient(Dio dio, {String baseUrl}) = _ApiClient;
 
-  @GET("/dev/apartments")
-  Future<List<Apartment>> listApartments();
+  @GET("/accomodation")
+  Future<List<Accommodation>> getAccomodations();
 
-  @POST("/dev/apartments")
-  Future<Apartment> postAnApartment(@Body() Apartment apartment);
+  @GET("/accomodation/{id}")
+  Future<List<Accommodation>> getAccomodationById(@Path("id") String id);
+
+  @POST("/accomodation")
+  Future<Accommodation> createAccomodation(@Body() Accommodation accomodation);
 
   @GET("/dev/doc/contract")
   Future<String> getContractDownloadUrl();
-
-  @POST("/dev/guests")
-  Future<Guest> postAGuest(@Body() Guest guest);
 }
 
 // This is needed to be injected into ApiClient through injectable_generator
@@ -33,5 +30,5 @@ abstract class ApiClient {
 abstract class RegisterModule {
   Dio get dio => Dio();
   String get baseUrl =>
-      'https://cu2kg3w6c1.execute-api.eu-west-1.amazonaws.com';
+      'https://europe-central2-salamlab-aparatments.cloudfunctions.net';
 }

@@ -41,15 +41,16 @@ dependencies:
   injectable: ^1.5.3
   url_launcher: ^6.0.20
   intl: ^0.17.0
+  i18next: ^0.5.2
+  flutter_localizations:
+    sdk: flutter
   flutter_native_splash: ^2.0.5
-  dartz:
-  uuid:
-  kt_dart:
-  freezed:
-  freezed_annotation:
-  flutter_bloc:
-  bloc:
-
+  bloc: ^8.0.3
+  freezed_annotation: ^1.1.0
+  dartz: ^0.10.1
+  mocktail: ^0.0.1-dev.12
+  flutter_bloc: ^8.0.1
+  json_annotation: ^4.4.0
 
 dev_dependencies:
   flutter_test:
@@ -59,6 +60,7 @@ dev_dependencies:
   json_serializable: ^6.1.4
   auto_route_generator:
   injectable_generator: ^1.5.3
+  freezed: ^1.1.1
 
 
 
@@ -83,6 +85,9 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/mapa-polski.png
+    - assets/locales/en/
+    - assets/locales/pl/
+    - assets/locales/ua/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

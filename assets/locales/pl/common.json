@@ -1,0 +1,30 @@
+{
+    "application": {
+        "title": "Koalicja Otwarty Kraków",
+        "header": {
+            "subtitle": "KOK:on – we help people find a safe harbor!"
+        }
+    },
+    "form": {
+        "label": {
+            "email": "E-mail",
+            "phone": "Phone"
+        },
+        "placeholder": {
+            "email": "username@hostname.tld",
+            "phone": "+1 (123) 4567890"
+        },
+        "pleaseSelect": "Please select…",
+        "button": {
+            "reset": "Reset changes",
+            "backToList": "Back to the list"
+        }
+    },
+    "data": {
+        "loading": "Loading data…",
+        "updateSuccess": "Changes saved successfully"
+    },
+    "errors": {
+        "apiFailure": "API communication error:"
+    }
+}

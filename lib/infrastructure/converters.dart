@@ -1,4 +1,4 @@
-import 'package:flutter_android/models/voivodeship.dart';
+import 'package:flutter_android/models/guest.dart';
 import 'package:intl/intl.dart';
 
 DateTime dateTimeFromString(String dateString) {
@@ -11,8 +11,9 @@ String dateTimeToString(DateTime dateTime) {
   return customDateFormat.format(dateTime);
 }
 
-Voivodeship voivodeshipFromString(String value) {
-  return Voivodeship.values.firstWhere(
-    (e) => e.name == value,
-  );
+String? nullableDateTimeToString(DateTime? dateTime) {
+  if (dateTime != null) {
+    return dateTimeToString(dateTime);
+  }
+  return null;
 }

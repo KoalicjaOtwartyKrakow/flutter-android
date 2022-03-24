@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_android/application/accommodation_form/accommodation_form_bloc.dart';
 import 'package:flutter_android/presentation/host/widgets/apartment_form.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:i18next/i18next.dart';
 
-import '../../infrastructure/api_client.dart';
 import '../../injection.dart';
 
 class ApartmentFormPage extends StatelessWidget {
@@ -11,10 +13,11 @@ class ApartmentFormPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Zaproponuj mieszkanie'),
+        title: Text(I18Next.of(context)!.t('apartment:propose')),
       ),
-      body: ApartmentForm(
-        apiClient: getIt<ApiClient>(),
+      body: BlocProvider<AccommodationFormBloc>(
+        create: (_) => getIt<AccommodationFormBloc>(),
+        child: const AccommodationForm(),
       ),
     );
   }

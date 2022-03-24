@@ -25,29 +25,28 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const HostPage());
     },
-    GuestRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-          routeData: routeData, child: const GuestPage());
-    },
     ApartmentFormRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const ApartmentFormPage());
-    },
-    GuestFormRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-          routeData: routeData, child: const GuestFormPage());
     },
     ApartmentAddedSuccessRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const ApartmentAddedSuccessPage());
     },
-    GuestFormSuccessRoute.name: (routeData) {
+    VolunteerRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
-          routeData: routeData, child: const GuestFormSuccessPage());
+          routeData: routeData, child: const VolunteerPage());
     },
-    GuestFormFailureRoute.name: (routeData) {
+    AccommodationListRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
-          routeData: routeData, child: const GuestFormFailurePage());
+          routeData: routeData, child: const AccommodationListPage());
+    },
+    AccomodationDetailRoute.name: (routeData) {
+      final args = routeData.argsAs<AccomodationDetailRouteArgs>();
+      return MaterialPageX<dynamic>(
+          routeData: routeData,
+          child: AccomodationDetailPage(
+              key: args.key, accomodation: args.accomodation));
     }
   };
 
@@ -55,15 +54,14 @@ class _$AppRouter extends RootStackRouter {
   List<RouteConfig> get routes => [
         RouteConfig(HomeRoute.name, path: '/'),
         RouteConfig(HostRoute.name, path: '/host-page'),
-        RouteConfig(GuestRoute.name, path: '/guest-page'),
         RouteConfig(ApartmentFormRoute.name, path: '/apartment-form-page'),
-        RouteConfig(GuestFormRoute.name, path: '/guest-form-page'),
         RouteConfig(ApartmentAddedSuccessRoute.name,
             path: '/apartment-added-success-page'),
-        RouteConfig(GuestFormSuccessRoute.name,
-            path: '/guest-form-success-page'),
-        RouteConfig(GuestFormFailureRoute.name,
-            path: '/guest-form-failure-page')
+        RouteConfig(VolunteerRoute.name, path: '/volunteer-page'),
+        RouteConfig(AccommodationListRoute.name,
+            path: '/accommodation-list-page'),
+        RouteConfig(AccomodationDetailRoute.name,
+            path: '/accomodation-detail-page')
       ];
 }
 
@@ -84,28 +82,12 @@ class HostRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [GuestPage]
-class GuestRoute extends PageRouteInfo<void> {
-  const GuestRoute() : super(GuestRoute.name, path: '/guest-page');
-
-  static const String name = 'GuestRoute';
-}
-
-/// generated route for
 /// [ApartmentFormPage]
 class ApartmentFormRoute extends PageRouteInfo<void> {
   const ApartmentFormRoute()
       : super(ApartmentFormRoute.name, path: '/apartment-form-page');
 
   static const String name = 'ApartmentFormRoute';
-}
-
-/// generated route for
-/// [GuestFormPage]
-class GuestFormRoute extends PageRouteInfo<void> {
-  const GuestFormRoute() : super(GuestFormRoute.name, path: '/guest-form-page');
-
-  static const String name = 'GuestFormRoute';
 }
 
 /// generated route for
@@ -119,19 +101,44 @@ class ApartmentAddedSuccessRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [GuestFormSuccessPage]
-class GuestFormSuccessRoute extends PageRouteInfo<void> {
-  const GuestFormSuccessRoute()
-      : super(GuestFormSuccessRoute.name, path: '/guest-form-success-page');
+/// [VolunteerPage]
+class VolunteerRoute extends PageRouteInfo<void> {
+  const VolunteerRoute() : super(VolunteerRoute.name, path: '/volunteer-page');
 
-  static const String name = 'GuestFormSuccessRoute';
+  static const String name = 'VolunteerRoute';
 }
 
 /// generated route for
-/// [GuestFormFailurePage]
-class GuestFormFailureRoute extends PageRouteInfo<void> {
-  const GuestFormFailureRoute()
-      : super(GuestFormFailureRoute.name, path: '/guest-form-failure-page');
+/// [AccommodationListPage]
+class AccommodationListRoute extends PageRouteInfo<void> {
+  const AccommodationListRoute()
+      : super(AccommodationListRoute.name, path: '/accommodation-list-page');
 
-  static const String name = 'GuestFormFailureRoute';
+  static const String name = 'AccommodationListRoute';
+}
+
+/// generated route for
+/// [AccomodationDetailPage]
+class AccomodationDetailRoute
+    extends PageRouteInfo<AccomodationDetailRouteArgs> {
+  AccomodationDetailRoute({Key? key, required Accommodation accomodation})
+      : super(AccomodationDetailRoute.name,
+            path: '/accomodation-detail-page',
+            args: AccomodationDetailRouteArgs(
+                key: key, accomodation: accomodation));
+
+  static const String name = 'AccomodationDetailRoute';
+}
+
+class AccomodationDetailRouteArgs {
+  const AccomodationDetailRouteArgs({this.key, required this.accomodation});
+
+  final Key? key;
+
+  final Accommodation accomodation;
+
+  @override
+  String toString() {
+    return 'AccomodationDetailRouteArgs{key: $key, accomodation: $accomodation}';
+  }
 }

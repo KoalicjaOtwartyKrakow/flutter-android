@@ -31,7 +31,7 @@ Map<String, dynamic> _$ApartmentToJson(Apartment instance) => <String, dynamic>{
       'ST_NUM': instance.addressStreetNumber,
       'ST_NAME': instance.addressStreetName,
       'ZIP': instance.addressZip,
-      'CreationTime': _nullableDateTimeToString(instance.createdAt),
+      'CreationTime': nullableDateTimeToString(instance.createdAt),
       'DESCRIPTION': instance.description,
       'ApartmentId': instance.id,
       'IS_VERIFIED': instance.isVerified,
@@ -43,7 +43,20 @@ Map<String, dynamic> _$ApartmentToJson(Apartment instance) => <String, dynamic>{
     };
 
 const _$VoivodeshipEnumMap = {
-  Voivodeship.LODZKIE: 'LODZKIE',
+  Voivodeship.DOLNOSLASKIE: 'DOLNOŚLĄSKIE',
+  Voivodeship.KUJAWSKO_POMORSKIE: 'KUJAWSKO-POMORSKIE',
+  Voivodeship.LUBELSKIE: 'LUBELSKIE',
+  Voivodeship.LUBUSKIE: 'LUBUSKIE',
+  Voivodeship.LODZKIE: 'ŁÓDZKIE',
   Voivodeship.MALOPOLSKIE: 'MAŁOPOLSKIE',
-  Voivodeship.DOLNOSLASKIE: 'DOLNOSLASKIE',
+  Voivodeship.MAZOWIECKIE: 'MAZOWIECKIE',
+  Voivodeship.OPOLSKIE: 'OPOLSKIE',
+  Voivodeship.PODKARPACKIE: 'PODKARPACKIE',
+  Voivodeship.PODLASKIE: 'PODLASKIE',
+  Voivodeship.POMORSKIE: 'POMORSKIE',
+  Voivodeship.SLASKIE: 'ŚLĄSKIE',
+  Voivodeship.SWIETOKRZYSKIE: 'ŚWIĘTOKRZYSKIE',
+  Voivodeship.WARMINSKO_MAZURSKIE: 'WARMIŃSKO-MAZURSKIE',
+  Voivodeship.WIELKOPOLSKIE: 'WIELKOPOLSKIE',
+  Voivodeship.ZACHODNIOPOMORSKIE: 'ZACHODNIOPOMORSKIE',
 };
