@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_android/presentation/guest/guest_list_page.dart';
 import 'package:flutter_android/presentation/volunteer/accomodation/accomodation_list_page.dart';
 import 'package:flutter_android/presentation/volunteer/volunteer_page.dart';
 
@@ -20,6 +21,7 @@ part 'app_router.gr.dart';
     MaterialRoute(page: ApartmentFormPage),
     MaterialRoute(page: ApartmentAddedSuccessPage),
     MaterialRoute(page: VolunteerPage),
+    MaterialRoute(page: GuestListPage),
     MaterialRoute(page: AccommodationListPage),
     MaterialRoute(page: AccomodationDetailPage),
   ],

@@ -6,7 +6,6 @@ import 'package:i18next/i18next.dart';
 import '../../../application/accommodation_loader/accommodation_loader_bloc.dart';
 import '../../../injection.dart';
 import '../../../models/accomodation.dart';
-import '../../../models/accomodation_verification_status.dart';
 import '../../core/utils.dart';
 import '../../routes/app_router.dart';
 

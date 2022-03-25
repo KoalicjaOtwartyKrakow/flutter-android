@@ -1,13 +1,12 @@
-import 'package:flutter_android/models/failure.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import '../infrastructure/converters.dart';
-import 'child_age.dart';
+import '../../infrastructure/converters.dart';
+import '../child_age.dart';
 
-part 'guest.g.dart';
+part 'guest_dto.g.dart';
 
 @JsonSerializable()
-class Guest {
+class GuestDto {
   String fullName;
   String email;
   String phoneNumber;
@@ -45,35 +44,34 @@ class Guest {
   DateTime? updatedAt;
 
 
-  Guest({
-    required this.fullName,
-    required this.email,
-    required this.phoneNumber,
-    this.peopleInGroup,
-    this.adultMaleCount,
-    this.adultFemaleCount,
-    this.children,
-    this.havePets,
-    this.petsDescription,
-    this.specialNeeds,
-    this.foodAllergies,
+  GuestDto(
+      {required this.fullName,
+      required this.email,
+      required this.phoneNumber,
+      this.peopleInGroup,
+      this.adultMaleCount,
+      this.adultFemaleCount,
+      this.children,
+      this.havePets,
+      this.petsDescription,
+      this.specialNeeds,
+      this.foodAllergies,
     this.meatFreeDiet,
     this.glutenFreeDiet,
     this.lactoseFreeDiet,
     this.financeStatus,
-    this.howLongToStay,
-    this.desiredDestination,
-    this.priorityStatus,
-    this.priorityDate,
-    this.verificationStatus,
-    this.id,
-    this.createdAt,
-    this.updatedAt
-  });
+      this.howLongToStay,
+      this.desiredDestination,
+      this.priorityStatus,
+      this.priorityDate,
+      this.verificationStatus,
+      this.id,
+      this.createdAt,
+      this.updatedAt});
 
-  factory Guest.fromJson(Map<String, dynamic> json) =>
-      _$GuestFromJson(json);
-  Map<String, dynamic> toJson() => _$GuestToJson(this);
+  factory GuestDto.fromJson(Map<String, dynamic> json) => _$GuestDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$GuestDtoToJson(this);
 }
 
 enum PriorityStatus {
