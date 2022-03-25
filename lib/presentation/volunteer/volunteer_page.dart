@@ -33,7 +33,7 @@ class VolunteerPage extends StatelessWidget {
               child: ListTile(
                 iconColor: Theme.of(context).primaryColor,
                 textColor: Theme.of(context).primaryColor,
-                onTap: () {},
+                onTap: () => AutoRouter.of(context).push(const GuestListRoute()),
                 leading: const Icon(Icons.person_add),
                 title: Text(I18Next.of(context)!.t('volunteer:showRequests')),
               ),

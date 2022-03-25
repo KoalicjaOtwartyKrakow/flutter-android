@@ -1,0 +1,3 @@
+class Guest {
+  const Guest();
+}
