@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:i18next/i18next.dart';
 
+import '../guest/guest_page.dart';
 import '../routes/app_router.dart';
 
 class HomePage extends StatelessWidget {
