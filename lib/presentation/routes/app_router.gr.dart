@@ -36,6 +36,14 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const GuestFormPage());
     },
+    GuestFormSuccessRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const GuestFormSuccessPage());
+    },
+    GuestFormFailureRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const GuestFormFailurePage());
+    },
     ApartmentAddedSuccessRoute.name: (routeData) {
       return MaterialPageX<dynamic>(routeData: routeData, child: const ApartmentAddedSuccessPage());
     },
@@ -77,6 +85,10 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(AccommodationListRoute.name, path: '/accommodation-list-page'),
         RouteConfig(AccomodationDetailRoute.name, path: '/accomodation-detail-page')
         RouteConfig(GuestFormRoute.name, path: '/guest-form-page'),
+        RouteConfig(GuestFormSuccessRoute.name,
+            path: '/guest-form-success-page'),
+        RouteConfig(GuestFormFailureRoute.name,
+            path: '/guest-form-failure-page'),
         RouteConfig(ApartmentAddedSuccessRoute.name,
             path: '/apartment-added-success-page'),
         RouteConfig(GuestFormSuccessRoute.name,
@@ -125,6 +137,24 @@ class GuestFormRoute extends PageRouteInfo<void> {
   const GuestFormRoute() : super(GuestFormRoute.name, path: '/guest-form-page');
 
   static const String name = 'GuestFormRoute';
+}
+
+/// generated route for
+/// [GuestFormSuccessPage]
+class GuestFormSuccessRoute extends PageRouteInfo<void> {
+  const GuestFormSuccessRoute()
+      : super(GuestFormSuccessRoute.name, path: '/guest-form-success-page');
+
+  static const String name = 'GuestFormSuccessRoute';
+}
+
+/// generated route for
+/// [GuestFormFailurePage]
+class GuestFormFailureRoute extends PageRouteInfo<void> {
+  const GuestFormFailureRoute()
+      : super(GuestFormFailureRoute.name, path: '/guest-form-failure-page');
+
+  static const String name = 'GuestFormFailureRoute';
 }
 
 /// generated route for

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_android/infrastructure/api_client.dart';
 import 'package:flutter_android/injection.dart';
 
+import '../routes/app_router.dart';
+
 
 class GuestFormFailurePage extends StatelessWidget {
   const GuestFormFailurePage({Key? key}) : super(key: key);
@@ -11,14 +13,15 @@ class GuestFormFailurePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder(
-        future: getIt<ApiClient>().listApartments(),
+        // future: getIt<ApiClient>().listApartments(),
         builder: (context, snapshot) => ListView(
           children: [
             const Text('Nie udało się zgłosić potrzeby lokalu. Spróbuj ponownie.'),
             TextButton(
               onPressed: () =>
-                  AutoRouter.of(context).popUntil((route) => route.isFirst),
-              child: const Text('Super'),
+                  // AutoRouter.of(context).popUntil((route) => route.isFirst),
+              AutoRouter.of(context).push(const GuestFormRoute()),
+              child: const Text('Spróbuj ponownie'),
             ),
           ],
         ),
