@@ -7,6 +7,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../infrastructure/guest/i_guest_repository.dart';
+import '../../../models/child_age.dart';
 import '../../../models/failure.dart';
 import '../../../models/guest.dart';
 
@@ -83,21 +84,11 @@ class GuestFormBloc extends Bloc<GuestFormEvent, GuestFormState> {
         );
       },
     );
-    on<ChildrenCountChanged>(
+    on<ChildrenChanged>(
           (event, emit) {
         emit(
           state.copyWith(
-            childrenCount: event.childrenCount,
-            submitFailureOrSuccessOption: none(),
-          ),
-        );
-      },
-    );
-    on<ChildrenAgesChanged>(
-          (event, emit) {
-        emit(
-          state.copyWith(
-            childrenAges: event.childrenAges,
+            children: event.childrenAges,
             submitFailureOrSuccessOption: none(),
           ),
         );
@@ -165,12 +156,19 @@ class GuestFormBloc extends Bloc<GuestFormEvent, GuestFormState> {
             peopleInGroup: state.peopleInGroup,
             adultMaleCount: state.adultMaleCount,
             adultFemaleCount: state.adultFemaleCount,
-            childrenCount: state.childrenCount,
+            children: state.children,
             havePets: state.havePets,
             petsDescription: state.petsDescription,
             specialNeeds: state.specialNeeds,
-            howLongToStay: state.howLongToStay,
+            foodAllergies: state.foodAllergies,
+            meatFreeDiet: state.meatFreeDiet,
+            glutenFreeDiet: state.glutenFreeDiet,
+            lactoseFreeDiet: state.lactoseFreeDiet,
             financeStatus: state.financeStatus,
+            howLongToStay: state.howLongToStay,
+            desiredDestination: state.desiredDestination,
+            priorityStatus: state.priorityStatus,
+            priorityDate: state.priorityDate
           );
 
           if (guest.isValidated()) {

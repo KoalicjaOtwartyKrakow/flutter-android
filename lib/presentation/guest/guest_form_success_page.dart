@@ -11,7 +11,7 @@ class GuestFormSuccessPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder(
-        future: getIt<ApiClient>().listApartments(),
+        // future: getIt<ApiClient>().listApartments(),
         builder: (context, snapshot) => ListView(
           children: [
             const Text('Dziękujemy! Zgłosiłeś potrzebę lokalu. Prosimy czekać na kontakt.'),

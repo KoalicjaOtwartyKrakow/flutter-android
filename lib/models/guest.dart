@@ -74,6 +74,45 @@ class Guest {
   factory Guest.fromJson(Map<String, dynamic> json) =>
       _$GuestFromJson(json);
   Map<String, dynamic> toJson() => _$GuestToJson(this);
+
+  bool isValidated() {
+    if (validateFullName(fullName) == null
+        && validatePhoneNumber(phoneNumber) == null
+        && validateEmail(email) == null
+    )
+    {
+      return true;
+    }
+    return false;
+  }
+
+  static String? validateFullName(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Name is required';
+    }
+    return null;
+  }
+
+  static String? validatePhoneNumber(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Phone number is required';
+    }
+    String result = value.replaceAll(new RegExp(r"\D"), "");
+    if (result.length < 9) {
+      return 'Incorrect phone number';
+    }
+    return null;
+  }
+
+  static String? validateEmail(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Email address is required';
+    }
+    if (!value.contains('@')) {
+      return 'Incorrect email address';
+    }
+    return null;
+  }
 }
 
 enum PriorityStatus {
@@ -90,4 +129,6 @@ enum VerificationStatus {
   verified,
   rejected
 }
+
+
 

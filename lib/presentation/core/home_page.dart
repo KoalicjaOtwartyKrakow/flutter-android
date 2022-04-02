@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:i18next/i18next.dart';
 
+import '../guest/guest_page.dart';
 import '../routes/app_router.dart';
 
 class HomePage extends StatelessWidget {
@@ -34,7 +35,9 @@ class HomePage extends StatelessWidget {
               ListTile(
                 iconColor: Theme.of(context).primaryColor,
                 textColor: Theme.of(context).primaryColor,
-                onTap: () {},
+                onTap: () => AutoRouter.of(context).push(
+                  const GuestRoute(),
+                ),
                 leading: const Icon(Icons.travel_explore),
                 title: Text(
                   I18Next.of(context)!.t('home:search'),
