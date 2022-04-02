@@ -6,8 +6,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../routes/app_router.dart';
 import '../guest_form_bloc/guest_form_bloc.dart';
 
-class GuestForm extends StatelessWidget {
+class GuestForm extends StatefulWidget {
   GuestForm({Key? key}) : super(key: key);
+
+  @override
+  State<GuestForm> createState() => _GuestFormState();
+}
+
+class _GuestFormState extends State<GuestForm> {
+
+  final _formKey = GlobalKey<FormState>();
 
   final fullNameController = TextEditingController();
   final phoneNumberController = TextEditingController();
@@ -26,14 +34,9 @@ class GuestForm extends StatelessWidget {
   final priorityStatusController = TextEditingController();
   final priorityDateController = TextEditingController();
 
-  bool meatFreeDietValue = true;
-  bool? glutenFreeFietValue = false;
-  bool? lactoseFreeDietValue = false;
-
-  final _formKey = GlobalKey<FormState>();
-
-  // @override
-  // State<GuestForm> createState() => _GuestFormState();
+  bool meatFreeDietValue = false;
+  bool glutenFreeDietValue = false;
+  bool lactoseFreeDietValue = false;
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +56,7 @@ class GuestForm extends StatelessWidget {
             ),
             TextFormField(
               controller: phoneNumberController,
-              validator: validatePhoneNumber,
+              validator: (text) => validatePhoneNumber(context, text),
               decoration: const InputDecoration(
                 hintText: 'Wpisz numer telefonu',
               ),
@@ -62,7 +65,7 @@ class GuestForm extends StatelessWidget {
               controller: emailController,
               validator: validateEmail,
               decoration: const InputDecoration(
-                hintText: 'Wpisz numer telefonu',
+                hintText: 'Wpisz email',
               ),
             ),
             TextFormField(
@@ -123,11 +126,19 @@ class GuestForm extends StatelessWidget {
 
             Checkbox(value: meatFreeDietValue, onChanged: (value) {
               setState(() {
-                meatFreeDietValue = value!;
+                meatFreeDietValue = value ?? false;
               });
-            },, activeColor: Colors.blueGrey, checkColor: Colors.pink,),
-            Checkbox(value: glutenFreeFietValue, onChanged: (status) => glutenFreeFietValue = status),
-            Checkbox(value: lactoseFreeDietValue, onChanged: (status) => lactoseFreeDietValue = status),
+            }),
+            Checkbox(value: glutenFreeDietValue, onChanged: (value) {
+              setState(() {
+                glutenFreeDietValue = value ?? false;
+              });
+            }),
+            Checkbox(value: lactoseFreeDietValue, onChanged: (value) {
+              setState(() {
+                lactoseFreeDietValue = value ?? false;
+              });
+            }),
             TextFormField(
               controller: financeStatusController,
               validator: validateFinanceStatus,
@@ -168,18 +179,12 @@ class GuestForm extends StatelessWidget {
               // }
               // : null,
               onPressed: () async {
-                // TODO: move this into the if statement after success response
-                // AutoRouter.of(context).push(const GuestFormSuccessRoute());
-                // if (_formKey.currentState!.validate()) {
-                //   // If form is valid post data
-                //   AutoRouter.of(context).push(const GuestFormSuccessRoute());
-                //   // TODO: handle error responses
-                // }
-                // else {
-                //   AutoRouter.of(context).push(const GuestFormFailureRoute());
-                //   AutoRouter.of(context).push(const GuestFormFailureRoute());
-                //   // false;
-                // }
+                if (_formKey.currentState!.validate()) {
+                  AutoRouter.of(context).push(const GuestFormSuccessRoute());
+                }
+                else {
+                  AutoRouter.of(context).push(const GuestFormFailureRoute());
+                }
               },
               child: const Text('Wyślij'),
             ),
@@ -201,12 +206,12 @@ String? validateFullName(String? value) {
   return null;
 }
 
-String? validatePhoneNumber(String? value) {
+String? validatePhoneNumber(BuildContext context, String? value) {
   if (value == null || value.isEmpty) {
     return 'Phone number is required';
   }
-  String result = value.replaceAll(new RegExp(r"\D"), "");
-  if (result.length < 9) {
+  final phoneNumberPattern = RegExp(r'^\+\d{1,2} ?)?\d{3}[- \.]?\d{3}[- \.]?\d{3}$');
+  if (phoneNumberPattern.hasMatch(value)){
     return 'Incorrect phone number';
   }
   return null;
@@ -241,15 +246,6 @@ String? validateAdultMaleCount(String? value) {
 }
 
 String? validateAdultFemaleCount(String? value) {
-  if (value?.isEmpty ?? false) {
-    if (!isNumeric(value)) {
-      return 'Incorrect value';
-    }
-  }
-  return null;
-}
-
-String? validateChildrenCount(String? value) {
   if (value?.isEmpty ?? false) {
     if (!isNumeric(value)) {
       return 'Incorrect value';

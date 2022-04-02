@@ -97,8 +97,8 @@ class Guest {
     if (value == null || value.isEmpty) {
       return 'Phone number is required';
     }
-    String result = value.replaceAll(new RegExp(r"\D"), "");
-    if (result.length < 9) {
+    final phoneNumberPattern = RegExp(r'^\+\d{1,2} ?)?\d{3}[- \.]?\d{3}[- \.]?\d{3}$');
+    if (phoneNumberPattern.hasMatch(value)){
       return 'Incorrect phone number';
     }
     return null;
