@@ -15,14 +15,20 @@ class GuestForm extends StatelessWidget {
   final peopleInGroupController = TextEditingController();
   final adultMaleCountController = TextEditingController();
   final adultFemaleCountController = TextEditingController();
-  final childrenCountController = TextEditingController();
-  final childrenAgesController = TextEditingController();
+  final childrenController = TextEditingController();
   final havePetsController = TextEditingController();
   final petsDescriptionController = TextEditingController();
   final specialNeedsController = TextEditingController();
+  final foodAllergiesController = TextEditingController();
   final financeStatusController = TextEditingController();
   final howLongToStayController = TextEditingController();
-  final createdAtController = TextEditingController();
+  final desiredDestinationController = TextEditingController();
+  final priorityStatusController = TextEditingController();
+  final priorityDateController = TextEditingController();
+
+  bool meatFreeDietValue = true;
+  bool? glutenFreeFietValue = false;
+  bool? lactoseFreeDietValue = false;
 
   final _formKey = GlobalKey<FormState>();
 
@@ -81,14 +87,7 @@ class GuestForm extends StatelessWidget {
               ),
             ),
             TextFormField(
-              controller: childrenCountController,
-              validator: validateChildrenCount,
-              decoration: const InputDecoration(
-                hintText: 'Napisz, ile jest w grupie dzieci',
-              ),
-            ),
-            TextFormField(
-              controller: childrenAgesController,
+              controller: childrenController,
               validator: validateChildrenAges,
               decoration: const InputDecoration(
                 hintText: 'Napisz wiek każdego z dzieci (np.: 5, 12, 8)',
@@ -116,6 +115,20 @@ class GuestForm extends StatelessWidget {
               ),
             ),
             TextFormField(
+              controller: foodAllergiesController,
+              decoration: const InputDecoration(
+                hintText: 'Napisz, jakie masz alergie żywieniowe',
+              ),
+            ),
+
+            Checkbox(value: meatFreeDietValue, onChanged: (value) {
+              setState(() {
+                meatFreeDietValue = value!;
+              });
+            },, activeColor: Colors.blueGrey, checkColor: Colors.pink,),
+            Checkbox(value: glutenFreeFietValue, onChanged: (status) => glutenFreeFietValue = status),
+            Checkbox(value: lactoseFreeDietValue, onChanged: (status) => lactoseFreeDietValue = status),
+            TextFormField(
               controller: financeStatusController,
               validator: validateFinanceStatus,
               decoration: const InputDecoration(
@@ -129,6 +142,24 @@ class GuestForm extends StatelessWidget {
                 hintText: 'Napisz, na jak długo potrzebujesz/potrzebujecie zakwaterowania',
               ),
             ),
+            TextFormField(
+              controller: desiredDestinationController,
+              decoration: const InputDecoration(
+                hintText: 'Napisz, w jakim mieście chcesz się docelowo znaleźć',
+              ),
+            ),
+            TextFormField(
+              controller: priorityStatusController,
+              decoration: const InputDecoration(
+                hintText: 'priority status',
+              ),
+            ),
+            TextFormField(
+              controller: priorityDateController,
+              decoration: const InputDecoration(
+                hintText: 'priority date',
+              ),
+            ),
 
             ElevatedButton(
               // onPressed: false
@@ -138,16 +169,17 @@ class GuestForm extends StatelessWidget {
               // : null,
               onPressed: () async {
                 // TODO: move this into the if statement after success response
-                AutoRouter.of(context).push(const GuestFormSuccessRoute());
-                if (_formKey.currentState!.validate()) {
-                  // If form is valid post data
-                  AutoRouter.of(context).push(const GuestFormSuccessRoute());
-                  // TODO: handle error responses
-                }
-                else {
-                  AutoRouter.of(context).push(const GuestFormFailureRoute());
-                  // false;
-                }
+                // AutoRouter.of(context).push(const GuestFormSuccessRoute());
+                // if (_formKey.currentState!.validate()) {
+                //   // If form is valid post data
+                //   AutoRouter.of(context).push(const GuestFormSuccessRoute());
+                //   // TODO: handle error responses
+                // }
+                // else {
+                //   AutoRouter.of(context).push(const GuestFormFailureRoute());
+                //   AutoRouter.of(context).push(const GuestFormFailureRoute());
+                //   // false;
+                // }
               },
               child: const Text('Wyślij'),
             ),

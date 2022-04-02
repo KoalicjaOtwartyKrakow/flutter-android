@@ -54,14 +54,8 @@ class _$GuestFormEventTearOff {
     );
   }
 
-  ChildrenCountChanged childrenCountChanged(int childrenCount) {
-    return ChildrenCountChanged(
-      childrenCount,
-    );
-  }
-
-  ChildrenAgesChanged childrenAgesChanged(List<int> childrenAges) {
-    return ChildrenAgesChanged(
+  ChildrenChanged childrenChanged(List<ChildAge> childrenAges) {
+    return ChildrenChanged(
       childrenAges,
     );
   }
@@ -84,15 +78,57 @@ class _$GuestFormEventTearOff {
     );
   }
 
-  HowLongToStayChanged howLongToStayChanged(String howLongToStayStr) {
-    return HowLongToStayChanged(
-      howLongToStayStr,
+  FoodAllergiesChanged foodAllergiesChanged(String foodAllergiesStr) {
+    return FoodAllergiesChanged(
+      foodAllergiesStr,
+    );
+  }
+
+  MeatFreeDietChanged meatFreDiet(bool hasMeatFreeDiet) {
+    return MeatFreeDietChanged(
+      hasMeatFreeDiet,
+    );
+  }
+
+  GlutenFreeDietChanged glutenFreeDiet(bool hasGlutenFreeDiet) {
+    return GlutenFreeDietChanged(
+      hasGlutenFreeDiet,
+    );
+  }
+
+  LactoseFreeDietChanged lactoseFreeDiet(bool hasLactoseFreeDiet) {
+    return LactoseFreeDietChanged(
+      hasLactoseFreeDiet,
     );
   }
 
   FinanceStatusChanged financeStatusChanged(String financeStatusStr) {
     return FinanceStatusChanged(
       financeStatusStr,
+    );
+  }
+
+  HowLongToStayChanged howLongToStayChanged(String howLongToStayStr) {
+    return HowLongToStayChanged(
+      howLongToStayStr,
+    );
+  }
+
+  DesiredDestinationChanged desiredDestination(String desiredDestinationStr) {
+    return DesiredDestinationChanged(
+      desiredDestinationStr,
+    );
+  }
+
+  PriorityStatusChanged priorityStatus(PriorityStatus priorityStatus) {
+    return PriorityStatusChanged(
+      priorityStatus,
+    );
+  }
+
+  PriorityDateChanged priorityDate(DateTime priorityDate) {
+    return PriorityDateChanged(
+      priorityDate,
     );
   }
 
@@ -114,13 +150,19 @@ mixin _$GuestFormEvent {
     required TResult Function(int peopleInGroup) peopleInGroupChanged,
     required TResult Function(int adultMaleCount) adultMaleCountChanged,
     required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
-    required TResult Function(int childrenCount) childrenCountChanged,
-    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(List<ChildAge> childrenAges) childrenChanged,
     required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
-    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String foodAllergiesStr) foodAllergiesChanged,
+    required TResult Function(bool hasMeatFreeDiet) meatFreDiet,
+    required TResult Function(bool hasGlutenFreeDiet) glutenFreeDiet,
+    required TResult Function(bool hasLactoseFreeDiet) lactoseFreeDiet,
     required TResult Function(String financeStatusStr) financeStatusChanged,
+    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String desiredDestinationStr) desiredDestination,
+    required TResult Function(PriorityStatus priorityStatus) priorityStatus,
+    required TResult Function(DateTime priorityDate) priorityDate,
     required TResult Function() submitAddGuest,
   }) =>
       throw _privateConstructorUsedError;
@@ -132,13 +174,19 @@ mixin _$GuestFormEvent {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
   }) =>
       throw _privateConstructorUsedError;
@@ -150,13 +198,19 @@ mixin _$GuestFormEvent {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
     required TResult orElse(),
   }) =>
@@ -171,14 +225,21 @@ mixin _$GuestFormEvent {
         adultMaleCountChanged,
     required TResult Function(AdultFemaleCountChanged value)
         adultFemaleCountChanged,
-    required TResult Function(ChildrenCountChanged value) childrenCountChanged,
-    required TResult Function(ChildrenAgesChanged value) childrenAgesChanged,
+    required TResult Function(ChildrenChanged value) childrenChanged,
     required TResult Function(HavePetsChanged value) havePetsChanged,
     required TResult Function(PetsDescriptionChanged value)
         petsDescriptionChanged,
     required TResult Function(SpecialNeedsChanged value) specialNeedsChanged,
-    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(FoodAllergiesChanged value) foodAllergiesChanged,
+    required TResult Function(MeatFreeDietChanged value) meatFreDiet,
+    required TResult Function(GlutenFreeDietChanged value) glutenFreeDiet,
+    required TResult Function(LactoseFreeDietChanged value) lactoseFreeDiet,
     required TResult Function(FinanceStatusChanged value) financeStatusChanged,
+    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(DesiredDestinationChanged value)
+        desiredDestination,
+    required TResult Function(PriorityStatusChanged value) priorityStatus,
+    required TResult Function(PriorityDateChanged value) priorityDate,
     required TResult Function(SubmitAddGuest value) submitAddGuest,
   }) =>
       throw _privateConstructorUsedError;
@@ -190,13 +251,19 @@ mixin _$GuestFormEvent {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
   }) =>
       throw _privateConstructorUsedError;
@@ -208,13 +275,19 @@ mixin _$GuestFormEvent {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
     required TResult orElse(),
   }) =>
@@ -310,13 +383,19 @@ class _$FullNameChanged implements FullNameChanged {
     required TResult Function(int peopleInGroup) peopleInGroupChanged,
     required TResult Function(int adultMaleCount) adultMaleCountChanged,
     required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
-    required TResult Function(int childrenCount) childrenCountChanged,
-    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(List<ChildAge> childrenAges) childrenChanged,
     required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
-    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String foodAllergiesStr) foodAllergiesChanged,
+    required TResult Function(bool hasMeatFreeDiet) meatFreDiet,
+    required TResult Function(bool hasGlutenFreeDiet) glutenFreeDiet,
+    required TResult Function(bool hasLactoseFreeDiet) lactoseFreeDiet,
     required TResult Function(String financeStatusStr) financeStatusChanged,
+    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String desiredDestinationStr) desiredDestination,
+    required TResult Function(PriorityStatus priorityStatus) priorityStatus,
+    required TResult Function(DateTime priorityDate) priorityDate,
     required TResult Function() submitAddGuest,
   }) {
     return fullNameChanged(fullNameStr);
@@ -331,13 +410,19 @@ class _$FullNameChanged implements FullNameChanged {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
   }) {
     return fullNameChanged?.call(fullNameStr);
@@ -352,13 +437,19 @@ class _$FullNameChanged implements FullNameChanged {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
     required TResult orElse(),
   }) {
@@ -379,14 +470,21 @@ class _$FullNameChanged implements FullNameChanged {
         adultMaleCountChanged,
     required TResult Function(AdultFemaleCountChanged value)
         adultFemaleCountChanged,
-    required TResult Function(ChildrenCountChanged value) childrenCountChanged,
-    required TResult Function(ChildrenAgesChanged value) childrenAgesChanged,
+    required TResult Function(ChildrenChanged value) childrenChanged,
     required TResult Function(HavePetsChanged value) havePetsChanged,
     required TResult Function(PetsDescriptionChanged value)
         petsDescriptionChanged,
     required TResult Function(SpecialNeedsChanged value) specialNeedsChanged,
-    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(FoodAllergiesChanged value) foodAllergiesChanged,
+    required TResult Function(MeatFreeDietChanged value) meatFreDiet,
+    required TResult Function(GlutenFreeDietChanged value) glutenFreeDiet,
+    required TResult Function(LactoseFreeDietChanged value) lactoseFreeDiet,
     required TResult Function(FinanceStatusChanged value) financeStatusChanged,
+    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(DesiredDestinationChanged value)
+        desiredDestination,
+    required TResult Function(PriorityStatusChanged value) priorityStatus,
+    required TResult Function(PriorityDateChanged value) priorityDate,
     required TResult Function(SubmitAddGuest value) submitAddGuest,
   }) {
     return fullNameChanged(this);
@@ -401,13 +499,19 @@ class _$FullNameChanged implements FullNameChanged {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
   }) {
     return fullNameChanged?.call(this);
@@ -422,13 +526,19 @@ class _$FullNameChanged implements FullNameChanged {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
     required TResult orElse(),
   }) {
@@ -520,13 +630,19 @@ class _$PhoneNumberChanged implements PhoneNumberChanged {
     required TResult Function(int peopleInGroup) peopleInGroupChanged,
     required TResult Function(int adultMaleCount) adultMaleCountChanged,
     required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
-    required TResult Function(int childrenCount) childrenCountChanged,
-    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(List<ChildAge> childrenAges) childrenChanged,
     required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
-    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String foodAllergiesStr) foodAllergiesChanged,
+    required TResult Function(bool hasMeatFreeDiet) meatFreDiet,
+    required TResult Function(bool hasGlutenFreeDiet) glutenFreeDiet,
+    required TResult Function(bool hasLactoseFreeDiet) lactoseFreeDiet,
     required TResult Function(String financeStatusStr) financeStatusChanged,
+    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String desiredDestinationStr) desiredDestination,
+    required TResult Function(PriorityStatus priorityStatus) priorityStatus,
+    required TResult Function(DateTime priorityDate) priorityDate,
     required TResult Function() submitAddGuest,
   }) {
     return phoneNumberChanged(phoneNumberStr);
@@ -541,13 +657,19 @@ class _$PhoneNumberChanged implements PhoneNumberChanged {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
   }) {
     return phoneNumberChanged?.call(phoneNumberStr);
@@ -562,13 +684,19 @@ class _$PhoneNumberChanged implements PhoneNumberChanged {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
     required TResult orElse(),
   }) {
@@ -589,14 +717,21 @@ class _$PhoneNumberChanged implements PhoneNumberChanged {
         adultMaleCountChanged,
     required TResult Function(AdultFemaleCountChanged value)
         adultFemaleCountChanged,
-    required TResult Function(ChildrenCountChanged value) childrenCountChanged,
-    required TResult Function(ChildrenAgesChanged value) childrenAgesChanged,
+    required TResult Function(ChildrenChanged value) childrenChanged,
     required TResult Function(HavePetsChanged value) havePetsChanged,
     required TResult Function(PetsDescriptionChanged value)
         petsDescriptionChanged,
     required TResult Function(SpecialNeedsChanged value) specialNeedsChanged,
-    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(FoodAllergiesChanged value) foodAllergiesChanged,
+    required TResult Function(MeatFreeDietChanged value) meatFreDiet,
+    required TResult Function(GlutenFreeDietChanged value) glutenFreeDiet,
+    required TResult Function(LactoseFreeDietChanged value) lactoseFreeDiet,
     required TResult Function(FinanceStatusChanged value) financeStatusChanged,
+    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(DesiredDestinationChanged value)
+        desiredDestination,
+    required TResult Function(PriorityStatusChanged value) priorityStatus,
+    required TResult Function(PriorityDateChanged value) priorityDate,
     required TResult Function(SubmitAddGuest value) submitAddGuest,
   }) {
     return phoneNumberChanged(this);
@@ -611,13 +746,19 @@ class _$PhoneNumberChanged implements PhoneNumberChanged {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
   }) {
     return phoneNumberChanged?.call(this);
@@ -632,13 +773,19 @@ class _$PhoneNumberChanged implements PhoneNumberChanged {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
     required TResult orElse(),
   }) {
@@ -730,13 +877,19 @@ class _$EmailChanged implements EmailChanged {
     required TResult Function(int peopleInGroup) peopleInGroupChanged,
     required TResult Function(int adultMaleCount) adultMaleCountChanged,
     required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
-    required TResult Function(int childrenCount) childrenCountChanged,
-    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(List<ChildAge> childrenAges) childrenChanged,
     required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
-    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String foodAllergiesStr) foodAllergiesChanged,
+    required TResult Function(bool hasMeatFreeDiet) meatFreDiet,
+    required TResult Function(bool hasGlutenFreeDiet) glutenFreeDiet,
+    required TResult Function(bool hasLactoseFreeDiet) lactoseFreeDiet,
     required TResult Function(String financeStatusStr) financeStatusChanged,
+    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String desiredDestinationStr) desiredDestination,
+    required TResult Function(PriorityStatus priorityStatus) priorityStatus,
+    required TResult Function(DateTime priorityDate) priorityDate,
     required TResult Function() submitAddGuest,
   }) {
     return emailChanged(emailStr);
@@ -751,13 +904,19 @@ class _$EmailChanged implements EmailChanged {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
   }) {
     return emailChanged?.call(emailStr);
@@ -772,13 +931,19 @@ class _$EmailChanged implements EmailChanged {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
     required TResult orElse(),
   }) {
@@ -799,14 +964,21 @@ class _$EmailChanged implements EmailChanged {
         adultMaleCountChanged,
     required TResult Function(AdultFemaleCountChanged value)
         adultFemaleCountChanged,
-    required TResult Function(ChildrenCountChanged value) childrenCountChanged,
-    required TResult Function(ChildrenAgesChanged value) childrenAgesChanged,
+    required TResult Function(ChildrenChanged value) childrenChanged,
     required TResult Function(HavePetsChanged value) havePetsChanged,
     required TResult Function(PetsDescriptionChanged value)
         petsDescriptionChanged,
     required TResult Function(SpecialNeedsChanged value) specialNeedsChanged,
-    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(FoodAllergiesChanged value) foodAllergiesChanged,
+    required TResult Function(MeatFreeDietChanged value) meatFreDiet,
+    required TResult Function(GlutenFreeDietChanged value) glutenFreeDiet,
+    required TResult Function(LactoseFreeDietChanged value) lactoseFreeDiet,
     required TResult Function(FinanceStatusChanged value) financeStatusChanged,
+    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(DesiredDestinationChanged value)
+        desiredDestination,
+    required TResult Function(PriorityStatusChanged value) priorityStatus,
+    required TResult Function(PriorityDateChanged value) priorityDate,
     required TResult Function(SubmitAddGuest value) submitAddGuest,
   }) {
     return emailChanged(this);
@@ -821,13 +993,19 @@ class _$EmailChanged implements EmailChanged {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
   }) {
     return emailChanged?.call(this);
@@ -842,13 +1020,19 @@ class _$EmailChanged implements EmailChanged {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
     required TResult orElse(),
   }) {
@@ -941,13 +1125,19 @@ class _$PeopleInGroupChanged implements PeopleInGroupChanged {
     required TResult Function(int peopleInGroup) peopleInGroupChanged,
     required TResult Function(int adultMaleCount) adultMaleCountChanged,
     required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
-    required TResult Function(int childrenCount) childrenCountChanged,
-    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(List<ChildAge> childrenAges) childrenChanged,
     required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
-    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String foodAllergiesStr) foodAllergiesChanged,
+    required TResult Function(bool hasMeatFreeDiet) meatFreDiet,
+    required TResult Function(bool hasGlutenFreeDiet) glutenFreeDiet,
+    required TResult Function(bool hasLactoseFreeDiet) lactoseFreeDiet,
     required TResult Function(String financeStatusStr) financeStatusChanged,
+    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String desiredDestinationStr) desiredDestination,
+    required TResult Function(PriorityStatus priorityStatus) priorityStatus,
+    required TResult Function(DateTime priorityDate) priorityDate,
     required TResult Function() submitAddGuest,
   }) {
     return peopleInGroupChanged(peopleInGroup);
@@ -962,13 +1152,19 @@ class _$PeopleInGroupChanged implements PeopleInGroupChanged {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
   }) {
     return peopleInGroupChanged?.call(peopleInGroup);
@@ -983,13 +1179,19 @@ class _$PeopleInGroupChanged implements PeopleInGroupChanged {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
     required TResult orElse(),
   }) {
@@ -1010,14 +1212,21 @@ class _$PeopleInGroupChanged implements PeopleInGroupChanged {
         adultMaleCountChanged,
     required TResult Function(AdultFemaleCountChanged value)
         adultFemaleCountChanged,
-    required TResult Function(ChildrenCountChanged value) childrenCountChanged,
-    required TResult Function(ChildrenAgesChanged value) childrenAgesChanged,
+    required TResult Function(ChildrenChanged value) childrenChanged,
     required TResult Function(HavePetsChanged value) havePetsChanged,
     required TResult Function(PetsDescriptionChanged value)
         petsDescriptionChanged,
     required TResult Function(SpecialNeedsChanged value) specialNeedsChanged,
-    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(FoodAllergiesChanged value) foodAllergiesChanged,
+    required TResult Function(MeatFreeDietChanged value) meatFreDiet,
+    required TResult Function(GlutenFreeDietChanged value) glutenFreeDiet,
+    required TResult Function(LactoseFreeDietChanged value) lactoseFreeDiet,
     required TResult Function(FinanceStatusChanged value) financeStatusChanged,
+    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(DesiredDestinationChanged value)
+        desiredDestination,
+    required TResult Function(PriorityStatusChanged value) priorityStatus,
+    required TResult Function(PriorityDateChanged value) priorityDate,
     required TResult Function(SubmitAddGuest value) submitAddGuest,
   }) {
     return peopleInGroupChanged(this);
@@ -1032,13 +1241,19 @@ class _$PeopleInGroupChanged implements PeopleInGroupChanged {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
   }) {
     return peopleInGroupChanged?.call(this);
@@ -1053,13 +1268,19 @@ class _$PeopleInGroupChanged implements PeopleInGroupChanged {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
     required TResult orElse(),
   }) {
@@ -1153,13 +1374,19 @@ class _$AdultMaleCountChanged implements AdultMaleCountChanged {
     required TResult Function(int peopleInGroup) peopleInGroupChanged,
     required TResult Function(int adultMaleCount) adultMaleCountChanged,
     required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
-    required TResult Function(int childrenCount) childrenCountChanged,
-    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(List<ChildAge> childrenAges) childrenChanged,
     required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
-    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String foodAllergiesStr) foodAllergiesChanged,
+    required TResult Function(bool hasMeatFreeDiet) meatFreDiet,
+    required TResult Function(bool hasGlutenFreeDiet) glutenFreeDiet,
+    required TResult Function(bool hasLactoseFreeDiet) lactoseFreeDiet,
     required TResult Function(String financeStatusStr) financeStatusChanged,
+    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String desiredDestinationStr) desiredDestination,
+    required TResult Function(PriorityStatus priorityStatus) priorityStatus,
+    required TResult Function(DateTime priorityDate) priorityDate,
     required TResult Function() submitAddGuest,
   }) {
     return adultMaleCountChanged(adultMaleCount);
@@ -1174,13 +1401,19 @@ class _$AdultMaleCountChanged implements AdultMaleCountChanged {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
   }) {
     return adultMaleCountChanged?.call(adultMaleCount);
@@ -1195,13 +1428,19 @@ class _$AdultMaleCountChanged implements AdultMaleCountChanged {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
     required TResult orElse(),
   }) {
@@ -1222,14 +1461,21 @@ class _$AdultMaleCountChanged implements AdultMaleCountChanged {
         adultMaleCountChanged,
     required TResult Function(AdultFemaleCountChanged value)
         adultFemaleCountChanged,
-    required TResult Function(ChildrenCountChanged value) childrenCountChanged,
-    required TResult Function(ChildrenAgesChanged value) childrenAgesChanged,
+    required TResult Function(ChildrenChanged value) childrenChanged,
     required TResult Function(HavePetsChanged value) havePetsChanged,
     required TResult Function(PetsDescriptionChanged value)
         petsDescriptionChanged,
     required TResult Function(SpecialNeedsChanged value) specialNeedsChanged,
-    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(FoodAllergiesChanged value) foodAllergiesChanged,
+    required TResult Function(MeatFreeDietChanged value) meatFreDiet,
+    required TResult Function(GlutenFreeDietChanged value) glutenFreeDiet,
+    required TResult Function(LactoseFreeDietChanged value) lactoseFreeDiet,
     required TResult Function(FinanceStatusChanged value) financeStatusChanged,
+    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(DesiredDestinationChanged value)
+        desiredDestination,
+    required TResult Function(PriorityStatusChanged value) priorityStatus,
+    required TResult Function(PriorityDateChanged value) priorityDate,
     required TResult Function(SubmitAddGuest value) submitAddGuest,
   }) {
     return adultMaleCountChanged(this);
@@ -1244,13 +1490,19 @@ class _$AdultMaleCountChanged implements AdultMaleCountChanged {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
   }) {
     return adultMaleCountChanged?.call(this);
@@ -1265,13 +1517,19 @@ class _$AdultMaleCountChanged implements AdultMaleCountChanged {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
     required TResult orElse(),
   }) {
@@ -1365,13 +1623,19 @@ class _$AdultFemaleCountChanged implements AdultFemaleCountChanged {
     required TResult Function(int peopleInGroup) peopleInGroupChanged,
     required TResult Function(int adultMaleCount) adultMaleCountChanged,
     required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
-    required TResult Function(int childrenCount) childrenCountChanged,
-    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(List<ChildAge> childrenAges) childrenChanged,
     required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
-    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String foodAllergiesStr) foodAllergiesChanged,
+    required TResult Function(bool hasMeatFreeDiet) meatFreDiet,
+    required TResult Function(bool hasGlutenFreeDiet) glutenFreeDiet,
+    required TResult Function(bool hasLactoseFreeDiet) lactoseFreeDiet,
     required TResult Function(String financeStatusStr) financeStatusChanged,
+    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String desiredDestinationStr) desiredDestination,
+    required TResult Function(PriorityStatus priorityStatus) priorityStatus,
+    required TResult Function(DateTime priorityDate) priorityDate,
     required TResult Function() submitAddGuest,
   }) {
     return adultFemaleCountChanged(adultFemaleCount);
@@ -1386,13 +1650,19 @@ class _$AdultFemaleCountChanged implements AdultFemaleCountChanged {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
   }) {
     return adultFemaleCountChanged?.call(adultFemaleCount);
@@ -1407,13 +1677,19 @@ class _$AdultFemaleCountChanged implements AdultFemaleCountChanged {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
     required TResult orElse(),
   }) {
@@ -1434,14 +1710,21 @@ class _$AdultFemaleCountChanged implements AdultFemaleCountChanged {
         adultMaleCountChanged,
     required TResult Function(AdultFemaleCountChanged value)
         adultFemaleCountChanged,
-    required TResult Function(ChildrenCountChanged value) childrenCountChanged,
-    required TResult Function(ChildrenAgesChanged value) childrenAgesChanged,
+    required TResult Function(ChildrenChanged value) childrenChanged,
     required TResult Function(HavePetsChanged value) havePetsChanged,
     required TResult Function(PetsDescriptionChanged value)
         petsDescriptionChanged,
     required TResult Function(SpecialNeedsChanged value) specialNeedsChanged,
-    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(FoodAllergiesChanged value) foodAllergiesChanged,
+    required TResult Function(MeatFreeDietChanged value) meatFreDiet,
+    required TResult Function(GlutenFreeDietChanged value) glutenFreeDiet,
+    required TResult Function(LactoseFreeDietChanged value) lactoseFreeDiet,
     required TResult Function(FinanceStatusChanged value) financeStatusChanged,
+    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(DesiredDestinationChanged value)
+        desiredDestination,
+    required TResult Function(PriorityStatusChanged value) priorityStatus,
+    required TResult Function(PriorityDateChanged value) priorityDate,
     required TResult Function(SubmitAddGuest value) submitAddGuest,
   }) {
     return adultFemaleCountChanged(this);
@@ -1456,13 +1739,19 @@ class _$AdultFemaleCountChanged implements AdultFemaleCountChanged {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
   }) {
     return adultFemaleCountChanged?.call(this);
@@ -1477,13 +1766,19 @@ class _$AdultFemaleCountChanged implements AdultFemaleCountChanged {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
     required TResult orElse(),
   }) {
@@ -1505,267 +1800,55 @@ abstract class AdultFemaleCountChanged implements GuestFormEvent {
 }
 
 /// @nodoc
-abstract class $ChildrenCountChangedCopyWith<$Res> {
-  factory $ChildrenCountChangedCopyWith(ChildrenCountChanged value,
-          $Res Function(ChildrenCountChanged) then) =
-      _$ChildrenCountChangedCopyWithImpl<$Res>;
-  $Res call({int childrenCount});
+abstract class $ChildrenChangedCopyWith<$Res> {
+  factory $ChildrenChangedCopyWith(
+          ChildrenChanged value, $Res Function(ChildrenChanged) then) =
+      _$ChildrenChangedCopyWithImpl<$Res>;
+  $Res call({List<ChildAge> childrenAges});
 }
 
 /// @nodoc
-class _$ChildrenCountChangedCopyWithImpl<$Res>
+class _$ChildrenChangedCopyWithImpl<$Res>
     extends _$GuestFormEventCopyWithImpl<$Res>
-    implements $ChildrenCountChangedCopyWith<$Res> {
-  _$ChildrenCountChangedCopyWithImpl(
-      ChildrenCountChanged _value, $Res Function(ChildrenCountChanged) _then)
-      : super(_value, (v) => _then(v as ChildrenCountChanged));
+    implements $ChildrenChangedCopyWith<$Res> {
+  _$ChildrenChangedCopyWithImpl(
+      ChildrenChanged _value, $Res Function(ChildrenChanged) _then)
+      : super(_value, (v) => _then(v as ChildrenChanged));
 
   @override
-  ChildrenCountChanged get _value => super._value as ChildrenCountChanged;
-
-  @override
-  $Res call({
-    Object? childrenCount = freezed,
-  }) {
-    return _then(ChildrenCountChanged(
-      childrenCount == freezed
-          ? _value.childrenCount
-          : childrenCount // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ChildrenCountChanged implements ChildrenCountChanged {
-  const _$ChildrenCountChanged(this.childrenCount);
-
-  @override
-  final int childrenCount;
-
-  @override
-  String toString() {
-    return 'GuestFormEvent.childrenCountChanged(childrenCount: $childrenCount)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is ChildrenCountChanged &&
-            const DeepCollectionEquality()
-                .equals(other.childrenCount, childrenCount));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(childrenCount));
-
-  @JsonKey(ignore: true)
-  @override
-  $ChildrenCountChangedCopyWith<ChildrenCountChanged> get copyWith =>
-      _$ChildrenCountChangedCopyWithImpl<ChildrenCountChanged>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String fullNameStr) fullNameChanged,
-    required TResult Function(String phoneNumberStr) phoneNumberChanged,
-    required TResult Function(String emailStr) emailChanged,
-    required TResult Function(int peopleInGroup) peopleInGroupChanged,
-    required TResult Function(int adultMaleCount) adultMaleCountChanged,
-    required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
-    required TResult Function(int childrenCount) childrenCountChanged,
-    required TResult Function(List<int> childrenAges) childrenAgesChanged,
-    required TResult Function(bool havePets) havePetsChanged,
-    required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
-    required TResult Function(String specialNeedsStr) specialNeedsChanged,
-    required TResult Function(String howLongToStayStr) howLongToStayChanged,
-    required TResult Function(String financeStatusStr) financeStatusChanged,
-    required TResult Function() submitAddGuest,
-  }) {
-    return childrenCountChanged(childrenCount);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String fullNameStr)? fullNameChanged,
-    TResult Function(String phoneNumberStr)? phoneNumberChanged,
-    TResult Function(String emailStr)? emailChanged,
-    TResult Function(int peopleInGroup)? peopleInGroupChanged,
-    TResult Function(int adultMaleCount)? adultMaleCountChanged,
-    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
-    TResult Function(bool havePets)? havePetsChanged,
-    TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
-    TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
-    TResult Function(String financeStatusStr)? financeStatusChanged,
-    TResult Function()? submitAddGuest,
-  }) {
-    return childrenCountChanged?.call(childrenCount);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String fullNameStr)? fullNameChanged,
-    TResult Function(String phoneNumberStr)? phoneNumberChanged,
-    TResult Function(String emailStr)? emailChanged,
-    TResult Function(int peopleInGroup)? peopleInGroupChanged,
-    TResult Function(int adultMaleCount)? adultMaleCountChanged,
-    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
-    TResult Function(bool havePets)? havePetsChanged,
-    TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
-    TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
-    TResult Function(String financeStatusStr)? financeStatusChanged,
-    TResult Function()? submitAddGuest,
-    required TResult orElse(),
-  }) {
-    if (childrenCountChanged != null) {
-      return childrenCountChanged(childrenCount);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(FullNameChanged value) fullNameChanged,
-    required TResult Function(PhoneNumberChanged value) phoneNumberChanged,
-    required TResult Function(EmailChanged value) emailChanged,
-    required TResult Function(PeopleInGroupChanged value) peopleInGroupChanged,
-    required TResult Function(AdultMaleCountChanged value)
-        adultMaleCountChanged,
-    required TResult Function(AdultFemaleCountChanged value)
-        adultFemaleCountChanged,
-    required TResult Function(ChildrenCountChanged value) childrenCountChanged,
-    required TResult Function(ChildrenAgesChanged value) childrenAgesChanged,
-    required TResult Function(HavePetsChanged value) havePetsChanged,
-    required TResult Function(PetsDescriptionChanged value)
-        petsDescriptionChanged,
-    required TResult Function(SpecialNeedsChanged value) specialNeedsChanged,
-    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
-    required TResult Function(FinanceStatusChanged value) financeStatusChanged,
-    required TResult Function(SubmitAddGuest value) submitAddGuest,
-  }) {
-    return childrenCountChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(FullNameChanged value)? fullNameChanged,
-    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
-    TResult Function(EmailChanged value)? emailChanged,
-    TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
-    TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
-    TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
-    TResult Function(HavePetsChanged value)? havePetsChanged,
-    TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
-    TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
-    TResult Function(FinanceStatusChanged value)? financeStatusChanged,
-    TResult Function(SubmitAddGuest value)? submitAddGuest,
-  }) {
-    return childrenCountChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(FullNameChanged value)? fullNameChanged,
-    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
-    TResult Function(EmailChanged value)? emailChanged,
-    TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
-    TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
-    TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
-    TResult Function(HavePetsChanged value)? havePetsChanged,
-    TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
-    TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
-    TResult Function(FinanceStatusChanged value)? financeStatusChanged,
-    TResult Function(SubmitAddGuest value)? submitAddGuest,
-    required TResult orElse(),
-  }) {
-    if (childrenCountChanged != null) {
-      return childrenCountChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ChildrenCountChanged implements GuestFormEvent {
-  const factory ChildrenCountChanged(int childrenCount) =
-      _$ChildrenCountChanged;
-
-  int get childrenCount;
-  @JsonKey(ignore: true)
-  $ChildrenCountChangedCopyWith<ChildrenCountChanged> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ChildrenAgesChangedCopyWith<$Res> {
-  factory $ChildrenAgesChangedCopyWith(
-          ChildrenAgesChanged value, $Res Function(ChildrenAgesChanged) then) =
-      _$ChildrenAgesChangedCopyWithImpl<$Res>;
-  $Res call({List<int> childrenAges});
-}
-
-/// @nodoc
-class _$ChildrenAgesChangedCopyWithImpl<$Res>
-    extends _$GuestFormEventCopyWithImpl<$Res>
-    implements $ChildrenAgesChangedCopyWith<$Res> {
-  _$ChildrenAgesChangedCopyWithImpl(
-      ChildrenAgesChanged _value, $Res Function(ChildrenAgesChanged) _then)
-      : super(_value, (v) => _then(v as ChildrenAgesChanged));
-
-  @override
-  ChildrenAgesChanged get _value => super._value as ChildrenAgesChanged;
+  ChildrenChanged get _value => super._value as ChildrenChanged;
 
   @override
   $Res call({
     Object? childrenAges = freezed,
   }) {
-    return _then(ChildrenAgesChanged(
+    return _then(ChildrenChanged(
       childrenAges == freezed
           ? _value.childrenAges
           : childrenAges // ignore: cast_nullable_to_non_nullable
-              as List<int>,
+              as List<ChildAge>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$ChildrenAgesChanged implements ChildrenAgesChanged {
-  const _$ChildrenAgesChanged(this.childrenAges);
+class _$ChildrenChanged implements ChildrenChanged {
+  const _$ChildrenChanged(this.childrenAges);
 
   @override
-  final List<int> childrenAges;
+  final List<ChildAge> childrenAges;
 
   @override
   String toString() {
-    return 'GuestFormEvent.childrenAgesChanged(childrenAges: $childrenAges)';
+    return 'GuestFormEvent.childrenChanged(childrenAges: $childrenAges)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is ChildrenAgesChanged &&
+            other is ChildrenChanged &&
             const DeepCollectionEquality()
                 .equals(other.childrenAges, childrenAges));
   }
@@ -1776,8 +1859,8 @@ class _$ChildrenAgesChanged implements ChildrenAgesChanged {
 
   @JsonKey(ignore: true)
   @override
-  $ChildrenAgesChangedCopyWith<ChildrenAgesChanged> get copyWith =>
-      _$ChildrenAgesChangedCopyWithImpl<ChildrenAgesChanged>(this, _$identity);
+  $ChildrenChangedCopyWith<ChildrenChanged> get copyWith =>
+      _$ChildrenChangedCopyWithImpl<ChildrenChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1788,16 +1871,22 @@ class _$ChildrenAgesChanged implements ChildrenAgesChanged {
     required TResult Function(int peopleInGroup) peopleInGroupChanged,
     required TResult Function(int adultMaleCount) adultMaleCountChanged,
     required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
-    required TResult Function(int childrenCount) childrenCountChanged,
-    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(List<ChildAge> childrenAges) childrenChanged,
     required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
-    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String foodAllergiesStr) foodAllergiesChanged,
+    required TResult Function(bool hasMeatFreeDiet) meatFreDiet,
+    required TResult Function(bool hasGlutenFreeDiet) glutenFreeDiet,
+    required TResult Function(bool hasLactoseFreeDiet) lactoseFreeDiet,
     required TResult Function(String financeStatusStr) financeStatusChanged,
+    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String desiredDestinationStr) desiredDestination,
+    required TResult Function(PriorityStatus priorityStatus) priorityStatus,
+    required TResult Function(DateTime priorityDate) priorityDate,
     required TResult Function() submitAddGuest,
   }) {
-    return childrenAgesChanged(childrenAges);
+    return childrenChanged(childrenAges);
   }
 
   @override
@@ -1809,16 +1898,22 @@ class _$ChildrenAgesChanged implements ChildrenAgesChanged {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
   }) {
-    return childrenAgesChanged?.call(childrenAges);
+    return childrenChanged?.call(childrenAges);
   }
 
   @override
@@ -1830,18 +1925,24 @@ class _$ChildrenAgesChanged implements ChildrenAgesChanged {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
     required TResult orElse(),
   }) {
-    if (childrenAgesChanged != null) {
-      return childrenAgesChanged(childrenAges);
+    if (childrenChanged != null) {
+      return childrenChanged(childrenAges);
     }
     return orElse();
   }
@@ -1857,17 +1958,24 @@ class _$ChildrenAgesChanged implements ChildrenAgesChanged {
         adultMaleCountChanged,
     required TResult Function(AdultFemaleCountChanged value)
         adultFemaleCountChanged,
-    required TResult Function(ChildrenCountChanged value) childrenCountChanged,
-    required TResult Function(ChildrenAgesChanged value) childrenAgesChanged,
+    required TResult Function(ChildrenChanged value) childrenChanged,
     required TResult Function(HavePetsChanged value) havePetsChanged,
     required TResult Function(PetsDescriptionChanged value)
         petsDescriptionChanged,
     required TResult Function(SpecialNeedsChanged value) specialNeedsChanged,
-    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(FoodAllergiesChanged value) foodAllergiesChanged,
+    required TResult Function(MeatFreeDietChanged value) meatFreDiet,
+    required TResult Function(GlutenFreeDietChanged value) glutenFreeDiet,
+    required TResult Function(LactoseFreeDietChanged value) lactoseFreeDiet,
     required TResult Function(FinanceStatusChanged value) financeStatusChanged,
+    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(DesiredDestinationChanged value)
+        desiredDestination,
+    required TResult Function(PriorityStatusChanged value) priorityStatus,
+    required TResult Function(PriorityDateChanged value) priorityDate,
     required TResult Function(SubmitAddGuest value) submitAddGuest,
   }) {
-    return childrenAgesChanged(this);
+    return childrenChanged(this);
   }
 
   @override
@@ -1879,16 +1987,22 @@ class _$ChildrenAgesChanged implements ChildrenAgesChanged {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
   }) {
-    return childrenAgesChanged?.call(this);
+    return childrenChanged?.call(this);
   }
 
   @override
@@ -1900,30 +2014,36 @@ class _$ChildrenAgesChanged implements ChildrenAgesChanged {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
     required TResult orElse(),
   }) {
-    if (childrenAgesChanged != null) {
-      return childrenAgesChanged(this);
+    if (childrenChanged != null) {
+      return childrenChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class ChildrenAgesChanged implements GuestFormEvent {
-  const factory ChildrenAgesChanged(List<int> childrenAges) =
-      _$ChildrenAgesChanged;
+abstract class ChildrenChanged implements GuestFormEvent {
+  const factory ChildrenChanged(List<ChildAge> childrenAges) =
+      _$ChildrenChanged;
 
-  List<int> get childrenAges;
+  List<ChildAge> get childrenAges;
   @JsonKey(ignore: true)
-  $ChildrenAgesChangedCopyWith<ChildrenAgesChanged> get copyWith =>
+  $ChildrenChangedCopyWith<ChildrenChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1998,13 +2118,19 @@ class _$HavePetsChanged implements HavePetsChanged {
     required TResult Function(int peopleInGroup) peopleInGroupChanged,
     required TResult Function(int adultMaleCount) adultMaleCountChanged,
     required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
-    required TResult Function(int childrenCount) childrenCountChanged,
-    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(List<ChildAge> childrenAges) childrenChanged,
     required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
-    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String foodAllergiesStr) foodAllergiesChanged,
+    required TResult Function(bool hasMeatFreeDiet) meatFreDiet,
+    required TResult Function(bool hasGlutenFreeDiet) glutenFreeDiet,
+    required TResult Function(bool hasLactoseFreeDiet) lactoseFreeDiet,
     required TResult Function(String financeStatusStr) financeStatusChanged,
+    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String desiredDestinationStr) desiredDestination,
+    required TResult Function(PriorityStatus priorityStatus) priorityStatus,
+    required TResult Function(DateTime priorityDate) priorityDate,
     required TResult Function() submitAddGuest,
   }) {
     return havePetsChanged(havePets);
@@ -2019,13 +2145,19 @@ class _$HavePetsChanged implements HavePetsChanged {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
   }) {
     return havePetsChanged?.call(havePets);
@@ -2040,13 +2172,19 @@ class _$HavePetsChanged implements HavePetsChanged {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
     required TResult orElse(),
   }) {
@@ -2067,14 +2205,21 @@ class _$HavePetsChanged implements HavePetsChanged {
         adultMaleCountChanged,
     required TResult Function(AdultFemaleCountChanged value)
         adultFemaleCountChanged,
-    required TResult Function(ChildrenCountChanged value) childrenCountChanged,
-    required TResult Function(ChildrenAgesChanged value) childrenAgesChanged,
+    required TResult Function(ChildrenChanged value) childrenChanged,
     required TResult Function(HavePetsChanged value) havePetsChanged,
     required TResult Function(PetsDescriptionChanged value)
         petsDescriptionChanged,
     required TResult Function(SpecialNeedsChanged value) specialNeedsChanged,
-    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(FoodAllergiesChanged value) foodAllergiesChanged,
+    required TResult Function(MeatFreeDietChanged value) meatFreDiet,
+    required TResult Function(GlutenFreeDietChanged value) glutenFreeDiet,
+    required TResult Function(LactoseFreeDietChanged value) lactoseFreeDiet,
     required TResult Function(FinanceStatusChanged value) financeStatusChanged,
+    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(DesiredDestinationChanged value)
+        desiredDestination,
+    required TResult Function(PriorityStatusChanged value) priorityStatus,
+    required TResult Function(PriorityDateChanged value) priorityDate,
     required TResult Function(SubmitAddGuest value) submitAddGuest,
   }) {
     return havePetsChanged(this);
@@ -2089,13 +2234,19 @@ class _$HavePetsChanged implements HavePetsChanged {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
   }) {
     return havePetsChanged?.call(this);
@@ -2110,13 +2261,19 @@ class _$HavePetsChanged implements HavePetsChanged {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
     required TResult orElse(),
   }) {
@@ -2209,13 +2366,19 @@ class _$PetsDescriptionChanged implements PetsDescriptionChanged {
     required TResult Function(int peopleInGroup) peopleInGroupChanged,
     required TResult Function(int adultMaleCount) adultMaleCountChanged,
     required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
-    required TResult Function(int childrenCount) childrenCountChanged,
-    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(List<ChildAge> childrenAges) childrenChanged,
     required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
-    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String foodAllergiesStr) foodAllergiesChanged,
+    required TResult Function(bool hasMeatFreeDiet) meatFreDiet,
+    required TResult Function(bool hasGlutenFreeDiet) glutenFreeDiet,
+    required TResult Function(bool hasLactoseFreeDiet) lactoseFreeDiet,
     required TResult Function(String financeStatusStr) financeStatusChanged,
+    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String desiredDestinationStr) desiredDestination,
+    required TResult Function(PriorityStatus priorityStatus) priorityStatus,
+    required TResult Function(DateTime priorityDate) priorityDate,
     required TResult Function() submitAddGuest,
   }) {
     return petsDescriptionChanged(petsDescriptionStr);
@@ -2230,13 +2393,19 @@ class _$PetsDescriptionChanged implements PetsDescriptionChanged {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
   }) {
     return petsDescriptionChanged?.call(petsDescriptionStr);
@@ -2251,13 +2420,19 @@ class _$PetsDescriptionChanged implements PetsDescriptionChanged {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
     required TResult orElse(),
   }) {
@@ -2278,14 +2453,21 @@ class _$PetsDescriptionChanged implements PetsDescriptionChanged {
         adultMaleCountChanged,
     required TResult Function(AdultFemaleCountChanged value)
         adultFemaleCountChanged,
-    required TResult Function(ChildrenCountChanged value) childrenCountChanged,
-    required TResult Function(ChildrenAgesChanged value) childrenAgesChanged,
+    required TResult Function(ChildrenChanged value) childrenChanged,
     required TResult Function(HavePetsChanged value) havePetsChanged,
     required TResult Function(PetsDescriptionChanged value)
         petsDescriptionChanged,
     required TResult Function(SpecialNeedsChanged value) specialNeedsChanged,
-    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(FoodAllergiesChanged value) foodAllergiesChanged,
+    required TResult Function(MeatFreeDietChanged value) meatFreDiet,
+    required TResult Function(GlutenFreeDietChanged value) glutenFreeDiet,
+    required TResult Function(LactoseFreeDietChanged value) lactoseFreeDiet,
     required TResult Function(FinanceStatusChanged value) financeStatusChanged,
+    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(DesiredDestinationChanged value)
+        desiredDestination,
+    required TResult Function(PriorityStatusChanged value) priorityStatus,
+    required TResult Function(PriorityDateChanged value) priorityDate,
     required TResult Function(SubmitAddGuest value) submitAddGuest,
   }) {
     return petsDescriptionChanged(this);
@@ -2300,13 +2482,19 @@ class _$PetsDescriptionChanged implements PetsDescriptionChanged {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
   }) {
     return petsDescriptionChanged?.call(this);
@@ -2321,13 +2509,19 @@ class _$PetsDescriptionChanged implements PetsDescriptionChanged {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
     required TResult orElse(),
   }) {
@@ -2420,13 +2614,19 @@ class _$SpecialNeedsChanged implements SpecialNeedsChanged {
     required TResult Function(int peopleInGroup) peopleInGroupChanged,
     required TResult Function(int adultMaleCount) adultMaleCountChanged,
     required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
-    required TResult Function(int childrenCount) childrenCountChanged,
-    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(List<ChildAge> childrenAges) childrenChanged,
     required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
-    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String foodAllergiesStr) foodAllergiesChanged,
+    required TResult Function(bool hasMeatFreeDiet) meatFreDiet,
+    required TResult Function(bool hasGlutenFreeDiet) glutenFreeDiet,
+    required TResult Function(bool hasLactoseFreeDiet) lactoseFreeDiet,
     required TResult Function(String financeStatusStr) financeStatusChanged,
+    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String desiredDestinationStr) desiredDestination,
+    required TResult Function(PriorityStatus priorityStatus) priorityStatus,
+    required TResult Function(DateTime priorityDate) priorityDate,
     required TResult Function() submitAddGuest,
   }) {
     return specialNeedsChanged(specialNeedsStr);
@@ -2441,13 +2641,19 @@ class _$SpecialNeedsChanged implements SpecialNeedsChanged {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
   }) {
     return specialNeedsChanged?.call(specialNeedsStr);
@@ -2462,13 +2668,19 @@ class _$SpecialNeedsChanged implements SpecialNeedsChanged {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
     required TResult orElse(),
   }) {
@@ -2489,14 +2701,21 @@ class _$SpecialNeedsChanged implements SpecialNeedsChanged {
         adultMaleCountChanged,
     required TResult Function(AdultFemaleCountChanged value)
         adultFemaleCountChanged,
-    required TResult Function(ChildrenCountChanged value) childrenCountChanged,
-    required TResult Function(ChildrenAgesChanged value) childrenAgesChanged,
+    required TResult Function(ChildrenChanged value) childrenChanged,
     required TResult Function(HavePetsChanged value) havePetsChanged,
     required TResult Function(PetsDescriptionChanged value)
         petsDescriptionChanged,
     required TResult Function(SpecialNeedsChanged value) specialNeedsChanged,
-    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(FoodAllergiesChanged value) foodAllergiesChanged,
+    required TResult Function(MeatFreeDietChanged value) meatFreDiet,
+    required TResult Function(GlutenFreeDietChanged value) glutenFreeDiet,
+    required TResult Function(LactoseFreeDietChanged value) lactoseFreeDiet,
     required TResult Function(FinanceStatusChanged value) financeStatusChanged,
+    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(DesiredDestinationChanged value)
+        desiredDestination,
+    required TResult Function(PriorityStatusChanged value) priorityStatus,
+    required TResult Function(PriorityDateChanged value) priorityDate,
     required TResult Function(SubmitAddGuest value) submitAddGuest,
   }) {
     return specialNeedsChanged(this);
@@ -2511,13 +2730,19 @@ class _$SpecialNeedsChanged implements SpecialNeedsChanged {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
   }) {
     return specialNeedsChanged?.call(this);
@@ -2532,13 +2757,19 @@ class _$SpecialNeedsChanged implements SpecialNeedsChanged {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
     required TResult orElse(),
   }) {
@@ -2560,32 +2791,32 @@ abstract class SpecialNeedsChanged implements GuestFormEvent {
 }
 
 /// @nodoc
-abstract class $HowLongToStayChangedCopyWith<$Res> {
-  factory $HowLongToStayChangedCopyWith(HowLongToStayChanged value,
-          $Res Function(HowLongToStayChanged) then) =
-      _$HowLongToStayChangedCopyWithImpl<$Res>;
-  $Res call({String howLongToStayStr});
+abstract class $FoodAllergiesChangedCopyWith<$Res> {
+  factory $FoodAllergiesChangedCopyWith(FoodAllergiesChanged value,
+          $Res Function(FoodAllergiesChanged) then) =
+      _$FoodAllergiesChangedCopyWithImpl<$Res>;
+  $Res call({String foodAllergiesStr});
 }
 
 /// @nodoc
-class _$HowLongToStayChangedCopyWithImpl<$Res>
+class _$FoodAllergiesChangedCopyWithImpl<$Res>
     extends _$GuestFormEventCopyWithImpl<$Res>
-    implements $HowLongToStayChangedCopyWith<$Res> {
-  _$HowLongToStayChangedCopyWithImpl(
-      HowLongToStayChanged _value, $Res Function(HowLongToStayChanged) _then)
-      : super(_value, (v) => _then(v as HowLongToStayChanged));
+    implements $FoodAllergiesChangedCopyWith<$Res> {
+  _$FoodAllergiesChangedCopyWithImpl(
+      FoodAllergiesChanged _value, $Res Function(FoodAllergiesChanged) _then)
+      : super(_value, (v) => _then(v as FoodAllergiesChanged));
 
   @override
-  HowLongToStayChanged get _value => super._value as HowLongToStayChanged;
+  FoodAllergiesChanged get _value => super._value as FoodAllergiesChanged;
 
   @override
   $Res call({
-    Object? howLongToStayStr = freezed,
+    Object? foodAllergiesStr = freezed,
   }) {
-    return _then(HowLongToStayChanged(
-      howLongToStayStr == freezed
-          ? _value.howLongToStayStr
-          : howLongToStayStr // ignore: cast_nullable_to_non_nullable
+    return _then(FoodAllergiesChanged(
+      foodAllergiesStr == freezed
+          ? _value.foodAllergiesStr
+          : foodAllergiesStr // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -2593,34 +2824,34 @@ class _$HowLongToStayChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HowLongToStayChanged implements HowLongToStayChanged {
-  const _$HowLongToStayChanged(this.howLongToStayStr);
+class _$FoodAllergiesChanged implements FoodAllergiesChanged {
+  const _$FoodAllergiesChanged(this.foodAllergiesStr);
 
   @override
-  final String howLongToStayStr;
+  final String foodAllergiesStr;
 
   @override
   String toString() {
-    return 'GuestFormEvent.howLongToStayChanged(howLongToStayStr: $howLongToStayStr)';
+    return 'GuestFormEvent.foodAllergiesChanged(foodAllergiesStr: $foodAllergiesStr)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is HowLongToStayChanged &&
+            other is FoodAllergiesChanged &&
             const DeepCollectionEquality()
-                .equals(other.howLongToStayStr, howLongToStayStr));
+                .equals(other.foodAllergiesStr, foodAllergiesStr));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(howLongToStayStr));
+      runtimeType, const DeepCollectionEquality().hash(foodAllergiesStr));
 
   @JsonKey(ignore: true)
   @override
-  $HowLongToStayChangedCopyWith<HowLongToStayChanged> get copyWith =>
-      _$HowLongToStayChangedCopyWithImpl<HowLongToStayChanged>(
+  $FoodAllergiesChangedCopyWith<FoodAllergiesChanged> get copyWith =>
+      _$FoodAllergiesChangedCopyWithImpl<FoodAllergiesChanged>(
           this, _$identity);
 
   @override
@@ -2632,16 +2863,22 @@ class _$HowLongToStayChanged implements HowLongToStayChanged {
     required TResult Function(int peopleInGroup) peopleInGroupChanged,
     required TResult Function(int adultMaleCount) adultMaleCountChanged,
     required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
-    required TResult Function(int childrenCount) childrenCountChanged,
-    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(List<ChildAge> childrenAges) childrenChanged,
     required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
-    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String foodAllergiesStr) foodAllergiesChanged,
+    required TResult Function(bool hasMeatFreeDiet) meatFreDiet,
+    required TResult Function(bool hasGlutenFreeDiet) glutenFreeDiet,
+    required TResult Function(bool hasLactoseFreeDiet) lactoseFreeDiet,
     required TResult Function(String financeStatusStr) financeStatusChanged,
+    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String desiredDestinationStr) desiredDestination,
+    required TResult Function(PriorityStatus priorityStatus) priorityStatus,
+    required TResult Function(DateTime priorityDate) priorityDate,
     required TResult Function() submitAddGuest,
   }) {
-    return howLongToStayChanged(howLongToStayStr);
+    return foodAllergiesChanged(foodAllergiesStr);
   }
 
   @override
@@ -2653,16 +2890,22 @@ class _$HowLongToStayChanged implements HowLongToStayChanged {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
   }) {
-    return howLongToStayChanged?.call(howLongToStayStr);
+    return foodAllergiesChanged?.call(foodAllergiesStr);
   }
 
   @override
@@ -2674,18 +2917,24 @@ class _$HowLongToStayChanged implements HowLongToStayChanged {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
     required TResult orElse(),
   }) {
-    if (howLongToStayChanged != null) {
-      return howLongToStayChanged(howLongToStayStr);
+    if (foodAllergiesChanged != null) {
+      return foodAllergiesChanged(foodAllergiesStr);
     }
     return orElse();
   }
@@ -2701,17 +2950,24 @@ class _$HowLongToStayChanged implements HowLongToStayChanged {
         adultMaleCountChanged,
     required TResult Function(AdultFemaleCountChanged value)
         adultFemaleCountChanged,
-    required TResult Function(ChildrenCountChanged value) childrenCountChanged,
-    required TResult Function(ChildrenAgesChanged value) childrenAgesChanged,
+    required TResult Function(ChildrenChanged value) childrenChanged,
     required TResult Function(HavePetsChanged value) havePetsChanged,
     required TResult Function(PetsDescriptionChanged value)
         petsDescriptionChanged,
     required TResult Function(SpecialNeedsChanged value) specialNeedsChanged,
-    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(FoodAllergiesChanged value) foodAllergiesChanged,
+    required TResult Function(MeatFreeDietChanged value) meatFreDiet,
+    required TResult Function(GlutenFreeDietChanged value) glutenFreeDiet,
+    required TResult Function(LactoseFreeDietChanged value) lactoseFreeDiet,
     required TResult Function(FinanceStatusChanged value) financeStatusChanged,
+    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(DesiredDestinationChanged value)
+        desiredDestination,
+    required TResult Function(PriorityStatusChanged value) priorityStatus,
+    required TResult Function(PriorityDateChanged value) priorityDate,
     required TResult Function(SubmitAddGuest value) submitAddGuest,
   }) {
-    return howLongToStayChanged(this);
+    return foodAllergiesChanged(this);
   }
 
   @override
@@ -2723,16 +2979,22 @@ class _$HowLongToStayChanged implements HowLongToStayChanged {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
   }) {
-    return howLongToStayChanged?.call(this);
+    return foodAllergiesChanged?.call(this);
   }
 
   @override
@@ -2744,30 +3006,782 @@ class _$HowLongToStayChanged implements HowLongToStayChanged {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
     required TResult orElse(),
   }) {
-    if (howLongToStayChanged != null) {
-      return howLongToStayChanged(this);
+    if (foodAllergiesChanged != null) {
+      return foodAllergiesChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class HowLongToStayChanged implements GuestFormEvent {
-  const factory HowLongToStayChanged(String howLongToStayStr) =
-      _$HowLongToStayChanged;
+abstract class FoodAllergiesChanged implements GuestFormEvent {
+  const factory FoodAllergiesChanged(String foodAllergiesStr) =
+      _$FoodAllergiesChanged;
 
-  String get howLongToStayStr;
+  String get foodAllergiesStr;
   @JsonKey(ignore: true)
-  $HowLongToStayChangedCopyWith<HowLongToStayChanged> get copyWith =>
+  $FoodAllergiesChangedCopyWith<FoodAllergiesChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $MeatFreeDietChangedCopyWith<$Res> {
+  factory $MeatFreeDietChangedCopyWith(
+          MeatFreeDietChanged value, $Res Function(MeatFreeDietChanged) then) =
+      _$MeatFreeDietChangedCopyWithImpl<$Res>;
+  $Res call({bool hasMeatFreeDiet});
+}
+
+/// @nodoc
+class _$MeatFreeDietChangedCopyWithImpl<$Res>
+    extends _$GuestFormEventCopyWithImpl<$Res>
+    implements $MeatFreeDietChangedCopyWith<$Res> {
+  _$MeatFreeDietChangedCopyWithImpl(
+      MeatFreeDietChanged _value, $Res Function(MeatFreeDietChanged) _then)
+      : super(_value, (v) => _then(v as MeatFreeDietChanged));
+
+  @override
+  MeatFreeDietChanged get _value => super._value as MeatFreeDietChanged;
+
+  @override
+  $Res call({
+    Object? hasMeatFreeDiet = freezed,
+  }) {
+    return _then(MeatFreeDietChanged(
+      hasMeatFreeDiet == freezed
+          ? _value.hasMeatFreeDiet
+          : hasMeatFreeDiet // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$MeatFreeDietChanged implements MeatFreeDietChanged {
+  const _$MeatFreeDietChanged(this.hasMeatFreeDiet);
+
+  @override
+  final bool hasMeatFreeDiet;
+
+  @override
+  String toString() {
+    return 'GuestFormEvent.meatFreDiet(hasMeatFreeDiet: $hasMeatFreeDiet)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is MeatFreeDietChanged &&
+            const DeepCollectionEquality()
+                .equals(other.hasMeatFreeDiet, hasMeatFreeDiet));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(hasMeatFreeDiet));
+
+  @JsonKey(ignore: true)
+  @override
+  $MeatFreeDietChangedCopyWith<MeatFreeDietChanged> get copyWith =>
+      _$MeatFreeDietChangedCopyWithImpl<MeatFreeDietChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String fullNameStr) fullNameChanged,
+    required TResult Function(String phoneNumberStr) phoneNumberChanged,
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(int peopleInGroup) peopleInGroupChanged,
+    required TResult Function(int adultMaleCount) adultMaleCountChanged,
+    required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
+    required TResult Function(List<ChildAge> childrenAges) childrenChanged,
+    required TResult Function(bool havePets) havePetsChanged,
+    required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
+    required TResult Function(String specialNeedsStr) specialNeedsChanged,
+    required TResult Function(String foodAllergiesStr) foodAllergiesChanged,
+    required TResult Function(bool hasMeatFreeDiet) meatFreDiet,
+    required TResult Function(bool hasGlutenFreeDiet) glutenFreeDiet,
+    required TResult Function(bool hasLactoseFreeDiet) lactoseFreeDiet,
+    required TResult Function(String financeStatusStr) financeStatusChanged,
+    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String desiredDestinationStr) desiredDestination,
+    required TResult Function(PriorityStatus priorityStatus) priorityStatus,
+    required TResult Function(DateTime priorityDate) priorityDate,
+    required TResult Function() submitAddGuest,
+  }) {
+    return meatFreDiet(hasMeatFreeDiet);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String fullNameStr)? fullNameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
+    TResult Function(bool havePets)? havePetsChanged,
+    TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
+    TResult Function(String specialNeedsStr)? specialNeedsChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
+    TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
+    TResult Function()? submitAddGuest,
+  }) {
+    return meatFreDiet?.call(hasMeatFreeDiet);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String fullNameStr)? fullNameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
+    TResult Function(bool havePets)? havePetsChanged,
+    TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
+    TResult Function(String specialNeedsStr)? specialNeedsChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
+    TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
+    TResult Function()? submitAddGuest,
+    required TResult orElse(),
+  }) {
+    if (meatFreDiet != null) {
+      return meatFreDiet(hasMeatFreeDiet);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FullNameChanged value) fullNameChanged,
+    required TResult Function(PhoneNumberChanged value) phoneNumberChanged,
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PeopleInGroupChanged value) peopleInGroupChanged,
+    required TResult Function(AdultMaleCountChanged value)
+        adultMaleCountChanged,
+    required TResult Function(AdultFemaleCountChanged value)
+        adultFemaleCountChanged,
+    required TResult Function(ChildrenChanged value) childrenChanged,
+    required TResult Function(HavePetsChanged value) havePetsChanged,
+    required TResult Function(PetsDescriptionChanged value)
+        petsDescriptionChanged,
+    required TResult Function(SpecialNeedsChanged value) specialNeedsChanged,
+    required TResult Function(FoodAllergiesChanged value) foodAllergiesChanged,
+    required TResult Function(MeatFreeDietChanged value) meatFreDiet,
+    required TResult Function(GlutenFreeDietChanged value) glutenFreeDiet,
+    required TResult Function(LactoseFreeDietChanged value) lactoseFreeDiet,
+    required TResult Function(FinanceStatusChanged value) financeStatusChanged,
+    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(DesiredDestinationChanged value)
+        desiredDestination,
+    required TResult Function(PriorityStatusChanged value) priorityStatus,
+    required TResult Function(PriorityDateChanged value) priorityDate,
+    required TResult Function(SubmitAddGuest value) submitAddGuest,
+  }) {
+    return meatFreDiet(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(FullNameChanged value)? fullNameChanged,
+    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
+    TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
+    TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
+    TResult Function(HavePetsChanged value)? havePetsChanged,
+    TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
+    TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
+    TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
+    TResult Function(SubmitAddGuest value)? submitAddGuest,
+  }) {
+    return meatFreDiet?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FullNameChanged value)? fullNameChanged,
+    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
+    TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
+    TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
+    TResult Function(HavePetsChanged value)? havePetsChanged,
+    TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
+    TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
+    TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
+    TResult Function(SubmitAddGuest value)? submitAddGuest,
+    required TResult orElse(),
+  }) {
+    if (meatFreDiet != null) {
+      return meatFreDiet(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MeatFreeDietChanged implements GuestFormEvent {
+  const factory MeatFreeDietChanged(bool hasMeatFreeDiet) =
+      _$MeatFreeDietChanged;
+
+  bool get hasMeatFreeDiet;
+  @JsonKey(ignore: true)
+  $MeatFreeDietChangedCopyWith<MeatFreeDietChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GlutenFreeDietChangedCopyWith<$Res> {
+  factory $GlutenFreeDietChangedCopyWith(GlutenFreeDietChanged value,
+          $Res Function(GlutenFreeDietChanged) then) =
+      _$GlutenFreeDietChangedCopyWithImpl<$Res>;
+  $Res call({bool hasGlutenFreeDiet});
+}
+
+/// @nodoc
+class _$GlutenFreeDietChangedCopyWithImpl<$Res>
+    extends _$GuestFormEventCopyWithImpl<$Res>
+    implements $GlutenFreeDietChangedCopyWith<$Res> {
+  _$GlutenFreeDietChangedCopyWithImpl(
+      GlutenFreeDietChanged _value, $Res Function(GlutenFreeDietChanged) _then)
+      : super(_value, (v) => _then(v as GlutenFreeDietChanged));
+
+  @override
+  GlutenFreeDietChanged get _value => super._value as GlutenFreeDietChanged;
+
+  @override
+  $Res call({
+    Object? hasGlutenFreeDiet = freezed,
+  }) {
+    return _then(GlutenFreeDietChanged(
+      hasGlutenFreeDiet == freezed
+          ? _value.hasGlutenFreeDiet
+          : hasGlutenFreeDiet // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GlutenFreeDietChanged implements GlutenFreeDietChanged {
+  const _$GlutenFreeDietChanged(this.hasGlutenFreeDiet);
+
+  @override
+  final bool hasGlutenFreeDiet;
+
+  @override
+  String toString() {
+    return 'GuestFormEvent.glutenFreeDiet(hasGlutenFreeDiet: $hasGlutenFreeDiet)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is GlutenFreeDietChanged &&
+            const DeepCollectionEquality()
+                .equals(other.hasGlutenFreeDiet, hasGlutenFreeDiet));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(hasGlutenFreeDiet));
+
+  @JsonKey(ignore: true)
+  @override
+  $GlutenFreeDietChangedCopyWith<GlutenFreeDietChanged> get copyWith =>
+      _$GlutenFreeDietChangedCopyWithImpl<GlutenFreeDietChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String fullNameStr) fullNameChanged,
+    required TResult Function(String phoneNumberStr) phoneNumberChanged,
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(int peopleInGroup) peopleInGroupChanged,
+    required TResult Function(int adultMaleCount) adultMaleCountChanged,
+    required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
+    required TResult Function(List<ChildAge> childrenAges) childrenChanged,
+    required TResult Function(bool havePets) havePetsChanged,
+    required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
+    required TResult Function(String specialNeedsStr) specialNeedsChanged,
+    required TResult Function(String foodAllergiesStr) foodAllergiesChanged,
+    required TResult Function(bool hasMeatFreeDiet) meatFreDiet,
+    required TResult Function(bool hasGlutenFreeDiet) glutenFreeDiet,
+    required TResult Function(bool hasLactoseFreeDiet) lactoseFreeDiet,
+    required TResult Function(String financeStatusStr) financeStatusChanged,
+    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String desiredDestinationStr) desiredDestination,
+    required TResult Function(PriorityStatus priorityStatus) priorityStatus,
+    required TResult Function(DateTime priorityDate) priorityDate,
+    required TResult Function() submitAddGuest,
+  }) {
+    return glutenFreeDiet(hasGlutenFreeDiet);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String fullNameStr)? fullNameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
+    TResult Function(bool havePets)? havePetsChanged,
+    TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
+    TResult Function(String specialNeedsStr)? specialNeedsChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
+    TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
+    TResult Function()? submitAddGuest,
+  }) {
+    return glutenFreeDiet?.call(hasGlutenFreeDiet);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String fullNameStr)? fullNameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
+    TResult Function(bool havePets)? havePetsChanged,
+    TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
+    TResult Function(String specialNeedsStr)? specialNeedsChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
+    TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
+    TResult Function()? submitAddGuest,
+    required TResult orElse(),
+  }) {
+    if (glutenFreeDiet != null) {
+      return glutenFreeDiet(hasGlutenFreeDiet);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FullNameChanged value) fullNameChanged,
+    required TResult Function(PhoneNumberChanged value) phoneNumberChanged,
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PeopleInGroupChanged value) peopleInGroupChanged,
+    required TResult Function(AdultMaleCountChanged value)
+        adultMaleCountChanged,
+    required TResult Function(AdultFemaleCountChanged value)
+        adultFemaleCountChanged,
+    required TResult Function(ChildrenChanged value) childrenChanged,
+    required TResult Function(HavePetsChanged value) havePetsChanged,
+    required TResult Function(PetsDescriptionChanged value)
+        petsDescriptionChanged,
+    required TResult Function(SpecialNeedsChanged value) specialNeedsChanged,
+    required TResult Function(FoodAllergiesChanged value) foodAllergiesChanged,
+    required TResult Function(MeatFreeDietChanged value) meatFreDiet,
+    required TResult Function(GlutenFreeDietChanged value) glutenFreeDiet,
+    required TResult Function(LactoseFreeDietChanged value) lactoseFreeDiet,
+    required TResult Function(FinanceStatusChanged value) financeStatusChanged,
+    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(DesiredDestinationChanged value)
+        desiredDestination,
+    required TResult Function(PriorityStatusChanged value) priorityStatus,
+    required TResult Function(PriorityDateChanged value) priorityDate,
+    required TResult Function(SubmitAddGuest value) submitAddGuest,
+  }) {
+    return glutenFreeDiet(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(FullNameChanged value)? fullNameChanged,
+    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
+    TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
+    TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
+    TResult Function(HavePetsChanged value)? havePetsChanged,
+    TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
+    TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
+    TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
+    TResult Function(SubmitAddGuest value)? submitAddGuest,
+  }) {
+    return glutenFreeDiet?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FullNameChanged value)? fullNameChanged,
+    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
+    TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
+    TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
+    TResult Function(HavePetsChanged value)? havePetsChanged,
+    TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
+    TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
+    TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
+    TResult Function(SubmitAddGuest value)? submitAddGuest,
+    required TResult orElse(),
+  }) {
+    if (glutenFreeDiet != null) {
+      return glutenFreeDiet(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GlutenFreeDietChanged implements GuestFormEvent {
+  const factory GlutenFreeDietChanged(bool hasGlutenFreeDiet) =
+      _$GlutenFreeDietChanged;
+
+  bool get hasGlutenFreeDiet;
+  @JsonKey(ignore: true)
+  $GlutenFreeDietChangedCopyWith<GlutenFreeDietChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LactoseFreeDietChangedCopyWith<$Res> {
+  factory $LactoseFreeDietChangedCopyWith(LactoseFreeDietChanged value,
+          $Res Function(LactoseFreeDietChanged) then) =
+      _$LactoseFreeDietChangedCopyWithImpl<$Res>;
+  $Res call({bool hasLactoseFreeDiet});
+}
+
+/// @nodoc
+class _$LactoseFreeDietChangedCopyWithImpl<$Res>
+    extends _$GuestFormEventCopyWithImpl<$Res>
+    implements $LactoseFreeDietChangedCopyWith<$Res> {
+  _$LactoseFreeDietChangedCopyWithImpl(LactoseFreeDietChanged _value,
+      $Res Function(LactoseFreeDietChanged) _then)
+      : super(_value, (v) => _then(v as LactoseFreeDietChanged));
+
+  @override
+  LactoseFreeDietChanged get _value => super._value as LactoseFreeDietChanged;
+
+  @override
+  $Res call({
+    Object? hasLactoseFreeDiet = freezed,
+  }) {
+    return _then(LactoseFreeDietChanged(
+      hasLactoseFreeDiet == freezed
+          ? _value.hasLactoseFreeDiet
+          : hasLactoseFreeDiet // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LactoseFreeDietChanged implements LactoseFreeDietChanged {
+  const _$LactoseFreeDietChanged(this.hasLactoseFreeDiet);
+
+  @override
+  final bool hasLactoseFreeDiet;
+
+  @override
+  String toString() {
+    return 'GuestFormEvent.lactoseFreeDiet(hasLactoseFreeDiet: $hasLactoseFreeDiet)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is LactoseFreeDietChanged &&
+            const DeepCollectionEquality()
+                .equals(other.hasLactoseFreeDiet, hasLactoseFreeDiet));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(hasLactoseFreeDiet));
+
+  @JsonKey(ignore: true)
+  @override
+  $LactoseFreeDietChangedCopyWith<LactoseFreeDietChanged> get copyWith =>
+      _$LactoseFreeDietChangedCopyWithImpl<LactoseFreeDietChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String fullNameStr) fullNameChanged,
+    required TResult Function(String phoneNumberStr) phoneNumberChanged,
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(int peopleInGroup) peopleInGroupChanged,
+    required TResult Function(int adultMaleCount) adultMaleCountChanged,
+    required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
+    required TResult Function(List<ChildAge> childrenAges) childrenChanged,
+    required TResult Function(bool havePets) havePetsChanged,
+    required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
+    required TResult Function(String specialNeedsStr) specialNeedsChanged,
+    required TResult Function(String foodAllergiesStr) foodAllergiesChanged,
+    required TResult Function(bool hasMeatFreeDiet) meatFreDiet,
+    required TResult Function(bool hasGlutenFreeDiet) glutenFreeDiet,
+    required TResult Function(bool hasLactoseFreeDiet) lactoseFreeDiet,
+    required TResult Function(String financeStatusStr) financeStatusChanged,
+    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String desiredDestinationStr) desiredDestination,
+    required TResult Function(PriorityStatus priorityStatus) priorityStatus,
+    required TResult Function(DateTime priorityDate) priorityDate,
+    required TResult Function() submitAddGuest,
+  }) {
+    return lactoseFreeDiet(hasLactoseFreeDiet);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String fullNameStr)? fullNameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
+    TResult Function(bool havePets)? havePetsChanged,
+    TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
+    TResult Function(String specialNeedsStr)? specialNeedsChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
+    TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
+    TResult Function()? submitAddGuest,
+  }) {
+    return lactoseFreeDiet?.call(hasLactoseFreeDiet);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String fullNameStr)? fullNameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
+    TResult Function(bool havePets)? havePetsChanged,
+    TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
+    TResult Function(String specialNeedsStr)? specialNeedsChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
+    TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
+    TResult Function()? submitAddGuest,
+    required TResult orElse(),
+  }) {
+    if (lactoseFreeDiet != null) {
+      return lactoseFreeDiet(hasLactoseFreeDiet);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FullNameChanged value) fullNameChanged,
+    required TResult Function(PhoneNumberChanged value) phoneNumberChanged,
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PeopleInGroupChanged value) peopleInGroupChanged,
+    required TResult Function(AdultMaleCountChanged value)
+        adultMaleCountChanged,
+    required TResult Function(AdultFemaleCountChanged value)
+        adultFemaleCountChanged,
+    required TResult Function(ChildrenChanged value) childrenChanged,
+    required TResult Function(HavePetsChanged value) havePetsChanged,
+    required TResult Function(PetsDescriptionChanged value)
+        petsDescriptionChanged,
+    required TResult Function(SpecialNeedsChanged value) specialNeedsChanged,
+    required TResult Function(FoodAllergiesChanged value) foodAllergiesChanged,
+    required TResult Function(MeatFreeDietChanged value) meatFreDiet,
+    required TResult Function(GlutenFreeDietChanged value) glutenFreeDiet,
+    required TResult Function(LactoseFreeDietChanged value) lactoseFreeDiet,
+    required TResult Function(FinanceStatusChanged value) financeStatusChanged,
+    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(DesiredDestinationChanged value)
+        desiredDestination,
+    required TResult Function(PriorityStatusChanged value) priorityStatus,
+    required TResult Function(PriorityDateChanged value) priorityDate,
+    required TResult Function(SubmitAddGuest value) submitAddGuest,
+  }) {
+    return lactoseFreeDiet(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(FullNameChanged value)? fullNameChanged,
+    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
+    TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
+    TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
+    TResult Function(HavePetsChanged value)? havePetsChanged,
+    TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
+    TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
+    TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
+    TResult Function(SubmitAddGuest value)? submitAddGuest,
+  }) {
+    return lactoseFreeDiet?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FullNameChanged value)? fullNameChanged,
+    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
+    TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
+    TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
+    TResult Function(HavePetsChanged value)? havePetsChanged,
+    TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
+    TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
+    TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
+    TResult Function(SubmitAddGuest value)? submitAddGuest,
+    required TResult orElse(),
+  }) {
+    if (lactoseFreeDiet != null) {
+      return lactoseFreeDiet(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LactoseFreeDietChanged implements GuestFormEvent {
+  const factory LactoseFreeDietChanged(bool hasLactoseFreeDiet) =
+      _$LactoseFreeDietChanged;
+
+  bool get hasLactoseFreeDiet;
+  @JsonKey(ignore: true)
+  $LactoseFreeDietChangedCopyWith<LactoseFreeDietChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -2844,13 +3858,19 @@ class _$FinanceStatusChanged implements FinanceStatusChanged {
     required TResult Function(int peopleInGroup) peopleInGroupChanged,
     required TResult Function(int adultMaleCount) adultMaleCountChanged,
     required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
-    required TResult Function(int childrenCount) childrenCountChanged,
-    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(List<ChildAge> childrenAges) childrenChanged,
     required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
-    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String foodAllergiesStr) foodAllergiesChanged,
+    required TResult Function(bool hasMeatFreeDiet) meatFreDiet,
+    required TResult Function(bool hasGlutenFreeDiet) glutenFreeDiet,
+    required TResult Function(bool hasLactoseFreeDiet) lactoseFreeDiet,
     required TResult Function(String financeStatusStr) financeStatusChanged,
+    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String desiredDestinationStr) desiredDestination,
+    required TResult Function(PriorityStatus priorityStatus) priorityStatus,
+    required TResult Function(DateTime priorityDate) priorityDate,
     required TResult Function() submitAddGuest,
   }) {
     return financeStatusChanged(financeStatusStr);
@@ -2865,13 +3885,19 @@ class _$FinanceStatusChanged implements FinanceStatusChanged {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
   }) {
     return financeStatusChanged?.call(financeStatusStr);
@@ -2886,13 +3912,19 @@ class _$FinanceStatusChanged implements FinanceStatusChanged {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
     required TResult orElse(),
   }) {
@@ -2913,14 +3945,21 @@ class _$FinanceStatusChanged implements FinanceStatusChanged {
         adultMaleCountChanged,
     required TResult Function(AdultFemaleCountChanged value)
         adultFemaleCountChanged,
-    required TResult Function(ChildrenCountChanged value) childrenCountChanged,
-    required TResult Function(ChildrenAgesChanged value) childrenAgesChanged,
+    required TResult Function(ChildrenChanged value) childrenChanged,
     required TResult Function(HavePetsChanged value) havePetsChanged,
     required TResult Function(PetsDescriptionChanged value)
         petsDescriptionChanged,
     required TResult Function(SpecialNeedsChanged value) specialNeedsChanged,
-    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(FoodAllergiesChanged value) foodAllergiesChanged,
+    required TResult Function(MeatFreeDietChanged value) meatFreDiet,
+    required TResult Function(GlutenFreeDietChanged value) glutenFreeDiet,
+    required TResult Function(LactoseFreeDietChanged value) lactoseFreeDiet,
     required TResult Function(FinanceStatusChanged value) financeStatusChanged,
+    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(DesiredDestinationChanged value)
+        desiredDestination,
+    required TResult Function(PriorityStatusChanged value) priorityStatus,
+    required TResult Function(PriorityDateChanged value) priorityDate,
     required TResult Function(SubmitAddGuest value) submitAddGuest,
   }) {
     return financeStatusChanged(this);
@@ -2935,13 +3974,19 @@ class _$FinanceStatusChanged implements FinanceStatusChanged {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
   }) {
     return financeStatusChanged?.call(this);
@@ -2956,13 +4001,19 @@ class _$FinanceStatusChanged implements FinanceStatusChanged {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
     required TResult orElse(),
   }) {
@@ -2980,6 +4031,1002 @@ abstract class FinanceStatusChanged implements GuestFormEvent {
   String get financeStatusStr;
   @JsonKey(ignore: true)
   $FinanceStatusChangedCopyWith<FinanceStatusChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $HowLongToStayChangedCopyWith<$Res> {
+  factory $HowLongToStayChangedCopyWith(HowLongToStayChanged value,
+          $Res Function(HowLongToStayChanged) then) =
+      _$HowLongToStayChangedCopyWithImpl<$Res>;
+  $Res call({String howLongToStayStr});
+}
+
+/// @nodoc
+class _$HowLongToStayChangedCopyWithImpl<$Res>
+    extends _$GuestFormEventCopyWithImpl<$Res>
+    implements $HowLongToStayChangedCopyWith<$Res> {
+  _$HowLongToStayChangedCopyWithImpl(
+      HowLongToStayChanged _value, $Res Function(HowLongToStayChanged) _then)
+      : super(_value, (v) => _then(v as HowLongToStayChanged));
+
+  @override
+  HowLongToStayChanged get _value => super._value as HowLongToStayChanged;
+
+  @override
+  $Res call({
+    Object? howLongToStayStr = freezed,
+  }) {
+    return _then(HowLongToStayChanged(
+      howLongToStayStr == freezed
+          ? _value.howLongToStayStr
+          : howLongToStayStr // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$HowLongToStayChanged implements HowLongToStayChanged {
+  const _$HowLongToStayChanged(this.howLongToStayStr);
+
+  @override
+  final String howLongToStayStr;
+
+  @override
+  String toString() {
+    return 'GuestFormEvent.howLongToStayChanged(howLongToStayStr: $howLongToStayStr)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is HowLongToStayChanged &&
+            const DeepCollectionEquality()
+                .equals(other.howLongToStayStr, howLongToStayStr));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(howLongToStayStr));
+
+  @JsonKey(ignore: true)
+  @override
+  $HowLongToStayChangedCopyWith<HowLongToStayChanged> get copyWith =>
+      _$HowLongToStayChangedCopyWithImpl<HowLongToStayChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String fullNameStr) fullNameChanged,
+    required TResult Function(String phoneNumberStr) phoneNumberChanged,
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(int peopleInGroup) peopleInGroupChanged,
+    required TResult Function(int adultMaleCount) adultMaleCountChanged,
+    required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
+    required TResult Function(List<ChildAge> childrenAges) childrenChanged,
+    required TResult Function(bool havePets) havePetsChanged,
+    required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
+    required TResult Function(String specialNeedsStr) specialNeedsChanged,
+    required TResult Function(String foodAllergiesStr) foodAllergiesChanged,
+    required TResult Function(bool hasMeatFreeDiet) meatFreDiet,
+    required TResult Function(bool hasGlutenFreeDiet) glutenFreeDiet,
+    required TResult Function(bool hasLactoseFreeDiet) lactoseFreeDiet,
+    required TResult Function(String financeStatusStr) financeStatusChanged,
+    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String desiredDestinationStr) desiredDestination,
+    required TResult Function(PriorityStatus priorityStatus) priorityStatus,
+    required TResult Function(DateTime priorityDate) priorityDate,
+    required TResult Function() submitAddGuest,
+  }) {
+    return howLongToStayChanged(howLongToStayStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String fullNameStr)? fullNameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
+    TResult Function(bool havePets)? havePetsChanged,
+    TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
+    TResult Function(String specialNeedsStr)? specialNeedsChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
+    TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
+    TResult Function()? submitAddGuest,
+  }) {
+    return howLongToStayChanged?.call(howLongToStayStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String fullNameStr)? fullNameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
+    TResult Function(bool havePets)? havePetsChanged,
+    TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
+    TResult Function(String specialNeedsStr)? specialNeedsChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
+    TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
+    TResult Function()? submitAddGuest,
+    required TResult orElse(),
+  }) {
+    if (howLongToStayChanged != null) {
+      return howLongToStayChanged(howLongToStayStr);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FullNameChanged value) fullNameChanged,
+    required TResult Function(PhoneNumberChanged value) phoneNumberChanged,
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PeopleInGroupChanged value) peopleInGroupChanged,
+    required TResult Function(AdultMaleCountChanged value)
+        adultMaleCountChanged,
+    required TResult Function(AdultFemaleCountChanged value)
+        adultFemaleCountChanged,
+    required TResult Function(ChildrenChanged value) childrenChanged,
+    required TResult Function(HavePetsChanged value) havePetsChanged,
+    required TResult Function(PetsDescriptionChanged value)
+        petsDescriptionChanged,
+    required TResult Function(SpecialNeedsChanged value) specialNeedsChanged,
+    required TResult Function(FoodAllergiesChanged value) foodAllergiesChanged,
+    required TResult Function(MeatFreeDietChanged value) meatFreDiet,
+    required TResult Function(GlutenFreeDietChanged value) glutenFreeDiet,
+    required TResult Function(LactoseFreeDietChanged value) lactoseFreeDiet,
+    required TResult Function(FinanceStatusChanged value) financeStatusChanged,
+    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(DesiredDestinationChanged value)
+        desiredDestination,
+    required TResult Function(PriorityStatusChanged value) priorityStatus,
+    required TResult Function(PriorityDateChanged value) priorityDate,
+    required TResult Function(SubmitAddGuest value) submitAddGuest,
+  }) {
+    return howLongToStayChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(FullNameChanged value)? fullNameChanged,
+    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
+    TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
+    TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
+    TResult Function(HavePetsChanged value)? havePetsChanged,
+    TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
+    TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
+    TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
+    TResult Function(SubmitAddGuest value)? submitAddGuest,
+  }) {
+    return howLongToStayChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FullNameChanged value)? fullNameChanged,
+    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
+    TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
+    TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
+    TResult Function(HavePetsChanged value)? havePetsChanged,
+    TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
+    TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
+    TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
+    TResult Function(SubmitAddGuest value)? submitAddGuest,
+    required TResult orElse(),
+  }) {
+    if (howLongToStayChanged != null) {
+      return howLongToStayChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class HowLongToStayChanged implements GuestFormEvent {
+  const factory HowLongToStayChanged(String howLongToStayStr) =
+      _$HowLongToStayChanged;
+
+  String get howLongToStayStr;
+  @JsonKey(ignore: true)
+  $HowLongToStayChangedCopyWith<HowLongToStayChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DesiredDestinationChangedCopyWith<$Res> {
+  factory $DesiredDestinationChangedCopyWith(DesiredDestinationChanged value,
+          $Res Function(DesiredDestinationChanged) then) =
+      _$DesiredDestinationChangedCopyWithImpl<$Res>;
+  $Res call({String desiredDestinationStr});
+}
+
+/// @nodoc
+class _$DesiredDestinationChangedCopyWithImpl<$Res>
+    extends _$GuestFormEventCopyWithImpl<$Res>
+    implements $DesiredDestinationChangedCopyWith<$Res> {
+  _$DesiredDestinationChangedCopyWithImpl(DesiredDestinationChanged _value,
+      $Res Function(DesiredDestinationChanged) _then)
+      : super(_value, (v) => _then(v as DesiredDestinationChanged));
+
+  @override
+  DesiredDestinationChanged get _value =>
+      super._value as DesiredDestinationChanged;
+
+  @override
+  $Res call({
+    Object? desiredDestinationStr = freezed,
+  }) {
+    return _then(DesiredDestinationChanged(
+      desiredDestinationStr == freezed
+          ? _value.desiredDestinationStr
+          : desiredDestinationStr // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DesiredDestinationChanged implements DesiredDestinationChanged {
+  const _$DesiredDestinationChanged(this.desiredDestinationStr);
+
+  @override
+  final String desiredDestinationStr;
+
+  @override
+  String toString() {
+    return 'GuestFormEvent.desiredDestination(desiredDestinationStr: $desiredDestinationStr)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is DesiredDestinationChanged &&
+            const DeepCollectionEquality()
+                .equals(other.desiredDestinationStr, desiredDestinationStr));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(desiredDestinationStr));
+
+  @JsonKey(ignore: true)
+  @override
+  $DesiredDestinationChangedCopyWith<DesiredDestinationChanged> get copyWith =>
+      _$DesiredDestinationChangedCopyWithImpl<DesiredDestinationChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String fullNameStr) fullNameChanged,
+    required TResult Function(String phoneNumberStr) phoneNumberChanged,
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(int peopleInGroup) peopleInGroupChanged,
+    required TResult Function(int adultMaleCount) adultMaleCountChanged,
+    required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
+    required TResult Function(List<ChildAge> childrenAges) childrenChanged,
+    required TResult Function(bool havePets) havePetsChanged,
+    required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
+    required TResult Function(String specialNeedsStr) specialNeedsChanged,
+    required TResult Function(String foodAllergiesStr) foodAllergiesChanged,
+    required TResult Function(bool hasMeatFreeDiet) meatFreDiet,
+    required TResult Function(bool hasGlutenFreeDiet) glutenFreeDiet,
+    required TResult Function(bool hasLactoseFreeDiet) lactoseFreeDiet,
+    required TResult Function(String financeStatusStr) financeStatusChanged,
+    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String desiredDestinationStr) desiredDestination,
+    required TResult Function(PriorityStatus priorityStatus) priorityStatus,
+    required TResult Function(DateTime priorityDate) priorityDate,
+    required TResult Function() submitAddGuest,
+  }) {
+    return desiredDestination(desiredDestinationStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String fullNameStr)? fullNameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
+    TResult Function(bool havePets)? havePetsChanged,
+    TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
+    TResult Function(String specialNeedsStr)? specialNeedsChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
+    TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
+    TResult Function()? submitAddGuest,
+  }) {
+    return desiredDestination?.call(desiredDestinationStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String fullNameStr)? fullNameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
+    TResult Function(bool havePets)? havePetsChanged,
+    TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
+    TResult Function(String specialNeedsStr)? specialNeedsChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
+    TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
+    TResult Function()? submitAddGuest,
+    required TResult orElse(),
+  }) {
+    if (desiredDestination != null) {
+      return desiredDestination(desiredDestinationStr);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FullNameChanged value) fullNameChanged,
+    required TResult Function(PhoneNumberChanged value) phoneNumberChanged,
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PeopleInGroupChanged value) peopleInGroupChanged,
+    required TResult Function(AdultMaleCountChanged value)
+        adultMaleCountChanged,
+    required TResult Function(AdultFemaleCountChanged value)
+        adultFemaleCountChanged,
+    required TResult Function(ChildrenChanged value) childrenChanged,
+    required TResult Function(HavePetsChanged value) havePetsChanged,
+    required TResult Function(PetsDescriptionChanged value)
+        petsDescriptionChanged,
+    required TResult Function(SpecialNeedsChanged value) specialNeedsChanged,
+    required TResult Function(FoodAllergiesChanged value) foodAllergiesChanged,
+    required TResult Function(MeatFreeDietChanged value) meatFreDiet,
+    required TResult Function(GlutenFreeDietChanged value) glutenFreeDiet,
+    required TResult Function(LactoseFreeDietChanged value) lactoseFreeDiet,
+    required TResult Function(FinanceStatusChanged value) financeStatusChanged,
+    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(DesiredDestinationChanged value)
+        desiredDestination,
+    required TResult Function(PriorityStatusChanged value) priorityStatus,
+    required TResult Function(PriorityDateChanged value) priorityDate,
+    required TResult Function(SubmitAddGuest value) submitAddGuest,
+  }) {
+    return desiredDestination(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(FullNameChanged value)? fullNameChanged,
+    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
+    TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
+    TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
+    TResult Function(HavePetsChanged value)? havePetsChanged,
+    TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
+    TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
+    TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
+    TResult Function(SubmitAddGuest value)? submitAddGuest,
+  }) {
+    return desiredDestination?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FullNameChanged value)? fullNameChanged,
+    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
+    TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
+    TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
+    TResult Function(HavePetsChanged value)? havePetsChanged,
+    TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
+    TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
+    TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
+    TResult Function(SubmitAddGuest value)? submitAddGuest,
+    required TResult orElse(),
+  }) {
+    if (desiredDestination != null) {
+      return desiredDestination(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DesiredDestinationChanged implements GuestFormEvent {
+  const factory DesiredDestinationChanged(String desiredDestinationStr) =
+      _$DesiredDestinationChanged;
+
+  String get desiredDestinationStr;
+  @JsonKey(ignore: true)
+  $DesiredDestinationChangedCopyWith<DesiredDestinationChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PriorityStatusChangedCopyWith<$Res> {
+  factory $PriorityStatusChangedCopyWith(PriorityStatusChanged value,
+          $Res Function(PriorityStatusChanged) then) =
+      _$PriorityStatusChangedCopyWithImpl<$Res>;
+  $Res call({PriorityStatus priorityStatus});
+}
+
+/// @nodoc
+class _$PriorityStatusChangedCopyWithImpl<$Res>
+    extends _$GuestFormEventCopyWithImpl<$Res>
+    implements $PriorityStatusChangedCopyWith<$Res> {
+  _$PriorityStatusChangedCopyWithImpl(
+      PriorityStatusChanged _value, $Res Function(PriorityStatusChanged) _then)
+      : super(_value, (v) => _then(v as PriorityStatusChanged));
+
+  @override
+  PriorityStatusChanged get _value => super._value as PriorityStatusChanged;
+
+  @override
+  $Res call({
+    Object? priorityStatus = freezed,
+  }) {
+    return _then(PriorityStatusChanged(
+      priorityStatus == freezed
+          ? _value.priorityStatus
+          : priorityStatus // ignore: cast_nullable_to_non_nullable
+              as PriorityStatus,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PriorityStatusChanged implements PriorityStatusChanged {
+  const _$PriorityStatusChanged(this.priorityStatus);
+
+  @override
+  final PriorityStatus priorityStatus;
+
+  @override
+  String toString() {
+    return 'GuestFormEvent.priorityStatus(priorityStatus: $priorityStatus)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is PriorityStatusChanged &&
+            const DeepCollectionEquality()
+                .equals(other.priorityStatus, priorityStatus));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(priorityStatus));
+
+  @JsonKey(ignore: true)
+  @override
+  $PriorityStatusChangedCopyWith<PriorityStatusChanged> get copyWith =>
+      _$PriorityStatusChangedCopyWithImpl<PriorityStatusChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String fullNameStr) fullNameChanged,
+    required TResult Function(String phoneNumberStr) phoneNumberChanged,
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(int peopleInGroup) peopleInGroupChanged,
+    required TResult Function(int adultMaleCount) adultMaleCountChanged,
+    required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
+    required TResult Function(List<ChildAge> childrenAges) childrenChanged,
+    required TResult Function(bool havePets) havePetsChanged,
+    required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
+    required TResult Function(String specialNeedsStr) specialNeedsChanged,
+    required TResult Function(String foodAllergiesStr) foodAllergiesChanged,
+    required TResult Function(bool hasMeatFreeDiet) meatFreDiet,
+    required TResult Function(bool hasGlutenFreeDiet) glutenFreeDiet,
+    required TResult Function(bool hasLactoseFreeDiet) lactoseFreeDiet,
+    required TResult Function(String financeStatusStr) financeStatusChanged,
+    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String desiredDestinationStr) desiredDestination,
+    required TResult Function(PriorityStatus priorityStatus) priorityStatus,
+    required TResult Function(DateTime priorityDate) priorityDate,
+    required TResult Function() submitAddGuest,
+  }) {
+    return priorityStatus(this.priorityStatus);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String fullNameStr)? fullNameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
+    TResult Function(bool havePets)? havePetsChanged,
+    TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
+    TResult Function(String specialNeedsStr)? specialNeedsChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
+    TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
+    TResult Function()? submitAddGuest,
+  }) {
+    return priorityStatus?.call(this.priorityStatus);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String fullNameStr)? fullNameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
+    TResult Function(bool havePets)? havePetsChanged,
+    TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
+    TResult Function(String specialNeedsStr)? specialNeedsChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
+    TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
+    TResult Function()? submitAddGuest,
+    required TResult orElse(),
+  }) {
+    if (priorityStatus != null) {
+      return priorityStatus(this.priorityStatus);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FullNameChanged value) fullNameChanged,
+    required TResult Function(PhoneNumberChanged value) phoneNumberChanged,
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PeopleInGroupChanged value) peopleInGroupChanged,
+    required TResult Function(AdultMaleCountChanged value)
+        adultMaleCountChanged,
+    required TResult Function(AdultFemaleCountChanged value)
+        adultFemaleCountChanged,
+    required TResult Function(ChildrenChanged value) childrenChanged,
+    required TResult Function(HavePetsChanged value) havePetsChanged,
+    required TResult Function(PetsDescriptionChanged value)
+        petsDescriptionChanged,
+    required TResult Function(SpecialNeedsChanged value) specialNeedsChanged,
+    required TResult Function(FoodAllergiesChanged value) foodAllergiesChanged,
+    required TResult Function(MeatFreeDietChanged value) meatFreDiet,
+    required TResult Function(GlutenFreeDietChanged value) glutenFreeDiet,
+    required TResult Function(LactoseFreeDietChanged value) lactoseFreeDiet,
+    required TResult Function(FinanceStatusChanged value) financeStatusChanged,
+    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(DesiredDestinationChanged value)
+        desiredDestination,
+    required TResult Function(PriorityStatusChanged value) priorityStatus,
+    required TResult Function(PriorityDateChanged value) priorityDate,
+    required TResult Function(SubmitAddGuest value) submitAddGuest,
+  }) {
+    return priorityStatus(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(FullNameChanged value)? fullNameChanged,
+    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
+    TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
+    TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
+    TResult Function(HavePetsChanged value)? havePetsChanged,
+    TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
+    TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
+    TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
+    TResult Function(SubmitAddGuest value)? submitAddGuest,
+  }) {
+    return priorityStatus?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FullNameChanged value)? fullNameChanged,
+    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
+    TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
+    TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
+    TResult Function(HavePetsChanged value)? havePetsChanged,
+    TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
+    TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
+    TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
+    TResult Function(SubmitAddGuest value)? submitAddGuest,
+    required TResult orElse(),
+  }) {
+    if (priorityStatus != null) {
+      return priorityStatus(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PriorityStatusChanged implements GuestFormEvent {
+  const factory PriorityStatusChanged(PriorityStatus priorityStatus) =
+      _$PriorityStatusChanged;
+
+  PriorityStatus get priorityStatus;
+  @JsonKey(ignore: true)
+  $PriorityStatusChangedCopyWith<PriorityStatusChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PriorityDateChangedCopyWith<$Res> {
+  factory $PriorityDateChangedCopyWith(
+          PriorityDateChanged value, $Res Function(PriorityDateChanged) then) =
+      _$PriorityDateChangedCopyWithImpl<$Res>;
+  $Res call({DateTime priorityDate});
+}
+
+/// @nodoc
+class _$PriorityDateChangedCopyWithImpl<$Res>
+    extends _$GuestFormEventCopyWithImpl<$Res>
+    implements $PriorityDateChangedCopyWith<$Res> {
+  _$PriorityDateChangedCopyWithImpl(
+      PriorityDateChanged _value, $Res Function(PriorityDateChanged) _then)
+      : super(_value, (v) => _then(v as PriorityDateChanged));
+
+  @override
+  PriorityDateChanged get _value => super._value as PriorityDateChanged;
+
+  @override
+  $Res call({
+    Object? priorityDate = freezed,
+  }) {
+    return _then(PriorityDateChanged(
+      priorityDate == freezed
+          ? _value.priorityDate
+          : priorityDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PriorityDateChanged implements PriorityDateChanged {
+  const _$PriorityDateChanged(this.priorityDate);
+
+  @override
+  final DateTime priorityDate;
+
+  @override
+  String toString() {
+    return 'GuestFormEvent.priorityDate(priorityDate: $priorityDate)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is PriorityDateChanged &&
+            const DeepCollectionEquality()
+                .equals(other.priorityDate, priorityDate));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(priorityDate));
+
+  @JsonKey(ignore: true)
+  @override
+  $PriorityDateChangedCopyWith<PriorityDateChanged> get copyWith =>
+      _$PriorityDateChangedCopyWithImpl<PriorityDateChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String fullNameStr) fullNameChanged,
+    required TResult Function(String phoneNumberStr) phoneNumberChanged,
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(int peopleInGroup) peopleInGroupChanged,
+    required TResult Function(int adultMaleCount) adultMaleCountChanged,
+    required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
+    required TResult Function(List<ChildAge> childrenAges) childrenChanged,
+    required TResult Function(bool havePets) havePetsChanged,
+    required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
+    required TResult Function(String specialNeedsStr) specialNeedsChanged,
+    required TResult Function(String foodAllergiesStr) foodAllergiesChanged,
+    required TResult Function(bool hasMeatFreeDiet) meatFreDiet,
+    required TResult Function(bool hasGlutenFreeDiet) glutenFreeDiet,
+    required TResult Function(bool hasLactoseFreeDiet) lactoseFreeDiet,
+    required TResult Function(String financeStatusStr) financeStatusChanged,
+    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String desiredDestinationStr) desiredDestination,
+    required TResult Function(PriorityStatus priorityStatus) priorityStatus,
+    required TResult Function(DateTime priorityDate) priorityDate,
+    required TResult Function() submitAddGuest,
+  }) {
+    return priorityDate(this.priorityDate);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String fullNameStr)? fullNameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
+    TResult Function(bool havePets)? havePetsChanged,
+    TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
+    TResult Function(String specialNeedsStr)? specialNeedsChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
+    TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
+    TResult Function()? submitAddGuest,
+  }) {
+    return priorityDate?.call(this.priorityDate);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String fullNameStr)? fullNameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(int peopleInGroup)? peopleInGroupChanged,
+    TResult Function(int adultMaleCount)? adultMaleCountChanged,
+    TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
+    TResult Function(bool havePets)? havePetsChanged,
+    TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
+    TResult Function(String specialNeedsStr)? specialNeedsChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
+    TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
+    TResult Function()? submitAddGuest,
+    required TResult orElse(),
+  }) {
+    if (priorityDate != null) {
+      return priorityDate(this.priorityDate);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FullNameChanged value) fullNameChanged,
+    required TResult Function(PhoneNumberChanged value) phoneNumberChanged,
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PeopleInGroupChanged value) peopleInGroupChanged,
+    required TResult Function(AdultMaleCountChanged value)
+        adultMaleCountChanged,
+    required TResult Function(AdultFemaleCountChanged value)
+        adultFemaleCountChanged,
+    required TResult Function(ChildrenChanged value) childrenChanged,
+    required TResult Function(HavePetsChanged value) havePetsChanged,
+    required TResult Function(PetsDescriptionChanged value)
+        petsDescriptionChanged,
+    required TResult Function(SpecialNeedsChanged value) specialNeedsChanged,
+    required TResult Function(FoodAllergiesChanged value) foodAllergiesChanged,
+    required TResult Function(MeatFreeDietChanged value) meatFreDiet,
+    required TResult Function(GlutenFreeDietChanged value) glutenFreeDiet,
+    required TResult Function(LactoseFreeDietChanged value) lactoseFreeDiet,
+    required TResult Function(FinanceStatusChanged value) financeStatusChanged,
+    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(DesiredDestinationChanged value)
+        desiredDestination,
+    required TResult Function(PriorityStatusChanged value) priorityStatus,
+    required TResult Function(PriorityDateChanged value) priorityDate,
+    required TResult Function(SubmitAddGuest value) submitAddGuest,
+  }) {
+    return priorityDate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(FullNameChanged value)? fullNameChanged,
+    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
+    TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
+    TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
+    TResult Function(HavePetsChanged value)? havePetsChanged,
+    TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
+    TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
+    TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
+    TResult Function(SubmitAddGuest value)? submitAddGuest,
+  }) {
+    return priorityDate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FullNameChanged value)? fullNameChanged,
+    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
+    TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
+    TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
+    TResult Function(HavePetsChanged value)? havePetsChanged,
+    TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
+    TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
+    TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
+    TResult Function(SubmitAddGuest value)? submitAddGuest,
+    required TResult orElse(),
+  }) {
+    if (priorityDate != null) {
+      return priorityDate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PriorityDateChanged implements GuestFormEvent {
+  const factory PriorityDateChanged(DateTime priorityDate) =
+      _$PriorityDateChanged;
+
+  DateTime get priorityDate;
+  @JsonKey(ignore: true)
+  $PriorityDateChangedCopyWith<PriorityDateChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -3030,13 +5077,19 @@ class _$SubmitAddGuest implements SubmitAddGuest {
     required TResult Function(int peopleInGroup) peopleInGroupChanged,
     required TResult Function(int adultMaleCount) adultMaleCountChanged,
     required TResult Function(int adultFemaleCount) adultFemaleCountChanged,
-    required TResult Function(int childrenCount) childrenCountChanged,
-    required TResult Function(List<int> childrenAges) childrenAgesChanged,
+    required TResult Function(List<ChildAge> childrenAges) childrenChanged,
     required TResult Function(bool havePets) havePetsChanged,
     required TResult Function(String petsDescriptionStr) petsDescriptionChanged,
     required TResult Function(String specialNeedsStr) specialNeedsChanged,
-    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String foodAllergiesStr) foodAllergiesChanged,
+    required TResult Function(bool hasMeatFreeDiet) meatFreDiet,
+    required TResult Function(bool hasGlutenFreeDiet) glutenFreeDiet,
+    required TResult Function(bool hasLactoseFreeDiet) lactoseFreeDiet,
     required TResult Function(String financeStatusStr) financeStatusChanged,
+    required TResult Function(String howLongToStayStr) howLongToStayChanged,
+    required TResult Function(String desiredDestinationStr) desiredDestination,
+    required TResult Function(PriorityStatus priorityStatus) priorityStatus,
+    required TResult Function(DateTime priorityDate) priorityDate,
     required TResult Function() submitAddGuest,
   }) {
     return submitAddGuest();
@@ -3051,13 +5104,19 @@ class _$SubmitAddGuest implements SubmitAddGuest {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
   }) {
     return submitAddGuest?.call();
@@ -3072,13 +5131,19 @@ class _$SubmitAddGuest implements SubmitAddGuest {
     TResult Function(int peopleInGroup)? peopleInGroupChanged,
     TResult Function(int adultMaleCount)? adultMaleCountChanged,
     TResult Function(int adultFemaleCount)? adultFemaleCountChanged,
-    TResult Function(int childrenCount)? childrenCountChanged,
-    TResult Function(List<int> childrenAges)? childrenAgesChanged,
+    TResult Function(List<ChildAge> childrenAges)? childrenChanged,
     TResult Function(bool havePets)? havePetsChanged,
     TResult Function(String petsDescriptionStr)? petsDescriptionChanged,
     TResult Function(String specialNeedsStr)? specialNeedsChanged,
-    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String foodAllergiesStr)? foodAllergiesChanged,
+    TResult Function(bool hasMeatFreeDiet)? meatFreDiet,
+    TResult Function(bool hasGlutenFreeDiet)? glutenFreeDiet,
+    TResult Function(bool hasLactoseFreeDiet)? lactoseFreeDiet,
     TResult Function(String financeStatusStr)? financeStatusChanged,
+    TResult Function(String howLongToStayStr)? howLongToStayChanged,
+    TResult Function(String desiredDestinationStr)? desiredDestination,
+    TResult Function(PriorityStatus priorityStatus)? priorityStatus,
+    TResult Function(DateTime priorityDate)? priorityDate,
     TResult Function()? submitAddGuest,
     required TResult orElse(),
   }) {
@@ -3099,14 +5164,21 @@ class _$SubmitAddGuest implements SubmitAddGuest {
         adultMaleCountChanged,
     required TResult Function(AdultFemaleCountChanged value)
         adultFemaleCountChanged,
-    required TResult Function(ChildrenCountChanged value) childrenCountChanged,
-    required TResult Function(ChildrenAgesChanged value) childrenAgesChanged,
+    required TResult Function(ChildrenChanged value) childrenChanged,
     required TResult Function(HavePetsChanged value) havePetsChanged,
     required TResult Function(PetsDescriptionChanged value)
         petsDescriptionChanged,
     required TResult Function(SpecialNeedsChanged value) specialNeedsChanged,
-    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(FoodAllergiesChanged value) foodAllergiesChanged,
+    required TResult Function(MeatFreeDietChanged value) meatFreDiet,
+    required TResult Function(GlutenFreeDietChanged value) glutenFreeDiet,
+    required TResult Function(LactoseFreeDietChanged value) lactoseFreeDiet,
     required TResult Function(FinanceStatusChanged value) financeStatusChanged,
+    required TResult Function(HowLongToStayChanged value) howLongToStayChanged,
+    required TResult Function(DesiredDestinationChanged value)
+        desiredDestination,
+    required TResult Function(PriorityStatusChanged value) priorityStatus,
+    required TResult Function(PriorityDateChanged value) priorityDate,
     required TResult Function(SubmitAddGuest value) submitAddGuest,
   }) {
     return submitAddGuest(this);
@@ -3121,13 +5193,19 @@ class _$SubmitAddGuest implements SubmitAddGuest {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
   }) {
     return submitAddGuest?.call(this);
@@ -3142,13 +5220,19 @@ class _$SubmitAddGuest implements SubmitAddGuest {
     TResult Function(PeopleInGroupChanged value)? peopleInGroupChanged,
     TResult Function(AdultMaleCountChanged value)? adultMaleCountChanged,
     TResult Function(AdultFemaleCountChanged value)? adultFemaleCountChanged,
-    TResult Function(ChildrenCountChanged value)? childrenCountChanged,
-    TResult Function(ChildrenAgesChanged value)? childrenAgesChanged,
+    TResult Function(ChildrenChanged value)? childrenChanged,
     TResult Function(HavePetsChanged value)? havePetsChanged,
     TResult Function(PetsDescriptionChanged value)? petsDescriptionChanged,
     TResult Function(SpecialNeedsChanged value)? specialNeedsChanged,
-    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(FoodAllergiesChanged value)? foodAllergiesChanged,
+    TResult Function(MeatFreeDietChanged value)? meatFreDiet,
+    TResult Function(GlutenFreeDietChanged value)? glutenFreeDiet,
+    TResult Function(LactoseFreeDietChanged value)? lactoseFreeDiet,
     TResult Function(FinanceStatusChanged value)? financeStatusChanged,
+    TResult Function(HowLongToStayChanged value)? howLongToStayChanged,
+    TResult Function(DesiredDestinationChanged value)? desiredDestination,
+    TResult Function(PriorityStatusChanged value)? priorityStatus,
+    TResult Function(PriorityDateChanged value)? priorityDate,
     TResult Function(SubmitAddGuest value)? submitAddGuest,
     required TResult orElse(),
   }) {
@@ -3174,13 +5258,19 @@ class _$GuestFormStateTearOff {
       int? peopleInGroup,
       int? adultMaleCount,
       int? adultFemaleCount,
-      int? childrenCount,
-      List<int>? childrenAges,
+      List<ChildAge>? children,
       bool? havePets,
       String? petsDescription,
       String? specialNeeds,
-      String? howLongToStay,
+      String? foodAllergies,
+      bool? meatFreeDiet,
+      bool? glutenFreeDiet,
+      bool? lactoseFreeDiet,
       String? financeStatus,
+      String? howLongToStay,
+      String? desiredDestination,
+      PriorityStatus? priorityStatus,
+      DateTime? priorityDate,
       required AutovalidateMode showErrorMessages,
       required bool isSubmitting,
       required Option<Either<Failure, Guest>> submitFailureOrSuccessOption}) {
@@ -3191,13 +5281,19 @@ class _$GuestFormStateTearOff {
       peopleInGroup: peopleInGroup,
       adultMaleCount: adultMaleCount,
       adultFemaleCount: adultFemaleCount,
-      childrenCount: childrenCount,
-      childrenAges: childrenAges,
+      children: children,
       havePets: havePets,
       petsDescription: petsDescription,
       specialNeeds: specialNeeds,
-      howLongToStay: howLongToStay,
+      foodAllergies: foodAllergies,
+      meatFreeDiet: meatFreeDiet,
+      glutenFreeDiet: glutenFreeDiet,
+      lactoseFreeDiet: lactoseFreeDiet,
       financeStatus: financeStatus,
+      howLongToStay: howLongToStay,
+      desiredDestination: desiredDestination,
+      priorityStatus: priorityStatus,
+      priorityDate: priorityDate,
       showErrorMessages: showErrorMessages,
       isSubmitting: isSubmitting,
       submitFailureOrSuccessOption: submitFailureOrSuccessOption,
@@ -3216,13 +5312,19 @@ mixin _$GuestFormState {
   int? get peopleInGroup => throw _privateConstructorUsedError;
   int? get adultMaleCount => throw _privateConstructorUsedError;
   int? get adultFemaleCount => throw _privateConstructorUsedError;
-  int? get childrenCount => throw _privateConstructorUsedError;
-  List<int>? get childrenAges => throw _privateConstructorUsedError;
+  List<ChildAge>? get children => throw _privateConstructorUsedError;
   bool? get havePets => throw _privateConstructorUsedError;
   String? get petsDescription => throw _privateConstructorUsedError;
   String? get specialNeeds => throw _privateConstructorUsedError;
-  String? get howLongToStay => throw _privateConstructorUsedError;
+  String? get foodAllergies => throw _privateConstructorUsedError;
+  bool? get meatFreeDiet => throw _privateConstructorUsedError;
+  bool? get glutenFreeDiet => throw _privateConstructorUsedError;
+  bool? get lactoseFreeDiet => throw _privateConstructorUsedError;
   String? get financeStatus => throw _privateConstructorUsedError;
+  String? get howLongToStay => throw _privateConstructorUsedError;
+  String? get desiredDestination => throw _privateConstructorUsedError;
+  PriorityStatus? get priorityStatus => throw _privateConstructorUsedError;
+  DateTime? get priorityDate => throw _privateConstructorUsedError;
   AutovalidateMode get showErrorMessages => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
   Option<Either<Failure, Guest>> get submitFailureOrSuccessOption =>
@@ -3245,13 +5347,19 @@ abstract class $GuestFormStateCopyWith<$Res> {
       int? peopleInGroup,
       int? adultMaleCount,
       int? adultFemaleCount,
-      int? childrenCount,
-      List<int>? childrenAges,
+      List<ChildAge>? children,
       bool? havePets,
       String? petsDescription,
       String? specialNeeds,
-      String? howLongToStay,
+      String? foodAllergies,
+      bool? meatFreeDiet,
+      bool? glutenFreeDiet,
+      bool? lactoseFreeDiet,
       String? financeStatus,
+      String? howLongToStay,
+      String? desiredDestination,
+      PriorityStatus? priorityStatus,
+      DateTime? priorityDate,
       AutovalidateMode showErrorMessages,
       bool isSubmitting,
       Option<Either<Failure, Guest>> submitFailureOrSuccessOption});
@@ -3274,13 +5382,19 @@ class _$GuestFormStateCopyWithImpl<$Res>
     Object? peopleInGroup = freezed,
     Object? adultMaleCount = freezed,
     Object? adultFemaleCount = freezed,
-    Object? childrenCount = freezed,
-    Object? childrenAges = freezed,
+    Object? children = freezed,
     Object? havePets = freezed,
     Object? petsDescription = freezed,
     Object? specialNeeds = freezed,
-    Object? howLongToStay = freezed,
+    Object? foodAllergies = freezed,
+    Object? meatFreeDiet = freezed,
+    Object? glutenFreeDiet = freezed,
+    Object? lactoseFreeDiet = freezed,
     Object? financeStatus = freezed,
+    Object? howLongToStay = freezed,
+    Object? desiredDestination = freezed,
+    Object? priorityStatus = freezed,
+    Object? priorityDate = freezed,
     Object? showErrorMessages = freezed,
     Object? isSubmitting = freezed,
     Object? submitFailureOrSuccessOption = freezed,
@@ -3310,14 +5424,10 @@ class _$GuestFormStateCopyWithImpl<$Res>
           ? _value.adultFemaleCount
           : adultFemaleCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      childrenCount: childrenCount == freezed
-          ? _value.childrenCount
-          : childrenCount // ignore: cast_nullable_to_non_nullable
-              as int?,
-      childrenAges: childrenAges == freezed
-          ? _value.childrenAges
-          : childrenAges // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+      children: children == freezed
+          ? _value.children
+          : children // ignore: cast_nullable_to_non_nullable
+              as List<ChildAge>?,
       havePets: havePets == freezed
           ? _value.havePets
           : havePets // ignore: cast_nullable_to_non_nullable
@@ -3330,14 +5440,42 @@ class _$GuestFormStateCopyWithImpl<$Res>
           ? _value.specialNeeds
           : specialNeeds // ignore: cast_nullable_to_non_nullable
               as String?,
-      howLongToStay: howLongToStay == freezed
-          ? _value.howLongToStay
-          : howLongToStay // ignore: cast_nullable_to_non_nullable
+      foodAllergies: foodAllergies == freezed
+          ? _value.foodAllergies
+          : foodAllergies // ignore: cast_nullable_to_non_nullable
               as String?,
+      meatFreeDiet: meatFreeDiet == freezed
+          ? _value.meatFreeDiet
+          : meatFreeDiet // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      glutenFreeDiet: glutenFreeDiet == freezed
+          ? _value.glutenFreeDiet
+          : glutenFreeDiet // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      lactoseFreeDiet: lactoseFreeDiet == freezed
+          ? _value.lactoseFreeDiet
+          : lactoseFreeDiet // ignore: cast_nullable_to_non_nullable
+              as bool?,
       financeStatus: financeStatus == freezed
           ? _value.financeStatus
           : financeStatus // ignore: cast_nullable_to_non_nullable
               as String?,
+      howLongToStay: howLongToStay == freezed
+          ? _value.howLongToStay
+          : howLongToStay // ignore: cast_nullable_to_non_nullable
+              as String?,
+      desiredDestination: desiredDestination == freezed
+          ? _value.desiredDestination
+          : desiredDestination // ignore: cast_nullable_to_non_nullable
+              as String?,
+      priorityStatus: priorityStatus == freezed
+          ? _value.priorityStatus
+          : priorityStatus // ignore: cast_nullable_to_non_nullable
+              as PriorityStatus?,
+      priorityDate: priorityDate == freezed
+          ? _value.priorityDate
+          : priorityDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -3368,13 +5506,19 @@ abstract class _$GuestFormStateCopyWith<$Res>
       int? peopleInGroup,
       int? adultMaleCount,
       int? adultFemaleCount,
-      int? childrenCount,
-      List<int>? childrenAges,
+      List<ChildAge>? children,
       bool? havePets,
       String? petsDescription,
       String? specialNeeds,
-      String? howLongToStay,
+      String? foodAllergies,
+      bool? meatFreeDiet,
+      bool? glutenFreeDiet,
+      bool? lactoseFreeDiet,
       String? financeStatus,
+      String? howLongToStay,
+      String? desiredDestination,
+      PriorityStatus? priorityStatus,
+      DateTime? priorityDate,
       AutovalidateMode showErrorMessages,
       bool isSubmitting,
       Option<Either<Failure, Guest>> submitFailureOrSuccessOption});
@@ -3399,13 +5543,19 @@ class __$GuestFormStateCopyWithImpl<$Res>
     Object? peopleInGroup = freezed,
     Object? adultMaleCount = freezed,
     Object? adultFemaleCount = freezed,
-    Object? childrenCount = freezed,
-    Object? childrenAges = freezed,
+    Object? children = freezed,
     Object? havePets = freezed,
     Object? petsDescription = freezed,
     Object? specialNeeds = freezed,
-    Object? howLongToStay = freezed,
+    Object? foodAllergies = freezed,
+    Object? meatFreeDiet = freezed,
+    Object? glutenFreeDiet = freezed,
+    Object? lactoseFreeDiet = freezed,
     Object? financeStatus = freezed,
+    Object? howLongToStay = freezed,
+    Object? desiredDestination = freezed,
+    Object? priorityStatus = freezed,
+    Object? priorityDate = freezed,
     Object? showErrorMessages = freezed,
     Object? isSubmitting = freezed,
     Object? submitFailureOrSuccessOption = freezed,
@@ -3435,14 +5585,10 @@ class __$GuestFormStateCopyWithImpl<$Res>
           ? _value.adultFemaleCount
           : adultFemaleCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      childrenCount: childrenCount == freezed
-          ? _value.childrenCount
-          : childrenCount // ignore: cast_nullable_to_non_nullable
-              as int?,
-      childrenAges: childrenAges == freezed
-          ? _value.childrenAges
-          : childrenAges // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+      children: children == freezed
+          ? _value.children
+          : children // ignore: cast_nullable_to_non_nullable
+              as List<ChildAge>?,
       havePets: havePets == freezed
           ? _value.havePets
           : havePets // ignore: cast_nullable_to_non_nullable
@@ -3455,14 +5601,42 @@ class __$GuestFormStateCopyWithImpl<$Res>
           ? _value.specialNeeds
           : specialNeeds // ignore: cast_nullable_to_non_nullable
               as String?,
-      howLongToStay: howLongToStay == freezed
-          ? _value.howLongToStay
-          : howLongToStay // ignore: cast_nullable_to_non_nullable
+      foodAllergies: foodAllergies == freezed
+          ? _value.foodAllergies
+          : foodAllergies // ignore: cast_nullable_to_non_nullable
               as String?,
+      meatFreeDiet: meatFreeDiet == freezed
+          ? _value.meatFreeDiet
+          : meatFreeDiet // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      glutenFreeDiet: glutenFreeDiet == freezed
+          ? _value.glutenFreeDiet
+          : glutenFreeDiet // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      lactoseFreeDiet: lactoseFreeDiet == freezed
+          ? _value.lactoseFreeDiet
+          : lactoseFreeDiet // ignore: cast_nullable_to_non_nullable
+              as bool?,
       financeStatus: financeStatus == freezed
           ? _value.financeStatus
           : financeStatus // ignore: cast_nullable_to_non_nullable
               as String?,
+      howLongToStay: howLongToStay == freezed
+          ? _value.howLongToStay
+          : howLongToStay // ignore: cast_nullable_to_non_nullable
+              as String?,
+      desiredDestination: desiredDestination == freezed
+          ? _value.desiredDestination
+          : desiredDestination // ignore: cast_nullable_to_non_nullable
+              as String?,
+      priorityStatus: priorityStatus == freezed
+          ? _value.priorityStatus
+          : priorityStatus // ignore: cast_nullable_to_non_nullable
+              as PriorityStatus?,
+      priorityDate: priorityDate == freezed
+          ? _value.priorityDate
+          : priorityDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -3489,13 +5663,19 @@ class _$_GuestFormState implements _GuestFormState {
       this.peopleInGroup,
       this.adultMaleCount,
       this.adultFemaleCount,
-      this.childrenCount,
-      this.childrenAges,
+      this.children,
       this.havePets,
       this.petsDescription,
       this.specialNeeds,
-      this.howLongToStay,
+      this.foodAllergies,
+      this.meatFreeDiet,
+      this.glutenFreeDiet,
+      this.lactoseFreeDiet,
       this.financeStatus,
+      this.howLongToStay,
+      this.desiredDestination,
+      this.priorityStatus,
+      this.priorityDate,
       required this.showErrorMessages,
       required this.isSubmitting,
       required this.submitFailureOrSuccessOption});
@@ -3513,9 +5693,7 @@ class _$_GuestFormState implements _GuestFormState {
   @override
   final int? adultFemaleCount;
   @override
-  final int? childrenCount;
-  @override
-  final List<int>? childrenAges;
+  final List<ChildAge>? children;
   @override
   final bool? havePets;
   @override
@@ -3523,9 +5701,23 @@ class _$_GuestFormState implements _GuestFormState {
   @override
   final String? specialNeeds;
   @override
-  final String? howLongToStay;
+  final String? foodAllergies;
+  @override
+  final bool? meatFreeDiet;
+  @override
+  final bool? glutenFreeDiet;
+  @override
+  final bool? lactoseFreeDiet;
   @override
   final String? financeStatus;
+  @override
+  final String? howLongToStay;
+  @override
+  final String? desiredDestination;
+  @override
+  final PriorityStatus? priorityStatus;
+  @override
+  final DateTime? priorityDate;
   @override
   final AutovalidateMode showErrorMessages;
   @override
@@ -3535,7 +5727,7 @@ class _$_GuestFormState implements _GuestFormState {
 
   @override
   String toString() {
-    return 'GuestFormState(fullName: $fullName, email: $email, phoneNumber: $phoneNumber, peopleInGroup: $peopleInGroup, adultMaleCount: $adultMaleCount, adultFemaleCount: $adultFemaleCount, childrenCount: $childrenCount, childrenAges: $childrenAges, havePets: $havePets, petsDescription: $petsDescription, specialNeeds: $specialNeeds, howLongToStay: $howLongToStay, financeStatus: $financeStatus, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, submitFailureOrSuccessOption: $submitFailureOrSuccessOption)';
+    return 'GuestFormState(fullName: $fullName, email: $email, phoneNumber: $phoneNumber, peopleInGroup: $peopleInGroup, adultMaleCount: $adultMaleCount, adultFemaleCount: $adultFemaleCount, children: $children, havePets: $havePets, petsDescription: $petsDescription, specialNeeds: $specialNeeds, foodAllergies: $foodAllergies, meatFreeDiet: $meatFreeDiet, glutenFreeDiet: $glutenFreeDiet, lactoseFreeDiet: $lactoseFreeDiet, financeStatus: $financeStatus, howLongToStay: $howLongToStay, desiredDestination: $desiredDestination, priorityStatus: $priorityStatus, priorityDate: $priorityDate, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, submitFailureOrSuccessOption: $submitFailureOrSuccessOption)';
   }
 
   @override
@@ -3553,19 +5745,30 @@ class _$_GuestFormState implements _GuestFormState {
                 .equals(other.adultMaleCount, adultMaleCount) &&
             const DeepCollectionEquality()
                 .equals(other.adultFemaleCount, adultFemaleCount) &&
-            const DeepCollectionEquality()
-                .equals(other.childrenCount, childrenCount) &&
-            const DeepCollectionEquality()
-                .equals(other.childrenAges, childrenAges) &&
+            const DeepCollectionEquality().equals(other.children, children) &&
             const DeepCollectionEquality().equals(other.havePets, havePets) &&
             const DeepCollectionEquality()
                 .equals(other.petsDescription, petsDescription) &&
             const DeepCollectionEquality()
                 .equals(other.specialNeeds, specialNeeds) &&
             const DeepCollectionEquality()
-                .equals(other.howLongToStay, howLongToStay) &&
+                .equals(other.foodAllergies, foodAllergies) &&
+            const DeepCollectionEquality()
+                .equals(other.meatFreeDiet, meatFreeDiet) &&
+            const DeepCollectionEquality()
+                .equals(other.glutenFreeDiet, glutenFreeDiet) &&
+            const DeepCollectionEquality()
+                .equals(other.lactoseFreeDiet, lactoseFreeDiet) &&
             const DeepCollectionEquality()
                 .equals(other.financeStatus, financeStatus) &&
+            const DeepCollectionEquality()
+                .equals(other.howLongToStay, howLongToStay) &&
+            const DeepCollectionEquality()
+                .equals(other.desiredDestination, desiredDestination) &&
+            const DeepCollectionEquality()
+                .equals(other.priorityStatus, priorityStatus) &&
+            const DeepCollectionEquality()
+                .equals(other.priorityDate, priorityDate) &&
             const DeepCollectionEquality()
                 .equals(other.showErrorMessages, showErrorMessages) &&
             const DeepCollectionEquality()
@@ -3576,24 +5779,31 @@ class _$_GuestFormState implements _GuestFormState {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(fullName),
-      const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(phoneNumber),
-      const DeepCollectionEquality().hash(peopleInGroup),
-      const DeepCollectionEquality().hash(adultMaleCount),
-      const DeepCollectionEquality().hash(adultFemaleCount),
-      const DeepCollectionEquality().hash(childrenCount),
-      const DeepCollectionEquality().hash(childrenAges),
-      const DeepCollectionEquality().hash(havePets),
-      const DeepCollectionEquality().hash(petsDescription),
-      const DeepCollectionEquality().hash(specialNeeds),
-      const DeepCollectionEquality().hash(howLongToStay),
-      const DeepCollectionEquality().hash(financeStatus),
-      const DeepCollectionEquality().hash(showErrorMessages),
-      const DeepCollectionEquality().hash(isSubmitting),
-      const DeepCollectionEquality().hash(submitFailureOrSuccessOption));
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        const DeepCollectionEquality().hash(fullName),
+        const DeepCollectionEquality().hash(email),
+        const DeepCollectionEquality().hash(phoneNumber),
+        const DeepCollectionEquality().hash(peopleInGroup),
+        const DeepCollectionEquality().hash(adultMaleCount),
+        const DeepCollectionEquality().hash(adultFemaleCount),
+        const DeepCollectionEquality().hash(children),
+        const DeepCollectionEquality().hash(havePets),
+        const DeepCollectionEquality().hash(petsDescription),
+        const DeepCollectionEquality().hash(specialNeeds),
+        const DeepCollectionEquality().hash(foodAllergies),
+        const DeepCollectionEquality().hash(meatFreeDiet),
+        const DeepCollectionEquality().hash(glutenFreeDiet),
+        const DeepCollectionEquality().hash(lactoseFreeDiet),
+        const DeepCollectionEquality().hash(financeStatus),
+        const DeepCollectionEquality().hash(howLongToStay),
+        const DeepCollectionEquality().hash(desiredDestination),
+        const DeepCollectionEquality().hash(priorityStatus),
+        const DeepCollectionEquality().hash(priorityDate),
+        const DeepCollectionEquality().hash(showErrorMessages),
+        const DeepCollectionEquality().hash(isSubmitting),
+        const DeepCollectionEquality().hash(submitFailureOrSuccessOption)
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -3609,13 +5819,19 @@ abstract class _GuestFormState implements GuestFormState {
       int? peopleInGroup,
       int? adultMaleCount,
       int? adultFemaleCount,
-      int? childrenCount,
-      List<int>? childrenAges,
+      List<ChildAge>? children,
       bool? havePets,
       String? petsDescription,
       String? specialNeeds,
-      String? howLongToStay,
+      String? foodAllergies,
+      bool? meatFreeDiet,
+      bool? glutenFreeDiet,
+      bool? lactoseFreeDiet,
       String? financeStatus,
+      String? howLongToStay,
+      String? desiredDestination,
+      PriorityStatus? priorityStatus,
+      DateTime? priorityDate,
       required AutovalidateMode showErrorMessages,
       required bool isSubmitting,
       required Option<Either<Failure, Guest>>
@@ -3634,9 +5850,7 @@ abstract class _GuestFormState implements GuestFormState {
   @override
   int? get adultFemaleCount;
   @override
-  int? get childrenCount;
-  @override
-  List<int>? get childrenAges;
+  List<ChildAge>? get children;
   @override
   bool? get havePets;
   @override
@@ -3644,9 +5858,23 @@ abstract class _GuestFormState implements GuestFormState {
   @override
   String? get specialNeeds;
   @override
-  String? get howLongToStay;
+  String? get foodAllergies;
+  @override
+  bool? get meatFreeDiet;
+  @override
+  bool? get glutenFreeDiet;
+  @override
+  bool? get lactoseFreeDiet;
   @override
   String? get financeStatus;
+  @override
+  String? get howLongToStay;
+  @override
+  String? get desiredDestination;
+  @override
+  PriorityStatus? get priorityStatus;
+  @override
+  DateTime? get priorityDate;
   @override
   AutovalidateMode get showErrorMessages;
   @override
