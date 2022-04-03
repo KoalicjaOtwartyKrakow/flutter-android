@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_android/models/guest.dart';
 import 'package:flutter_android/presentation/guest/guest_form_success_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -38,6 +40,9 @@ class _GuestFormState extends State<GuestForm> {
   bool glutenFreeDietValue = false;
   bool lactoseFreeDietValue = false;
 
+
+  PriorityStatus? priorityStatusValue;
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<GuestFormBloc, GuestFormState>(
@@ -68,26 +73,35 @@ class _GuestFormState extends State<GuestForm> {
                 hintText: 'Wpisz email',
               ),
             ),
-            TextFormField(
+            TextField(
               controller: peopleInGroupController,
-              validator: validatePeopleInGroup,
+              decoration: const InputDecoration(
+                hintText: "Napisz, ile osób liczy grupa",
+              ),
+              keyboardType: TextInputType.number,
+              inputFormatters: <TextInputFormatter>[
+                FilteringTextInputFormatter.digitsOnly
+              ], // Only numbers can be entered
+            ),
+            TextField(
+              controller: adultMaleCountController,
               decoration: const InputDecoration(
                 hintText: 'Napisz, ile osób liczy grupa',
               ),
+              keyboardType: TextInputType.number,
+              inputFormatters: <TextInputFormatter>[
+                FilteringTextInputFormatter.digitsOnly
+              ], // Only numbers can be entered
             ),
-            TextFormField(
-              controller: adultMaleCountController,
-              validator: validateAdultMaleCount,
-              decoration: const InputDecoration(
-                hintText: 'Napisz, ilu jest w grupie dorosłych mężczyzn',
-              ),
-            ),
-            TextFormField(
+            TextField(
               controller: adultFemaleCountController,
-              validator: validateAdultFemaleCount,
               decoration: const InputDecoration(
                 hintText: 'Napisz, ile jest w grupie dorosłych kobiet',
               ),
+              keyboardType: TextInputType.number,
+              inputFormatters: <TextInputFormatter>[
+                FilteringTextInputFormatter.digitsOnly
+              ], // Only numbers can be entered
             ),
             TextFormField(
               controller: childrenController,
@@ -124,21 +138,54 @@ class _GuestFormState extends State<GuestForm> {
               ),
             ),
 
-            Checkbox(value: meatFreeDietValue, onChanged: (value) {
-              setState(() {
-                meatFreeDietValue = value ?? false;
-              });
-            }),
-            Checkbox(value: glutenFreeDietValue, onChanged: (value) {
-              setState(() {
-                glutenFreeDietValue = value ?? false;
-              });
-            }),
-            Checkbox(value: lactoseFreeDietValue, onChanged: (value) {
-              setState(() {
-                lactoseFreeDietValue = value ?? false;
-              });
-            }),
+            Row(
+              children: [
+                Text(
+                  "Dieta bezmięsna",
+                  style: Theme.of(context).inputDecorationTheme.hintStyle,
+                ),
+                Checkbox(
+                  value: meatFreeDietValue,
+                  onChanged: (value) => setState(
+                        () {
+                          meatFreeDietValue = value ?? false;
+                    },
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Text(
+                  "Dieta bezglutenowa",
+                  style: Theme.of(context).inputDecorationTheme.hintStyle,
+                ),
+                Checkbox(
+                  value: glutenFreeDietValue,
+                  onChanged: (value) => setState(
+                        () {
+                          glutenFreeDietValue = value ?? false;
+                    },
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Text(
+                  "Dieta bez laktozy",
+                  style: Theme.of(context).inputDecorationTheme.hintStyle,
+                ),
+                Checkbox(
+                  value: lactoseFreeDietValue,
+                  onChanged: (value) => setState(
+                        () {
+                          lactoseFreeDietValue = value ?? false;
+                    },
+                  ),
+                ),
+              ],
+            ),
             TextFormField(
               controller: financeStatusController,
               validator: validateFinanceStatus,
@@ -158,6 +205,19 @@ class _GuestFormState extends State<GuestForm> {
               decoration: const InputDecoration(
                 hintText: 'Napisz, w jakim mieście chcesz się docelowo znaleźć',
               ),
+            ),
+            DropdownButton<PriorityStatus>(
+              hint: priorityStatusValue == null ? Text("wybierz priority status") : Text(priorityStatusValue.toString()),
+              // items: <String>['A', 'B', 'C', 'D'].map((String value) {
+                items: PriorityStatus.values.map((PriorityStatus priorityStatus) {
+                  return DropdownMenuItem<PriorityStatus>(
+                      value: priorityStatus,
+                      child: Text(priorityStatusToString(priorityStatus)));
+                }).toList(),
+              onChanged: (value) => setState(
+              () {
+                priorityStatusValue = value!;
+              }),
             ),
             TextFormField(
               controller: priorityStatusController,
@@ -283,4 +343,21 @@ bool isNumeric(String? s) {
     return false;
   }
   return double.tryParse(s) != null;
+}
+
+String priorityStatusToString(PriorityStatus priorityStatus) {
+  switch(priorityStatus) {
+    case PriorityStatus.accommodation_not_needed:
+      return "Zakwaterowanie niepotrzebne";
+    case PriorityStatus.accommodation_found:
+      return "Znaleziono zakwaterowanie";
+    case PriorityStatus.en_route_ukraine:
+      return "W drodze do Ukrainy";
+    case PriorityStatus.en_route_poland:
+      return "W drodze do Polski";
+    case PriorityStatus.in_krakow:
+      return "W Krakowie";
+    case PriorityStatus.in_crisis_point:
+      return "W punkcie kryzysowym";
+  }
 }
