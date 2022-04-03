@@ -55,21 +55,21 @@ class _GuestFormState extends State<GuestForm> {
           children: <Widget>[
             TextFormField(
               controller: fullNameController,
-              validator: validateFullName,
+              validator: GuestDto.validateFullName,
               decoration: InputDecoration(
                 hintText: I18Next.of(context)!.t('guest_form:fullName'),
               ),
             ),
             TextFormField(
               controller: phoneNumberController,
-              validator: (text) => validatePhoneNumber(context, text),
+              validator: GuestDto.validatePhoneNumber,
               decoration: InputDecoration(
                 hintText: I18Next.of(context)!.t('guest_form:phoneNumber'),
               ),
             ),
             TextFormField(
               controller: emailController,
-              validator: validateEmail,
+              validator: GuestDto.validateEmail,
               decoration: InputDecoration(
                 hintText: I18Next.of(context)!.t('guest_form:email'),
               ),
@@ -106,28 +106,24 @@ class _GuestFormState extends State<GuestForm> {
             ),
             TextFormField(
               controller: childrenController,
-              validator: validateChildrenAges,
               decoration: InputDecoration(
                 hintText: I18Next.of(context)!.t('guest_form:children'),
               ),
             ),
             TextFormField(
               controller: havePetsController,
-              validator: validateHavePets,
               decoration: InputDecoration(
                 hintText: I18Next.of(context)!.t('guest_form:havePets'),
               ),
             ),
             TextFormField(
               controller: petsDescriptionController,
-              validator: validatePetsDescription,
               decoration: InputDecoration(
                 hintText: I18Next.of(context)!.t('guest_form:petsDescription'),
               ),
             ),
             TextFormField(
               controller: specialNeedsController,
-              validator: validateSpecialNeeds,
               decoration: InputDecoration(
                 hintText: I18Next.of(context)!.t('guest_form:specialNeeds'),
               ),
@@ -189,14 +185,12 @@ class _GuestFormState extends State<GuestForm> {
             ),
             TextFormField(
               controller: financeStatusController,
-              validator: validateFinanceStatus,
               decoration: InputDecoration(
                 hintText: I18Next.of(context)!.t('guest_form:howLongToStay'),
               ),
             ),
             TextFormField(
               controller: howLongToStayController,
-              validator: validateHowLongToStay,
               decoration: InputDecoration(
                 hintText: I18Next.of(context)!.t('guest_form:howLongToStay'),
               ),
@@ -241,7 +235,7 @@ class _GuestFormState extends State<GuestForm> {
               // : null,
               onPressed: () async {
                 if (_formKey.currentState!.validate()) {
-                  // SubmitAddGuest();
+                  SubmitAddGuest();
                   AutoRouter.of(context).push(const GuestFormSuccessRoute());
                 }
                 else {
@@ -258,93 +252,6 @@ class _GuestFormState extends State<GuestForm> {
 
     });
   }
-}
-
-
-String? validateFullName(String? value) {
-  if (value == null || value.isEmpty) {
-    return 'Name is required';
-  }
-  return null;
-}
-
-String? validatePhoneNumber(BuildContext context, String? value) {
-  if (value == null || value.isEmpty) {
-    return 'Phone number is required';
-  }
-  final phoneNumberPattern = RegExp(r'^\+\d{1,2} ?)?\d{3}[- \.]?\d{3}[- \.]?\d{3}$');
-  if (phoneNumberPattern.hasMatch(value)){
-    return 'Incorrect phone number';
-  }
-  return null;
-}
-
-String? validateEmail(String? value) {
-  if (value == null || value.isEmpty) {
-    return 'Email address is required';
-  }
-  if (!value.contains('@')) {
-    return 'Incorrect email address';
-  }
-  return null;
-}
-
-String? validatePeopleInGroup(String? value) {
-  if (value?.isEmpty ?? false) {
-    if (!isNumeric(value)) {
-      return 'Incorrect value';
-    }
-  }
-  return null;
-}
-
-String? validateAdultMaleCount(String? value) {
-  if (value?.isEmpty ?? false) {
-    if (!isNumeric(value)) {
-      return 'Incorrect value';
-    }
-  }
-  return null;
-}
-
-String? validateAdultFemaleCount(String? value) {
-  if (value?.isEmpty ?? false) {
-    if (!isNumeric(value)) {
-      return 'Incorrect value';
-    }
-  }
-  return null;
-}
-
-String? validateChildrenAges(String? value) {
-  return null;
-}
-
-String? validateHavePets(String? value) {
-  return null;
-}
-
-String? validatePetsDescription(String? value) {
-  return null;
-}
-
-String? validateSpecialNeeds(String? value) {
-  return null;
-}
-
-String? validateFinanceStatus(String? value) {
-  return null;
-}
-
-String? validateHowLongToStay(String? value) {
-  return null;
-}
-
-bool isNumeric(String? s) {
-  if (s == null) {
-    return false;
-  }
-  return double.tryParse(s) != null;
 }
 
 String priorityStatusToString(PriorityStatus priorityStatus) {
