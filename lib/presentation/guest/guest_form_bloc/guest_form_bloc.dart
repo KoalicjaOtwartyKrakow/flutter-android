@@ -8,8 +8,9 @@ import 'package:injectable/injectable.dart';
 
 import '../../../infrastructure/guest/guest_repository.dart';
 import '../../../models/child_age.dart';
+import '../../../models/domain/guest.dart';
+import '../../../models/dto/guest_dto.dart';
 import '../../../models/failure.dart';
-import '../../../models/guest.dart';
 
 part 'guest_form_event.dart';
 part 'guest_form_state.dart';
@@ -147,9 +148,9 @@ class GuestFormBloc extends Bloc<GuestFormEvent, GuestFormState> {
     on<SubmitAddGuest>(
           (event, emit) async {
 
-          Either<Failure, Guest>? failureOrSuccess;
+          Either<Failure, GuestDto>? failureOrSuccess;
 
-          Guest guest = Guest(
+          GuestDto guest = GuestDto(
             fullName: state.fullName,
             phoneNumber: state.phoneNumber,
             email: state.email,

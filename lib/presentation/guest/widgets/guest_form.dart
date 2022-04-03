@@ -1,11 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_android/models/guest.dart';
 import 'package:flutter_android/presentation/guest/guest_form_success_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:i18next/i18next.dart';
 
+import '../../../models/dto/guest_dto.dart';
 import '../../routes/app_router.dart';
 import '../guest_form_bloc/guest_form_bloc.dart';
 

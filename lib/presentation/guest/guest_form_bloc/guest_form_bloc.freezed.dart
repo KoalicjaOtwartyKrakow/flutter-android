@@ -5273,7 +5273,8 @@ class _$GuestFormStateTearOff {
       DateTime? priorityDate,
       required AutovalidateMode showErrorMessages,
       required bool isSubmitting,
-      required Option<Either<Failure, Guest>> submitFailureOrSuccessOption}) {
+      required Option<Either<Failure, GuestDto>>
+          submitFailureOrSuccessOption}) {
     return _GuestFormState(
       fullName: fullName,
       email: email,
@@ -5327,7 +5328,7 @@ mixin _$GuestFormState {
   DateTime? get priorityDate => throw _privateConstructorUsedError;
   AutovalidateMode get showErrorMessages => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
-  Option<Either<Failure, Guest>> get submitFailureOrSuccessOption =>
+  Option<Either<Failure, GuestDto>> get submitFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -5362,7 +5363,7 @@ abstract class $GuestFormStateCopyWith<$Res> {
       DateTime? priorityDate,
       AutovalidateMode showErrorMessages,
       bool isSubmitting,
-      Option<Either<Failure, Guest>> submitFailureOrSuccessOption});
+      Option<Either<Failure, GuestDto>> submitFailureOrSuccessOption});
 }
 
 /// @nodoc
@@ -5487,7 +5488,7 @@ class _$GuestFormStateCopyWithImpl<$Res>
       submitFailureOrSuccessOption: submitFailureOrSuccessOption == freezed
           ? _value.submitFailureOrSuccessOption
           : submitFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
-              as Option<Either<Failure, Guest>>,
+              as Option<Either<Failure, GuestDto>>,
     ));
   }
 }
@@ -5521,7 +5522,7 @@ abstract class _$GuestFormStateCopyWith<$Res>
       DateTime? priorityDate,
       AutovalidateMode showErrorMessages,
       bool isSubmitting,
-      Option<Either<Failure, Guest>> submitFailureOrSuccessOption});
+      Option<Either<Failure, GuestDto>> submitFailureOrSuccessOption});
 }
 
 /// @nodoc
@@ -5648,7 +5649,7 @@ class __$GuestFormStateCopyWithImpl<$Res>
       submitFailureOrSuccessOption: submitFailureOrSuccessOption == freezed
           ? _value.submitFailureOrSuccessOption
           : submitFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
-              as Option<Either<Failure, Guest>>,
+              as Option<Either<Failure, GuestDto>>,
     ));
   }
 }
@@ -5723,7 +5724,7 @@ class _$_GuestFormState implements _GuestFormState {
   @override
   final bool isSubmitting;
   @override
-  final Option<Either<Failure, Guest>> submitFailureOrSuccessOption;
+  final Option<Either<Failure, GuestDto>> submitFailureOrSuccessOption;
 
   @override
   String toString() {
@@ -5834,7 +5835,7 @@ abstract class _GuestFormState implements GuestFormState {
       DateTime? priorityDate,
       required AutovalidateMode showErrorMessages,
       required bool isSubmitting,
-      required Option<Either<Failure, Guest>>
+      required Option<Either<Failure, GuestDto>>
           submitFailureOrSuccessOption}) = _$_GuestFormState;
 
   @override
@@ -5880,7 +5881,7 @@ abstract class _GuestFormState implements GuestFormState {
   @override
   bool get isSubmitting;
   @override
-  Option<Either<Failure, Guest>> get submitFailureOrSuccessOption;
+  Option<Either<Failure, GuestDto>> get submitFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$GuestFormStateCopyWith<_GuestFormState> get copyWith =>

@@ -13,7 +13,9 @@ GuestDto _$GuestDtoFromJson(Map<String, dynamic> json) => GuestDto(
       peopleInGroup: json['peopleInGroup'] as int?,
       adultMaleCount: json['adultMaleCount'] as int?,
       adultFemaleCount: json['adultFemaleCount'] as int?,
-      children: (json['children'] as List<dynamic>?)?.map((e) => ChildAge.fromJson(e as Map<String, dynamic>)).toList(),
+      children: (json['children'] as List<dynamic>?)
+          ?.map((e) => ChildAge.fromJson(e as Map<String, dynamic>))
+          .toList(),
       havePets: json['havePets'] as bool?,
       petsDescription: json['petsDescription'] as String?,
       specialNeeds: json['specialNeeds'] as String?,
@@ -24,9 +26,11 @@ GuestDto _$GuestDtoFromJson(Map<String, dynamic> json) => GuestDto(
       financeStatus: json['financeStatus'] as String?,
       howLongToStay: json['howLongToStay'] as String?,
       desiredDestination: json['desiredDestination'] as String?,
-      priorityStatus: $enumDecodeNullable(_$PriorityStatusEnumMap, json['priorityStatus']),
+      priorityStatus:
+          $enumDecodeNullable(_$PriorityStatusEnumMap, json['priorityStatus']),
       priorityDate: dateTimeFromString(json['priorityDate'] as String),
-      verificationStatus: $enumDecodeNullable(_$VerificationStatusEnumMap, json['verificationStatus']),
+      verificationStatus: $enumDecodeNullable(
+          _$VerificationStatusEnumMap, json['verificationStatus']),
       id: json['id'] as String?,
       createdAt: dateTimeFromString(json['createdAt'] as String),
       updatedAt: dateTimeFromString(json['updatedAt'] as String),
@@ -52,7 +56,8 @@ Map<String, dynamic> _$GuestDtoToJson(GuestDto instance) => <String, dynamic>{
       'desiredDestination': instance.desiredDestination,
       'priorityStatus': _$PriorityStatusEnumMap[instance.priorityStatus],
       'priorityDate': nullableDateTimeToString(instance.priorityDate),
-      'verificationStatus': _$VerificationStatusEnumMap[instance.verificationStatus],
+      'verificationStatus':
+          _$VerificationStatusEnumMap[instance.verificationStatus],
       'id': instance.id,
       'createdAt': nullableDateTimeToString(instance.createdAt),
       'updatedAt': nullableDateTimeToString(instance.updatedAt),
