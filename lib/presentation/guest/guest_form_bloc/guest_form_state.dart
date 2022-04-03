@@ -30,7 +30,7 @@ abstract class GuestFormState with _$GuestFormState {
 
     required AutovalidateMode showErrorMessages,
     required bool isSubmitting,
-    required Option<Either<Failure, Guest>> submitFailureOrSuccessOption,
+    required Option<Either<Failure, GuestDto>> submitFailureOrSuccessOption,
   }) = _GuestFormState;
 
   factory GuestFormState.initial() => GuestFormState(
