@@ -5,6 +5,7 @@ import 'package:flutter_android/presentation/guest/guest_form_success_page.dart'
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:i18next/i18next.dart';
 
+import '../../../models/child_age.dart';
 import '../../../models/dto/guest_dto.dart';
 import '../../routes/app_router.dart';
 import '../guest_form_bloc/guest_form_bloc.dart';
@@ -27,7 +28,6 @@ class _GuestFormState extends State<GuestForm> {
   final adultMaleCountController = TextEditingController();
   final adultFemaleCountController = TextEditingController();
   final childrenController = TextEditingController();
-  final havePetsController = TextEditingController();
   final petsDescriptionController = TextEditingController();
   final specialNeedsController = TextEditingController();
   final foodAllergiesController = TextEditingController();
@@ -35,11 +35,13 @@ class _GuestFormState extends State<GuestForm> {
   final howLongToStayController = TextEditingController();
   final desiredDestinationController = TextEditingController();
   final priorityStatusController = TextEditingController();
-  final priorityDateController = TextEditingController();
 
+  bool havePetsValue = false;
   bool meatFreeDietValue = false;
   bool glutenFreeDietValue = false;
   bool lactoseFreeDietValue = false;
+
+  DateTime? priorityDateValue;
 
 
   PriorityStatus? priorityStatusValue;
@@ -110,10 +112,12 @@ class _GuestFormState extends State<GuestForm> {
                 hintText: I18Next.of(context)!.t('guest_form:children'),
               ),
             ),
-            TextFormField(
-              controller: havePetsController,
-              decoration: InputDecoration(
-                hintText: I18Next.of(context)!.t('guest_form:havePets'),
+            Checkbox(
+              value: havePetsValue,
+              onChanged: (value) => setState(
+                    () {
+                      havePetsValue = value ?? false;
+                },
               ),
             ),
             TextFormField(
@@ -214,28 +218,37 @@ class _GuestFormState extends State<GuestForm> {
                 priorityStatusValue = value!;
               }),
             ),
-            TextFormField(
-              controller: priorityStatusController,
-              decoration: InputDecoration(
-                hintText: I18Next.of(context)!.t('guest_form:priorityDate'),
-              ),
-            ),
-            TextFormField(
-              controller: priorityDateController,
-              decoration: const InputDecoration(
-                hintText: 'priority date',
-              ),
-            ),
-
             ElevatedButton(
-              // onPressed: false
-              // ? () {
-              //
-              // }
-              // : null,
+              onPressed: () {
+                _selectPriorityDate(context);
+              },
+              child: Text(priorityDateValue == null ? I18Next.of(context)!.t('guest_form:priorityDate') : priorityDateValue.toString())
+            ),
+            ElevatedButton(
               onPressed: () async {
                 if (_formKey.currentState!.validate()) {
-                  SubmitAddGuest();
+                  context.read<GuestFormBloc>().add(SubmitAddGuest(
+                      GuestDto(
+                        fullName: fullNameController.text,
+                        phoneNumber: phoneNumberController.text,
+                        email: emailController.text,
+                        peopleInGroup: int.parse(peopleInGroupController.text),
+                        adultMaleCount: int.parse(adultMaleCountController.text),
+                        adultFemaleCount: int.parse(adultFemaleCountController.text),
+                        children: ChildAge.getChildrenFromString(childrenController.text),
+                        havePets: havePetsValue,
+                        petsDescription: petsDescriptionController.text,
+                        specialNeeds: specialNeedsController.text,
+                        foodAllergies: foodAllergiesController.text,
+                        meatFreeDiet: meatFreeDietValue,
+                        glutenFreeDiet: glutenFreeDietValue,
+                        lactoseFreeDiet: lactoseFreeDietValue,
+                        financeStatus: financeStatusController.text,
+                        howLongToStay: howLongToStayController.text,
+                        desiredDestination: desiredDestinationController.text,
+                        priorityStatus: priorityStatusValue,
+                        priorityDate: priorityDateValue,
+                  )));
                   AutoRouter.of(context).push(const GuestFormSuccessRoute());
                 }
                 else {
@@ -252,7 +265,23 @@ class _GuestFormState extends State<GuestForm> {
 
     });
   }
+  _selectPriorityDate(BuildContext context) async {
+    final DateTime? selected = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2010),
+      lastDate: DateTime(2025),
+    );
+    if (selected != null && selected != priorityDateValue) {
+      setState(() {
+        priorityDateValue = selected;
+      });
+    }
+  }
+
 }
+
+
 
 String priorityStatusToString(PriorityStatus priorityStatus) {
   switch(priorityStatus) {
