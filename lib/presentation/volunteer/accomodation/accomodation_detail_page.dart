@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:i18next/i18next.dart';
 
 import '../../../models/accomodation.dart';
@@ -31,10 +30,9 @@ class AccomodationDetailPage extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     children: [
-                      Icon(Icons.location_city),
+                      const Icon(Icons.location_city),
                       Text(
-                        I18Next.of(context)!
-                            .t('accommodation:form.label.addressCity'),
+                        I18Next.of(context)!.t('accommodation:form.label.addressCity'),
                       ),
                     ],
                   ),
@@ -56,10 +54,9 @@ class AccomodationDetailPage extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     children: [
-                      Icon(Icons.mail),
+                      const Icon(Icons.mail),
                       Text(
-                        I18Next.of(context)!
-                            .t('accommodation:form.label.addressZip'),
+                        I18Next.of(context)!.t('accommodation:form.label.addressZip'),
                       ),
                     ],
                   ),
@@ -80,10 +77,9 @@ class AccomodationDetailPage extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     children: [
-                      Icon(Icons.map),
+                      const Icon(Icons.map),
                       Text(
-                        I18Next.of(context)!
-                            .t('accommodation:form.label.addressProvince'),
+                        I18Next.of(context)!.t('accommodation:form.label.addressProvince'),
                       ),
                     ],
                   ),
@@ -104,10 +100,9 @@ class AccomodationDetailPage extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     children: [
-                      Icon(Icons.location_on),
+                      const Icon(Icons.location_on),
                       Text(
-                        I18Next.of(context)!
-                            .t('accommodation:form.label.addressLine'),
+                        I18Next.of(context)!.t('accommodation:form.label.addressLine'),
                       ),
                     ],
                   ),
@@ -131,10 +126,9 @@ class AccomodationDetailPage extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        Icon(Icons.night_shelter),
+                        const Icon(Icons.night_shelter),
                         Text(
-                          I18Next.of(context)!
-                              .t('accommodation:form.label.vacanciesFree'),
+                          I18Next.of(context)!.t('accommodation:form.label.vacanciesFree'),
                         ),
                       ],
                     ),
@@ -212,10 +206,9 @@ class AccomodationDetailPage extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     children: [
-                      Icon(Icons.comment),
+                      const Icon(Icons.comment),
                       Text(
-                        I18Next.of(context)!
-                            .t('accommodation:form.label.comments'),
+                        I18Next.of(context)!.t('accommodation:form.label.comments'),
                       ),
                     ],
                   ),
@@ -238,10 +231,9 @@ class AccomodationDetailPage extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     children: [
-                      Icon(Icons.report),
+                      const Icon(Icons.report),
                       Text(
-                        I18Next.of(context)!
-                            .t('accommodation:form.label.status'),
+                        I18Next.of(context)!.t('accommodation:form.label.status'),
                       ),
                     ],
                   ),

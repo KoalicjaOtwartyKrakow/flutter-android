@@ -1,13 +1,12 @@
-import 'package:flutter_android/models/failure.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import '../infrastructure/converters.dart';
-import 'child_age.dart';
+import '../../infrastructure/converters.dart';
+import '../child_age.dart';
 
-part 'guest.g.dart';
+part 'guest_dto.g.dart';
 
 @JsonSerializable()
-class Guest {
+class GuestDto {
   String fullName;
   String email;
   String phoneNumber;
@@ -45,8 +44,8 @@ class Guest {
   DateTime? updatedAt;
 
 
-  Guest({
-    required this.fullName,
+  GuestDto(
+    {required this.fullName,
     required this.email,
     required this.phoneNumber,
     this.peopleInGroup,
@@ -113,6 +112,9 @@ class Guest {
     }
     return null;
   }
+  factory GuestDto.fromJson(Map<String, dynamic> json) => _$GuestDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$GuestDtoToJson(this);
 }
 
 enum PriorityStatus {
@@ -129,6 +131,4 @@ enum VerificationStatus {
   verified,
   rejected
 }
-
-
 

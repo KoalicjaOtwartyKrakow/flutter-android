@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_android/models/accomodation.dart';
+import 'package:flutter_android/models/dto/guest_dto.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -25,6 +26,9 @@ abstract class ApiClient {
 
   @GET("/dev/doc/contract")
   Future<String> getContractDownloadUrl();
+
+  @GET("/guest")
+  Future<List<GuestDto>> getGuests();
 
   @POST("/guest")
   Future<Guest> postGuest(Guest guest);

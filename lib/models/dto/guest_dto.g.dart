@@ -1,21 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'guest.dart';
+part of 'guest_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Guest _$GuestFromJson(Map<String, dynamic> json) => Guest(
+GuestDto _$GuestDtoFromJson(Map<String, dynamic> json) => GuestDto(
       fullName: json['fullName'] as String,
       email: json['email'] as String,
       phoneNumber: json['phoneNumber'] as String,
       peopleInGroup: json['peopleInGroup'] as int?,
       adultMaleCount: json['adultMaleCount'] as int?,
       adultFemaleCount: json['adultFemaleCount'] as int?,
-      children: (json['children'] as List<dynamic>?)
-          ?.map((e) => ChildAge.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      children: (json['children'] as List<dynamic>?)?.map((e) => ChildAge.fromJson(e as Map<String, dynamic>)).toList(),
       havePets: json['havePets'] as bool?,
       petsDescription: json['petsDescription'] as String?,
       specialNeeds: json['specialNeeds'] as String?,
@@ -26,17 +24,15 @@ Guest _$GuestFromJson(Map<String, dynamic> json) => Guest(
       financeStatus: json['financeStatus'] as String?,
       howLongToStay: json['howLongToStay'] as String?,
       desiredDestination: json['desiredDestination'] as String?,
-      priorityStatus:
-          $enumDecodeNullable(_$PriorityStatusEnumMap, json['priorityStatus']),
+      priorityStatus: $enumDecodeNullable(_$PriorityStatusEnumMap, json['priorityStatus']),
       priorityDate: dateTimeFromString(json['priorityDate'] as String),
-      verificationStatus: $enumDecodeNullable(
-          _$VerificationStatusEnumMap, json['verificationStatus']),
+      verificationStatus: $enumDecodeNullable(_$VerificationStatusEnumMap, json['verificationStatus']),
       id: json['id'] as String?,
       createdAt: dateTimeFromString(json['createdAt'] as String),
       updatedAt: dateTimeFromString(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$GuestToJson(Guest instance) => <String, dynamic>{
+Map<String, dynamic> _$GuestDtoToJson(GuestDto instance) => <String, dynamic>{
       'fullName': instance.fullName,
       'email': instance.email,
       'phoneNumber': instance.phoneNumber,
@@ -56,8 +52,7 @@ Map<String, dynamic> _$GuestToJson(Guest instance) => <String, dynamic>{
       'desiredDestination': instance.desiredDestination,
       'priorityStatus': _$PriorityStatusEnumMap[instance.priorityStatus],
       'priorityDate': nullableDateTimeToString(instance.priorityDate),
-      'verificationStatus':
-          _$VerificationStatusEnumMap[instance.verificationStatus],
+      'verificationStatus': _$VerificationStatusEnumMap[instance.verificationStatus],
       'id': instance.id,
       'createdAt': nullableDateTimeToString(instance.createdAt),
       'updatedAt': nullableDateTimeToString(instance.updatedAt),
