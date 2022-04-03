@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_android/models/guest.dart';
 import 'package:flutter_android/presentation/guest/guest_form_success_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:i18next/i18next.dart';
 
 import '../../routes/app_router.dart';
 import '../guest_form_bloc/guest_form_bloc.dart';
@@ -55,28 +56,28 @@ class _GuestFormState extends State<GuestForm> {
             TextFormField(
               controller: fullNameController,
               validator: validateFullName,
-              decoration: const InputDecoration(
-                hintText: 'Wpisz swoje imię i nazwisko',
+              decoration: InputDecoration(
+                hintText: I18Next.of(context)!.t('guest_form:fullName'),
               ),
             ),
             TextFormField(
               controller: phoneNumberController,
               validator: (text) => validatePhoneNumber(context, text),
-              decoration: const InputDecoration(
-                hintText: 'Wpisz numer telefonu',
+              decoration: InputDecoration(
+                hintText: I18Next.of(context)!.t('guest_form:phoneNumber'),
               ),
             ),
             TextFormField(
               controller: emailController,
               validator: validateEmail,
-              decoration: const InputDecoration(
-                hintText: 'Wpisz email',
+              decoration: InputDecoration(
+                hintText: I18Next.of(context)!.t('guest_form:email'),
               ),
             ),
             TextField(
               controller: peopleInGroupController,
-              decoration: const InputDecoration(
-                hintText: "Napisz, ile osób liczy grupa",
+              decoration: InputDecoration(
+                hintText: I18Next.of(context)!.t('guest_form:peopleInGroup'),
               ),
               keyboardType: TextInputType.number,
               inputFormatters: <TextInputFormatter>[
@@ -85,8 +86,8 @@ class _GuestFormState extends State<GuestForm> {
             ),
             TextField(
               controller: adultMaleCountController,
-              decoration: const InputDecoration(
-                hintText: 'Napisz, ile osób liczy grupa',
+              decoration: InputDecoration(
+                hintText: I18Next.of(context)!.t('guest_form:adultMaleCount'),
               ),
               keyboardType: TextInputType.number,
               inputFormatters: <TextInputFormatter>[
@@ -95,8 +96,8 @@ class _GuestFormState extends State<GuestForm> {
             ),
             TextField(
               controller: adultFemaleCountController,
-              decoration: const InputDecoration(
-                hintText: 'Napisz, ile jest w grupie dorosłych kobiet',
+              decoration: InputDecoration(
+                hintText: I18Next.of(context)!.t('guest_form:adultFemaleCount'),
               ),
               keyboardType: TextInputType.number,
               inputFormatters: <TextInputFormatter>[
@@ -106,42 +107,42 @@ class _GuestFormState extends State<GuestForm> {
             TextFormField(
               controller: childrenController,
               validator: validateChildrenAges,
-              decoration: const InputDecoration(
-                hintText: 'Napisz wiek każdego z dzieci (np.: 5, 12, 8)',
+              decoration: InputDecoration(
+                hintText: I18Next.of(context)!.t('guest_form:children'),
               ),
             ),
             TextFormField(
               controller: havePetsController,
               validator: validateHavePets,
-              decoration: const InputDecoration(
-                hintText: 'Napisz, czy masz zwierzęta',
+              decoration: InputDecoration(
+                hintText: I18Next.of(context)!.t('guest_form:havePets'),
               ),
             ),
             TextFormField(
               controller: petsDescriptionController,
               validator: validatePetsDescription,
-              decoration: const InputDecoration(
-                hintText: 'Napisz, jakie masz zwierzęta',
+              decoration: InputDecoration(
+                hintText: I18Next.of(context)!.t('guest_form:petsDescription'),
               ),
             ),
             TextFormField(
               controller: specialNeedsController,
               validator: validateSpecialNeeds,
-              decoration: const InputDecoration(
-                hintText: 'Napisz, jakie masz specjalne potrzeby (np. dietetyczne)',
+              decoration: InputDecoration(
+                hintText: I18Next.of(context)!.t('guest_form:specialNeeds'),
               ),
             ),
             TextFormField(
               controller: foodAllergiesController,
-              decoration: const InputDecoration(
-                hintText: 'Napisz, jakie masz alergie żywieniowe',
+              decoration: InputDecoration(
+                hintText: I18Next.of(context)!.t('guest_form:foodAllergies'),
               ),
             ),
 
             Row(
               children: [
                 Text(
-                  "Dieta bezmięsna",
+                  I18Next.of(context)!.t('guest_form:meatFreeDiet'),
                   style: Theme.of(context).inputDecorationTheme.hintStyle,
                 ),
                 Checkbox(
@@ -157,7 +158,7 @@ class _GuestFormState extends State<GuestForm> {
             Row(
               children: [
                 Text(
-                  "Dieta bezglutenowa",
+                  I18Next.of(context)!.t('guest_form:glutenFreeDiet'),
                   style: Theme.of(context).inputDecorationTheme.hintStyle,
                 ),
                 Checkbox(
@@ -173,7 +174,7 @@ class _GuestFormState extends State<GuestForm> {
             Row(
               children: [
                 Text(
-                  "Dieta bez laktozy",
+                  I18Next.of(context)!.t('guest_form:lactoseFreeDiet'),
                   style: Theme.of(context).inputDecorationTheme.hintStyle,
                 ),
                 Checkbox(
@@ -189,26 +190,26 @@ class _GuestFormState extends State<GuestForm> {
             TextFormField(
               controller: financeStatusController,
               validator: validateFinanceStatus,
-              decoration: const InputDecoration(
-                hintText: 'Napisz, jaki masz status finansowy',
+              decoration: InputDecoration(
+                hintText: I18Next.of(context)!.t('guest_form:howLongToStay'),
               ),
             ),
             TextFormField(
               controller: howLongToStayController,
               validator: validateHowLongToStay,
-              decoration: const InputDecoration(
-                hintText: 'Napisz, na jak długo potrzebujesz/potrzebujecie zakwaterowania',
+              decoration: InputDecoration(
+                hintText: I18Next.of(context)!.t('guest_form:howLongToStay'),
               ),
             ),
             TextFormField(
               controller: desiredDestinationController,
-              decoration: const InputDecoration(
-                hintText: 'Napisz, w jakim mieście chcesz się docelowo znaleźć',
+              decoration: InputDecoration(
+                hintText: I18Next.of(context)!.t('guest_form:desiredDestination'),
+                // hintText: 'Napisz, w jakim mieście chcesz się docelowo znaleźć',
               ),
             ),
             DropdownButton<PriorityStatus>(
-              hint: priorityStatusValue == null ? Text("wybierz priority status") : Text(priorityStatusValue.toString()),
-              // items: <String>['A', 'B', 'C', 'D'].map((String value) {
+              hint: priorityStatusValue == null ? Text(I18Next.of(context)!.t('guest_form:priorityStatus')) : Text(priorityStatusValue.toString()),
                 items: PriorityStatus.values.map((PriorityStatus priorityStatus) {
                   return DropdownMenuItem<PriorityStatus>(
                       value: priorityStatus,
@@ -221,8 +222,8 @@ class _GuestFormState extends State<GuestForm> {
             ),
             TextFormField(
               controller: priorityStatusController,
-              decoration: const InputDecoration(
-                hintText: 'priority status',
+              decoration: InputDecoration(
+                hintText: I18Next.of(context)!.t('guest_form:priorityDate'),
               ),
             ),
             TextFormField(
@@ -240,6 +241,7 @@ class _GuestFormState extends State<GuestForm> {
               // : null,
               onPressed: () async {
                 if (_formKey.currentState!.validate()) {
+                  // SubmitAddGuest();
                   AutoRouter.of(context).push(const GuestFormSuccessRoute());
                 }
                 else {

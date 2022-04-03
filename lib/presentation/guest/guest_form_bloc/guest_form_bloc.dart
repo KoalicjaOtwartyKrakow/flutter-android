@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../infrastructure/guest/i_guest_repository.dart';
+import '../../../infrastructure/guest/guest_repository.dart';
 import '../../../models/child_age.dart';
 import '../../../models/failure.dart';
 import '../../../models/guest.dart';
@@ -21,7 +21,7 @@ class GuestFormBloc extends Bloc<GuestFormEvent, GuestFormState> {
   @override
   GuestFormState get initialState => GuestFormState.initial();
 
-  final IGuestRepository guestRepository;
+  final GuestRepository guestRepository;
 
   GuestFormBloc(this.guestRepository) : super(GuestFormState.initial()) {
     on<FullNameChanged>(

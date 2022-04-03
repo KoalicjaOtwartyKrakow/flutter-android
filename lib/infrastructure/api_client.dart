@@ -3,6 +3,8 @@ import 'package:flutter_android/models/accomodation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 
+import '../models/guest.dart';
+
 part 'api_client.g.dart';
 
 @injectable
@@ -23,6 +25,9 @@ abstract class ApiClient {
 
   @GET("/dev/doc/contract")
   Future<String> getContractDownloadUrl();
+
+  @POST("/guest")
+  Future<Guest> postGuest(Guest guest);
 }
 
 // This is needed to be injected into ApiClient through injectable_generator
