@@ -13,6 +13,19 @@ class ChildAge {
   Map<String, dynamic> toJson() => _$ChildAgeToJson(this);
   factory ChildAge.fromJson(Map<String, dynamic> json) =>
       _$ChildAgeFromJson(json);
+
+  static List<ChildAge>? getChildrenFromString(String? value) {
+    if (value == null) {
+      return null;
+    }
+    List<ChildAge> children = [];
+    List<String> childrenStrings = value.split(',');
+
+    for (String childStr in childrenStrings) {
+      children.add(ChildAge(age: int.parse(childStr)));
+    }
+    return children;
+  }
 }
 
 
