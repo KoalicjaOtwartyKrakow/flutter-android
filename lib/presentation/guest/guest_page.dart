@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_android/presentation/routes/app_router.dart';
+import 'package:i18next/i18next.dart';
 
 class GuestPage extends StatelessWidget {
   const GuestPage({Key? key}) : super(key: key);
@@ -24,8 +25,8 @@ class GuestPage extends StatelessWidget {
                 onTap: () =>
                     AutoRouter.of(context).push(const GuestFormRoute()),
                 leading: Icon(Icons.night_shelter),
-                title: const Text(
-                  'ZGŁOŚ PROŚBĘ O MIESZKANIE',
+                title: Text(
+                    I18Next.of(context)!.t('guest_page:requestAccommodation')
                 ),
               ),
             ),
