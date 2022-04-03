@@ -33,32 +33,27 @@ mixin _$GuestListEvent {
     required TResult Function() download,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? download,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? download,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) download,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? download,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? download,
@@ -69,28 +64,32 @@ mixin _$GuestListEvent {
 
 /// @nodoc
 abstract class $GuestListEventCopyWith<$Res> {
-  factory $GuestListEventCopyWith(GuestListEvent value, $Res Function(GuestListEvent) then) =
+  factory $GuestListEventCopyWith(
+          GuestListEvent value, $Res Function(GuestListEvent) then) =
       _$GuestListEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GuestListEventCopyWithImpl<$Res> implements $GuestListEventCopyWith<$Res> {
+class _$GuestListEventCopyWithImpl<$Res>
+    implements $GuestListEventCopyWith<$Res> {
   _$GuestListEventCopyWithImpl(this._value, this._then);
 
   final GuestListEvent _value;
-
   // ignore: unused_field
   final $Res Function(GuestListEvent) _then;
 }
 
 /// @nodoc
 abstract class _$StartedCopyWith<$Res> {
-  factory _$StartedCopyWith(_Started value, $Res Function(_Started) then) = __$StartedCopyWithImpl<$Res>;
+  factory _$StartedCopyWith(_Started value, $Res Function(_Started) then) =
+      __$StartedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$StartedCopyWithImpl<$Res> extends _$GuestListEventCopyWithImpl<$Res> implements _$StartedCopyWith<$Res> {
-  __$StartedCopyWithImpl(_Started _value, $Res Function(_Started) _then) : super(_value, (v) => _then(v as _Started));
+class __$StartedCopyWithImpl<$Res> extends _$GuestListEventCopyWithImpl<$Res>
+    implements _$StartedCopyWith<$Res> {
+  __$StartedCopyWithImpl(_Started _value, $Res Function(_Started) _then)
+      : super(_value, (v) => _then(v as _Started));
 
   @override
   _Started get _value => super._value as _Started;
@@ -108,7 +107,8 @@ class _$_Started implements _Started {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _Started);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Started);
   }
 
   @override
@@ -213,7 +213,6 @@ mixin _$GuestListState {
     required TResult Function(Failure failure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
@@ -222,7 +221,6 @@ mixin _$GuestListState {
     TResult Function(Failure failure)? loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -232,7 +230,6 @@ mixin _$GuestListState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -241,7 +238,6 @@ mixin _$GuestListState {
     required TResult Function(_LoadFailure value) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -250,7 +246,6 @@ mixin _$GuestListState {
     TResult Function(_LoadFailure value)? loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -264,28 +259,32 @@ mixin _$GuestListState {
 
 /// @nodoc
 abstract class $GuestListStateCopyWith<$Res> {
-  factory $GuestListStateCopyWith(GuestListState value, $Res Function(GuestListState) then) =
+  factory $GuestListStateCopyWith(
+          GuestListState value, $Res Function(GuestListState) then) =
       _$GuestListStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GuestListStateCopyWithImpl<$Res> implements $GuestListStateCopyWith<$Res> {
+class _$GuestListStateCopyWithImpl<$Res>
+    implements $GuestListStateCopyWith<$Res> {
   _$GuestListStateCopyWithImpl(this._value, this._then);
 
   final GuestListState _value;
-
   // ignore: unused_field
   final $Res Function(GuestListState) _then;
 }
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$GuestListStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$GuestListStateCopyWithImpl<$Res>
+    implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+      : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -303,7 +302,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -390,14 +390,17 @@ abstract class _Initial implements GuestListState {
 
 /// @nodoc
 abstract class _$LoadInProgressCopyWith<$Res> {
-  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) =
+  factory _$LoadInProgressCopyWith(
+          _LoadInProgress value, $Res Function(_LoadInProgress) then) =
       __$LoadInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadInProgressCopyWithImpl<$Res> extends _$GuestListStateCopyWithImpl<$Res>
+class __$LoadInProgressCopyWithImpl<$Res>
+    extends _$GuestListStateCopyWithImpl<$Res>
     implements _$LoadInProgressCopyWith<$Res> {
-  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then)
+  __$LoadInProgressCopyWithImpl(
+      _LoadInProgress _value, $Res Function(_LoadInProgress) _then)
       : super(_value, (v) => _then(v as _LoadInProgress));
 
   @override
@@ -416,7 +419,8 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _LoadInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _LoadInProgress);
   }
 
   @override
@@ -503,16 +507,18 @@ abstract class _LoadInProgress implements GuestListState {
 
 /// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
-  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
+  factory _$LoadSuccessCopyWith(
+          _LoadSuccess value, $Res Function(_LoadSuccess) then) =
       __$LoadSuccessCopyWithImpl<$Res>;
-
   $Res call({List<Guest> accommodations});
 }
 
 /// @nodoc
-class __$LoadSuccessCopyWithImpl<$Res> extends _$GuestListStateCopyWithImpl<$Res>
+class __$LoadSuccessCopyWithImpl<$Res>
+    extends _$GuestListStateCopyWithImpl<$Res>
     implements _$LoadSuccessCopyWith<$Res> {
-  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then)
+  __$LoadSuccessCopyWithImpl(
+      _LoadSuccess _value, $Res Function(_LoadSuccess) _then)
       : super(_value, (v) => _then(v as _LoadSuccess));
 
   @override
@@ -549,15 +555,18 @@ class _$_LoadSuccess implements _LoadSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _LoadSuccess &&
-            const DeepCollectionEquality().equals(other.accommodations, accommodations));
+            const DeepCollectionEquality()
+                .equals(other.accommodations, accommodations));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(accommodations));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(accommodations));
 
   @JsonKey(ignore: true)
   @override
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith => __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+      __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -638,25 +647,27 @@ abstract class _LoadSuccess implements GuestListState {
   const factory _LoadSuccess(List<Guest> accommodations) = _$_LoadSuccess;
 
   List<Guest> get accommodations;
-
   @JsonKey(ignore: true)
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith => throw _privateConstructorUsedError;
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) =
+  factory _$LoadFailureCopyWith(
+          _LoadFailure value, $Res Function(_LoadFailure) then) =
       __$LoadFailureCopyWithImpl<$Res>;
-
   $Res call({Failure failure});
 
   $FailureCopyWith<$Res> get failure;
 }
 
 /// @nodoc
-class __$LoadFailureCopyWithImpl<$Res> extends _$GuestListStateCopyWithImpl<$Res>
+class __$LoadFailureCopyWithImpl<$Res>
+    extends _$GuestListStateCopyWithImpl<$Res>
     implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then)
+  __$LoadFailureCopyWithImpl(
+      _LoadFailure _value, $Res Function(_LoadFailure) _then)
       : super(_value, (v) => _then(v as _LoadFailure));
 
   @override
@@ -704,11 +715,13 @@ class _$_LoadFailure implements _LoadFailure {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
 
   @JsonKey(ignore: true)
   @override
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith => __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+      __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -789,7 +802,7 @@ abstract class _LoadFailure implements GuestListState {
   const factory _LoadFailure(Failure failure) = _$_LoadFailure;
 
   Failure get failure;
-
   @JsonKey(ignore: true)
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith => throw _privateConstructorUsedError;
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }

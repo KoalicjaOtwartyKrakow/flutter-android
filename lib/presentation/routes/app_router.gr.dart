@@ -26,7 +26,8 @@ class _$AppRouter extends RootStackRouter {
           routeData: routeData, child: const HostPage());
     },
     ApartmentFormRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(routeData: routeData, child: const ApartmentFormPage());
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const ApartmentFormPage());
     },
     GuestRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
@@ -45,31 +46,35 @@ class _$AppRouter extends RootStackRouter {
           routeData: routeData, child: const GuestFormFailurePage());
     },
     ApartmentAddedSuccessRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(routeData: routeData, child: const ApartmentAddedSuccessPage());
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const ApartmentAddedSuccessPage());
     },
     VolunteerRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(routeData: routeData, child: const VolunteerPage());
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const VolunteerPage());
     },
     GuestListRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(routeData: routeData, child: const GuestListPage());
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const GuestListPage());
     },
     AccommodationListRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(routeData: routeData, child: const AccommodationListPage());
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const AccommodationListPage());
     },
     AccomodationDetailRoute.name: (routeData) {
       final args = routeData.argsAs<AccomodationDetailRouteArgs>();
       return MaterialPageX<dynamic>(
-          routeData: routeData, child: AccomodationDetailPage(key: args.key, accomodation: args.accomodation));
+          routeData: routeData,
+          child: AccomodationDetailPage(
+              key: args.key, accomodation: args.accomodation));
     }
   };
 
   @override
-  List<RouteConfig> get routes =>
-      [
+  List<RouteConfig> get routes => [
         RouteConfig(HomeRoute.name, path: '/'),
         RouteConfig(HostRoute.name, path: '/host-page'),
         RouteConfig(ApartmentFormRoute.name, path: '/apartment-form-page'),
-        RouteConfig(ApartmentAddedSuccessRoute.name, path: '/apartment-added-success-page'),
         RouteConfig(GuestRoute.name, path: '/guest-page'),
         RouteConfig(GuestFormRoute.name, path: '/guest-form-page'),
         RouteConfig(GuestFormSuccessRoute.name,
@@ -80,8 +85,10 @@ class _$AppRouter extends RootStackRouter {
             path: '/apartment-added-success-page'),
         RouteConfig(VolunteerRoute.name, path: '/volunteer-page'),
         RouteConfig(GuestListRoute.name, path: '/guest-list-page'),
-        RouteConfig(AccommodationListRoute.name, path: '/accommodation-list-page'),
-        RouteConfig(AccomodationDetailRoute.name, path: '/accomodation-detail-page')
+        RouteConfig(AccommodationListRoute.name,
+            path: '/accommodation-list-page'),
+        RouteConfig(AccomodationDetailRoute.name,
+            path: '/accomodation-detail-page')
       ];
 }
 
@@ -173,7 +180,8 @@ class GuestListRoute extends PageRouteInfo<void> {
 /// generated route for
 /// [AccommodationListPage]
 class AccommodationListRoute extends PageRouteInfo<void> {
-  const AccommodationListRoute() : super(AccommodationListRoute.name, path: '/accommodation-list-page');
+  const AccommodationListRoute()
+      : super(AccommodationListRoute.name, path: '/accommodation-list-page');
 
   static const String name = 'AccommodationListRoute';
 }

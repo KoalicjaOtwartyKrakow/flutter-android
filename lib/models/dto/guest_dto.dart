@@ -70,10 +70,6 @@ class GuestDto {
     this.updatedAt
   });
 
-  factory Guest.fromJson(Map<String, dynamic> json) =>
-      _$GuestFromJson(json);
-  Map<String, dynamic> toJson() => _$GuestToJson(this);
-
   bool isValidated() {
     if (validateFullName(fullName) == null
         && validatePhoneNumber(phoneNumber) == null

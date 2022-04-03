@@ -79,7 +79,8 @@ class _ApiClient implements ApiClient {
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<String>(_setStreamType<String>(
         Options(method: 'GET', headers: _headers, extra: _extra)
-            .compose(_dio.options, '/dev/doc/contract', queryParameters: queryParameters, data: _data)
+            .compose(_dio.options, '/dev/doc/contract',
+                queryParameters: queryParameters, data: _data)
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = _result.data!;
     return value;
@@ -91,33 +92,38 @@ class _ApiClient implements ApiClient {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    final _result = await _dio.fetch<List<dynamic>>(_setStreamType<List<GuestDto>>(
-        Options(method: 'GET', headers: _headers, extra: _extra)
-            .compose(_dio.options, '/guest', queryParameters: queryParameters, data: _data)
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    var value = _result.data!.map((dynamic i) => GuestDto.fromJson(i as Map<String, dynamic>)).toList();
+    final _result = await _dio.fetch<List<dynamic>>(
+        _setStreamType<List<GuestDto>>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/guest',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    var value = _result.data!
+        .map((dynamic i) => GuestDto.fromJson(i as Map<String, dynamic>))
+        .toList();
     return value;
   }
 
   @override
-  Future<Guest> postGuest(guest) async {
+  Future<GuestDto> postGuest(guest) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<Guest>(
+        _setStreamType<GuestDto>(
             Options(method: 'POST', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/guest',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = Guest.fromJson(_result.data!);
+    final value = GuestDto.fromJson(_result.data!);
     return value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
     if (T != dynamic &&
-        !(requestOptions.responseType == ResponseType.bytes || requestOptions.responseType == ResponseType.stream)) {
+        !(requestOptions.responseType == ResponseType.bytes ||
+            requestOptions.responseType == ResponseType.stream)) {
       if (T == String) {
         requestOptions.responseType = ResponseType.plain;
       } else {

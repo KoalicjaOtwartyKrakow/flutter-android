@@ -4,8 +4,6 @@ import 'package:flutter_android/models/dto/guest_dto.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 
-import '../models/guest.dart';
-
 part 'api_client.g.dart';
 
 @injectable
@@ -31,7 +29,7 @@ abstract class ApiClient {
   Future<List<GuestDto>> getGuests();
 
   @POST("/guest")
-  Future<Guest> postGuest(Guest guest);
+  Future<GuestDto> postGuest(GuestDto guest);
 }
 
 // This is needed to be injected into ApiClient through injectable_generator
