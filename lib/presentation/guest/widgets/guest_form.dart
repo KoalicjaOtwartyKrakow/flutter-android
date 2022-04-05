@@ -209,7 +209,7 @@ class _GuestFormState extends State<GuestForm> {
                 items: PriorityStatus.values.map((PriorityStatus priorityStatus) {
                   return DropdownMenuItem<PriorityStatus>(
                       value: priorityStatus,
-                      child: Text(priorityStatusToString(priorityStatus)));
+                      child: Text(priorityStatusToString(priorityStatus, context)));
                 }).toList(),
               onChanged: (value) => setState(
               () {
@@ -281,20 +281,19 @@ class _GuestFormState extends State<GuestForm> {
 
 
 
-String priorityStatusToString(PriorityStatus priorityStatus) {
+String priorityStatusToString(PriorityStatus priorityStatus, BuildContext context) {
   switch(priorityStatus) {
     case PriorityStatus.accommodation_not_needed:
-      return "Zakwaterowanie niepotrzebne";
+      return I18Next.of(context)!.t('priority_status:accommodationNotNeeded');
     case PriorityStatus.accommodation_found:
-      return "Znaleziono zakwaterowanie";
+      return I18Next.of(context)!.t('priority_status:accommodationFound');
     case PriorityStatus.en_route_ukraine:
-      return "W drodze do Ukrainy";
+      return I18Next.of(context)!.t('priority_status:enRouteUkraine');
     case PriorityStatus.en_route_poland:
-      return "W drodze do Polski";
+      return I18Next.of(context)!.t('priority_status:enRoutePoland');
     case PriorityStatus.in_krakow:
-      return "W Krakowie";
+      return I18Next.of(context)!.t('priority_status:inKrakow');
     case PriorityStatus.in_crisis_point:
-      return "W punkcie kryzysowym";
-      // return I18Next.of(context)!.t('guest_form:priorityDate');
+      return I18Next.of(context)!.t('priority_status:inCrisisPoint');
   }
 }
