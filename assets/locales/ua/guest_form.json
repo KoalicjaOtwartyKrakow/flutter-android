@@ -17,5 +17,6 @@
   "howLongToStay": "How long to stay",
   "desiredDestination": "Desired destination",
   "priorityStatus": "Priority status",
-  "priorityDate": "Date since when accommodation will be neeeded"
+  "priorityDate": "Date since when accommodation will be neeeded",
+  "guestFormAdded": "Thank you! You've requested accommodation. We will contact you."
 }

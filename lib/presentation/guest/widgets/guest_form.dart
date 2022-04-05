@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_android/presentation/guest/guest_form_success_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:i18next/i18next.dart';
 
@@ -203,7 +202,6 @@ class _GuestFormState extends State<GuestForm> {
               controller: desiredDestinationController,
               decoration: InputDecoration(
                 hintText: I18Next.of(context)!.t('guest_form:desiredDestination'),
-                // hintText: 'Napisz, w jakim mieście chcesz się docelowo znaleźć',
               ),
             ),
             DropdownButton<PriorityStatus>(
@@ -297,5 +295,6 @@ String priorityStatusToString(PriorityStatus priorityStatus) {
       return "W Krakowie";
     case PriorityStatus.in_crisis_point:
       return "W punkcie kryzysowym";
+      // return I18Next.of(context)!.t('guest_form:priorityDate');
   }
 }
