@@ -17,7 +17,9 @@
         "button": {
             "reset": "Reset changes",
             "backToList": "Back to the list"
-        }
+        },
+        "success": "OK",
+        "failure": "Try again"
     },
     "data": {
         "loading": "Loading data…",

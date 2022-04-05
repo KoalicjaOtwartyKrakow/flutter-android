@@ -16,7 +16,7 @@ class GuestFormSuccessPage extends StatelessWidget {
             TextButton(
               onPressed: () =>
               AutoRouter.of(context).popUntilRoot(),
-              child: const Text('Super'),
+              child: Text(I18Next.of(context)!.t('common:form:success')),
             ),
           ],
         ),

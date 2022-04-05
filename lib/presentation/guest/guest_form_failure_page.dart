@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_android/infrastructure/api_client.dart';
-import 'package:flutter_android/injection.dart';
+import 'package:i18next/i18next.dart';
 
 import '../routes/app_router.dart';
 
@@ -13,15 +12,13 @@ class GuestFormFailurePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder(
-        // future: getIt<ApiClient>().listApartments(),
         builder: (context, snapshot) => ListView(
           children: [
-            const Text('Nie udało się zgłosić potrzeby lokalu. Spróbuj ponownie.'),
+            Text(I18Next.of(context)!.t('guest_form:guestFormNotAdded')),
             TextButton(
               onPressed: () =>
-                  // AutoRouter.of(context).popUntil((route) => route.isFirst),
               AutoRouter.of(context).push(const GuestFormRoute()),
-              child: const Text('Spróbuj ponownie'),
+              child: Text(I18Next.of(context)!.t('common:form:failure')),
             ),
           ],
         ),

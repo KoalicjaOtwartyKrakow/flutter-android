@@ -18,7 +18,9 @@
         "button": {
             "reset": "Reset changes",
             "backToList": "Back to the list"
-        }
+        },
+        "success": "Super",
+        "failure": "Spróbuj ponownie"
     },
     "data": {
         "loading": "Loading data…",

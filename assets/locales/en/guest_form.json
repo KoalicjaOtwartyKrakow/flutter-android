@@ -18,5 +18,6 @@
   "desiredDestination": "Desired destination",
   "priorityStatus": "Priority status",
   "priorityDate": "Date since when accommodation will be neeeded",
-  "guestFormAdded": "Thank you! You've requested accommodation. We will contact you."
+  "guestFormAdded": "Thank you! You've requested accommodation. We will contact you.",
+  "guestFormNotAdded": "Accommodation request failed."
 }

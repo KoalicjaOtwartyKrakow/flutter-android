@@ -18,5 +18,6 @@
   "desiredDestination": "Napisz, w jakim mieście chcesz się docelowo znaleźć",
   "priorityStatus": "Wybierz status",
   "priorityDate": "Wybierz, od kiedy potrzebujesz zakwaterowania",
-  "guestFormAdded": "Dziękujemy! Zgłosiłeś potrzebę lokalu. Prosimy czekać na kontakt."
+  "guestFormAdded": "Dziękujemy! Zgłosiłeś potrzebę lokalu. Prosimy czekać na kontakt.",
+  "guestFormNotAdded": "Nie udało się zgłosić potrzeby lokalu."
 }
