@@ -1,4 +1,3 @@
-import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_android/models/accomodation.dart';
 import 'package:flutter_android/models/dto/guest_dto.dart';
@@ -29,8 +28,8 @@ abstract class ApiClient {
   @GET("/guest")
   Future<List<GuestDto>> getGuests();
 
-  @POST("/dev/guests")
-  Future<Guest> postAGuest(@Body() Guest guest);
+  @POST("/guest")
+  Future<GuestDto> postGuest(GuestDto guest);
 }
 
 // This is needed to be injected into ApiClient through injectable_generator
