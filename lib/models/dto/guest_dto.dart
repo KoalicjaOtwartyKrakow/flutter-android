@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:email_validator/email_validator.dart';
 
 import '../../infrastructure/converters.dart';
 import '../child_age.dart';
@@ -92,8 +93,8 @@ class GuestDto {
     if (value == null || value.isEmpty) {
       return 'Phone number is required';
     }
-    final phoneNumberPattern = RegExp(r'^\+\d{1,2} ?)?\d{3}[- \.]?\d{3}[- \.]?\d{3}$');
-    if (phoneNumberPattern.hasMatch(value)){
+    final phoneNumberPattern = RegExp(r'^(\+\d{1,2} ?)?\d{3}[- \.]?\d{3}[- \.]?\d{3}$');
+    if (!phoneNumberPattern.hasMatch(value)){
       return 'Incorrect phone number';
     }
     return null;
@@ -103,7 +104,7 @@ class GuestDto {
     if (value == null || value.isEmpty) {
       return 'Email address is required';
     }
-    if (!value.contains('@')) {
+    if (!EmailValidator.validate(value)) {
       return 'Incorrect email address';
     }
     return null;

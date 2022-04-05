@@ -16,7 +16,7 @@ class ChildAge {
 
   static List<ChildAge>? getChildrenFromString(String? value) {
     if (value == null) {
-      return null;
+      return [];
     }
     List<ChildAge> children = [];
     List<String> childrenStrings = value.split(',');
