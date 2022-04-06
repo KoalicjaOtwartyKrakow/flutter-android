@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:i18next/i18next.dart';
 
 import '../../injection.dart';
 import 'guest_form_bloc/guest_form_bloc.dart';
@@ -11,7 +12,7 @@ class GuestFormPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(
-        title: const Text('Zgłoś potrzebę mieszkania'),
+        title: Text(I18Next.of(context)!.t('guest_page:requestAccommodation'))
       ),
       body: BlocProvider<GuestFormBloc>(
         create: (_) => getIt<GuestFormBloc>(),
