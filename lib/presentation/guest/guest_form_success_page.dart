@@ -7,8 +7,7 @@ class GuestFormSuccessPage extends StatelessWidget {
   const GuestFormSuccessPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+  Widget build(BuildContext context) => Scaffold(
       body: FutureBuilder(
         builder: (context, snapshot) => ListView(
           children: [
@@ -23,4 +22,3 @@ class GuestFormSuccessPage extends StatelessWidget {
       ),
     );
   }
-}

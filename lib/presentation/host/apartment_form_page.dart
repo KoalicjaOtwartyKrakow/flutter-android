@@ -10,8 +10,7 @@ class ApartmentFormPage extends StatelessWidget {
   const ApartmentFormPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+  Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(
         title: Text(I18Next.of(context)!.t('apartment:propose')),
       ),
@@ -21,4 +20,3 @@ class ApartmentFormPage extends StatelessWidget {
       ),
     );
   }
-}

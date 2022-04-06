@@ -7,8 +7,7 @@ class GuestPage extends StatelessWidget {
   const GuestPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+  Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(
         title: Text('Gość'),
       ),
@@ -35,4 +34,3 @@ class GuestPage extends StatelessWidget {
       ),
     );
   }
-}

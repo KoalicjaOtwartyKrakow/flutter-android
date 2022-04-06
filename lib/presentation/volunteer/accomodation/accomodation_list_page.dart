@@ -13,8 +13,7 @@ class AccommodationListPage extends StatelessWidget {
   const AccommodationListPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+  Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(
         title: Text(
           I18Next.of(context)!.t('volunteer:accommodationListTitle'),
@@ -53,7 +52,6 @@ class AccommodationListPage extends StatelessWidget {
       ),
     );
   }
-}
 
 class AccomodationListLoadSuccessWidget extends StatelessWidget {
   const AccomodationListLoadSuccessWidget({
