@@ -34,7 +34,9 @@ class HomePage extends StatelessWidget {
               ListTile(
                 iconColor: Theme.of(context).primaryColor,
                 textColor: Theme.of(context).primaryColor,
-                onTap: () {},
+                onTap: () => AutoRouter.of(context).push(
+                  const GuestRoute(),
+                ),
                 leading: const Icon(Icons.travel_explore),
                 title: Text(
                   I18Next.of(context)!.t('home:search'),

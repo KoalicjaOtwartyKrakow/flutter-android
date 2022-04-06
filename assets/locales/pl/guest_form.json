@@ -1,0 +1,23 @@
+{
+  "fullName": "Wpisz swoje imię i nazwisko",
+  "phoneNumber": "Wpisz numer telefonu",
+  "email": "Wpisz email",
+  "peopleInGroup": "Napisz, ile osób liczy grupa",
+  "adultMaleCount": "Napisz, ile jest w grupie dorosłych mężczyzn",
+  "adultFemaleCount": "Napisz, ile jest w grupie dorosłych kobiet",
+  "children": "Napisz wiek każdego z dzieci (np.: 5, 12, 8)",
+  "havePets": "Napisz, czy masz zwierzęta",
+  "petsDescription": "Napisz, jakie masz zwierzęta",
+  "specialNeeds": "Napisz, jakie masz specjalne potrzeby (np. dietetyczne)",
+  "foodAllergies": "Napisz, jakie masz alergie żywieniowe",
+  "meatFreeDiet": "Dieta bezmięsna",
+  "glutenFreeDiet": "Dieta bezglutenowa",
+  "lactoseFreeDiet": "Dieta bez laktozy",
+  "financeStatus": "Napisz, jaki masz status finansowy",
+  "howLongToStay": "Napisz, na jak długo potrzebujesz/potrzebujecie zakwaterowania",
+  "desiredDestination": "Napisz, w jakim mieście chcesz się docelowo znaleźć",
+  "priorityStatus": "Wybierz status",
+  "priorityDate": "Wybierz, od kiedy potrzebujesz zakwaterowania",
+  "guestFormAdded": "Dziękujemy! Zgłosiłeś potrzebę lokalu. Prosimy czekać na kontakt.",
+  "guestFormNotAdded": "Nie udało się zgłosić potrzeby lokalu."
+}

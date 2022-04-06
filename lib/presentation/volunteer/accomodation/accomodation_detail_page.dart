@@ -13,8 +13,7 @@ class AccomodationDetailPage extends StatelessWidget {
   final Accommodation accomodation;
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+  Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(
         title: Text(
           I18Next.of(context)!.t('accommodation:appBar.title'),
@@ -253,4 +252,3 @@ class AccomodationDetailPage extends StatelessWidget {
       ),
     );
   }
-}

@@ -1,0 +1,23 @@
+{
+  "fullName": "Full name",
+  "phoneNumber": "Phone number",
+  "email": "Email address",
+  "peopleInGroup": "Number of people in group",
+  "adultMaleCount": "Number of adult men in group",
+  "adultFemaleCount": "Number of adult women in group",
+  "children": "Children ages (for example: 5, 12, 8)",
+  "havePets": "Have pets",
+  "petsDescription": "What pets do you have?",
+  "specialNeeds": "Write about special needs (for example dietary)",
+  "foodAllergies": "Write about food allergies",
+  "meatFreeDiet": "Meat free diet",
+  "glutenFreeDiet": "Gluten free diet",
+  "lactoseFreeDiet": "Lactose free diet",
+  "financeStatus": "Finance status",
+  "howLongToStay": "How long to stay",
+  "desiredDestination": "Desired destination",
+  "priorityStatus": "Priority status",
+  "priorityDate": "Date since when accommodation will be neeeded",
+  "guestFormAdded": "Thank you! You've requested accommodation. We will contact you.",
+  "guestFormNotAdded": "Accommodation request failed."
+}
