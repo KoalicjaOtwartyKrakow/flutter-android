@@ -11,12 +11,10 @@ class GuestFormPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-      appBar: AppBar(
-        title: Text(I18Next.of(context)!.t('guest_page:requestAccommodation'))
-      ),
-      body: BlocProvider<GuestFormBloc>(
-        create: (_) => getIt<GuestFormBloc>(),
-        child: GuestForm(),
-      ),
-    );
+      appBar: AppBar(title: Text(I18Next.of(context)!.t('guest_page:requestAccommodation'))),
+        body: BlocProvider<GuestFormBloc>(
+          create: (_) => getIt<GuestFormBloc>(),
+          child: const GuestForm(),
+        ),
+      );
   }

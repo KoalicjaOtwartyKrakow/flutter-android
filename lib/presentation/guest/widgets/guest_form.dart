@@ -1,16 +1,16 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_android/models/domain/priority_status.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:i18next/i18next.dart';
 
-import '../../../models/child_age.dart';
 import '../../../models/dto/guest_dto.dart';
 import '../../routes/app_router.dart';
 import '../guest_form_bloc/guest_form_bloc.dart';
 
 class GuestForm extends StatefulWidget {
-  GuestForm({Key? key}) : super(key: key);
+  const GuestForm({Key? key}) : super(key: key);
 
   @override
   State<GuestForm> createState() => _GuestFormState();
@@ -52,29 +52,29 @@ class _GuestFormState extends State<GuestForm> {
       return Form(
         key: _formKey,
         child: ListView(
-          padding: EdgeInsets.all(10.0),
-          children: <Widget>[
-            TextFormField(
-              controller: fullNameController,
-              validator: GuestDto.validateFullName,
-              decoration: InputDecoration(
-                hintText: I18Next.of(context)!.t('guest_form:fullName'),
-              ),
-            ),
-            TextFormField(
-              controller: phoneNumberController,
-              validator: GuestDto.validatePhoneNumber,
-              decoration: InputDecoration(
-                hintText: I18Next.of(context)!.t('guest_form:phoneNumber'),
-              ),
-            ),
-            TextFormField(
-              controller: emailController,
-              validator: GuestDto.validateEmail,
-              decoration: InputDecoration(
-                hintText: I18Next.of(context)!.t('guest_form:email'),
-              ),
-            ),
+              padding: const EdgeInsets.all(10.0),
+              children: <Widget>[
+                TextFormField(
+                  controller: fullNameController,
+                  validator: GuestDto.validateFullName,
+                  decoration: InputDecoration(
+                    hintText: I18Next.of(context)!.t('guest_form:fullName'),
+                  ),
+                ),
+                TextFormField(
+                  controller: phoneNumberController,
+                  validator: GuestDto.validatePhoneNumber,
+                  decoration: InputDecoration(
+                    hintText: I18Next.of(context)!.t('guest_form:phoneNumber'),
+                  ),
+                ),
+                TextFormField(
+                  controller: emailController,
+                  validator: GuestDto.validateEmail,
+                  decoration: InputDecoration(
+                    hintText: I18Next.of(context)!.t('guest_form:email'),
+                  ),
+                ),
             TextField(
               controller: peopleInGroupController,
               decoration: InputDecoration(
@@ -225,30 +225,42 @@ class _GuestFormState extends State<GuestForm> {
             ElevatedButton(
               onPressed: () async {
                 if (_formKey.currentState!.validate()) {
-                  context.read<GuestFormBloc>().add(SubmitAddGuest(
-                      GuestDto(
-                        fullName: fullNameController.text,
-                        phoneNumber: phoneNumberController.text,
-                        email: emailController.text,
-                        peopleInGroup: int.parse(peopleInGroupController.text),
-                        adultMaleCount: int.parse(adultMaleCountController.text),
-                        adultFemaleCount: int.parse(adultFemaleCountController.text),
-                        children: ChildAge.getChildrenFromString(childrenController.text),
-                        havePets: havePetsValue,
-                        petsDescription: petsDescriptionController.text,
-                        specialNeeds: specialNeedsController.text,
-                        foodAllergies: foodAllergiesController.text,
-                        meatFreeDiet: meatFreeDietValue,
-                        glutenFreeDiet: glutenFreeDietValue,
-                        lactoseFreeDiet: lactoseFreeDietValue,
-                        financeStatus: financeStatusController.text,
-                        howLongToStay: howLongToStayController.text,
-                        desiredDestination: desiredDestinationController.text,
-                        priorityStatus: priorityStatusValue,
-                        priorityDate: priorityDateValue,
-                  )));
-                  AutoRouter.of(context).push(const GuestFormSuccessRoute());
-                }
+                  context.read<GuestFormBloc>().add(SubmitAddGuest(GuestDto(
+                            fullNameController.text,
+                            emailController.text,
+                            phoneNumberController.text,
+                            null,
+                            null,
+                            int.parse(peopleInGroupController.text),
+                            int.parse(adultMaleCountController.text),
+                            int.parse(adultFemaleCountController.text),
+                            childrenController.text.split(',').map((e) => int.parse(e.trim())).toList(growable: false),
+                            havePetsValue,
+                            petsDescriptionController.text,
+                            specialNeedsController.text,
+                            foodAllergiesController.text,
+                            meatFreeDietValue,
+                            glutenFreeDietValue,
+                            lactoseFreeDietValue,
+                            financeStatusController.text,
+                            howLongToStayController.text,
+                            desiredDestinationController.text,
+                            priorityStatusValue,
+                            priorityDateValue,
+                            null,
+                            null,
+                            null,
+                            null,
+                            null,
+                            null,
+                            null,
+                            null,
+                            null,
+                            null,
+                            null,
+                          )));
+                      AutoRouter.of(context).push(const GuestFormSuccessRoute());
+                    }
                 else {
                   AutoRouter.of(context).push(const GuestFormFailureRoute());
                 }
@@ -283,17 +295,19 @@ class _GuestFormState extends State<GuestForm> {
 
 String priorityStatusToString(PriorityStatus priorityStatus, BuildContext context) {
   switch(priorityStatus) {
-    case PriorityStatus.accommodation_not_needed:
+    case PriorityStatus.ACCOMMODATION_NOT_NEEDED:
       return I18Next.of(context)!.t('priority_status:accommodationNotNeeded');
-    case PriorityStatus.accommodation_found:
+    case PriorityStatus.ACCOMMODATION_FOUND:
       return I18Next.of(context)!.t('priority_status:accommodationFound');
-    case PriorityStatus.en_route_ukraine:
+    case PriorityStatus.EN_ROUTE_UA:
       return I18Next.of(context)!.t('priority_status:enRouteUkraine');
-    case PriorityStatus.en_route_poland:
+    case PriorityStatus.EN_ROUTE_PL:
       return I18Next.of(context)!.t('priority_status:enRoutePoland');
-    case PriorityStatus.in_krakow:
+    case PriorityStatus.IN_KRK:
       return I18Next.of(context)!.t('priority_status:inKrakow');
-    case PriorityStatus.in_crisis_point:
+    case PriorityStatus.AT_R3:
       return I18Next.of(context)!.t('priority_status:inCrisisPoint');
+    default:
+      return 'TODO'; //ODO
   }
 }

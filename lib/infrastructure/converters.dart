@@ -1,14 +1,10 @@
 import 'package:intl/intl.dart';
 
-DateTime dateTimeFromString(String dateString) {
-  final customDateFormat = DateFormat('dd/MM/yyyy hh:mm:ss');
-  return customDateFormat.parse(dateString);
-}
+final _dateFormat = DateFormat('yyyy-MM-ddThh:mm:ssZ');
 
-String dateTimeToString(DateTime dateTime) {
-  final customDateFormat = DateFormat('dd/MM/yyyy hh:mm:ss');
-  return customDateFormat.format(dateTime);
-}
+DateTime? dateTimeFromString(String? dateString) => dateString != null ? _dateFormat.parse(dateString) : null;
+
+String dateTimeToString(DateTime dateTime) => _dateFormat.format(dateTime);
 
 String? nullableDateTimeToString(DateTime? dateTime) {
   if (dateTime != null) {

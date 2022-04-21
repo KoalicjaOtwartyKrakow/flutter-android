@@ -11,7 +11,7 @@ part of 'api_client.dart';
 class _ApiClient implements ApiClient {
   _ApiClient(this._dio, {this.baseUrl}) {
     baseUrl ??=
-        'https://europe-central2-salamlab-aparatments.cloudfunctions.net/';
+        'https://europe-central2-salamlab-aparatments.cloudfunctions.net';
   }
 
   final Dio _dio;
@@ -87,20 +87,21 @@ class _ApiClient implements ApiClient {
   }
 
   @override
-  Future<List<GuestDto>> getGuests() async {
+  Future<GuestListDto> getGuests(offset, limit) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'offset': offset,
+      r'limit': limit
+    };
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    final _result = await _dio.fetch<List<dynamic>>(
-        _setStreamType<List<GuestDto>>(
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<GuestListDto>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/guest',
+                .compose(_dio.options, '/mobile/guest',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    var value = _result.data!
-        .map((dynamic i) => GuestDto.fromJson(i as Map<String, dynamic>))
-        .toList();
+    final value = GuestListDto.fromJson(_result.data!);
     return value;
   }
 
