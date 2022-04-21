@@ -18,8 +18,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$GuestListEventTearOff {
   const _$GuestListEventTearOff();
 
-  _Started download() {
-    return const _Started();
+  _Download download({required bool resetOffset}) {
+    return _Download(
+      resetOffset: resetOffset,
+    );
   }
 }
 
@@ -28,37 +30,43 @@ const $GuestListEvent = _$GuestListEventTearOff();
 
 /// @nodoc
 mixin _$GuestListEvent {
+  bool get resetOffset => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() download,
+    required TResult Function(bool resetOffset) download,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? download,
+    TResult Function(bool resetOffset)? download,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? download,
+    TResult Function(bool resetOffset)? download,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) download,
+    required TResult Function(_Download value) download,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? download,
+    TResult Function(_Download value)? download,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? download,
+    TResult Function(_Download value)? download,
     required TResult orElse(),
   }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $GuestListEventCopyWith<GuestListEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -67,6 +75,7 @@ abstract class $GuestListEventCopyWith<$Res> {
   factory $GuestListEventCopyWith(
           GuestListEvent value, $Res Function(GuestListEvent) then) =
       _$GuestListEventCopyWithImpl<$Res>;
+  $Res call({bool resetOffset});
 }
 
 /// @nodoc
@@ -77,67 +86,106 @@ class _$GuestListEventCopyWithImpl<$Res>
   final GuestListEvent _value;
   // ignore: unused_field
   final $Res Function(GuestListEvent) _then;
-}
-
-/// @nodoc
-abstract class _$StartedCopyWith<$Res> {
-  factory _$StartedCopyWith(_Started value, $Res Function(_Started) then) =
-      __$StartedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$StartedCopyWithImpl<$Res> extends _$GuestListEventCopyWithImpl<$Res>
-    implements _$StartedCopyWith<$Res> {
-  __$StartedCopyWithImpl(_Started _value, $Res Function(_Started) _then)
-      : super(_value, (v) => _then(v as _Started));
 
   @override
-  _Started get _value => super._value as _Started;
+  $Res call({
+    Object? resetOffset = freezed,
+  }) {
+    return _then(_value.copyWith(
+      resetOffset: resetOffset == freezed
+          ? _value.resetOffset
+          : resetOffset // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$DownloadCopyWith<$Res>
+    implements $GuestListEventCopyWith<$Res> {
+  factory _$DownloadCopyWith(_Download value, $Res Function(_Download) then) =
+      __$DownloadCopyWithImpl<$Res>;
+  @override
+  $Res call({bool resetOffset});
+}
+
+/// @nodoc
+class __$DownloadCopyWithImpl<$Res> extends _$GuestListEventCopyWithImpl<$Res>
+    implements _$DownloadCopyWith<$Res> {
+  __$DownloadCopyWithImpl(_Download _value, $Res Function(_Download) _then)
+      : super(_value, (v) => _then(v as _Download));
+
+  @override
+  _Download get _value => super._value as _Download;
+
+  @override
+  $Res call({
+    Object? resetOffset = freezed,
+  }) {
+    return _then(_Download(
+      resetOffset: resetOffset == freezed
+          ? _value.resetOffset
+          : resetOffset // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$_Started implements _Started {
-  const _$_Started();
+class _$_Download implements _Download {
+  const _$_Download({required this.resetOffset});
+
+  @override
+  final bool resetOffset;
 
   @override
   String toString() {
-    return 'GuestListEvent.download()';
+    return 'GuestListEvent.download(resetOffset: $resetOffset)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Started);
+        (other.runtimeType == runtimeType &&
+            other is _Download &&
+            const DeepCollectionEquality()
+                .equals(other.resetOffset, resetOffset));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(resetOffset));
+
+  @JsonKey(ignore: true)
+  @override
+  _$DownloadCopyWith<_Download> get copyWith =>
+      __$DownloadCopyWithImpl<_Download>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() download,
+    required TResult Function(bool resetOffset) download,
   }) {
-    return download();
+    return download(resetOffset);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? download,
+    TResult Function(bool resetOffset)? download,
   }) {
-    return download?.call();
+    return download?.call(resetOffset);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? download,
+    TResult Function(bool resetOffset)? download,
     required TResult orElse(),
   }) {
     if (download != null) {
-      return download();
+      return download(resetOffset);
     }
     return orElse();
   }
@@ -145,7 +193,7 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) download,
+    required TResult Function(_Download value) download,
   }) {
     return download(this);
   }
@@ -153,7 +201,7 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? download,
+    TResult Function(_Download value)? download,
   }) {
     return download?.call(this);
   }
@@ -161,7 +209,7 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? download,
+    TResult Function(_Download value)? download,
     required TResult orElse(),
   }) {
     if (download != null) {
@@ -171,8 +219,15 @@ class _$_Started implements _Started {
   }
 }
 
-abstract class _Started implements GuestListEvent {
-  const factory _Started() = _$_Started;
+abstract class _Download implements GuestListEvent {
+  const factory _Download({required bool resetOffset}) = _$_Download;
+
+  @override
+  bool get resetOffset;
+  @override
+  @JsonKey(ignore: true)
+  _$DownloadCopyWith<_Download> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -187,9 +242,9 @@ class _$GuestListStateTearOff {
     return const _LoadInProgress();
   }
 
-  _LoadSuccess loadSuccess(List<Guest> accommodations) {
+  _LoadSuccess loadSuccess(List<Guest> guests) {
     return _LoadSuccess(
-      accommodations,
+      guests,
     );
   }
 
@@ -209,7 +264,7 @@ mixin _$GuestListState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Guest> accommodations) loadSuccess,
+    required TResult Function(List<Guest> guests) loadSuccess,
     required TResult Function(Failure failure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -217,7 +272,7 @@ mixin _$GuestListState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Guest> accommodations)? loadSuccess,
+    TResult Function(List<Guest> guests)? loadSuccess,
     TResult Function(Failure failure)? loadFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -225,7 +280,7 @@ mixin _$GuestListState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Guest> accommodations)? loadSuccess,
+    TResult Function(List<Guest> guests)? loadSuccess,
     TResult Function(Failure failure)? loadFailure,
     required TResult orElse(),
   }) =>
@@ -314,7 +369,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Guest> accommodations) loadSuccess,
+    required TResult Function(List<Guest> guests) loadSuccess,
     required TResult Function(Failure failure) loadFailure,
   }) {
     return initial();
@@ -325,7 +380,7 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Guest> accommodations)? loadSuccess,
+    TResult Function(List<Guest> guests)? loadSuccess,
     TResult Function(Failure failure)? loadFailure,
   }) {
     return initial?.call();
@@ -336,7 +391,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Guest> accommodations)? loadSuccess,
+    TResult Function(List<Guest> guests)? loadSuccess,
     TResult Function(Failure failure)? loadFailure,
     required TResult orElse(),
   }) {
@@ -431,7 +486,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Guest> accommodations) loadSuccess,
+    required TResult Function(List<Guest> guests) loadSuccess,
     required TResult Function(Failure failure) loadFailure,
   }) {
     return loadInProgress();
@@ -442,7 +497,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Guest> accommodations)? loadSuccess,
+    TResult Function(List<Guest> guests)? loadSuccess,
     TResult Function(Failure failure)? loadFailure,
   }) {
     return loadInProgress?.call();
@@ -453,7 +508,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Guest> accommodations)? loadSuccess,
+    TResult Function(List<Guest> guests)? loadSuccess,
     TResult Function(Failure failure)? loadFailure,
     required TResult orElse(),
   }) {
@@ -510,7 +565,7 @@ abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(
           _LoadSuccess value, $Res Function(_LoadSuccess) then) =
       __$LoadSuccessCopyWithImpl<$Res>;
-  $Res call({List<Guest> accommodations});
+  $Res call({List<Guest> guests});
 }
 
 /// @nodoc
@@ -526,12 +581,12 @@ class __$LoadSuccessCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? accommodations = freezed,
+    Object? guests = freezed,
   }) {
     return _then(_LoadSuccess(
-      accommodations == freezed
-          ? _value.accommodations
-          : accommodations // ignore: cast_nullable_to_non_nullable
+      guests == freezed
+          ? _value.guests
+          : guests // ignore: cast_nullable_to_non_nullable
               as List<Guest>,
     ));
   }
@@ -540,14 +595,14 @@ class __$LoadSuccessCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_LoadSuccess implements _LoadSuccess {
-  const _$_LoadSuccess(this.accommodations);
+  const _$_LoadSuccess(this.guests);
 
   @override
-  final List<Guest> accommodations;
+  final List<Guest> guests;
 
   @override
   String toString() {
-    return 'GuestListState.loadSuccess(accommodations: $accommodations)';
+    return 'GuestListState.loadSuccess(guests: $guests)';
   }
 
   @override
@@ -555,13 +610,12 @@ class _$_LoadSuccess implements _LoadSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _LoadSuccess &&
-            const DeepCollectionEquality()
-                .equals(other.accommodations, accommodations));
+            const DeepCollectionEquality().equals(other.guests, guests));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(accommodations));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(guests));
 
   @JsonKey(ignore: true)
   @override
@@ -573,10 +627,10 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Guest> accommodations) loadSuccess,
+    required TResult Function(List<Guest> guests) loadSuccess,
     required TResult Function(Failure failure) loadFailure,
   }) {
-    return loadSuccess(accommodations);
+    return loadSuccess(guests);
   }
 
   @override
@@ -584,10 +638,10 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Guest> accommodations)? loadSuccess,
+    TResult Function(List<Guest> guests)? loadSuccess,
     TResult Function(Failure failure)? loadFailure,
   }) {
-    return loadSuccess?.call(accommodations);
+    return loadSuccess?.call(guests);
   }
 
   @override
@@ -595,12 +649,12 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Guest> accommodations)? loadSuccess,
+    TResult Function(List<Guest> guests)? loadSuccess,
     TResult Function(Failure failure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
-      return loadSuccess(accommodations);
+      return loadSuccess(guests);
     }
     return orElse();
   }
@@ -644,9 +698,9 @@ class _$_LoadSuccess implements _LoadSuccess {
 }
 
 abstract class _LoadSuccess implements GuestListState {
-  const factory _LoadSuccess(List<Guest> accommodations) = _$_LoadSuccess;
+  const factory _LoadSuccess(List<Guest> guests) = _$_LoadSuccess;
 
-  List<Guest> get accommodations;
+  List<Guest> get guests;
   @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -728,7 +782,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Guest> accommodations) loadSuccess,
+    required TResult Function(List<Guest> guests) loadSuccess,
     required TResult Function(Failure failure) loadFailure,
   }) {
     return loadFailure(failure);
@@ -739,7 +793,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Guest> accommodations)? loadSuccess,
+    TResult Function(List<Guest> guests)? loadSuccess,
     TResult Function(Failure failure)? loadFailure,
   }) {
     return loadFailure?.call(failure);
@@ -750,7 +804,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Guest> accommodations)? loadSuccess,
+    TResult Function(List<Guest> guests)? loadSuccess,
     TResult Function(Failure failure)? loadFailure,
     required TResult orElse(),
   }) {

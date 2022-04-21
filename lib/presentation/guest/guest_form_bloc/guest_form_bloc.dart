@@ -1,17 +1,15 @@
 import 'package:bloc/bloc.dart';
-import 'package:dartz/dartz.dart';
-import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../infrastructure/guest/guest_repository.dart';
-import '../../../models/child_age.dart';
 import '../../../models/dto/guest_dto.dart';
 import '../../../models/failure.dart';
 
+part 'guest_form_bloc.freezed.dart';
+
 part 'guest_form_event.dart';
 part 'guest_form_state.dart';
-part 'guest_form_bloc.freezed.dart';
 
 @injectable
 class GuestFormBloc extends Bloc<GuestFormEvent, GuestFormState> {

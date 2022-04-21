@@ -1,58 +1,76 @@
-import 'package:json_annotation/json_annotation.dart';
+// ignore_for_file: constant_identifier_names
+
 import 'package:email_validator/email_validator.dart';
+import 'package:flutter_android/models/domain/priority_status.dart';
+import 'package:flutter_android/models/domain/verification_status.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 import '../../infrastructure/converters.dart';
-import '../child_age.dart';
+import 'accommodation_unit_dto.dart';
 
 part 'guest_dto.g.dart';
 
 @JsonSerializable()
 class GuestDto {
-  String fullName;
-  String email;
-  String phoneNumber;
-  int? peopleInGroup;
-  int? adultMaleCount;
-  int? adultFemaleCount;
-  List<ChildAge>? children;
-  bool? havePets;
-  String? petsDescription;
-  String? specialNeeds;
-  String? foodAllergies;
-  bool? meatFreeDiet;
-  bool? glutenFreeDiet;
-  bool? lactoseFreeDiet;
-  String? financeStatus;
-  String? howLongToStay;
-  String? desiredDestination;
-  PriorityStatus? priorityStatus;
+  final String fullName;
+  final String email;
+  final String phoneNumber;
+  final bool? isAgent;
+  final String? documentNumber;
+  final int? peopleInGroup;
+  final int? adultMaleCount;
+  final int? adultFemaleCount;
+  final List<int>? childrenAges;
+  final bool? havePets;
+  final String? petsDescription;
+  final String? specialNeeds;
+  final String? foodAllergies;
+  final bool? meatFreeDiet;
+  final bool? glutenFreeDiet;
+  final bool? lactoseFreeDiet;
+  final String? financeStatus;
+  final String? howLongToStay;
+  final String? desiredDestination;
+  final PriorityStatus? priorityStatus;
   @JsonKey(
     fromJson: dateTimeFromString,
     toJson: nullableDateTimeToString,
   )
-  DateTime? priorityDate;
-  VerificationStatus? verificationStatus;
-  String? id;
+  final DateTime? priorityDate;
+  final String? accommodationUnitId;
+  final String? claimedById;
+  final String? staffComments;
+  final VerificationStatus? verificationStatus;
+  final String? guid;
   @JsonKey(
     fromJson: dateTimeFromString,
     toJson: nullableDateTimeToString,
   )
-  DateTime? createdAt;
+  final DateTime? createdAt;
   @JsonKey(
     fromJson: dateTimeFromString,
     toJson: nullableDateTimeToString,
   )
-  DateTime? updatedAt;
+  final DateTime? updatedAt;
+  final String? systemComments;
+  final AccommodationUnitDto? accommodationUnit;
+  final String? claimedBy;
+  @JsonKey(
+    fromJson: dateTimeFromString,
+    toJson: nullableDateTimeToString,
+  )
+  final DateTime? claimedAt;
 
-
-  GuestDto(
-    {required this.fullName,
-    required this.email,
-    required this.phoneNumber,
+  const GuestDto(
+    this.fullName,
+    this.email,
+    this.phoneNumber,
+    this.isAgent,
+    this.documentNumber,
     this.peopleInGroup,
     this.adultMaleCount,
     this.adultFemaleCount,
-    this.children,
+    this.childrenAges,
     this.havePets,
     this.petsDescription,
     this.specialNeeds,
@@ -65,18 +83,23 @@ class GuestDto {
     this.desiredDestination,
     this.priorityStatus,
     this.priorityDate,
+    this.accommodationUnitId,
+    this.claimedById,
+    this.staffComments,
     this.verificationStatus,
-    this.id,
+    this.guid,
     this.createdAt,
-    this.updatedAt
-  });
+    this.updatedAt,
+    this.systemComments,
+    this.accommodationUnit,
+    this.claimedBy,
+    this.claimedAt,
+  );
 
   bool isValidated() {
-    if (validateFullName(fullName) == null
-        && validatePhoneNumber(phoneNumber) == null
-        && validateEmail(email) == null
-    )
-    {
+    if (validateFullName(fullName) == null &&
+        validatePhoneNumber(phoneNumber) == null &&
+        validateEmail(email) == null) {
       return true;
     }
     return false;
@@ -94,7 +117,7 @@ class GuestDto {
       return 'Phone number is required';
     }
     final phoneNumberPattern = RegExp(r'^(\+\d{1,2} ?)?\d{3}[- \.]?\d{3}[- \.]?\d{3}$');
-    if (!phoneNumberPattern.hasMatch(value)){
+    if (!phoneNumberPattern.hasMatch(value)) {
       return 'Incorrect phone number';
     }
     return null;
@@ -109,23 +132,8 @@ class GuestDto {
     }
     return null;
   }
+
   factory GuestDto.fromJson(Map<String, dynamic> json) => _$GuestDtoFromJson(json);
 
   Map<String, dynamic> toJson() => _$GuestDtoToJson(this);
 }
-
-enum PriorityStatus {
-  accommodation_not_needed,
-  accommodation_found,
-  en_route_ukraine,
-  en_route_poland,
-  in_krakow,
-  in_crisis_point
-}
-
-enum VerificationStatus {
-  created,
-  verified,
-  rejected
-}
-

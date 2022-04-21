@@ -7,7 +7,7 @@ class GuestListState with _$GuestListState {
   const factory GuestListState.loadInProgress() = _LoadInProgress;
 
   const factory GuestListState.loadSuccess(
-    List<Guest> accommodations,
+    List<Guest> guests,
   ) = _LoadSuccess;
 
   const factory GuestListState.loadFailure(

@@ -14,7 +14,7 @@ Apartment _$ApartmentFromJson(Map<String, dynamic> json) => Apartment(
       addressStreetName: json['ST_NAME'] as String,
       addressStreetNumber: json['ST_NUM'] as String,
       addressZip: json['ZIP'] as String,
-      createdAt: dateTimeFromString(json['CreationTime'] as String),
+      createdAt: dateTimeFromString(json['CreationTime'] as String?),
       description: json['DESCRIPTION'] as String,
       isVerified: json['IS_VERIFIED'] as bool?,
       landlordEmail: json['LANDLORD_EMAIL'] as String,
