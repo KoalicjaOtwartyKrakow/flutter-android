@@ -3,6 +3,7 @@ import 'package:flutter_android/infrastructure/api_client.dart';
 import 'package:flutter_android/infrastructure/guest/guest_list_mapper.dart';
 import 'package:flutter_android/models/domain/guest.dart';
 import 'package:flutter_android/models/failure.dart';
+import 'package:flutter_android/presentation/core/constants.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../models/dto/guest_dto.dart';
@@ -12,18 +13,14 @@ import '../api_client.dart';
 class GuestRepository {
   final ApiClient _apiClient;
   final GuestListMapper _guestListMapper;
-  int _currentOffset = 0;
 
   GuestRepository(this._apiClient, this._guestListMapper);
 
-  Future<Either<Failure, List<Guest>>> getGuests({bool resetOffset = false}) async {
+  Future<Either<Failure, List<Guest>>> getGuests({required int offset}) async {
     try {
-      final guests = await _apiClient.getGuests(_currentOffset, 20);
-      _currentOffset += guests.items.length;
+      final guests = await _apiClient.getGuests(offset, pageSize);
       return Right<Failure, List<Guest>>(_guestListMapper(guests.items));
     } catch (e, st) {
-      print(e);
-      print(st);
       return const Left(Failure.unexpected());
     }
   }

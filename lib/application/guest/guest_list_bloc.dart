@@ -17,11 +17,10 @@ class GuestListBloc extends Bloc<GuestListEvent, GuestListState> {
     this._guestRepository,
   ) : super(const GuestListState.initial()) {
     on<GuestListEvent>((event, emit) async {
-      await event.when(download: (resetOffset) async {
-        emit(const GuestListState.loadInProgress());
-        (await _guestRepository.getGuests(resetOffset: resetOffset)).fold(
-          (l) => emit(GuestListState.loadFailure(l)),
-          (r) => emit(GuestListState.loadSuccess(r)),
+      await event.when(downloadPage: (offset) async {
+        (await _guestRepository.getGuests(offset: offset)).fold(
+          (l) => emit(GuestListState.pageLoadFailure(l)),
+          (r) => emit(GuestListState.pageLoadSuccess(r)),
         );
       });
     });
