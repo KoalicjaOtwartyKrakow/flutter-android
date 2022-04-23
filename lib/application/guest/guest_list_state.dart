@@ -4,13 +4,7 @@ part of 'guest_list_bloc.dart';
 class GuestListState with _$GuestListState {
   const factory GuestListState.initial() = _Initial;
 
-  const factory GuestListState.loadInProgress() = _LoadInProgress;
+  const factory GuestListState.pageLoadSuccess(List<Guest> guests) = _NextPageLoadSuccess;
 
-  const factory GuestListState.loadSuccess(
-    List<Guest> guests,
-  ) = _LoadSuccess;
-
-  const factory GuestListState.loadFailure(
-    Failure failure,
-  ) = _LoadFailure;
+  const factory GuestListState.pageLoadFailure(Failure failure) = _FirstPageLoadFailure;
 }

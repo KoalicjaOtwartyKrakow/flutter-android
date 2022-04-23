@@ -1,102 +1,76 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_android/application/guest/guest_list_bloc.dart';
 import 'package:flutter_android/injection.dart';
 import 'package:flutter_android/models/domain/guest.dart';
+import 'package:flutter_android/presentation/core/constants.dart';
+import 'package:flutter_android/presentation/guest/widgets/guest_tile.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intl/intl.dart';
+import 'package:i18next/i18next.dart';
+import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
-class GuestListPage extends StatelessWidget {
+class GuestListPage extends StatefulWidget {
   const GuestListPage({Key? key}) : super(key: key);
 
   @override
+  State<GuestListPage> createState() => _GuestListPageState();
+}
+
+class _GuestListPageState extends State<GuestListPage> {
+  final PagingController<int, Guest> _pagingController = PagingController(firstPageKey: 0);
+
+  void _appendPage(List<Guest> newItems) {
+    final isLastPage = newItems.length < pageSize;
+    if (isLastPage) {
+      _pagingController.appendLastPage(newItems);
+    } else {
+      final nextPageKey = _pagingController.itemList?.length ?? 0 + newItems.length;
+      _pagingController.appendPage(newItems, nextPageKey);
+    }
+  }
+
+  @override
   Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(title: Text(I18Next.of(context)!.t('guest_list_page:title'))),
         body: BlocProvider<GuestListBloc>(
-          create: (_) => getIt<GuestListBloc>()..add(const GuestListEvent.download(resetOffset: false)),
-          child: BlocBuilder<GuestListBloc, GuestListState>(
-            builder: (context, GuestListState state) => state.maybeWhen(
-              loadSuccess: (guests) => _buildLoadedBody(context, guests),
-              loadInProgress: () => const Center(child: CupertinoActivityIndicator()),
+          create: (context) {
+            final bloc = getIt<GuestListBloc>();
+            _pagingController
+                .addPageRequestListener((pageKey) => bloc.add(GuestListEvent.downloadPage(offset: pageKey)));
+            return bloc;
+          },
+          child: BlocConsumer<GuestListBloc, GuestListState>(
+            buildWhen: (_, current) => current.when(
+              pageLoadSuccess: (_) => false,
+              pageLoadFailure: (_) => false,
+              initial: () => true,
+            ),
+            listener: (context, state) => state.maybeWhen(
+              pageLoadSuccess: _appendPage,
+              pageLoadFailure: (failure) => _pagingController.error = failure,
+              orElse: () => null,
+            ),
+            builder: (context, state) => state.maybeWhen(
+              initial: () => _buildBody(context),
               orElse: () => const SizedBox(),
             ),
           ),
         ),
       );
 
-  _buildLoadedBody(BuildContext context, List<Guest> guests) => RefreshIndicator(
+  _buildBody(BuildContext context) => RefreshIndicator(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: ListView.separated(
-            itemCount: guests.length,
-            itemBuilder: (_, index) => GuestTile(guests[index]),
-            separatorBuilder: (BuildContext context, int index) => Container(
-              margin: const EdgeInsets.symmetric(vertical: 4),
-              height: 1,
-              color: Colors.black,
-            ),
+          child: PagedListView<int, Guest>(
+            pagingController: _pagingController,
+            builderDelegate: PagedChildBuilderDelegate<Guest>(itemBuilder: (context, item, index) => GuestTile(item)),
           ),
         ),
-        //TODO add pagination
-        onRefresh: () async => context.read<GuestListBloc>().add(const GuestListEvent.download(resetOffset: true)),
+        onRefresh: () async => context.read<GuestListBloc>().add(const GuestListEvent.downloadPage(offset: 0)),
       );
-}
-
-class GuestTile extends StatelessWidget {
-  final Guest guest;
-
-  const GuestTile(this.guest, {Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            guest.fullName,
-            style: Theme.of(context).textTheme.titleLarge!,
-          ),
-          const SizedBox(height: 12),
-          Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                guest.phoneNumber,
-                style: Theme.of(context).textTheme.bodyText2,
-              ),
-              if (guest.priorityStatus != null)
-                Text(
-                  //TODO map to user-friendly texts
-                  guest.priorityStatus.toString(),
-                  style: const TextStyle(
-                    backgroundColor: Colors.red,
-                  ),
-                ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              if (guest.priorityDate != null) Text(DateFormat.yMd().format(guest.priorityDate!)),
-              //TODO fill with real data
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: const [
-                  Text('1'),
-                  Text('3'),
-                ],
-              ),
-              const Text('4 weeks'),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: const [
-                  Icon(Icons.flutter_dash),
-                ],
-              ),
-            ],
-          ),
-        ],
-      );
+  void dispose() {
+    _pagingController.dispose();
+    super.dispose();
+  }
 }
