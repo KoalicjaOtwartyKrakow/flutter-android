@@ -10,8 +10,8 @@ const _supportedLocales = [
   Locale('ua'),
 ];
 
-class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
+class KokApp extends StatelessWidget {
+  KokApp({Key? key}) : super(key: key);
   final AppRouter _appRouter = AppRouter();
 
   @override
