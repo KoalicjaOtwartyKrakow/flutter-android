@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:fimber/fimber.dart';
 import 'package:flutter_android/infrastructure/api_client.dart';
 import 'package:flutter_android/infrastructure/guest/guest_list_mapper.dart';
 import 'package:flutter_android/models/domain/guest.dart';
@@ -21,6 +22,7 @@ class GuestRepository {
       final guests = await _apiClient.getGuests(offset, pageSize);
       return Right<Failure, List<Guest>>(_guestListMapper(guests.items));
     } catch (e, st) {
+      Fimber.w('Could not fetch guest list', ex: e, stacktrace: st);
       return const Left(Failure.unexpected());
     }
   }
@@ -29,7 +31,8 @@ class GuestRepository {
     try {
       final postGuest = await _apiClient.postGuest(guest);
       return right(postGuest);
-    } catch (e) {
+    } catch (e, st) {
+      Fimber.w('Could not update guest', ex: e, stacktrace: st);
       return const Left(Failure.unexpected());
     }
   }
