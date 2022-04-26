@@ -31,6 +31,7 @@ class GuestDto {
   final String? financeStatus;
   final String? howLongToStay;
   final String? desiredDestination;
+  @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue)
   final PriorityStatus? priorityStatus;
   @JsonKey(
     fromJson: dateTimeFromString,
@@ -40,6 +41,7 @@ class GuestDto {
   final String? accommodationUnitId;
   final String? claimedById;
   final String? staffComments;
+  @JsonKey(unknownEnumValue: JsonKey.nullForUndefinedEnumValue)
   final VerificationStatus? verificationStatus;
   final String? guid;
   @JsonKey(

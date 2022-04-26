@@ -511,6 +511,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.4.0"
+  phonenumbers:
+    dependency: "direct main"
+    description:
+      name: phonenumbers
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.0"
+  phonenumbers_core:
+    dependency: transitive
+    description:
+      name: phonenumbers_core
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   plugin_platform_interface:
     dependency: transitive
     description:

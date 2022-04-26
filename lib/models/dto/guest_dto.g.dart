@@ -26,21 +26,21 @@ GuestDto _$GuestDtoFromJson(Map<String, dynamic> json) => GuestDto(
       json['financeStatus'] as String?,
       json['howLongToStay'] as String?,
       json['desiredDestination'] as String?,
-      $enumDecodeNullable(_$PriorityStatusEnumMap, json['priorityStatus']),
+      $enumDecodeNullable(_$PriorityStatusEnumMap, json['priorityStatus'],
+          unknownValue: JsonKey.nullForUndefinedEnumValue),
       dateTimeFromString(json['priorityDate'] as String?),
       json['accommodationUnitId'] as String?,
       json['claimedById'] as String?,
       json['staffComments'] as String?,
-      $enumDecodeNullable(
-          _$VerificationStatusEnumMap, json['verificationStatus']),
+      $enumDecodeNullable(_$VerificationStatusEnumMap, json['verificationStatus'],
+          unknownValue: JsonKey.nullForUndefinedEnumValue),
       json['guid'] as String?,
       dateTimeFromString(json['createdAt'] as String?),
       dateTimeFromString(json['updatedAt'] as String?),
       json['systemComments'] as String?,
       json['accommodationUnit'] == null
           ? null
-          : AccommodationUnitDto.fromJson(
-              json['accommodationUnit'] as Map<String, dynamic>),
+          : AccommodationUnitDto.fromJson(json['accommodationUnit'] as Map<String, dynamic>),
       json['claimedBy'] as String?,
       dateTimeFromString(json['claimedAt'] as String?),
     );

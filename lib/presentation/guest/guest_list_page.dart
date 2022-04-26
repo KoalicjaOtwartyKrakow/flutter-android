@@ -60,7 +60,8 @@ class _GuestListPageState extends State<GuestListPage> {
   _buildBody(BuildContext context) => RefreshIndicator(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: PagedListView<int, Guest>(
+          child: PagedListView<int, Guest>.separated(
+            separatorBuilder: (context, index) => const Divider(thickness: 2),
             pagingController: _pagingController,
             builderDelegate: PagedChildBuilderDelegate<Guest>(itemBuilder: (context, item, index) => GuestTile(item)),
           ),

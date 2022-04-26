@@ -45,7 +45,7 @@ class HostPage extends StatelessWidget {
                   child: BlocConsumer<HostBloc, HostState>(
                     listener: (context, state) async {
                       if (state is HostStateSuccess) {
-                        launch(state.url).onError((error, stackTrace) {
+                        launchUrl(Uri.parse(state.url)).onError((error, stackTrace) {
                           // TODO: handle launch errors
                           return true;
                         });

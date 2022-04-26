@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_android/models/domain/guest.dart';
+import 'package:flutter_android/presentation/core/hyperlink_text.dart';
+import 'package:flutter_android/presentation/guest/widgets/guest_status_indicator.dart';
+import 'package:flutter_android/presentation/guest/widgets/iconized_widget.dart';
 import 'package:intl/intl.dart';
 
 class GuestTile extends StatelessWidget {
@@ -12,27 +15,33 @@ class GuestTile extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            guest.fullName,
-            style: Theme.of(context).textTheme.titleLarge!,
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  guest.fullName,
+                  style: Theme.of(context).textTheme.titleLarge!,
+                ),
+              ),
+              GuestStatusIndicator(guest.priorityStatus),
+            ],
           ),
           const SizedBox(height: 12),
           Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                guest.phoneNumber,
-                style: Theme.of(context).textTheme.bodyText2,
-              ),
-              if (guest.priorityStatus != null)
-                Text(
-                  //TODO map to user-friendly texts
-                  guest.priorityStatus.toString(),
-                  style: const TextStyle(
-                    backgroundColor: Colors.red,
-                  ),
+              IconizedWidget(
+                Icons.contact_phone,
+                HyperlinkText(
+                  uri: Uri.parse('tel:${guest.normalizedPhoneNumber}'),
+                  text: guest.normalizedPhoneNumber,
                 ),
+              ),
+              const Spacer(),
+              if (guest.priorityDate != null)
+                IconizedWidget(
+                  Icons.date_range,
+                  Text(DateFormat.yMd().format(guest.priorityDate!)),
+                )
             ],
           ),
           const SizedBox(height: 12),
@@ -40,21 +49,34 @@ class GuestTile extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              if (guest.priorityDate != null) Text(DateFormat.yMd().format(guest.priorityDate!)),
-              //TODO fill with real data
               Row(
                 mainAxisSize: MainAxisSize.min,
-                children: const [
-                  Text('1'),
-                  Text('3'),
+                children: [
+                  IconizedWidget(
+                    Icons.people,
+                    Text(NumberFormat('0').format(guest.totalPeopleCount ?? 0)),
+                  ),
+                  const SizedBox(width: 16),
+                  IconizedWidget(
+                    Icons.male,
+                    Text(NumberFormat('0').format(guest.adultMaleCount ?? 0)),
+                  ),
+                  const SizedBox(width: 16),
+                  IconizedWidget(
+                    Icons.female,
+                    Text(NumberFormat('0').format(guest.adultFemaleCount ?? 0)),
+                  ),
+                  const SizedBox(width: 16),
+                  IconizedWidget(
+                    Icons.child_care,
+                    Text(NumberFormat('0').format(guest.childrenAges?.length ?? 0)),
+                  ),
                 ],
               ),
-              const Text('4 weeks'),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: const [
-                  Icon(Icons.flutter_dash),
-                ],
+              //TODO fill with real data
+              const IconizedWidget(
+                Icons.hourglass_bottom,
+                Text('4 weeks'),
               ),
             ],
           ),
