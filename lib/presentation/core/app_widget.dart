@@ -17,7 +17,6 @@ class KokApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialApp.router(
         supportedLocales: _supportedLocales,
-        locale: const Locale('pl'),
         localizationsDelegates: [
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,

@@ -10,5 +10,15 @@
     "inTheCity": "In Cracow",
     "updated": "Updated",
     "unknown": "Unknown"
+  },
+  "stayDuration": {
+    "day_0": "{{count}} day",
+    "day_1": "{{count}} days",
+    "week_0": "{{count}} week",
+    "week_1": "{{count}} weeks",
+    "month_0": "{{count}} month",
+    "month_1": "{{count}} months",
+    "year_0": "{{count}} year",
+    "year_1": "{{count}} years"
   }
 }

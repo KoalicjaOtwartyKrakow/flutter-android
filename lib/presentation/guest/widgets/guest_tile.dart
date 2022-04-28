@@ -3,6 +3,7 @@ import 'package:flutter_android/models/domain/guest.dart';
 import 'package:flutter_android/presentation/core/hyperlink_text.dart';
 import 'package:flutter_android/presentation/guest/widgets/guest_status_indicator.dart';
 import 'package:flutter_android/presentation/guest/widgets/iconized_widget.dart';
+import 'package:i18next/i18next.dart';
 import 'package:intl/intl.dart';
 
 class GuestTile extends StatelessWidget {
@@ -54,30 +55,39 @@ class GuestTile extends StatelessWidget {
                 children: [
                   IconizedWidget(
                     Icons.people,
-                    Text(NumberFormat('0').format(guest.totalPeopleCount ?? 0)),
+                    Text(NumberFormat('0').format(guest.totalPeopleCount)),
                   ),
                   const SizedBox(width: 16),
                   IconizedWidget(
                     Icons.male,
-                    Text(NumberFormat('0').format(guest.adultMaleCount ?? 0)),
+                    Text(NumberFormat('0').format(guest.adultMaleCount)),
                   ),
                   const SizedBox(width: 16),
                   IconizedWidget(
                     Icons.female,
-                    Text(NumberFormat('0').format(guest.adultFemaleCount ?? 0)),
+                    Text(NumberFormat('0').format(guest.adultFemaleCount)),
                   ),
                   const SizedBox(width: 16),
                   IconizedWidget(
                     Icons.child_care,
-                    Text(NumberFormat('0').format(guest.childrenAges?.length ?? 0)),
+                    Text(NumberFormat('0').format(guest.childrenAges.length)),
                   ),
                 ],
               ),
-              //TODO fill with real data
-              const IconizedWidget(
-                Icons.hourglass_bottom,
-                Text('4 weeks'),
-              ),
+              if (guest.howLongToStay != null)
+                IconizedWidget(
+                  Icons.hourglass_bottom,
+                  Text(I18Next.of(context)!.t('guest_list_page:stayDuration.${guest.howLongToStay!.unit.name}',
+                      count: guest.howLongToStay!.value)),
+                ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              if (guest.havePets) const Icon(Icons.pets),
             ],
           ),
         ],
