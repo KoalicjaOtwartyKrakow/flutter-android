@@ -19,7 +19,7 @@ class GuestRepository {
 
   Future<Either<Failure, List<Guest>>> getGuests({required int offset}) async {
     try {
-      final guests = await _apiClient.getGuests(offset, pageSize);
+      final guests = await _apiClient.getGuests(offset, pageSize, 'priorityStatus');
       return Right<Failure, List<Guest>>(_guestListMapper(guests.items));
     } catch (e, st) {
       Fimber.w('Could not fetch guest list', ex: e, stacktrace: st);

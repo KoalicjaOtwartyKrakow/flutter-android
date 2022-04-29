@@ -20,5 +20,10 @@
     "month_1": "{{count}} months",
     "year_0": "{{count}} year",
     "year_1": "{{count}} years"
-  }
+  },
+  "havePets": "Pets present",
+  "meatFreeDiet": "Meat free diet",
+  "foodAllergies": "Food allergies",
+  "glutenFreeDiet": "Gluten free diet",
+  "lactoseFreeDiet": "Lactose free diet"
 }

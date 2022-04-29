@@ -87,20 +87,15 @@ class _ApiClient implements ApiClient {
   }
 
   @override
-  Future<GuestListDto> getGuests(offset, limit) async {
+  Future<GuestListDto> getGuests(offset, limit, sort) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{
-      r'offset': offset,
-      r'limit': limit
-    };
+    final queryParameters = <String, dynamic>{r'offset': offset, r'limit': limit, r'sort': sort};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<GuestListDto>(
-            Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/mobile/guest',
-                    queryParameters: queryParameters, data: _data)
-                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<GuestListDto>(
+        Options(method: 'GET', headers: _headers, extra: _extra)
+            .compose(_dio.options, '/mobile/guest', queryParameters: queryParameters, data: _data)
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = GuestListDto.fromJson(_result.data!);
     return value;
   }
