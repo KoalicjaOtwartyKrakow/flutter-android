@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_android/models/domain/guest.dart';
-import 'package:flutter_android/presentation/core/hyperlink_text.dart';
+import 'package:flutter_android/presentation/core/widgets/crossed_out.dart';
+import 'package:flutter_android/presentation/core/widgets/hyperlink_text.dart';
+import 'package:flutter_android/presentation/core/widgets/tooltipped_icon.dart';
 import 'package:flutter_android/presentation/guest/widgets/guest_status_indicator.dart';
 import 'package:flutter_android/presentation/guest/widgets/iconized_widget.dart';
 import 'package:i18next/i18next.dart';
@@ -84,12 +86,39 @@ class GuestTile extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              if (guest.havePets) const Icon(Icons.pets),
+              if (guest.havePets)
+                TooltippedIcon(
+                  icon: Icons.pets,
+                  message: I18Next.of(context)!.t('guest_list_page:havePets'),
+                ),
+              if (guest.meatFreeDiet)
+                TooltippedIcon(
+                  icon: Icons.grass,
+                  message: I18Next.of(context)!.t('guest_list_page:meatFreeDiet'),
+                ),
+              if (guest.foodAllergies.isNotEmpty)
+                TooltippedIcon(
+                  icon: Icons.front_hand,
+                  message: I18Next.of(context)!.t('guest_list_page:foodAllergies'),
+                ),
+              if (guest.glutenFreeDiet)
+                CrossedOut(
+                  child: TooltippedIcon(
+                    icon: Icons.bakery_dining,
+                    message: I18Next.of(context)!.t('guest_list_page:glutenFreeDiet'),
+                  ),
+                ),
+              if (guest.lactoseFreeDiet)
+                CrossedOut(
+                  child: TooltippedIcon(
+                    icon: Icons.cake,
+                    message: I18Next.of(context)!.t('guest_list_page:lactoseFreeDiet'),
+                  ),
+                ),
             ],
           ),
+          if (guest.specialNeeds.isNotEmpty) Text(guest.specialNeeds),
         ],
       );
 }

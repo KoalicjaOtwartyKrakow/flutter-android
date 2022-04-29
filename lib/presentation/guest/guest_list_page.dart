@@ -63,7 +63,14 @@ class _GuestListPageState extends State<GuestListPage> {
           child: PagedListView<int, Guest>.separated(
             separatorBuilder: (context, index) => const Divider(thickness: 2),
             pagingController: _pagingController,
-            builderDelegate: PagedChildBuilderDelegate<Guest>(itemBuilder: (context, item, index) => GuestTile(item)),
+            builderDelegate: PagedChildBuilderDelegate<Guest>(
+              itemBuilder: (context, item, index) => InkWell(
+                child: GuestTile(item),
+                onTap: () {
+                  //TODO navigate to single guest page
+                },
+              ),
+            ),
           ),
         ),
         onRefresh: () async => context.read<GuestListBloc>().add(const GuestListEvent.downloadPage(offset: 0)),

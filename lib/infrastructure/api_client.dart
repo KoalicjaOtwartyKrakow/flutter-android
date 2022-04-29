@@ -29,6 +29,7 @@ abstract class ApiClient {
   Future<GuestListDto> getGuests(
     @Query('offset') int offset,
     @Query('limit') int limit,
+    @Query('sort') String sort,
   );
 
   @POST('/guest')
@@ -46,7 +47,31 @@ abstract class RegisterModule {
           'X-Endpoint-API-UserInfo': _fakeJwt,
           'X-api-key': String.fromEnvironment('api-key'),
         },
-      ));
+      ))
+        ..interceptors.add(CurlInterceptor());
 
   String get baseUrl => 'https://apartments-dev.r3.salamlab.pl/api';
+}
+
+class CurlInterceptor extends Interceptor {
+  @override
+  void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
+    try {
+      final qp = options.queryParameters;
+      final h = options.headers;
+      final d = options.data;
+      final curl = 'curl -X ${options.method} \'${options.baseUrl}${options.path}' +
+          (qp.isNotEmpty
+              ? qp.keys.fold('', (value, key) => '$value${value.isEmpty ? '?' : '&'}$key=${qp[key]}\'')
+              : '\'') +
+          h.keys.fold('', (value, key) => '$value -H \'$key: ${h[key]}\'') +
+          (d.length != 0 ? ' --data-binary \'$d\'' : '') +
+          ' --insecure';
+      print('server_curl: $curl');
+    } catch (e) {
+      print('CurlInterceptor error: $e');
+    }
+
+    super.onRequest(options, handler);
+  }
 }

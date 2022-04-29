@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_android/presentation/guest/guest_form_failure_page.dart';
 import 'package:flutter_android/presentation/guest/guest_form_success_page.dart';
 import 'package:flutter_android/presentation/guest/guest_list_page.dart';
+import 'package:flutter_android/presentation/home/home_page.dart';
 import 'package:flutter_android/presentation/volunteer/accomodation/accomodation_list_page.dart';
 import 'package:flutter_android/presentation/volunteer/volunteer_page.dart';
 
 import '../../models/accomodation.dart';
-import '../core/home_page.dart';
 import '../guest/guest_form_page.dart';
 import '../guest/guest_page.dart';
 import '../host/apartment_added_success_page.dart';
